@@ -34,6 +34,7 @@ QUARTER_TITLE = "Q1 FY27"
 
 OUT_HTML = Path(__file__).with_name("earnings_calendar.html")
 OUT_JSON = Path(__file__).with_name("earnings_data.json")
+TIMES_JSON = Path(__file__).with_name("release_times.json")  # approx times, built separately
 
 API = ("https://api.moneycontrol.com/mcapi/v1/earnings/get-earnings-data"
        "?indexId=All&page=1&startDate={s}&endDate={e}"
@@ -49,6 +50,21 @@ HEADERS = {
 MONTHS = {m: i for i, m in enumerate(
     ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], start=1)}
+
+
+def norm_name(s):
+    """Normalize a company name for matching (must mirror build_release_times.py)."""
+    import re as _re
+    s = s.lower().replace("&", " and ")
+    s = _re.sub(r"\b(ltd|limited|limite|the)\b", "", s)
+    return _re.sub(r"[^a-z0-9]", "", s)
+
+
+def load_times():
+    try:
+        return json.loads(TIMES_JSON.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
 
 
 # ---------------------------------------------------------------------------
@@ -112,13 +128,22 @@ def month_grid(year, month, by_date):
                 nm = escape(c["name"])
                 url = escape(c["url"]) if c.get("url") else ""
                 mc = c.get("mcap")
-                mc_attr = f' title="Mkt cap: Rs {mc:,.0f} cr"' if mc else ""
+                tm = c.get("time")
+                mc_bits = []
+                if mc:
+                    mc_bits.append(f"Mkt cap: Rs {mc:,.0f} cr")
+                if tm:
+                    mc_bits.append(f"Approx. time (from last quarter): {tm}")
+                tip = escape(" · ".join(mc_bits))
+                tip_attr = f' title="{tip}"' if tip else ""
+                tspan = f' <span class="tm">({escape(tm)})</span>' if tm else ""
+                inner = f'<span class="nm">{nm}</span>{tspan}'
                 if url:
                     items.append(f'<a class="co" href="{url}" target="_blank" '
-                                 f'rel="noopener"{mc_attr} data-name="{nm.lower()}">{nm}</a>')
+                                 f'rel="noopener"{tip_attr} data-name="{nm.lower()}">{inner}</a>')
                 else:
-                    items.append(f'<span class="co"{mc_attr} '
-                                 f'data-name="{nm.lower()}">{nm}</span>')
+                    items.append(f'<span class="co"{tip_attr} '
+                                 f'data-name="{nm.lower()}">{inner}</span>')
             head += '<div class="colist">' + "".join(items) + '</div>'
         head += '</div>'
         cells.append(head)
@@ -139,18 +164,25 @@ def month_grid(year, month, by_date):
 def build_html(data):
     rows = data["list"]
     as_on = data.get("asOnDate", "")
+    times = load_times()
 
     by_date = {}
     total = 0
+    timed = 0
     for r in rows:
         if RESULT_TYPE_LABEL not in (r.get("resultType") or ""):
             continue
         d = parse_iso(r["date"])
+        name = r.get("stockName") or r.get("stockShortName") or "?"
+        tm = times.get(norm_name(name))
+        if tm:
+            timed += 1
         by_date.setdefault(d, []).append({
-            "name": r.get("stockName") or r.get("stockShortName") or "?",
+            "name": name,
             "url": r.get("stockUrl") or "",
             "mcap": r.get("marketCap"),
             "exch": r.get("exchange") or "",
+            "time": tm,
         })
         total += 1
 
@@ -213,7 +245,9 @@ def build_html(data):
   .co {{ display:block; font-size:11.5px; line-height:1.28; color:var(--ink);
     background:var(--cobg); border-radius:5px; padding:3px 6px; text-decoration:none;
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
+  .co .tm {{ color:var(--mut); font-weight:600; font-size:10px; }}
   a.co:hover {{ background:var(--accent); color:#fff; }}
+  a.co:hover .tm {{ color:#dbe4ff; }}
   .co.dim {{ opacity:.14; }}
   .cell.nomatch {{ opacity:.4; }}
   footer {{ padding:16px 26px 40px; color:var(--mut); font-size:12px;
@@ -230,7 +264,8 @@ def build_html(data):
   <h1>{QUARTER_TITLE} Earnings Calendar &mdash; Indian Listed Companies</h1>
   <div class="sub">Quarter <b>{QUARTER_TITLE}</b> (Apr&ndash;Jun 2026) results &middot;
      reporting window <b>{span}</b> &middot;
-     <b>{total}</b> companies across <b>{len(by_date)}</b> dates</div>
+     <b>{total}</b> companies across <b>{len(by_date)}</b> dates &middot;
+     times in <b>(brackets)</b> = approx., based on last quarter&rsquo;s filing</div>
   <div class="bar">
     <div class="search"><input id="q" type="search"
        placeholder="Search a company&hellip; (e.g. Reliance, TCS, Infosys)"></div>
@@ -245,7 +280,8 @@ def build_html(data):
   Auto-generated from MoneyControl&rsquo;s
   <a href="https://www.moneycontrol.com/markets/earnings/results-calendar/" target="_blank" rel="noopener">Results Calendar</a>.
   Click any company to open its MoneyControl page. Dates &amp; companies update whenever you re-run <code>update_calendar.py</code>.
-  Result timings are announced by companies and may change.
+  Times in brackets are <b>approximate</b> &mdash; they show when the company filed its <b>last quarter (Q4&nbsp;FY26)</b> results with the BSE,
+  used here as a rough guide. Actual {QUARTER_TITLE} timing may differ, and some companies (mainly NSE-SME listings) have no time shown.
 </footer>
 <script>
   const q = document.getElementById('q');
