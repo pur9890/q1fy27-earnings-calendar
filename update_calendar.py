@@ -17,7 +17,9 @@ import ssl
 import sys
 import urllib.request
 import urllib.error
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
+
+IST = timezone(timedelta(hours=5, minutes=30))
 from pathlib import Path
 from html import escape
 
@@ -156,7 +158,7 @@ def build_html(data):
     months = sorted({(d.year, d.month) for d in by_date})
     grids = "".join(month_grid(y, m, by_date) for y, m in months)
 
-    generated = datetime.now().strftime("%d %b %Y, %I:%M %p")
+    generated = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
     first_day = min(by_date) if by_date else None
     last_day = max(by_date) if by_date else None
     span = (f"{first_day.strftime('%d %b')} &ndash; {last_day.strftime('%d %b %Y')}"
