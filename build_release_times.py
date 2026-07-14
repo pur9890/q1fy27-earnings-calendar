@@ -173,9 +173,45 @@ def fmt(iso):
     return datetime.strptime(iso[:16], "%Y-%m-%dT%H:%M").strftime("%I:%M %p").lstrip("0")
 
 
-def main():
-    comps = [r["stockName"] for r in json.loads(MC_JSON.read_text(encoding="utf-8"))["list"]]
-    print(f"{len(comps)} companies to resolve")
+def resolve_one(name, q4dates):
+    """Look up a single company's last-quarter filing time via BSE. None if not found."""
+    code = search_code(name); time.sleep(0.12)
+    if not code:
+        return None
+    dt = scrip_result_time(code, on_date=q4dates.get(norm(name))); time.sleep(0.12)
+    return fmt(dt) if dt else None
+
+
+def build_incremental(comps):
+    """Only resolve companies that don't already have a time (fast; for daily runs)."""
+    existing = {}
+    if OUT.exists():
+        try:
+            existing = json.loads(OUT.read_text(encoding="utf-8"))
+        except Exception:
+            existing = {}
+    missing = [c for c in comps if norm(c) not in existing]
+    print(f"{len(comps)} companies | {len(existing)} already timed | {len(missing)} to look up")
+    if not missing:
+        print("No new companies need a time. Nothing to do.")
+        return
+    q4dates = q4_report_dates()
+    added = 0
+    for c in missing:
+        t = resolve_one(c, q4dates)
+        if t:
+            existing[norm(c)] = t
+            added += 1
+            print(f"  + {c}  ->  {t}")
+    OUT.write_text(json.dumps(existing, ensure_ascii=False, indent=0, sort_keys=True),
+                   encoding="utf-8")
+    still = len(comps) - sum(1 for c in comps if norm(c) in existing)
+    print(f"incremental done: +{added} new times | total {len(existing)} | "
+          f"{still} companies still without a time (not on BSE)")
+
+
+def build_full(comps):
+    print(f"{len(comps)} companies to resolve (FULL rebuild)")
 
     bmap = sweep_results()
     print(f"BSE Result-sweep: {len(bmap)} companies")
@@ -213,6 +249,16 @@ def main():
     OUT.write_text(json.dumps(final, ensure_ascii=False, indent=0, sort_keys=True),
                    encoding="utf-8")
     print(f"DONE  {len(final)}/{len(comps)} companies have a time  ->  {OUT.name}")
+
+
+def main():
+    import sys
+    comps = [r["stockName"] for r in json.loads(MC_JSON.read_text(encoding="utf-8"))["list"]]
+    # Full rebuild only when forced or when no times exist yet; otherwise incremental.
+    if "--full" in sys.argv or not OUT.exists():
+        build_full(comps)
+    else:
+        build_incremental(comps)
 
 
 if __name__ == "__main__":
