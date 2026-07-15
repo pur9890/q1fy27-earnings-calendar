@@ -103,7 +103,7 @@ def parse_iso(datestr):
 # ---------------------------------------------------------------------------
 # HTML rendering
 # ---------------------------------------------------------------------------
-def month_grid(year, month, by_date):
+def month_grid(year, month, by_date, today=None):
     """Return HTML for one month's calendar grid (Mon-first weeks)."""
     first = date(year, month, 1)
     next_month = date(year + (month == 12), (month % 12) + 1, 1)
@@ -117,11 +117,18 @@ def month_grid(year, month, by_date):
     for dnum in range(1, n_days + 1):
         d = date(year, month, dnum)
         comps = by_date.get(d, [])
-        wknd = " weekend" if d.weekday() >= 5 else ""
-        head = (f'<div class="cell{wknd}{" has" if comps else ""}">'
-                f'<div class="dnum">{dnum}'
-                + (f'<span class="cnt">{len(comps)}</span>' if comps else "")
-                + '</div>')
+        cls = "cell"
+        if d.weekday() >= 5:
+            cls += " weekend"
+        if comps:
+            cls += " has"
+        is_today = today is not None and d == today
+        if is_today:
+            cls += " today"
+        today_tag = '<span class="todaytag">TODAY</span>' if is_today else ""
+        cnt_badge = f'<span class="cnt">{len(comps)}</span>' if comps else ""
+        head = (f'<div class="{cls}"{" id=\"today\"" if is_today else ""}>'
+                f'<div class="dnum"><span class="dl">{dnum}{today_tag}</span>{cnt_badge}</div>')
         if comps:
             items = []
             for c in comps:
@@ -187,8 +194,9 @@ def build_html(data):
         total += 1
 
     # keep market-cap desc order within each day (API already sorted)
+    today = datetime.now(IST).date()
     months = sorted({(d.year, d.month) for d in by_date})
-    grids = "".join(month_grid(y, m, by_date) for y, m in months)
+    grids = "".join(month_grid(y, m, by_date, today) for y, m in months)
 
     generated = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
     first_day = min(by_date) if by_date else None
@@ -207,6 +215,7 @@ def build_html(data):
     --bg:#0f1420; --panel:#151b2b; --cell:#1a2233; --cell2:#161d2c;
     --line:#28324a; --ink:#e7ecf5; --mut:#8b97ad; --accent:#4f8cff;
     --has:#1d2740; --wk:#141a28; --cobg:#222d45; --green:#26a269;
+    --todaybg:#1b2b4d;
   }}
   * {{ box-sizing:border-box; }}
   body {{ margin:0; background:var(--bg); color:var(--ink);
@@ -237,6 +246,12 @@ def build_html(data):
   .cell.weekend {{ background:var(--wk); }}
   .cell.has {{ background:var(--has); }}
   .cell.empty {{ background:transparent; border:none; }}
+  .cell.today {{ border-color:var(--accent); box-shadow:0 0 0 2px var(--accent) inset,
+    0 0 18px rgba(79,140,255,.40); background:var(--todaybg); }}
+  .cell.today .dnum {{ color:var(--accent); }}
+  .dl {{ display:inline-flex; align-items:center; gap:6px; }}
+  .todaytag {{ background:var(--accent); color:#fff; font-size:8.5px; font-weight:800;
+    padding:1px 6px; border-radius:20px; letter-spacing:.6px; }}
   .dnum {{ font-size:12px; color:var(--mut); font-weight:600; margin-bottom:5px;
     display:flex; align-items:center; justify-content:space-between; }}
   .cnt {{ background:var(--accent); color:#fff; border-radius:20px;
@@ -284,6 +299,11 @@ def build_html(data):
   used here as a rough guide. Actual {QUARTER_TITLE} timing may differ, and some companies (mainly NSE-SME listings) have no time shown.
 </footer>
 <script>
+  // Bring today's highlighted cell into view on load.
+  (function () {{
+    const t = document.getElementById('today');
+    if (t) setTimeout(() => t.scrollIntoView({{block: 'center', behavior: 'smooth'}}), 150);
+  }})();
   const q = document.getElementById('q');
   const cos = [...document.querySelectorAll('.co')];
   const cells = [...document.querySelectorAll('.cell.has')];
