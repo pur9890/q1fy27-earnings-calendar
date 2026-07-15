@@ -5,7 +5,11 @@ on:
     branches: [main]
   workflow_dispatch:        # lets you run it manually from the Actions tab
   schedule:
-    - cron: "30 2 * * *"    # every day at 02:30 UTC = 08:00 IST
+    # GitHub's free cron is best-effort and drops runs scheduled on busy
+    # round minutes (:00/:30). Odd minutes + a backup attempt are far more
+    # reliable. Both land around 8 AM IST (UTC = IST - 5:30).
+    - cron: "17 2 * * *"    # 07:47 IST
+    - cron: "47 2 * * *"    # 08:17 IST (backup, in case 07:47 is dropped)
 
 permissions:
   contents: read
