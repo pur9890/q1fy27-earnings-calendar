@@ -15,6 +15,7 @@ Data source (discovered from moneycontrol.com/markets/earnings/results-calendar)
 import json
 import ssl
 import sys
+import time
 import urllib.request
 import urllib.error
 from datetime import date, datetime, timedelta, timezone
@@ -71,16 +72,26 @@ def load_times():
 # Fetch
 # ---------------------------------------------------------------------------
 def fetch():
+    """Fetch the calendar data, retrying on transient errors (MoneyControl
+    occasionally returns 400/403/503 from datacenter IPs)."""
     url = API.format(s=START_DATE, e=END_DATE)
-    req = urllib.request.Request(url, headers=HEADERS)
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
-    with urllib.request.urlopen(req, timeout=45, context=ctx) as r:
-        payload = json.load(r)
-    if not payload.get("success"):
-        raise RuntimeError("API returned success=0: %r" % payload.get("data"))
-    return payload["data"]
+    last = None
+    for attempt in range(5):
+        try:
+            req = urllib.request.Request(url, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=45, context=ctx) as r:
+                payload = json.load(r)
+            if payload.get("success"):
+                return payload["data"]
+            last = RuntimeError("API returned success=0: %r" % payload.get("data"))
+        except Exception as e:
+            last = e
+        if attempt < 4:
+            time.sleep(4 * (attempt + 1))    # 4s, 8s, 12s, 16s backoff
+    raise last
 
 
 def parse_iso(datestr):
