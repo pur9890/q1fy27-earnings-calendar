@@ -1,0 +1,4036 @@
+{
+"records": [
+{
+"name": "Amara Raja Energy",
+"aliases": [
+"Amara Raja Energy & Mobility"
+],
+"rev": 36346.5,
+"ebitda": 4132.5,
+"margin": 0.11369732986669968,
+"pat": 2074,
+"n": 2
+},
+{
+"name": "Apollo Tyres",
+"aliases": [
+"Apollo Tyres"
+],
+"rev": 75739.5,
+"ebitda": 8058.5,
+"margin": 0.10639758646413035,
+"pat": 2585.5,
+"n": 2
+},
+{
+"name": "Ashok Leyland",
+"aliases": [
+"Ashok Leyland",
+"Ashok Leyland"
+],
+"rev": 96689.33333333333,
+"ebitda": 9071.666666666666,
+"margin": 0.0938228277507343,
+"pat": 5596.666666666667,
+"n": 3
+},
+{
+"name": "Bajaj Auto",
+"aliases": [
+"Bajaj Auto",
+"Bajaj Auto"
+],
+"rev": 168186.33333333334,
+"ebitda": 33405.333333333336,
+"margin": 0.19862097395943784,
+"pat": 27105.333333333332,
+"n": 3
+},
+{
+"name": "Balkrishna Inds",
+"aliases": [
+"Balkrishna Industries"
+],
+"rev": 30609.5,
+"ebitda": 6616,
+"margin": 0.21614204740358386,
+"pat": 3804.5,
+"n": 2
+},
+{
+"name": "Bharat Forge",
+"aliases": [
+"Bharat Forge",
+"Bharat Forge (Standalone)"
+],
+"rev": 31318,
+"ebitda": 6856,
+"margin": 0.21891563956829937,
+"pat": 3711.6666666666665,
+"n": 3
+},
+{
+"name": "Bosch",
+"aliases": [],
+"rev": 53153,
+"ebitda": 6485,
+"margin": 0.12200628374691927,
+"pat": 5327,
+"n": 1
+},
+{
+"name": "CEAT",
+"aliases": [
+"CEAT"
+],
+"rev": 42555.5,
+"ebitda": 3831,
+"margin": 0.09002361621882013,
+"pat": 793,
+"n": 2
+},
+{
+"name": "CIE Automotive",
+"aliases": [
+"CIE Automotive",
+"CIE Automotive India"
+],
+"rev": 26307.5,
+"ebitda": 4021.5,
+"margin": 0.15286515252304475,
+"pat": 2483.5,
+"n": 2
+},
+{
+"name": "Craftsman Auto",
+"aliases": [],
+"rev": 21170,
+"ebitda": 3147,
+"margin": 0.14865375531412375,
+"pat": 940,
+"n": 1
+},
+{
+"name": "Eicher Motors",
+"aliases": [
+"Eicher Motors",
+"Eicher Motors (Consol)"
+],
+"rev": 63515,
+"ebitda": 15228.666666666666,
+"margin": 0.2397648849353171,
+"pat": 14331.333333333334,
+"n": 3
+},
+{
+"name": "Endurance Tech.",
+"aliases": [
+"Endurance Technologies",
+"Endurance Tech (Consol.)"
+],
+"rev": 41460.333333333336,
+"ebitda": 5261.333333333333,
+"margin": 0.1269004108344522,
+"pat": 2596.6666666666665,
+"n": 3
+},
+{
+"name": "Escorts Kubota",
+"aliases": [
+"Escorts Kubota",
+"Escorts Kubota"
+],
+"rev": 31129.333333333332,
+"ebitda": 3574,
+"margin": 0.11481132479547694,
+"pat": 3293.6666666666665,
+"n": 3
+},
+{
+"name": "Exide Inds.",
+"aliases": [
+"Exide Industries"
+],
+"rev": 48706,
+"ebitda": 5766,
+"margin": 0.11838377201987435,
+"pat": 3432.5,
+"n": 2
+},
+{
+"name": "Gabriel India",
+"aliases": [
+"Gabriel India (Consol)"
+],
+"rev": 14166,
+"ebitda": 1042,
+"margin": 0.07355640265424256,
+"pat": 1020,
+"n": 2
+},
+{
+"name": "Happy Forgings",
+"aliases": [
+"Happy Forgings (Standalone)"
+],
+"rev": 4402,
+"ebitda": 1330.5,
+"margin": 0.3022489777373921,
+"pat": 871,
+"n": 2
+},
+{
+"name": "Hero Motocorp",
+"aliases": [
+"Hero Motocorp",
+"Hero MotoCorp"
+],
+"rev": 125630.33333333333,
+"ebitda": 16171.333333333334,
+"margin": 0.12872156671292231,
+"pat": 12771.333333333334,
+"n": 3
+},
+{
+"name": "Hyundai Motor",
+"aliases": [
+"Hyundai Motor",
+"Hyundai Motor India"
+],
+"rev": 161612,
+"ebitda": 15089,
+"margin": 0.09336559166398535,
+"pat": 8429.333333333334,
+"n": 3
+},
+{
+"name": "Mahindra & Mahindra",
+"aliases": [
+"Mahindra & Mahindra",
+"Mahindra & Mahindra"
+],
+"rev": 414964,
+"ebitda": 52324.333333333336,
+"margin": 0.12609366916969506,
+"pat": 35545,
+"n": 3
+},
+{
+"name": "Maruti Suzuki",
+"aliases": [
+"Maruti Suzuki",
+"Maruti Suzuki India"
+],
+"rev": 526237.3333333334,
+"ebitda": 52251.333333333336,
+"margin": 0.09929233451066438,
+"pat": 35020.333333333336,
+"n": 3
+},
+{
+"name": "Samvardhana Motherson",
+"aliases": [
+"Samvardhana Motherson",
+"Samvardhana Motherson International (Consol.)"
+],
+"rev": 345273,
+"ebitda": 29970,
+"margin": 0.08680087930420276,
+"pat": 9629,
+"n": 3
+},
+{
+"name": "Motherson Wiring",
+"aliases": [
+"Motherson Sumi Wiring (Standalone)"
+],
+"rev": 32796.5,
+"ebitda": 2854.5,
+"margin": 0.08703672647995975,
+"pat": 1660.5,
+"n": 2
+},
+{
+"name": "MRF",
+"aliases": [
+"MRF"
+],
+"rev": 83919,
+"ebitda": 10311,
+"margin": 0.12286848032030886,
+"pat": 4806.5,
+"n": 2
+},
+{
+"name": "Sona BLW Precis.",
+"aliases": [
+"Sona BLW Precision",
+"Sona BLW Precision (Consol.)",
+"Sona BLW Precision Forgings"
+],
+"rev": 12560.666666666666,
+"ebitda": 2889.6666666666665,
+"margin": 0.23005679104081525,
+"pat": 1712.3333333333333,
+"n": 3
+},
+{
+"name": "Tata Motors CV",
+"aliases": [
+"Tata Motors",
+"Tata Motors Commercial Vehicles Ltd"
+],
+"rev": 204721,
+"ebitda": 21014.666666666668,
+"margin": 0.1026502736244287,
+"pat": 13310.5,
+"n": 3
+},
+{
+"name": "Tata Motors PV",
+"aliases": [
+"Tata Motors PV"
+],
+"rev": 933180,
+"ebitda": 58433,
+"margin": 0.06261707280481793,
+"pat": 7273.5,
+"n": 2
+},
+{
+"name": "Tube Investments",
+"aliases": [],
+"rev": 22257,
+"ebitda": 2469,
+"margin": 0.11093139237093948,
+"pat": 1652,
+"n": 1
+},
+{
+"name": "TVS Motor",
+"aliases": [
+"TVS Motor",
+"TVS Motor",
+"TVS Motor Company"
+],
+"rev": 135387.33333333334,
+"ebitda": 16591.666666666668,
+"margin": 0.12254962305680984,
+"pat": 10181.666666666666,
+"n": 3
+},
+{
+"name": "Astral",
+"aliases": [
+"Astral"
+],
+"rev": 15851,
+"ebitda": 2446.5,
+"margin": 0.15434357453788405,
+"pat": 1229,
+"n": 2
+},
+{
+"name": "Century Plyboards",
+"aliases": [],
+"rev": 13169,
+"ebitda": 1688,
+"margin": 0.12817981623509758,
+"pat": 685,
+"n": 1
+},
+{
+"name": "Cera Sanitaryware",
+"aliases": [],
+"rev": 4823,
+"ebitda": 712,
+"margin": 0.14762595894671365,
+"pat": 527,
+"n": 1
+},
+{
+"name": "Kajaria Ceramics",
+"aliases": [],
+"rev": 12099,
+"ebitda": 2177,
+"margin": 0.17993222580378543,
+"pat": 1336,
+"n": 1
+},
+{
+"name": "Prince Pipes",
+"aliases": [],
+"rev": 6893,
+"ebitda": 781,
+"margin": 0.11330335122588132,
+"pat": 328,
+"n": 1
+},
+{
+"name": "Supreme Inds.",
+"aliases": [
+"Supreme Industries"
+],
+"rev": 29843.5,
+"ebitda": 4034,
+"margin": 0.13517181295759545,
+"pat": 2342.5,
+"n": 2
+},
+{
+"name": "ABB India",
+"aliases": [
+"ABB",
+"ABB India"
+],
+"rev": 32212.666666666668,
+"ebitda": 4233.333333333333,
+"margin": 0.13141828266313457,
+"pat": 3630,
+"n": 3
+},
+{
+"name": "Astra Microwave",
+"aliases": [],
+"rev": 2252,
+"ebitda": 450,
+"margin": 0.19982238010657194,
+"pat": 262,
+"n": 1
+},
+{
+"name": "Atlanta Electricals",
+"aliases": [],
+"rev": 4102,
+"ebitda": 677,
+"margin": 0.16504144319843977,
+"pat": 349,
+"n": 1
+},
+{
+"name": "Bharat Dynamics",
+"aliases": [],
+"rev": 3176,
+"ebitda": 476,
+"margin": 0.14987405541561713,
+"pat": 832,
+"n": 1
+},
+{
+"name": "Bharat Electronics",
+"aliases": [
+"Bharat Electronics"
+],
+"rev": 51286.5,
+"ebitda": 14658,
+"margin": 0.2858062063116025,
+"pat": 11204.5,
+"n": 2
+},
+{
+"name": "CG Power & Inds.",
+"aliases": [
+"CG Power & Industrial",
+"CG Power Industrial",
+"CG Power and Industrial Solutions"
+],
+"rev": 35805,
+"ebitda": 4829.666666666667,
+"margin": 0.1348880510170833,
+"pat": 3489.6666666666665,
+"n": 3
+},
+{
+"name": "Cummins India",
+"aliases": [
+"Cummins India"
+],
+"rev": 31767.5,
+"ebitda": 6673,
+"margin": 0.2100574486503502,
+"pat": 6103.5,
+"n": 2
+},
+{
+"name": "GE Vernova T&D",
+"aliases": [
+"GE Vernova T&D"
+],
+"rev": 17542.5,
+"ebitda": 4583.5,
+"margin": 0.2612797491805615,
+"pat": 3468,
+"n": 2
+},
+{
+"name": "Hind.Aeronautics",
+"aliases": [],
+"rev": 52714,
+"ebitda": 13706,
+"margin": 0.2600068293053079,
+"pat": 15276,
+"n": 1
+},
+{
+"name": "Hitachi Energy",
+"aliases": [
+"Hitachi Energy"
+],
+"rev": 21558.5,
+"ebitda": 3260,
+"margin": 0.1512164575457476,
+"pat": 2654,
+"n": 2
+},
+{
+"name": "Kalpataru Proj.",
+"aliases": [
+"Kalpataru Projects",
+"Kalpataru Projects International Ltd"
+],
+"rev": 52965.666666666664,
+"ebitda": 4449,
+"margin": 0.083997809902012,
+"pat": 2055,
+"n": 3
+},
+{
+"name": "KEC International",
+"aliases": [
+"KEC International",
+"KEC International Ltd"
+],
+"rev": 51570.666666666664,
+"ebitda": 3490,
+"margin": 0.06767412999638038,
+"pat": 1094,
+"n": 3
+},
+{
+"name": "Kirloskar Oil",
+"aliases": [],
+"rev": 14203,
+"ebitda": 1988,
+"margin": 0.13997042878265156,
+"pat": 1277,
+"n": 1
+},
+{
+"name": "Larsen & Toubro",
+"aliases": [
+"L&T"
+],
+"rev": 669174.5,
+"ebitda": 64981,
+"margin": 0.09710621071185468,
+"pat": 39534.5,
+"n": 2
+},
+{
+"name": "Siemens",
+"aliases": [
+"Siemens",
+"Siemens Ltd."
+],
+"rev": 46115.333333333336,
+"ebitda": 4850.666666666667,
+"margin": 0.10518554927500615,
+"pat": 3911.3333333333335,
+"n": 3
+},
+{
+"name": "Siemens Energy",
+"aliases": [
+"Siemens Energy"
+],
+"rev": 23413,
+"ebitda": 4707,
+"margin": 0.20104215606714218,
+"pat": 3604.5,
+"n": 2
+},
+{
+"name": "Thermax",
+"aliases": [
+"Thermax"
+],
+"rev": 24693.5,
+"ebitda": 2047,
+"margin": 0.08289630874521635,
+"pat": 1199,
+"n": 2
+},
+{
+"name": "Triveni Turbine",
+"aliases": [],
+"rev": 4223,
+"ebitda": 697,
+"margin": 0.1650485436893204,
+"pat": 608,
+"n": 1
+},
+{
+"name": "Zen Technologies",
+"aliases": [],
+"rev": 1091,
+"ebitda": 311,
+"margin": 0.2850595783684693,
+"pat": 333,
+"n": 1
+},
+{
+"name": "ACC",
+"aliases": [],
+"rev": 60273,
+"ebitda": 6261,
+"margin": 0.10387735802100442,
+"pat": 2820,
+"n": 1
+},
+{
+"name": "Ambuja Cements",
+"aliases": [
+"Ambuja Cements"
+],
+"rev": 103592.5,
+"ebitda": 15788.5,
+"margin": 0.15240968216811063,
+"pat": 3442,
+"n": 2
+},
+{
+"name": "Birla Corporation",
+"aliases": [],
+"rev": 26140,
+"ebitda": 3973,
+"margin": 0.1519892884468248,
+"pat": 1549,
+"n": 1
+},
+{
+"name": "Dalmia Bharat",
+"aliases": [
+"Dalmia Bharat"
+],
+"rev": 37853,
+"ebitda": 7405,
+"margin": 0.1956251816236494,
+"pat": 2151.5,
+"n": 2
+},
+{
+"name": "Grasim Industries",
+"aliases": [
+"Grasim Industries"
+],
+"rev": 124714,
+"ebitda": 8330.5,
+"margin": 0.06679683114967044,
+"pat": 998.5,
+"n": 2
+},
+{
+"name": "India Cements",
+"aliases": [],
+"rev": 9979,
+"ebitda": 1058,
+"margin": 0.10602264755987574,
+"pat": 106,
+"n": 1
+},
+{
+"name": "J K Cements",
+"aliases": [
+"JK Cement"
+],
+"rev": 36509.5,
+"ebitda": 6077.5,
+"margin": 0.16646352319259372,
+"pat": 2723.5,
+"n": 2
+},
+{
+"name": "JK Lakshmi Cem.",
+"aliases": [],
+"rev": 17798,
+"ebitda": 2381,
+"margin": 0.13377907630070796,
+"pat": 958,
+"n": 1
+},
+{
+"name": "JSW Cement",
+"aliases": [
+"JSW Cement"
+],
+"rev": 18475.5,
+"ebitda": 3170.5,
+"margin": 0.17160563990149116,
+"pat": 1203.5,
+"n": 2
+},
+{
+"name": "Ramco Cements",
+"aliases": [
+"The Ramco Cements"
+],
+"rev": 22120.5,
+"ebitda": 3009,
+"margin": 0.1360276666440632,
+"pat": 226.5,
+"n": 2
+},
+{
+"name": "Shree Cement",
+"aliases": [
+"Shree Cement"
+],
+"rev": 55570,
+"ebitda": 11470.5,
+"margin": 0.20641533201367646,
+"pat": 4405.5,
+"n": 2
+},
+{
+"name": "Ultratech Cement",
+"aliases": [
+"UltraTech Cement"
+],
+"rev": 241277.5,
+"ebitda": 49105,
+"margin": 0.20352084218379252,
+"pat": 24598,
+"n": 2
+},
+{
+"name": "Alkyl Amines",
+"aliases": [],
+"rev": 4258,
+"ebitda": 732,
+"margin": 0.171911695631752,
+"pat": 473,
+"n": 1
+},
+{
+"name": "Atul",
+"aliases": [
+"Atul"
+],
+"rev": 17352.5,
+"ebitda": 2679.5,
+"margin": 0.15441579023195506,
+"pat": 1633,
+"n": 2
+},
+{
+"name": "Clean Science",
+"aliases": [
+"Clean Science & Technology",
+"CLEAN"
+],
+"rev": 2611.3333333333335,
+"ebitda": 921.6666666666666,
+"margin": 0.35294868521827927,
+"pat": 601.3333333333334,
+"n": 3
+},
+{
+"name": "Deepak Nitrite",
+"aliases": [
+"Deepak Nitrite",
+"DN"
+],
+"rev": 24402.666666666668,
+"ebitda": 4213,
+"margin": 0.1726450661129931,
+"pat": 1599.9906666666666,
+"n": 3
+},
+{
+"name": "Ellenbarrie Industrial",
+"aliases": [],
+"rev": 952,
+"ebitda": 333,
+"margin": 0.34978991596638653,
+"pat": 227,
+"n": 1
+},
+{
+"name": "Fine Organic",
+"aliases": [],
+"rev": 6131,
+"ebitda": 1232,
+"margin": 0.20094601206980917,
+"pat": 1075,
+"n": 1
+},
+{
+"name": "Galaxy Surfactants",
+"aliases": [],
+"rev": 15036,
+"ebitda": 1458,
+"margin": 0.09696727853152434,
+"pat": 897,
+"n": 1
+},
+{
+"name": "Navin Fluorine",
+"aliases": [
+"Navin Fluorine",
+"NFIL",
+"Navin Fluorine International"
+],
+"rev": 9627.333333333334,
+"ebitda": 3110.6666666666665,
+"margin": 0.32310781801814276,
+"pat": 1922,
+"n": 3
+},
+{
+"name": "P I Industries",
+"aliases": [
+"PI Industries"
+],
+"rev": 17747,
+"ebitda": 4333,
+"margin": 0.24415394151124134,
+"pat": 3077,
+"n": 2
+},
+{
+"name": "Privi Speciality",
+"aliases": [],
+"rev": 6594,
+"ebitda": 1645,
+"margin": 0.2494692144373673,
+"pat": 822,
+"n": 1
+},
+{
+"name": "SRF",
+"aliases": [
+"SRF",
+"SRF"
+],
+"rev": 43701,
+"ebitda": 9790.666666666666,
+"margin": 0.22403758876608468,
+"pat": 5387.666666666667,
+"n": 3
+},
+{
+"name": "Tata Chemicals",
+"aliases": [
+"Tata Chemicals"
+],
+"rev": 39868.5,
+"ebitda": 4707.5,
+"margin": 0.11807567377754367,
+"pat": 142.5,
+"n": 2
+},
+{
+"name": "Vinati Organics",
+"aliases": [
+"Vinati Organics",
+"VO"
+],
+"rev": 5957.333333333333,
+"ebitda": 1657.6666666666667,
+"margin": 0.278256490599821,
+"pat": 1085.3333333333333,
+"n": 3
+},
+{
+"name": "Asian Paints",
+"aliases": [
+"Asian Paints",
+"Asian Paints"
+],
+"rev": 104172.66666666667,
+"ebitda": 19178,
+"margin": 0.18409819594391363,
+"pat": 12980,
+"n": 3
+},
+{
+"name": "Bikaji Foods",
+"aliases": [
+"Bikaji Foods International"
+],
+"rev": 7316,
+"ebitda": 998,
+"margin": 0.1364133406232914,
+"pat": 621,
+"n": 1
+},
+{
+"name": "Britannia",
+"aliases": [
+"Britannia Industries",
+"Britannia"
+],
+"rev": 49916,
+"ebitda": 8785.333333333334,
+"margin": 0.17600235061570105,
+"pat": 6205.333333333333,
+"n": 3
+},
+{
+"name": "Colgate",
+"aliases": [
+"Colgate-Palmolive (India)"
+],
+"rev": 15771,
+"ebitda": 4919,
+"margin": 0.3119015915287553,
+"pat": 3545,
+"n": 2
+},
+{
+"name": "Dabur",
+"aliases": [
+"Dabur India",
+"Dabur"
+],
+"rev": 37663.333333333336,
+"ebitda": 7418,
+"margin": 0.19695548278608724,
+"pat": 5719.333333333333,
+"n": 3
+},
+{
+"name": "Emami",
+"aliases": [],
+"rev": 10206,
+"ebitda": 2288,
+"margin": 0.22418185381148345,
+"pat": 1834,
+"n": 1
+},
+{
+"name": "Godrej Consumer",
+"aliases": [
+"Godrej Consumer Products"
+],
+"rev": 41225,
+"ebitda": 7808.5,
+"margin": 0.18941176470588236,
+"pat": 5329.5,
+"n": 2
+},
+{
+"name": "Gopal Snacks",
+"aliases": [],
+"rev": 4149,
+"ebitda": 311,
+"margin": 0.07495782116172572,
+"pat": 155,
+"n": 1
+},
+{
+"name": "Hind. Unilever",
+"aliases": [
+"Hindustan Unilever",
+"Hindustan Unilever"
+],
+"rev": 172180,
+"ebitda": 39268.333333333336,
+"margin": 0.22806559027374454,
+"pat": 27630.666666666668,
+"n": 3
+},
+{
+"name": "Indigo Paints",
+"aliases": [
+"Indigo Paints"
+],
+"rev": 3729.5,
+"ebitda": 532,
+"margin": 0.1426464673548733,
+"pat": 303.5,
+"n": 2
+},
+{
+"name": "ITC",
+"aliases": [
+"ITC"
+],
+"rev": 190944,
+"ebitda": 52434,
+"margin": 0.27460407239819007,
+"pat": 41775.5,
+"n": 2
+},
+{
+"name": "Jyothy Labs",
+"aliases": [
+"Jyothy Labs"
+],
+"rev": 8077.5,
+"ebitda": 1073.5,
+"margin": 0.13290003095017022,
+"pat": 811.5,
+"n": 2
+},
+{
+"name": "L T Foods",
+"aliases": [],
+"rev": 29458,
+"ebitda": 3146,
+"margin": 0.10679611650485436,
+"pat": 1593,
+"n": 1
+},
+{
+"name": "Marico",
+"aliases": [
+"Marico",
+"Marico"
+],
+"rev": 39283.666666666664,
+"ebitda": 7833.666666666667,
+"margin": 0.19941281788020468,
+"pat": 5975.333333333333,
+"n": 3
+},
+{
+"name": "Mrs Bectors Food",
+"aliases": [
+"Mrs Bectors Specialities"
+],
+"rev": 5322.5,
+"ebitda": 680,
+"margin": 0.1277595115077501,
+"pat": 385.5,
+"n": 2
+},
+{
+"name": "Nestle",
+"aliases": [
+"Nestle India",
+"Nestle"
+],
+"rev": 60505.333333333336,
+"ebitda": 13467.666666666666,
+"margin": 0.22258643866105465,
+"pat": 8351.666666666666,
+"n": 3
+},
+{
+"name": "P&G Hygiene",
+"aliases": [],
+"rev": 10026,
+"ebitda": 2657,
+"margin": 0.2650109714741672,
+"pat": 1995,
+"n": 1
+},
+{
+"name": "Page Industries",
+"aliases": [
+"Page Industries",
+"Page Industries"
+],
+"rev": 15085.333333333334,
+"ebitda": 3277.6666666666665,
+"margin": 0.21727505745094572,
+"pat": 2278,
+"n": 3
+},
+{
+"name": "Pidilite Inds.",
+"aliases": [
+"Pidilite Industries"
+],
+"rev": 44268,
+"ebitda": 10829,
+"margin": 0.2446236559139785,
+"pat": 7657,
+"n": 2
+},
+{
+"name": "Prataap Snacks",
+"aliases": [],
+"rev": 4398,
+"ebitda": 215,
+"margin": 0.04888585720782174,
+"pat": 24,
+"n": 1
+},
+{
+"name": "Radico Khaitan",
+"aliases": [
+"Radico Khaitan"
+],
+"rev": 16839,
+"ebitda": 3155.5,
+"margin": 0.18739236296692202,
+"pat": 2027,
+"n": 2
+},
+{
+"name": "Tata Consumer",
+"aliases": [
+"Tata Consumer Products",
+"Tata Consumer Products"
+],
+"rev": 53601.333333333336,
+"ebitda": 7263,
+"margin": 0.1355003606875451,
+"pat": 4386.5,
+"n": 3
+},
+{
+"name": "United Breweries",
+"aliases": [
+"United Breweries",
+"United Breweries"
+],
+"rev": 31487.333333333332,
+"ebitda": 2842.6666666666665,
+"margin": 0.09027968918718637,
+"pat": 1522.6666666666667,
+"n": 3
+},
+{
+"name": "United Spirits",
+"aliases": [
+"United Spirits",
+"United Spirits"
+],
+"rev": 26598.333333333332,
+"ebitda": 4494.666666666667,
+"margin": 0.16898301898615203,
+"pat": 3155.3333333333335,
+"n": 3
+},
+{
+"name": "Varun Beverages",
+"aliases": [
+"Varun Beverages",
+"Varun Beverages"
+],
+"rev": 85553.66666666667,
+"ebitda": 24724.666666666668,
+"margin": 0.28899599082057653,
+"pat": 16374.333333333334,
+"n": 3
+},
+{
+"name": "Zydus Wellness",
+"aliases": [],
+"rev": 15266,
+"ebitda": 2582,
+"margin": 0.16913402331979563,
+"pat": 1703,
+"n": 1
+},
+{
+"name": "Blue Star",
+"aliases": [
+"Blue Star",
+"Blue Star"
+],
+"rev": 36087.666666666664,
+"ebitda": 2438.6666666666665,
+"margin": 0.06757618022777866,
+"pat": 1474.3333333333333,
+"n": 3
+},
+{
+"name": "CG Consumer Elect.",
+"aliases": [
+"Crompton Greaves Consumer",
+"Crompton"
+],
+"rev": 22635,
+"ebitda": 2268.3333333333335,
+"margin": 0.10021353361313601,
+"pat": 1423.6666666666667,
+"n": 3
+},
+{
+"name": "Havells India",
+"aliases": [
+"Havells India",
+"Havells"
+],
+"rev": 66132.66666666667,
+"ebitda": 6028.333333333333,
+"margin": 0.09115515277371747,
+"pat": 4012.6666666666665,
+"n": 3
+},
+{
+"name": "KEI Industries",
+"aliases": [
+"KEI Industries",
+"KEI Industries"
+],
+"rev": 32596.333333333332,
+"ebitda": 3495.3333333333335,
+"margin": 0.10723087463825176,
+"pat": 2516.6666666666665,
+"n": 3
+},
+{
+"name": "LG Electronics",
+"aliases": [
+"LG Electronics",
+"LG Electronics India"
+],
+"rev": 70875.33333333333,
+"ebitda": 8413.666666666666,
+"margin": 0.11871078795631766,
+"pat": 6180.333333333333,
+"n": 3
+},
+{
+"name": "Polycab India",
+"aliases": [
+"Polycab",
+"Polycab"
+],
+"rev": 80082.33333333333,
+"ebitda": 10687,
+"margin": 0.13345015754619205,
+"pat": 7119,
+"n": 3
+},
+{
+"name": "R R Kabel",
+"aliases": [
+"RR Kabel",
+"RR Kabel"
+],
+"rev": 28165.333333333332,
+"ebitda": 2473.6666666666665,
+"margin": 0.08782664268131035,
+"pat": 1570,
+"n": 3
+},
+{
+"name": "Voltas",
+"aliases": [
+"Voltas",
+"Voltas"
+],
+"rev": 51899,
+"ebitda": 3245.6666666666665,
+"margin": 0.06253813496727618,
+"pat": 2199.6666666666665,
+"n": 3
+},
+{
+"name": "Amber Enterp.",
+"aliases": [
+"Amber Enterprises",
+"Amber Enterprises"
+],
+"rev": 44747.333333333336,
+"ebitda": 3373.6666666666665,
+"margin": 0.07539369198909432,
+"pat": 1375.3333333333333,
+"n": 3
+},
+{
+"name": "Avalon Tech",
+"aliases": [
+"Avalon Technologies"
+],
+"rev": 4251.5,
+"ebitda": 457.5,
+"margin": 0.1076090791485358,
+"pat": 298,
+"n": 2
+},
+{
+"name": "Cyient DLM",
+"aliases": [
+"Cyient DLM"
+],
+"rev": 3529,
+"ebitda": 339.5,
+"margin": 0.09620289033720601,
+"pat": 177,
+"n": 2
+},
+{
+"name": "Data Pattern",
+"aliases": [],
+"rev": 2583,
+"ebitda": 990,
+"margin": 0.3832752613240418,
+"pat": 743,
+"n": 1
+},
+{
+"name": "Dixon Tech.",
+"aliases": [
+"Dixon Technologies",
+"Dixon Technologies"
+],
+"rev": 148237.33333333334,
+"ebitda": 4984,
+"margin": 0.0336217597006602,
+"pat": 2288.3333333333335,
+"n": 3
+},
+{
+"name": "Kaynes Tech",
+"aliases": [
+"Kaynes Technology"
+],
+"rev": 8687.5,
+"ebitda": 1305.5,
+"margin": 0.15027338129496404,
+"pat": 840,
+"n": 2
+},
+{
+"name": "Syrma SGS Tech.",
+"aliases": [
+"Syrma SGS Technology"
+],
+"rev": 14160,
+"ebitda": 1411.5,
+"margin": 0.09968220338983051,
+"pat": 835,
+"n": 2
+},
+{
+"name": "Ajanta Pharma",
+"aliases": [],
+"rev": 15151,
+"ebitda": 4182,
+"margin": 0.2760213847270807,
+"pat": 2882,
+"n": 1
+},
+{
+"name": "Alembic Pharma",
+"aliases": [],
+"rev": 19138,
+"ebitda": 2794,
+"margin": 0.14599226669453444,
+"pat": 1536,
+"n": 1
+},
+{
+"name": "Alkem Lab",
+"aliases": [],
+"rev": 37140,
+"ebitda": 6611,
+"margin": 0.17800215401184707,
+"pat": 4363,
+"n": 1
+},
+{
+"name": "Apollo Hospitals",
+"aliases": [
+"Apollo Hospitals"
+],
+"rev": 68920,
+"ebitda": 10314,
+"margin": 0.14965177016831108,
+"pat": 5832,
+"n": 2
+},
+{
+"name": "Aurobindo Pharma",
+"aliases": [
+"Aurobindo Pharma"
+],
+"rev": 91148,
+"ebitda": 18672,
+"margin": 0.20485364462193356,
+"pat": 9776,
+"n": 2
+},
+{
+"name": "Biocon",
+"aliases": [
+"Biocon"
+],
+"rev": 45528.5,
+"ebitda": 9813.5,
+"margin": 0.21554630615987788,
+"pat": 2069.5,
+"n": 2
+},
+{
+"name": "Blue Jet Healthcare",
+"aliases": [
+"Blue Jet Healthcare"
+],
+"rev": 2920,
+"ebitda": 957,
+"margin": 0.32773972602739726,
+"pat": 750,
+"n": 2
+},
+{
+"name": "Cipla",
+"aliases": [
+"Cipla"
+],
+"rev": 70448,
+"ebitda": 11962,
+"margin": 0.16979900068135362,
+"pat": 7854.5,
+"n": 2
+},
+{
+"name": "Divis Labs",
+"aliases": [
+"Divis Laboratories"
+],
+"rev": 27415,
+"ebitda": 8631,
+"margin": 0.31482764909720956,
+"pat": 6383,
+"n": 2
+},
+{
+"name": "Dr Agarwals Health.",
+"aliases": [],
+"rev": 5923,
+"ebitda": 1581,
+"margin": 0.26692554448759076,
+"pat": 368,
+"n": 1
+},
+{
+"name": "Dr Reddy's Labs",
+"aliases": [
+"Dr Reddy's Laboratories"
+],
+"rev": 81889,
+"ebitda": 12770.5,
+"margin": 0.15594890644653128,
+"pat": 6632.5,
+"n": 2
+},
+{
+"name": "Eris Lifescience",
+"aliases": [],
+"rev": 8426,
+"ebitda": 3067,
+"margin": 0.36399240446237835,
+"pat": 1515,
+"n": 1
+},
+{
+"name": "Fortis Healthcare",
+"aliases": [],
+"rev": 25205,
+"ebitda": 5440,
+"margin": 0.21583019242213847,
+"pat": 2621,
+"n": 1
+},
+{
+"name": "Gland Pharma",
+"aliases": [
+"Gland Pharma"
+],
+"rev": 17081.5,
+"ebitda": 4441,
+"margin": 0.25998887685507716,
+"pat": 2917,
+"n": 2
+},
+{
+"name": "Glenmark Pharma",
+"aliases": [],
+"rev": 40919,
+"ebitda": 8685,
+"margin": 0.21224858867518756,
+"pat": 5357,
+"n": 1
+},
+{
+"name": "Global Health",
+"aliases": [
+"Global Health"
+],
+"rev": 11740,
+"ebitda": 2511,
+"margin": 0.21388415672913116,
+"pat": 1525.5,
+"n": 2
+},
+{
+"name": "Granules India",
+"aliases": [],
+"rev": 14413,
+"ebitda": 3286,
+"margin": 0.22798862138347326,
+"pat": 1771,
+"n": 1
+},
+{
+"name": "GSK Pharma",
+"aliases": [],
+"rev": 8788,
+"ebitda": 2865,
+"margin": 0.3260127446517979,
+"pat": 2295,
+"n": 1
+},
+{
+"name": "IPCA Labs.",
+"aliases": [],
+"rev": 25912,
+"ebitda": 5364,
+"margin": 0.20700833590614387,
+"pat": 3001,
+"n": 1
+},
+{
+"name": "Laurus Labs",
+"aliases": [
+"Laurus Labs"
+],
+"rev": 18288,
+"ebitda": 5065.5,
+"margin": 0.27698490813648297,
+"pat": 2613.5,
+"n": 2
+},
+{
+"name": "Laxmi Dental",
+"aliases": [],
+"rev": 761,
+"ebitda": 129,
+"margin": 0.16951379763469118,
+"pat": 90,
+"n": 1
+},
+{
+"name": "Lupin",
+"aliases": [
+"Lupin"
+],
+"rev": 79936,
+"ebitda": 21699.5,
+"margin": 0.271460918734988,
+"pat": 13367.5,
+"n": 2
+},
+{
+"name": "Mankind Pharma",
+"aliases": [
+"Mankind Pharma"
+],
+"rev": 39855,
+"ebitda": 10674,
+"margin": 0.2678208505833647,
+"pat": 6045,
+"n": 2
+},
+{
+"name": "Max Healthcare",
+"aliases": [
+"Max Healthcare"
+],
+"rev": 27634.5,
+"ebitda": 7055.5,
+"margin": 0.2553149143281044,
+"pat": 4275.5,
+"n": 2
+},
+{
+"name": "Piramal Pharma",
+"aliases": [
+"Piramal Pharma"
+],
+"rev": 21340,
+"ebitda": 1494,
+"margin": 0.07000937207122775,
+"pat": -1178.5,
+"n": 2
+},
+{
+"name": "Rubicon Research",
+"aliases": [],
+"rev": 5128,
+"ebitda": 1144,
+"margin": 0.22308892355694226,
+"pat": 730,
+"n": 1
+},
+{
+"name": "Sun Pharma",
+"aliases": [
+"Sun Pharmaceuticals"
+],
+"rev": 152804.5,
+"ebitda": 41561,
+"margin": 0.2719880631787676,
+"pat": 27663,
+"n": 2
+},
+{
+"name": "Torrent Pharma",
+"aliases": [
+"Torrent Pharmaceuticals"
+],
+"rev": 46875,
+"ebitda": 15367.5,
+"margin": 0.32784,
+"pat": 4634,
+"n": 2
+},
+{
+"name": "Zydus Lifesciences",
+"aliases": [],
+"rev": 76844,
+"ebitda": 18904,
+"margin": 0.24600489303003487,
+"pat": 10321,
+"n": 1
+},
+{
+"name": "Indegene",
+"aliases": [
+"Indegene"
+],
+"rev": 10509.5,
+"ebitda": 1771,
+"margin": 0.16851420143679527,
+"pat": 1119.5,
+"n": 2
+},
+{
+"name": "Inventurus Knowledge",
+"aliases": [],
+"rev": 8959,
+"ebitda": 3135,
+"margin": 0.3499274472597388,
+"pat": 2098,
+"n": 1
+},
+{
+"name": "Sagility",
+"aliases": [
+"Sagility"
+],
+"rev": 19203.5,
+"ebitda": 4432,
+"margin": 0.2307912620095295,
+"pat": 2290,
+"n": 2
+},
+{
+"name": "G R Infraproject",
+"aliases": [
+"G R Infraprojects",
+"GR Infraprojects Ltd"
+],
+"rev": 20167.333333333332,
+"ebitda": 2175.6666666666665,
+"margin": 0.107880731215497,
+"pat": 1986,
+"n": 3
+},
+{
+"name": "IRB Infra",
+"aliases": [
+"IRB Infrastructure"
+],
+"rev": 19583.5,
+"ebitda": 10583,
+"margin": 0.5404039114560727,
+"pat": 2611.5,
+"n": 2
+},
+{
+"name": "KNR Constructions",
+"aliases": [
+"KNR Constructions Ltd"
+],
+"rev": 4551.5,
+"ebitda": 435,
+"margin": 0.09557288805888169,
+"pat": 264,
+"n": 2
+},
+{
+"name": "Adani Ports",
+"aliases": [
+"Adani Ports and SEZ",
+"Adani Ports and Special Economic Zone"
+],
+"rev": 107054.5,
+"ebitda": 62331,
+"margin": 0.5822361507456483,
+"pat": 33080.5,
+"n": 2
+},
+{
+"name": "Blue Dart Express",
+"aliases": [
+"Blue Dart"
+],
+"rev": 15799,
+"ebitda": 1382,
+"margin": 0.08747389075257928,
+"pat": 596,
+"n": 2
+},
+{
+"name": "Concor",
+"aliases": [
+"Container Corp.",
+"Container Corporation of India"
+],
+"rev": 22035,
+"ebitda": 4617.5,
+"margin": 0.20955298388926707,
+"pat": 2894,
+"n": 2
+},
+{
+"name": "Delhivery",
+"aliases": [
+"Delhivery",
+"Delhivery"
+],
+"rev": 29060,
+"ebitda": 1357,
+"margin": 0.046696490020646936,
+"pat": 272.6666666666667,
+"n": 3
+},
+{
+"name": "JSW Infra",
+"aliases": [
+"JSW Infrastructure"
+],
+"rev": 14404,
+"ebitda": 6678.5,
+"margin": 0.4636559289086365,
+"pat": 3917.5,
+"n": 2
+},
+{
+"name": "Mahindra Logistics",
+"aliases": [],
+"rev": 18512,
+"ebitda": 1074,
+"margin": 0.058016421780466725,
+"pat": 244,
+"n": 1
+},
+{
+"name": "TCI Express",
+"aliases": [],
+"rev": 3070,
+"ebitda": 319,
+"margin": 0.10390879478827361,
+"pat": 218,
+"n": 1
+},
+{
+"name": "Transport Corp.",
+"aliases": [
+"Transport Corporation of India"
+],
+"rev": 12526,
+"ebitda": 1290,
+"margin": 0.10298578955771995,
+"pat": 1053,
+"n": 1
+},
+{
+"name": "VRL Logistics",
+"aliases": [],
+"rev": 7938,
+"ebitda": 1546,
+"margin": 0.1947593852355757,
+"pat": 521,
+"n": 1
+},
+{
+"name": "PVR Inox",
+"aliases": [
+"PVR INOX",
+"PVR Inox (C, Post Ind-AS)"
+],
+"rev": 16321.333333333334,
+"ebitda": 2925,
+"margin": 0.17921329956702883,
+"pat": 481.3333333333333,
+"n": 3
+},
+{
+"name": "Sun TV",
+"aliases": [
+"Sun TV Network"
+],
+"rev": 12934.5,
+"ebitda": 5715,
+"margin": 0.4418415864548301,
+"pat": 4689.5,
+"n": 2
+},
+{
+"name": "Zee Entertainment",
+"aliases": [
+"Zee Entertainment Enterprises"
+],
+"rev": 19290.5,
+"ebitda": 849,
+"margin": 0.04401130089940644,
+"pat": 530,
+"n": 2
+},
+{
+"name": "Coal India",
+"aliases": [
+"Coal India"
+],
+"rev": 381314.5,
+"ebitda": 96578.5,
+"margin": 0.2532778061154244,
+"pat": 85643.5,
+"n": 2
+},
+{
+"name": "Hindalco",
+"aliases": [
+"Hindalco Industries"
+],
+"rev": 950262.5,
+"ebitda": 106004.5,
+"margin": 0.11155286039383855,
+"pat": 57824,
+"n": 2
+},
+{
+"name": "Hindustan Zinc",
+"aliases": [
+"Hindustan Zinc"
+],
+"rev": 125899,
+"ebitda": 76878,
+"margin": 0.6106323322663405,
+"pat": 50379,
+"n": 2
+},
+{
+"name": "Jindal Stainless",
+"aliases": [],
+"rev": 103373,
+"ebitda": 12290,
+"margin": 0.11888984551091678,
+"pat": 6683,
+"n": 1
+},
+{
+"name": "Jindal Steel",
+"aliases": [
+"Jindal Steel"
+],
+"rev": 140521.5,
+"ebitda": 25018.5,
+"margin": 0.1780403710464235,
+"pat": 10329,
+"n": 2
+},
+{
+"name": "JSW Steel",
+"aliases": [
+"JSW Steel"
+],
+"rev": 438493,
+"ebitda": 89220.5,
+"margin": 0.20347075095839615,
+"pat": 35186,
+"n": 2
+},
+{
+"name": "Midwest",
+"aliases": [],
+"rev": 1936,
+"ebitda": 578,
+"margin": 0.29855371900826444,
+"pat": 365,
+"n": 1
+},
+{
+"name": "Nalco",
+"aliases": [
+"National Aluminium Co."
+],
+"rev": 52062.5,
+"ebitda": 26768.5,
+"margin": 0.5141608643457383,
+"pat": 19425,
+"n": 2
+},
+{
+"name": "NMDC",
+"aliases": [
+"NMDC"
+],
+"rev": 70674,
+"ebitda": 24922.5,
+"margin": 0.3526402920451651,
+"pat": 20037,
+"n": 2
+},
+{
+"name": "SAIL",
+"aliases": [
+"SAIL"
+],
+"rev": 261711,
+"ebitda": 40977.5,
+"margin": 0.1565753827695435,
+"pat": 17678,
+"n": 2
+},
+{
+"name": "Tata Steel",
+"aliases": [
+"Tata Steel"
+],
+"rev": 575603,
+"ebitda": 92328.5,
+"margin": 0.1604030903244076,
+"pat": 20458,
+"n": 2
+},
+{
+"name": "Vedanta",
+"aliases": [
+"Vedanta"
+],
+"rev": 241119,
+"ebitda": 81086.5,
+"margin": 0.33629245310406897,
+"pat": 29840,
+"n": 2
+},
+{
+"name": "Aegis Logistics",
+"aliases": [],
+"rev": 23338,
+"ebitda": 3333,
+"margin": 0.14281429428400033,
+"pat": 1874,
+"n": 1
+},
+{
+"name": "BPCL",
+"aliases": [
+"BPCL",
+"BPCL (S)"
+],
+"rev": 1203079.6666666667,
+"ebitda": -156236.66666666666,
+"margin": -0.12986394084736422,
+"pat": -125430.33333333333,
+"n": 3
+},
+{
+"name": "Castrol India",
+"aliases": [
+"Castrol India"
+],
+"rev": 16620,
+"ebitda": 3343,
+"margin": 0.20114320096269556,
+"pat": 1235.6395,
+"n": 2
+},
+{
+"name": "GAIL",
+"aliases": [
+"GAIL (India)",
+"GAIL (S)"
+],
+"rev": 335290,
+"ebitda": 34981,
+"margin": 0.10433057949834472,
+"pat": 20863.666666666668,
+"n": 3
+},
+{
+"name": "Gujarat Energy",
+"aliases": [],
+"rev": 75608,
+"ebitda": 11877,
+"margin": 0.1570865516876521,
+"pat": 10898,
+"n": 1
+},
+{
+"name": "HPCL",
+"aliases": [
+"HPCL",
+"HPCL (S)"
+],
+"rev": 1259539.6666666667,
+"ebitda": -152307.66666666666,
+"margin": -0.120923279113348,
+"pat": -122411,
+"n": 3
+},
+{
+"name": "Indraprastha Gas",
+"aliases": [
+"Indraprastha Gas",
+"IGL (S)"
+],
+"rev": 44976.333333333336,
+"ebitda": 2968.3333333333335,
+"margin": 0.06599767285016564,
+"pat": 2179.3333333333335,
+"n": 3
+},
+{
+"name": "IOC",
+"aliases": [
+"IOCL",
+"IOCL (S)"
+],
+"rev": 2397611,
+"ebitda": -194335.33333333334,
+"margin": -0.08105373779705438,
+"pat": -177019.66666666666,
+"n": 3
+},
+{
+"name": "Mahanagar Gas",
+"aliases": [
+"Mahanagar Gas",
+"MGL (S)"
+],
+"rev": 23162.333333333332,
+"ebitda": 2257.3333333333335,
+"margin": 0.09745707830241629,
+"pat": 1117.3333333333333,
+"n": 3
+},
+{
+"name": "Oil India",
+"aliases": [
+"Oil India",
+"Oil India (S)"
+],
+"rev": 77663,
+"ebitda": 40399.333333333336,
+"margin": 0.5201876483439133,
+"pat": 23719.333333333332,
+"n": 3
+},
+{
+"name": "ONGC",
+"aliases": [
+"ONGC",
+"ONGC (S)"
+],
+"rev": 485671,
+"ebitda": 300220,
+"margin": 0.618155088527007,
+"pat": 167069.33333333334,
+"n": 3
+},
+{
+"name": "Petronet LNG",
+"aliases": [
+"Petronet LNG",
+"PLNG (S)"
+],
+"rev": 106523.66666666667,
+"ebitda": 13569.666666666666,
+"margin": 0.12738640239571175,
+"pat": 9410.666666666666,
+"n": 3
+},
+{
+"name": "Reliance Inds.",
+"aliases": [
+"Reliance Industries",
+"Reliance (C)"
+],
+"rev": 3073131.3333333335,
+"ebitda": 451515,
+"margin": 0.14692343119298296,
+"pat": 178517.66666666666,
+"n": 3
+},
+{
+"name": "Aditya Birla Real Est.",
+"aliases": [],
+"rev": 1013,
+"ebitda": -993,
+"margin": -0.9802566633761106,
+"pat": -1103,
+"n": 1
+},
+{
+"name": "Anant Raj",
+"aliases": [],
+"rev": 6505,
+"ebitda": 1703,
+"margin": 0.26179861644888547,
+"pat": 1290,
+"n": 1
+},
+{
+"name": "Brigade Enterpr.",
+"aliases": [
+"Brigade Enterprises"
+],
+"rev": 13326.5,
+"ebitda": 3504.5,
+"margin": 0.2629722732900612,
+"pat": 1498,
+"n": 2
+},
+{
+"name": "DLF",
+"aliases": [
+"DLF"
+],
+"rev": 20653,
+"ebitda": 5271,
+"margin": 0.25521715973466325,
+"pat": 10487.5,
+"n": 2
+},
+{
+"name": "Godrej Properties",
+"aliases": [
+"Godrej Properties"
+],
+"rev": 6694.5,
+"ebitda": -1505.5,
+"margin": -0.22488610053028604,
+"pat": 2703.5,
+"n": 2
+},
+{
+"name": "Kolte Patil Dev.",
+"aliases": [],
+"rev": 1460,
+"ebitda": -292,
+"margin": -0.2,
+"pat": -217,
+"n": 1
+},
+{
+"name": "Lodha Developers",
+"aliases": [
+"Lodha Developers"
+],
+"rev": 37710.5,
+"ebitda": 10976.5,
+"margin": 0.2910727781387147,
+"pat": 7262.5,
+"n": 2
+},
+{
+"name": "Mahindra Lifespace",
+"aliases": [
+"Mahindra Lifespace Developers"
+],
+"rev": 6009,
+"ebitda": 720,
+"margin": 0.11982026959560658,
+"pat": 2312,
+"n": 1
+},
+{
+"name": "Oberoi Realty",
+"aliases": [
+"Oberoi Realty"
+],
+"rev": 13725.5,
+"ebitda": 7336,
+"margin": 0.5344796182288442,
+"pat": 5483,
+"n": 2
+},
+{
+"name": "Phoenix Mills",
+"aliases": [
+"Phoenix Mills"
+],
+"rev": 11094,
+"ebitda": 6493,
+"margin": 0.5852713178294574,
+"pat": 3308.5,
+"n": 2
+},
+{
+"name": "Prestige Estates",
+"aliases": [
+"Prestige Estates Projects"
+],
+"rev": 31032,
+"ebitda": 9173,
+"margin": 0.29559809229182776,
+"pat": 2843.5,
+"n": 2
+},
+{
+"name": "SignatureGlobal",
+"aliases": [
+"Signature Global"
+],
+"rev": 8582,
+"ebitda": 605,
+"margin": 0.07049638778839432,
+"pat": 836.5,
+"n": 2
+},
+{
+"name": "Sobha",
+"aliases": [
+"Sobha"
+],
+"rev": 12058.5,
+"ebitda": 885,
+"margin": 0.07339221296181117,
+"pat": 579,
+"n": 2
+},
+{
+"name": "Sri Lotus Developers",
+"aliases": [],
+"rev": 1509,
+"ebitda": 512,
+"margin": 0.33929754804506296,
+"pat": 442,
+"n": 1
+},
+{
+"name": "Sunteck Realty",
+"aliases": [
+"Sunteck Realty"
+],
+"rev": 2443,
+"ebitda": 696.5,
+"margin": 0.2851002865329513,
+"pat": 504,
+"n": 2
+},
+{
+"name": "Aditya Birla Fashion",
+"aliases": [
+"Aditya Birla Fashion and Retail",
+"Aditya Birla Fashion and Retail"
+],
+"rev": 20469,
+"ebitda": 1597.6666666666667,
+"margin": 0.07805299070138584,
+"pat": -2560.3333333333335,
+"n": 3
+},
+{
+"name": "Aditya Birla Lifestyle",
+"aliases": [
+"Aditya Birla Lifestyle Brands Limited"
+],
+"rev": 20316.5,
+"ebitda": 2991.5,
+"margin": 0.14724485024487485,
+"pat": 298,
+"n": 2
+},
+{
+"name": "Arvind Fashions",
+"aliases": [],
+"rev": 12580,
+"ebitda": 1556,
+"margin": 0.12368839427662957,
+"pat": 24,
+"n": 1
+},
+{
+"name": "Avenue Supermarts",
+"aliases": [
+"Avenue Supermarts",
+"Avenue Supermarts"
+],
+"rev": 186754.66666666666,
+"ebitda": 15180,
+"margin": 0.08128310939128697,
+"pat": 8967.333333333334,
+"n": 3
+},
+{
+"name": "Bata India",
+"aliases": [],
+"rev": 9846,
+"ebitda": 2122,
+"margin": 0.21551899248425757,
+"pat": 554,
+"n": 1
+},
+{
+"name": "Campus Activewear",
+"aliases": [
+"Campus Activewear",
+"Campus"
+],
+"rev": 3957.6666666666665,
+"ebitda": 610,
+"margin": 0.15413122210056432,
+"pat": 275.6666666666667,
+"n": 3
+},
+{
+"name": "Devyani Intl.",
+"aliases": [
+"Devyani International",
+"Devyani International"
+],
+"rev": 15775.333333333334,
+"ebitda": 2431.6666666666665,
+"margin": 0.15414359971263153,
+"pat": 77.66666666666667,
+"n": 3
+},
+{
+"name": "Go Fashion",
+"aliases": [],
+"rev": 2172,
+"ebitda": 651,
+"margin": 0.29972375690607733,
+"pat": 172,
+"n": 1
+},
+{
+"name": "Jubilant Foodworks",
+"aliases": [
+"Jubilant Foodworks",
+"Jubilant Foodworks"
+],
+"rev": 18420.666666666668,
+"ebitda": 3688,
+"margin": 0.20020990916000145,
+"pat": 745,
+"n": 3
+},
+{
+"name": "Kalyan Jewellers",
+"aliases": [],
+"rev": 105663,
+"ebitda": 7079,
+"margin": 0.06699601563461192,
+"pat": 3992,
+"n": 1
+},
+{
+"name": "Lenskart Solutions",
+"aliases": [
+"Lenskart Solutions",
+"Lenskart"
+],
+"rev": 26396,
+"ebitda": 5530.666666666667,
+"margin": 0.20952669596403498,
+"pat": 1785.3333333333333,
+"n": 3
+},
+{
+"name": "Metro Brands",
+"aliases": [
+"Metro Brands",
+"Metro Brands"
+],
+"rev": 7364.333333333333,
+"ebitda": 2265.6666666666665,
+"margin": 0.30765400805685056,
+"pat": 1059,
+"n": 3
+},
+{
+"name": "P N Gadgil Jewellers",
+"aliases": [],
+"rev": 24084,
+"ebitda": 1555,
+"margin": 0.06456568676299618,
+"pat": 941,
+"n": 1
+},
+{
+"name": "Raymond Lifestyle",
+"aliases": [],
+"rev": 15086,
+"ebitda": 740,
+"margin": 0.04905210128596049,
+"pat": -95,
+"n": 1
+},
+{
+"name": "Relaxo Footwear",
+"aliases": [],
+"rev": 6799,
+"ebitda": 1071,
+"margin": 0.15752316517134873,
+"pat": 542,
+"n": 1
+},
+{
+"name": "Restaurant Brands",
+"aliases": [
+"Restaurant Brands Asia"
+],
+"rev": 6489,
+"ebitda": 999.5,
+"margin": 0.15402989674834336,
+"pat": -106.5,
+"n": 2
+},
+{
+"name": "Sapphire Foods",
+"aliases": [
+"Sapphire Foods",
+"Sapphire Foods"
+],
+"rev": 8711,
+"ebitda": 1336,
+"margin": 0.1533693031798875,
+"pat": 30.666666666666668,
+"n": 3
+},
+{
+"name": "Senco Gold",
+"aliases": [],
+"rev": 28855,
+"ebitda": 2510,
+"margin": 0.08698665742505632,
+"pat": 1437,
+"n": 1
+},
+{
+"name": "Shoppers Stop",
+"aliases": [],
+"rev": 11712,
+"ebitda": 1785,
+"margin": 0.1524077868852459,
+"pat": -171,
+"n": 1
+},
+{
+"name": "Titan Company",
+"aliases": [
+"Titan Company",
+"Titan"
+],
+"rev": 197549,
+"ebitda": 20446.333333333332,
+"margin": 0.10350005990075035,
+"pat": 12771,
+"n": 3
+},
+{
+"name": "Trent",
+"aliases": [
+"Trent",
+"Trent"
+],
+"rev": 57776.333333333336,
+"ebitda": 10386,
+"margin": 0.17976218636235136,
+"pat": 5056.666666666667,
+"n": 3
+},
+{
+"name": "United Foodbrands",
+"aliases": [],
+"rev": 3637,
+"ebitda": 640,
+"margin": 0.17596920538905692,
+"pat": -10,
+"n": 1
+},
+{
+"name": "V-Mart Retail",
+"aliases": [],
+"rev": 10890,
+"ebitda": 1603,
+"margin": 0.14719926538108355,
+"pat": 457,
+"n": 1
+},
+{
+"name": "Vedant Fashions",
+"aliases": [
+"Vedant Fashions"
+],
+"rev": 2855.5,
+"ebitda": 1178,
+"margin": 0.4125372088951147,
+"pat": 652.5,
+"n": 2
+},
+{
+"name": "Vishal Mega Mart",
+"aliases": [
+"Vishal Mega Mart",
+"Vishal Mega Mart"
+],
+"rev": 37703,
+"ebitda": 5525.666666666667,
+"margin": 0.1465577451838492,
+"pat": 2551.3333333333335,
+"n": 3
+},
+{
+"name": "Westlife Foodworld",
+"aliases": [
+"Westlife Foodworld"
+],
+"rev": 7270.5,
+"ebitda": 959.5,
+"margin": 0.13197166632281135,
+"pat": 20.5,
+"n": 2
+},
+{
+"name": "Quess Corp",
+"aliases": [],
+"rev": 39726,
+"ebitda": 824,
+"margin": 0.020742083270402254,
+"pat": 558,
+"n": 1
+},
+{
+"name": "SIS",
+"aliases": [],
+"rev": 42628,
+"ebitda": 1836,
+"margin": 0.04307028244346439,
+"pat": 963,
+"n": 1
+},
+{
+"name": "Team Lease Serv.",
+"aliases": [
+"Teamlease Services"
+],
+"rev": 30211.5,
+"ebitda": 405.5,
+"margin": 0.013422041275673171,
+"pat": 347.5,
+"n": 2
+},
+{
+"name": "Updater Services",
+"aliases": [],
+"rev": 7759,
+"ebitda": 442,
+"margin": 0.0569661038793659,
+"pat": 310,
+"n": 1
+},
+{
+"name": "Coforge",
+"aliases": [
+"Coforge"
+],
+"rev": 50850,
+"ebitda": 10204,
+"margin": 0.20066863323500492,
+"pat": 5216,
+"n": 2
+},
+{
+"name": "Cyient",
+"aliases": [
+"Cyient"
+],
+"rev": 22865,
+"ebitda": 3413.5,
+"margin": 0.14928930680078722,
+"pat": 2544.5,
+"n": 2
+},
+{
+"name": "HCL Technologies",
+"aliases": [
+"HCL Technologies"
+],
+"rev": 344519.5,
+"ebitda": 69355.5,
+"margin": 0.2013108111442168,
+"pat": 46470,
+"n": 2
+},
+{
+"name": "Hexaware Tech.",
+"aliases": [
+"Hexaware Technologies"
+],
+"rev": 38035,
+"ebitda": 6134.5,
+"margin": 0.1612856579466281,
+"pat": 3364.5,
+"n": 2
+},
+{
+"name": "Infosys",
+"aliases": [
+"Infosys"
+],
+"rev": 486048,
+"ebitda": 116706,
+"margin": 0.24011208769504247,
+"pat": 78762.5,
+"n": 2
+},
+{
+"name": "KPIT Technologies",
+"aliases": [],
+"rev": 17174,
+"ebitda": 3555,
+"margin": 0.206998951904041,
+"pat": 2201,
+"n": 1
+},
+{
+"name": "LTM",
+"aliases": [],
+"rev": 115332,
+"ebitda": 19952,
+"margin": 0.17299621960947525,
+"pat": 14618,
+"n": 1
+},
+{
+"name": "L&T Technology",
+"aliases": [],
+"rev": 29336,
+"ebitda": 5339,
+"margin": 0.18199481865284975,
+"pat": 3573,
+"n": 1
+},
+{
+"name": "MphasiS",
+"aliases": [],
+"rev": 43955,
+"ebitda": 8264,
+"margin": 0.18801046524854964,
+"pat": 5406,
+"n": 1
+},
+{
+"name": "Persistent Systems",
+"aliases": [],
+"rev": 42495,
+"ebitda": 8031,
+"margin": 0.18898693963995764,
+"pat": 5461,
+"n": 1
+},
+{
+"name": "Tata Elxsi",
+"aliases": [
+"Tata Elxsi"
+],
+"rev": 10276,
+"ebitda": 2442.5,
+"margin": 0.23768976255352278,
+"pat": 1974,
+"n": 2
+},
+{
+"name": "Tata Technologies",
+"aliases": [
+"Tata Technologies"
+],
+"rev": 16235,
+"ebitda": 2691.5,
+"margin": 0.16578380043116722,
+"pat": 1878,
+"n": 2
+},
+{
+"name": "TCS",
+"aliases": [
+"TCS"
+],
+"rev": 718340,
+"ebitda": 178370.5,
+"margin": 0.24830929643344377,
+"pat": 134138,
+"n": 2
+},
+{
+"name": "Tech Mahindra",
+"aliases": [
+"Tech Mahindra"
+],
+"rev": 155211.5,
+"ebitda": 26955.5,
+"margin": 0.17366947681067446,
+"pat": 17522,
+"n": 2
+},
+{
+"name": "Wipro",
+"aliases": [
+"Wipro"
+],
+"rev": 249192,
+"ebitda": 49378.5,
+"margin": 0.19815443513435424,
+"pat": 33801,
+"n": 2
+},
+{
+"name": "Zensar Tech",
+"aliases": [],
+"rev": 15006,
+"ebitda": 2146,
+"margin": 0.14300946288151406,
+"pat": 1696,
+"n": 1
+},
+{
+"name": "Bharti Airtel",
+"aliases": [
+"Bharti Airtel",
+"Bharti Airtel (C)"
+],
+"rev": 573017.6666666666,
+"ebitda": 323741.6666666667,
+"margin": 0.5649767633691342,
+"pat": 86169.66666666667,
+"n": 3
+},
+{
+"name": "Bharti Hexacom",
+"aliases": [
+"Bharti Hexacom"
+],
+"rev": 24694.5,
+"ebitda": 12836,
+"margin": 0.5197918564862621,
+"pat": 4669,
+"n": 2
+},
+{
+"name": "Indus Towers",
+"aliases": [
+"Indus Towers",
+"Indus Tower (C)"
+],
+"rev": 83810.33333333333,
+"ebitda": 45137.333333333336,
+"margin": 0.5385652524947203,
+"pat": 18157.666666666668,
+"n": 3
+},
+{
+"name": "Tata Comm",
+"aliases": [
+"Tata Communications"
+],
+"rev": 66360.5,
+"ebitda": 13315.5,
+"margin": 0.20065400351112483,
+"pat": 3560,
+"n": 2
+},
+{
+"name": "Vodafone Idea",
+"aliases": [
+"Vodafone Idea",
+"VIL (C)"
+],
+"rev": 114760,
+"ebitda": 48967.333333333336,
+"margin": 0.4266933891018938,
+"pat": -56339,
+"n": 3
+},
+{
+"name": "Arvind",
+"aliases": [],
+"rev": 22471,
+"ebitda": 2060,
+"margin": 0.0916737127853678,
+"pat": 740,
+"n": 1
+},
+{
+"name": "Gokaldas Exports",
+"aliases": [],
+"rev": 10609,
+"ebitda": 1077,
+"margin": 0.10151757941370534,
+"pat": 448,
+"n": 1
+},
+{
+"name": "Indo Count Inds",
+"aliases": [],
+"rev": 10738,
+"ebitda": 1017,
+"margin": 0.09471037437139132,
+"pat": 328,
+"n": 1
+},
+{
+"name": "KPR Mill",
+"aliases": [],
+"rev": 18546,
+"ebitda": 3701,
+"margin": 0.19955785614148602,
+"pat": 2515,
+"n": 1
+},
+{
+"name": "Pearl Global",
+"aliases": [],
+"rev": 13384,
+"ebitda": 1292,
+"margin": 0.09653317393903169,
+"pat": 775,
+"n": 1
+},
+{
+"name": "Trident",
+"aliases": [],
+"rev": 18264,
+"ebitda": 2457,
+"margin": 0.134526938239159,
+"pat": 1224,
+"n": 1
+},
+{
+"name": "Vardhman Textiles",
+"aliases": [],
+"rev": 25861,
+"ebitda": 3501,
+"margin": 0.1353775956072851,
+"pat": 2146,
+"n": 1
+},
+{
+"name": "Welspun Living",
+"aliases": [],
+"rev": 25770,
+"ebitda": 2459,
+"margin": 0.09542103220799379,
+"pat": 989,
+"n": 1
+},
+{
+"name": "Le Travenues",
+"aliases": [],
+"rev": 3550,
+"ebitda": 332,
+"margin": 0.09352112676056339,
+"pat": 302,
+"n": 1
+},
+{
+"name": "TBO Tek",
+"aliases": [],
+"rev": 8228,
+"ebitda": 1112,
+"margin": 0.13514827418570735,
+"pat": 652,
+"n": 1
+},
+{
+"name": "Yatra Online",
+"aliases": [],
+"rev": 2072,
+"ebitda": 140,
+"margin": 0.06756756756756757,
+"pat": 90,
+"n": 1
+},
+{
+"name": "ACME Solar",
+"aliases": [
+"Acme Solar Holdings"
+],
+"rev": 7139,
+"ebitda": 6029.5,
+"margin": 0.8445860764812999,
+"pat": 1655,
+"n": 2
+},
+{
+"name": "Indian Energy Exch.",
+"aliases": [],
+"rev": 1524,
+"ebitda": 1220,
+"margin": 0.800524934383202,
+"pat": 1178,
+"n": 1
+},
+{
+"name": "Inox Wind",
+"aliases": [],
+"rev": 9560,
+"ebitda": 1850,
+"margin": 0.19351464435146443,
+"pat": 850,
+"n": 1
+},
+{
+"name": "JSW Energy",
+"aliases": [
+"JSW Energy"
+],
+"rev": 48805.5,
+"ebitda": 24999,
+"margin": 0.5122168608046225,
+"pat": 2354,
+"n": 2
+},
+{
+"name": "NTPC",
+"aliases": [
+"NTPC"
+],
+"rev": 425429.5,
+"ebitda": 107581.5,
+"margin": 0.25287738626493933,
+"pat": 48544,
+"n": 2
+},
+{
+"name": "Power Grid Corp.",
+"aliases": [
+"Power Grid"
+],
+"rev": 116567,
+"ebitda": 95713,
+"margin": 0.821098595657433,
+"pat": 37492.5,
+"n": 2
+},
+{
+"name": "Premier Energies",
+"aliases": [
+"Premier Energies"
+],
+"rev": 24801,
+"ebitda": 7200.5,
+"margin": 0.2903310350389097,
+"pat": 4449.5,
+"n": 2
+},
+{
+"name": "Suzlon Energy",
+"aliases": [],
+"rev": 38946,
+"ebitda": 6874,
+"margin": 0.1765007959739126,
+"pat": 4109,
+"n": 1
+},
+{
+"name": "Tata Power",
+"aliases": [
+"Tata Power"
+],
+"rev": 179725,
+"ebitda": 37237,
+"margin": 0.20718876060648211,
+"pat": 10778,
+"n": 2
+},
+{
+"name": "Waaree Energies",
+"aliases": [
+"Waaree Energies"
+],
+"rev": 84091,
+"ebitda": 16042.5,
+"margin": 0.19077546943192494,
+"pat": 10385,
+"n": 2
+},
+{
+"name": "APL Apollo Tubes",
+"aliases": [
+"APL Apollo Tubes"
+],
+"rev": 49822.5,
+"ebitda": 4030,
+"margin": 0.08088714938030006,
+"pat": 2600,
+"n": 2
+},
+{
+"name": "Cello World",
+"aliases": [
+"Cello World"
+],
+"rev": 5604.5,
+"ebitda": 1052,
+"margin": 0.18770630743152825,
+"pat": 719,
+"n": 2
+},
+{
+"name": "Coromandel International",
+"aliases": [],
+"rev": 83666,
+"ebitda": 8429,
+"margin": 0.1007458226758779,
+"pat": 5014,
+"n": 1
+},
+{
+"name": "EPL",
+"aliases": [],
+"rev": 13126,
+"ebitda": 2568,
+"margin": 0.19564223678195947,
+"pat": 1150,
+"n": 1
+},
+{
+"name": "Eternal",
+"aliases": [
+"Eternal"
+],
+"rev": 197638.5,
+"ebitda": 6669,
+"margin": 0.03374342549655052,
+"pat": 3441,
+"n": 2
+},
+{
+"name": "FSN E-Commerce",
+"aliases": [
+"FSN E-Commerce Ventures",
+"Nykaa"
+],
+"rev": 27492,
+"ebitda": 2268.3333333333335,
+"margin": 0.08250885105970222,
+"pat": 838.3333333333334,
+"n": 3
+},
+{
+"name": "Fujiyama Power",
+"aliases": [],
+"rev": 9259,
+"ebitda": 1802,
+"margin": 0.1946214494005832,
+"pat": 1072,
+"n": 1
+},
+{
+"name": "GNG Electronics",
+"aliases": [],
+"rev": 4122,
+"ebitda": 459,
+"margin": 0.11135371179039301,
+"pat": 261,
+"n": 1
+},
+{
+"name": "Godrej Agrovet",
+"aliases": [
+"Godrej Agrovet"
+],
+"rev": 28598.5,
+"ebitda": 2782.5,
+"margin": 0.09729531269122506,
+"pat": 1555.5,
+"n": 2
+},
+{
+"name": "Gravita India",
+"aliases": [
+"Gravita India"
+],
+"rev": 14214,
+"ebitda": 1408.5,
+"margin": 0.09909244406922753,
+"pat": 1043,
+"n": 2
+},
+{
+"name": "Indiamart Inter.",
+"aliases": [
+"Indiamart",
+"IndiaMART InterMESH (S)"
+],
+"rev": 3873.3333333333335,
+"ebitda": 1379.6666666666667,
+"margin": 0.3561962134251291,
+"pat": 1308.3333333333333,
+"n": 3
+},
+{
+"name": "Indian Hotels",
+"aliases": [
+"Indian Hotels",
+"Indian Hotels Company"
+],
+"rev": 22714.5,
+"ebitda": 6498,
+"margin": 0.2860727728983689,
+"pat": 3637.5,
+"n": 2
+},
+{
+"name": "Info Edge",
+"aliases": [
+"Info Edge",
+"Info Edge (S)"
+],
+"rev": 8242.333333333334,
+"ebitda": 3512.3333333333335,
+"margin": 0.42613337647106403,
+"pat": 3058.6666666666665,
+"n": 3
+},
+{
+"name": "Interglobe Aviation",
+"aliases": [
+"InterGlobe Aviation"
+],
+"rev": 242220,
+"ebitda": 50962.5,
+"margin": 0.21039757245479315,
+"pat": 14051,
+"n": 2
+},
+{
+"name": "Jain Resource",
+"aliases": [],
+"rev": 24474,
+"ebitda": 1387,
+"margin": 0.05667238702296314,
+"pat": 921,
+"n": 1
+},
+{
+"name": "Lemon Tree Hotel",
+"aliases": [
+"Lemon Tree Hotels"
+],
+"rev": 3422,
+"ebitda": 1501.5,
+"margin": 0.43877849210987724,
+"pat": 417,
+"n": 2
+},
+{
+"name": "MTAR Tech",
+"aliases": [],
+"rev": 3132,
+"ebitda": 673,
+"margin": 0.2148786717752235,
+"pat": 399,
+"n": 1
+},
+{
+"name": "One 97 Comm.",
+"aliases": [],
+"rev": 24122,
+"ebitda": 1751,
+"margin": 0.07258933753420115,
+"pat": 1958,
+"n": 1
+},
+{
+"name": "Safari Inds.",
+"aliases": [
+"Safari Industries"
+],
+"rev": 5898.5,
+"ebitda": 722.5,
+"margin": 0.1224887683309316,
+"pat": 447.5,
+"n": 2
+},
+{
+"name": "SBI Cards",
+"aliases": [
+"SBI Cards and Payment Services",
+"SBI Cards and Payment Services"
+],
+"rev": 25486.333333333332,
+"ebitda": 18855.666666666668,
+"margin": 0.7398344210622687,
+"pat": 6483.666666666667,
+"n": 3
+},
+{
+"name": "Shaily Engineering",
+"aliases": [],
+"rev": 2988,
+"ebitda": 898,
+"margin": 0.30053547523427043,
+"pat": 566,
+"n": 1
+},
+{
+"name": "Swiggy",
+"aliases": [
+"Swiggy"
+],
+"rev": 67284.5,
+"ebitda": -5264,
+"margin": -0.07823495753108071,
+"pat": -6783.5,
+"n": 2
+},
+{
+"name": "Time Technoplast",
+"aliases": [],
+"rev": 16323,
+"ebitda": 2332,
+"margin": 0.14286589474973962,
+"pat": 1261,
+"n": 1
+},
+{
+"name": "UPL",
+"aliases": [
+"UPL"
+],
+"rev": 99570.5,
+"ebitda": 14658.5,
+"margin": 0.1472172982961821,
+"pat": -583.5,
+"n": 2
+},
+{
+"name": "Urban Company",
+"aliases": [
+"Urban Company"
+],
+"rev": 5038,
+"ebitda": -861.5,
+"margin": -0.17100039698292974,
+"pat": -642.5,
+"n": 2
+},
+{
+"name": "Va Tech Wabag",
+"aliases": [],
+"rev": 8634,
+"ebitda": 1147,
+"margin": 0.13284688441047024,
+"pat": 801,
+"n": 1
+},
+{
+"name": "Ventive Hospitality",
+"aliases": [
+"Ventive Hospitality"
+],
+"rev": 5331.5,
+"ebitda": 2164.5,
+"margin": 0.40598330676169936,
+"pat": 546.5,
+"n": 2
+},
+{
+"name": "VIP Inds.",
+"aliases": [
+"VIP Industries"
+],
+"rev": 5698.5,
+"ebitda": 46.5,
+"margin": 0.008160042116346407,
+"pat": -395.5,
+"n": 2
+},
+{
+"name": "AU Small Finance",
+"aliases": [
+"AU Small Finance Bank",
+"AU Small Finance Bank"
+],
+"rev": 26952.333333333332,
+"ebitda": 14487.333333333334,
+"margin": 0.5375168507364855,
+"pat": 8238.666666666666,
+"n": 3
+},
+{
+"name": "Axis Bank",
+"aliases": [
+"Axis Bank",
+"Axis Bank"
+],
+"rev": 148852.66666666666,
+"ebitda": 113586.33333333333,
+"margin": 0.7630789281571487,
+"pat": 68593,
+"n": 3
+},
+{
+"name": "Bandhan Bank",
+"aliases": [
+"Bandhan Bank",
+"Bandhan Bank"
+],
+"rev": 29002.333333333332,
+"ebitda": 14359,
+"margin": 0.49509809555553,
+"pat": 5024,
+"n": 3
+},
+{
+"name": "DCB Bank",
+"aliases": [
+"DCB Bank"
+],
+"rev": 6918.5,
+"ebitda": 3418,
+"margin": 0.49403772494037723,
+"pat": 1929.5,
+"n": 2
+},
+{
+"name": "Equitas Small Fin.",
+"aliases": [
+"Equitas Small Finance Bank",
+"Equitas Small Finance Bank"
+],
+"rev": 10145.333333333334,
+"ebitda": 3845.3333333333335,
+"margin": 0.37902483900643974,
+"pat": 1599.6666666666667,
+"n": 3
+},
+{
+"name": "Federal Bank",
+"aliases": [
+"Federal Bank",
+"Federal Bank"
+],
+"rev": 28376,
+"ebitda": 19334.666666666668,
+"margin": 0.6813739310215206,
+"pat": 11737.333333333334,
+"n": 3
+},
+{
+"name": "HDFC Bank",
+"aliases": [
+"HDFC Bank",
+"HDFC Bank"
+],
+"rev": 345934.3333333333,
+"ebitda": 289705.6666666667,
+"margin": 0.8374585542728246,
+"pat": 196507,
+"n": 3
+},
+{
+"name": "ICICI Bank",
+"aliases": [
+"ICICI Bank",
+"ICICI Bank"
+],
+"rev": 239161.66666666666,
+"ebitda": 189799.66666666666,
+"margin": 0.7936040474713757,
+"pat": 131900.66666666666,
+"n": 3
+},
+{
+"name": "IDFC First Bank",
+"aliases": [],
+"rev": 58686,
+"ebitda": 23788,
+"margin": 0.40534369355553285,
+"pat": 8034,
+"n": 1
+},
+{
+"name": "IndusInd Bank",
+"aliases": [
+"IndusInd Bank"
+],
+"rev": 44494,
+"ebitda": 23077.5,
+"margin": 0.5186654380365892,
+"pat": 6213,
+"n": 2
+},
+{
+"name": "Kotak Mahindra Bank",
+"aliases": [
+"Kotak Mahindra Bank"
+],
+"rev": 80687.5,
+"ebitda": 59509.5,
+"margin": 0.7375305964368707,
+"pat": 38897.5,
+"n": 2
+},
+{
+"name": "RBL Bank",
+"aliases": [
+"RBL Bank"
+],
+"rev": 17942,
+"ebitda": 9052.5,
+"margin": 0.50454241444655,
+"pat": 2176,
+"n": 2
+},
+{
+"name": "Bank of Baroda",
+"aliases": [
+"Bank of Baroda",
+"Bank of Baroda"
+],
+"rev": 125609.33333333333,
+"ebitda": 78479.33333333333,
+"margin": 0.6247890284161474,
+"pat": 30397.333333333332,
+"n": 3
+},
+{
+"name": "Canara Bank",
+"aliases": [
+"Canara Bank"
+],
+"rev": 99636,
+"ebitda": 72891.5,
+"margin": 0.7315779437151231,
+"pat": 42592,
+"n": 2
+},
+{
+"name": "Indian Bank",
+"aliases": [],
+"rev": 73736,
+"ebitda": 54055,
+"margin": 0.7330883150699794,
+"pat": 32549,
+"n": 1
+},
+{
+"name": "Punjab National Bank",
+"aliases": [
+"Punjab National Bank"
+],
+"rev": 105847.5,
+"ebitda": 69447.5,
+"margin": 0.656109024776211,
+"pat": 47050.5,
+"n": 2
+},
+{
+"name": "State Bank",
+"aliases": [
+"State Bank of India",
+"State Bank of India"
+],
+"rev": 456136.6666666667,
+"ebitda": 300458.6666666667,
+"margin": 0.6587031664486521,
+"pat": 182552.33333333334,
+"n": 3
+},
+{
+"name": "Union Bank",
+"aliases": [
+"Union Bank",
+"Union Bank of India"
+],
+"rev": 96757.5,
+"ebitda": 69829.5,
+"margin": 0.7216959925587164,
+"pat": 42802.5,
+"n": 2
+},
+{
+"name": "Canara HSBC",
+"aliases": [],
+"rev": 21230,
+"ebitda": 1133,
+"margin": 0.05336787564766839,
+"pat": 276,
+"n": 1
+},
+{
+"name": "HDFC Life Insur.",
+"aliases": [
+"HDFC Life Insurance",
+"HDFC Life Insurance Company"
+],
+"rev": 99812,
+"ebitda": 8499.5,
+"margin": 0.08515509157215566,
+"pat": 5979,
+"n": 2
+},
+{
+"name": "ICICI Lombard",
+"aliases": [
+"ICICI Lombard General Insurance Company"
+],
+"rev": 58810,
+"ebitda": -3069,
+"margin": -0.05218500255058663,
+"pat": 7382,
+"n": 1
+},
+{
+"name": "ICICI Pru Life",
+"aliases": [
+"ICICI Prudential Life",
+"ICICI Prudential Life Insurance Company"
+],
+"rev": 61440.5,
+"ebitda": 5236,
+"margin": 0.08522066063915495,
+"pat": 3921,
+"n": 2
+},
+{
+"name": "Life Insurance Corp.",
+"aliases": [
+"LIC"
+],
+"rev": 719398.5,
+"ebitda": 24689.5,
+"margin": 0.03431964342433297,
+"pat": 119581,
+"n": 2
+},
+{
+"name": "Max Financial",
+"aliases": [
+"Max Financial Services"
+],
+"rev": 46721.5,
+"ebitda": 3879.5,
+"margin": 0.0830345772288989,
+"pat": 1436,
+"n": 2
+},
+{
+"name": "Niva Bupa Health",
+"aliases": [],
+"rev": 22047,
+"ebitda": 110,
+"margin": 0.004989340953417698,
+"pat": 985,
+"n": 1
+},
+{
+"name": "SBI Life Insurance",
+"aliases": [
+"SBI Life Insurance",
+"SBI Life Insurance Company"
+],
+"rev": 123724,
+"ebitda": 11865.5,
+"margin": 0.09590297759529275,
+"pat": 6748,
+"n": 2
+},
+{
+"name": "Star Health",
+"aliases": [
+"Star Health & Allied Insurance Company"
+],
+"rev": 51165,
+"ebitda": 3889,
+"margin": 0.07600899052086388,
+"pat": 5175,
+"n": 1
+},
+{
+"name": "AAVAS Financiers",
+"aliases": [
+"Aavas Financiers",
+"Aavas Financiers"
+],
+"rev": 3508.3333333333335,
+"ebitda": 2253.6666666666665,
+"margin": 0.6423752969121139,
+"pat": 1695.3333333333333,
+"n": 3
+},
+{
+"name": "Bajaj Finance",
+"aliases": [
+"Bajaj Finance",
+"Bajaj Finance (consol)"
+],
+"rev": 124267.33333333333,
+"ebitda": 99678,
+"margin": 0.8021255250776552,
+"pat": 57772.666666666664,
+"n": 3
+},
+{
+"name": "Bajaj Housing",
+"aliases": [
+"Bajaj Housing Finance",
+"Bajaj Housing Finance"
+],
+"rev": 10006.333333333334,
+"ebitda": 9210.333333333334,
+"margin": 0.9204503814250975,
+"pat": 6703,
+"n": 3
+},
+{
+"name": "Can Fin Homes",
+"aliases": [
+"Can Fin Homes"
+],
+"rev": 4258.5,
+"ebitda": 3542,
+"margin": 0.8317482681695433,
+"pat": 2642,
+"n": 2
+},
+{
+"name": "Chola. Inv & Fin.",
+"aliases": [
+"Cholamandalam",
+"Chola Investment & Finance"
+],
+"rev": 42877,
+"ebitda": 29794.333333333332,
+"margin": 0.6948791504380748,
+"pat": 14902.333333333334,
+"n": 3
+},
+{
+"name": "CreditAccess",
+"aliases": [],
+"rev": 11258,
+"ebitda": 8193,
+"margin": 0.7277491561556226,
+"pat": 4461,
+"n": 1
+},
+{
+"name": "Five-Star Business",
+"aliases": [
+"Five Star Business Finance",
+"Five Star Business Finance"
+],
+"rev": 6305.333333333333,
+"ebitda": 4290.333333333333,
+"margin": 0.6804292662296468,
+"pat": 2758.3333333333335,
+"n": 3
+},
+{
+"name": "Fusion Finance",
+"aliases": [],
+"rev": 2419,
+"ebitda": 1088,
+"margin": 0.4497726333195535,
+"pat": 699,
+"n": 1
+},
+{
+"name": "HDB Financial",
+"aliases": [
+"HDB Financial Services"
+],
+"rev": 24622,
+"ebitda": 16955,
+"margin": 0.6886118105759077,
+"pat": 7584,
+"n": 2
+},
+{
+"name": "Home First Fin.",
+"aliases": [
+"Home First Finance"
+],
+"rev": 2488.5,
+"ebitda": 2172.5,
+"margin": 0.873015873015873,
+"pat": 1550,
+"n": 2
+},
+{
+"name": "IIFL Finance",
+"aliases": [],
+"rev": 18414,
+"ebitda": 11840,
+"margin": 0.6429890300858043,
+"pat": 5936,
+"n": 1
+},
+{
+"name": "Jio Financial",
+"aliases": [
+"Jio Financial Services"
+],
+"rev": 3961,
+"ebitda": 4117,
+"margin": 1.039383993940924,
+"pat": 3345,
+"n": 1
+},
+{
+"name": "L&T Finance",
+"aliases": [
+"L&T Finance"
+],
+"rev": 27692.5,
+"ebitda": 19157,
+"margin": 0.6917757515572809,
+"pat": 8691.5,
+"n": 2
+},
+{
+"name": "LIC Housing Fin",
+"aliases": [
+"LIC Housing Finance",
+"LIC Housing Finance"
+],
+"rev": 22229.333333333332,
+"ebitda": 20419.666666666668,
+"margin": 0.9185910508637237,
+"pat": 14862,
+"n": 3
+},
+{
+"name": "M & M Financial",
+"aliases": [
+"Mahindra & Mahindra Financial",
+"M&M Finance",
+"Mahindra and Mahindra Financial Services"
+],
+"rev": 24520,
+"ebitda": 17600.666666666668,
+"margin": 0.7178085916258837,
+"pat": 8501,
+"n": 3
+},
+{
+"name": "Manappuram Finance",
+"aliases": [],
+"rev": 16305,
+"ebitda": 9299,
+"margin": 0.5703158540325054,
+"pat": 4650,
+"n": 1
+},
+{
+"name": "MAS Financial",
+"aliases": [],
+"rev": 3081,
+"ebitda": 1990,
+"margin": 0.6458941901979877,
+"pat": 1036,
+"n": 1
+},
+{
+"name": "Muthoot Finance",
+"aliases": [
+"Muthoot Finance",
+"Muthoot Finance"
+],
+"rev": 52826,
+"ebitda": 44558.666666666664,
+"margin": 0.8434987821653478,
+"pat": 31752.666666666668,
+"n": 3
+},
+{
+"name": "Northern ARC",
+"aliases": [
+"Northern Arc Capital"
+],
+"rev": 4581,
+"ebitda": 2502,
+"margin": 0.5461689587426326,
+"pat": 1048.5,
+"n": 2
+},
+{
+"name": "PFC",
+"aliases": [],
+"rev": 56472,
+"ebitda": 53884,
+"margin": 0.9541719790338575,
+"pat": 45005,
+"n": 1
+},
+{
+"name": "PNB Housing",
+"aliases": [],
+"rev": 8186,
+"ebitda": 6906,
+"margin": 0.8436354752015637,
+"pat": 5784,
+"n": 1
+},
+{
+"name": "Poonawalla Fincorp",
+"aliases": [],
+"rev": 11555,
+"ebitda": 8120,
+"margin": 0.7027260926006058,
+"pat": 3305,
+"n": 1
+},
+{
+"name": "REC",
+"aliases": [],
+"rev": 52165,
+"ebitda": 53054,
+"margin": 1.017042078021662,
+"pat": 43243,
+"n": 1
+},
+{
+"name": "Repco Home Fin",
+"aliases": [],
+"rev": 1993,
+"ebitda": 1444,
+"margin": 0.7245358755644756,
+"pat": 1086,
+"n": 1
+},
+{
+"name": "Shriram Finance",
+"aliases": [
+"Shriram Finance",
+"Shriram Finance"
+],
+"rev": 72685.66666666667,
+"ebitda": 58172.333333333336,
+"margin": 0.8003274373214343,
+"pat": 32665,
+"n": 3
+},
+{
+"name": "Spandana Sphoorty",
+"aliases": [],
+"rev": 1255,
+"ebitda": 126,
+"margin": 0.100398406374502,
+"pat": 166,
+"n": 1
+},
+{
+"name": "Tata Capital",
+"aliases": [
+"Tata Capital",
+"Tata Capital"
+],
+"rev": 36249.333333333336,
+"ebitda": 27249.333333333332,
+"margin": 0.7517195718541949,
+"pat": 15430,
+"n": 3
+},
+{
+"name": "360 One WAM",
+"aliases": [
+"360 One"
+],
+"rev": 8189.5,
+"ebitda": 3965,
+"margin": 0.4841565419134257,
+"pat": 3151.5,
+"n": 2
+},
+{
+"name": "Aditya Birla AMC",
+"aliases": [
+"ABSL AMC",
+"Aditya Birla Sun Life AMC"
+],
+"rev": 5045.5,
+"ebitda": 2614,
+"margin": 0.5180854226538499,
+"pat": 2553.5,
+"n": 2
+},
+{
+"name": "Anand Rathi Wealth",
+"aliases": [],
+"rev": 3368,
+"ebitda": 1498,
+"margin": 0.44477434679334915,
+"pat": 1171,
+"n": 1
+},
+{
+"name": "Angel One",
+"aliases": [
+"Angel One"
+],
+"rev": 12037,
+"ebitda": 2655,
+"margin": 0.2205699094458752,
+"pat": 2008.5,
+"n": 2
+},
+{
+"name": "Bajaj Finserv",
+"aliases": [],
+"rev": 391394,
+"ebitda": 161900,
+"margin": 0.4136496727083195,
+"pat": 27578,
+"n": 1
+},
+{
+"name": "Billionbrains",
+"aliases": [
+"Billionbrains Garage Ventures"
+],
+"rev": 14886,
+"ebitda": 8738,
+"margin": 0.5869944914684939,
+"pat": 6541.5,
+"n": 2
+},
+{
+"name": "BSE",
+"aliases": [],
+"rev": 16145,
+"ebitda": 11331,
+"margin": 0.70182719108083,
+"pat": 8800,
+"n": 1
+},
+{
+"name": "Cams Services",
+"aliases": [
+"CAMS"
+],
+"rev": 4092,
+"ebitda": 1896,
+"margin": 0.4633431085043988,
+"pat": 1264.5,
+"n": 2
+},
+{
+"name": "CDSL",
+"aliases": [],
+"rev": 2924,
+"ebitda": 1367,
+"margin": 0.46751025991792067,
+"pat": 1105,
+"n": 1
+},
+{
+"name": "HDFC AMC",
+"aliases": [
+"HDFC AMC"
+],
+"rev": 11635,
+"ebitda": 8518,
+"margin": 0.7321014181349377,
+"pat": 7643.5,
+"n": 2
+},
+{
+"name": "ICICI Pru. AMC",
+"aliases": [
+"ICICI Prudential AMC"
+],
+"rev": 15408.5,
+"ebitda": 11359,
+"margin": 0.7371905117305383,
+"pat": 9080,
+"n": 2
+},
+{
+"name": "KFin Technologies",
+"aliases": [
+"KFIN Technologies"
+],
+"rev": 3580.5,
+"ebitda": 1146,
+"margin": 0.3200670297444491,
+"pat": 717.5,
+"n": 2
+},
+{
+"name": "MCX",
+"aliases": [],
+"rev": 7164,
+"ebitda": 5317,
+"margin": 0.7421831379117811,
+"pat": 4305,
+"n": 1
+},
+{
+"name": "Nippon Life AMC",
+"aliases": [
+"Nippon AMC"
+],
+"rev": 8112,
+"ebitda": 5043,
+"margin": 0.6216715976331361,
+"pat": 4546.5,
+"n": 2
+},
+{
+"name": "NSDL",
+"aliases": [],
+"rev": 4224,
+"ebitda": 1130,
+"margin": 0.2675189393939394,
+"pat": 1010,
+"n": 1
+},
+{
+"name": "Nuvama Wealth",
+"aliases": [],
+"rev": 8342,
+"ebitda": 3798,
+"margin": 0.4552865020378806,
+"pat": 2868,
+"n": 1
+},
+{
+"name": "PB Fintech",
+"aliases": [],
+"rev": 18126,
+"ebitda": 1653,
+"margin": 0.09119496855345911,
+"pat": 1423,
+"n": 1
+},
+{
+"name": "Prudent Corp.",
+"aliases": [],
+"rev": 3536,
+"ebitda": 826,
+"margin": 0.2335972850678733,
+"pat": 622,
+"n": 1
+},
+{
+"name": "UTI AMC",
+"aliases": [
+"UTI AMC"
+],
+"rev": 4564,
+"ebitda": 1579,
+"margin": 0.3459684487291849,
+"pat": 2038,
+"n": 2
+}
+]
+}

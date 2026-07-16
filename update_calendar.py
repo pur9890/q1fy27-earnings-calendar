@@ -36,6 +36,8 @@ QUARTER_TITLE = "Q1 FY27"
 OUT_HTML = Path(__file__).with_name("earnings_calendar.html")
 OUT_JSON = Path(__file__).with_name("earnings_data.json")
 TIMES_JSON = Path(__file__).with_name("release_times.json")  # approx times, built separately
+EST_JSON = Path(__file__).with_name("estimates.json")        # broker estimates, built separately
+OUT_EST_HTML = Path(__file__).with_name("estimates.html")
 
 API = ("https://api.moneycontrol.com/mcapi/v1/earnings/get-earnings-data"
        "?indexId=All&page=1&startDate={s}&endDate={e}"
@@ -66,6 +68,29 @@ def load_times():
         return json.loads(TIMES_JSON.read_text(encoding="utf-8"))
     except Exception:
         return {}
+
+
+def est_norm(s):
+    """Normalize a company name for estimate matching (strips parentheticals)."""
+    import re as _re
+    s = s.lower().replace("&", " and ")
+    s = _re.sub(r"\(.*?\)", "", s)
+    s = _re.sub(r"\b(ltd|limited|the)\b", "", s)
+    return _re.sub(r"[^a-z0-9]", "", s)
+
+
+def load_estimates():
+    """Returns (lookup: norm_name -> slug, records: list). Empty if no file."""
+    try:
+        recs = json.loads(EST_JSON.read_text(encoding="utf-8"))["records"]
+    except Exception:
+        return {}, []
+    lookup = {}
+    for rec in recs:
+        rec["slug"] = est_norm(rec["name"])
+        for nm in [rec["name"]] + rec.get("aliases", []):
+            lookup.setdefault(est_norm(nm), rec["slug"])
+    return lookup, recs
 
 
 # ---------------------------------------------------------------------------
@@ -156,7 +181,14 @@ def month_grid(year, month, by_date, today=None):
                 tip_attr = f' title="{tip}"' if tip else ""
                 tspan = f' <span class="tm">({escape(tm)})</span>' if tm else ""
                 inner = f'<span class="nm">{nm}</span>{tspan}'
-                if url:
+                slug = c.get("est")
+                if slug:
+                    # link to the estimates tab (opens in a new tab)
+                    etip = escape((" · " if tip else "") + "Click: Q1FY27 estimates (broker avg)")
+                    items.append(f'<a class="co hasEst" href="estimates.html#{slug}" '
+                                 f'target="_blank" rel="noopener" title="{tip}{etip}" '
+                                 f'data-name="{nm.lower()}">{inner}</a>')
+                elif url:
                     items.append(f'<a class="co" href="{url}" target="_blank" '
                                  f'rel="noopener"{tip_attr} data-name="{nm.lower()}">{inner}</a>')
                 else:
@@ -183,6 +215,7 @@ def build_html(data):
     rows = data["list"]
     as_on = data.get("asOnDate", "")
     times = load_times()
+    est_lookup, _est_recs = load_estimates()
 
     by_date = {}
     total = 0
@@ -201,6 +234,7 @@ def build_html(data):
             "mcap": r.get("marketCap"),
             "exch": r.get("exchange") or "",
             "time": tm,
+            "est": est_lookup.get(est_norm(name)),
         })
         total += 1
 
@@ -210,6 +244,8 @@ def build_html(data):
     grids = "".join(month_grid(y, m, by_date, today) for y, m in months)
 
     generated = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
+    est_nav = ('<a class="estlink" href="estimates.html" target="_blank" '
+               'rel="noopener">&#128202; Broker estimates &rarr;</a>' if est_lookup else "")
     first_day = min(by_date) if by_date else None
     last_day = max(by_date) if by_date else None
     span = (f"{first_day.strftime('%d %b')} &ndash; {last_day.strftime('%d %b %Y')}"
@@ -245,6 +281,8 @@ def build_html(data):
   .search input:focus {{ border-color:var(--accent); }}
   .chip {{ font-size:12px; color:var(--mut); }}
   .chip b {{ color:var(--ink); }}
+  a.estlink {{ font-size:12px; color:var(--accent); text-decoration:none; font-weight:700; }}
+  a.estlink:hover {{ text-decoration:underline; }}
   main {{ padding:20px 26px 60px; }}
   .month {{ margin-bottom:34px; }}
   .month h2 {{ font-size:17px; margin:0 0 10px; font-weight:650; }}
@@ -274,6 +312,9 @@ def build_html(data):
   .co .tm {{ color:var(--mut); font-weight:600; font-size:10px; }}
   a.co:hover {{ background:var(--accent); color:#fff; }}
   a.co:hover .tm {{ color:#dbe4ff; }}
+  /* companies that have a broker estimate: subtle left accent bar + hint */
+  a.co.hasEst {{ box-shadow:inset 3px 0 0 var(--green); }}
+  a.co.hasEst:hover {{ background:var(--green); box-shadow:none; }}
   .co.dim {{ opacity:.14; }}
   .cell.nomatch {{ opacity:.4; }}
   footer {{ padding:16px 26px 40px; color:var(--mut); font-size:12px;
@@ -297,6 +338,7 @@ def build_html(data):
        placeholder="Search a company&hellip; (e.g. Reliance, TCS, Infosys)"></div>
     <div class="chip">Source: <b>MoneyControl</b> &middot; data as on <b>{escape(as_on)}</b></div>
     <div class="chip">Updated <b>{generated}</b></div>
+    {est_nav}
   </div>
 </header>
 <main>
@@ -334,6 +376,110 @@ def build_html(data):
 """
 
 
+def _cr(v):
+    """Rs million -> Rs crore, formatted with thousands separators."""
+    if v is None:
+        return "&mdash;"
+    return f"{round(v / 10):,}"
+
+
+def build_estimates_html(records):
+    """Standalone estimates page (all covered companies), opened in a new tab."""
+    generated = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
+    recs = sorted(records, key=lambda r: r["name"].lower())
+    cards = []
+    for rec in recs:
+        nm = escape(rec["name"])
+        n = rec.get("n") or 0
+        margin = rec.get("margin")
+        mg = f"{margin * 100:.1f}%" if isinstance(margin, (int, float)) else "&mdash;"
+        cards.append(f"""<div class="ecard" id="{rec['slug']}">
+  <div class="ename">{nm}</div>
+  <div class="metrics">
+    <div class="m"><span class="ml">Revenue</span><span class="mv">{_cr(rec.get('rev'))}</span></div>
+    <div class="m"><span class="ml">EBITDA</span><span class="mv">{_cr(rec.get('ebitda'))}</span></div>
+    <div class="m"><span class="ml">EBITDA margin</span><span class="mv">{mg}</span></div>
+    <div class="m"><span class="ml">PAT</span><span class="mv">{_cr(rec.get('pat'))}</span></div>
+  </div>
+  <div class="efoot">Average of {n} broker{'s' if n != 1 else ''} &middot; Q1&nbsp;FY27E</div>
+</div>""")
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q1 FY27 Broker Estimates &mdash; Indian Listed Companies</title>
+<style>
+  :root {{ --bg:#0f1420; --panel:#151b2b; --card:#161d2c; --line:#28324a;
+    --ink:#e7ecf5; --mut:#8b97ad; --accent:#4f8cff; --green:#26a269; }}
+  * {{ box-sizing:border-box; }}
+  body {{ margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }}
+  header {{ padding:22px 26px 14px; border-bottom:1px solid var(--line);
+    position:sticky; top:0; background:var(--bg); z-index:5; }}
+  h1 {{ margin:0 0 4px; font-size:21px; }}
+  .sub {{ color:var(--mut); font-size:13px; }}
+  .sub b {{ color:var(--ink); }}
+  a.back {{ color:var(--accent); text-decoration:none; font-size:13px; font-weight:600; }}
+  a.back:hover {{ text-decoration:underline; }}
+  .bar {{ display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; margin-top:12px; }}
+  .search {{ flex:1; min-width:220px; max-width:420px; }}
+  .search input {{ width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--line);
+    background:var(--panel); color:var(--ink); font-size:14px; outline:none; }}
+  .search input:focus {{ border-color:var(--accent); }}
+  main {{ padding:20px 26px 60px; display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }}
+  .ecard {{ background:var(--card); border:1px solid var(--line); border-radius:11px;
+    padding:13px 14px; scroll-margin-top:120px; }}
+  .ecard.nomatch {{ display:none; }}
+  .ename {{ font-size:14.5px; font-weight:650; margin-bottom:10px; text-wrap:balance; }}
+  .metrics {{ display:grid; grid-template-columns:1fr 1fr; gap:9px 12px; }}
+  .m {{ display:flex; flex-direction:column; gap:1px; }}
+  .ml {{ font-size:10.5px; color:var(--mut); text-transform:uppercase; letter-spacing:.4px; }}
+  .mv {{ font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; }}
+  .efoot {{ margin-top:11px; padding-top:9px; border-top:1px solid var(--line);
+    font-size:11px; color:var(--mut); }}
+  .ecard:target {{ border-color:var(--accent);
+    box-shadow:0 0 0 2px var(--accent) inset, 0 0 22px rgba(79,140,255,.45); }}
+  footer {{ padding:16px 26px 44px; color:var(--mut); font-size:12px; border-top:1px solid var(--line); }}
+  @media (max-width:640px) {{ main {{ padding:14px 12px 50px; }} header {{ padding:16px 12px 12px; }} }}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="index.html">&larr; Back to calendar</a>
+  <h1 style="margin-top:8px">Q1&nbsp;FY27 Broker Estimates &mdash; Averages</h1>
+  <div class="sub">Consensus for <b>Apr&ndash;Jun 2026</b> (reported Jul&ndash;Aug) &middot;
+     average of <b>MOSL / Kotak / Ambit</b> &middot; <b>{len(recs)}</b> companies.
+     All figures in <b>&#8377; crore</b> (EBITDA margin in %).</div>
+  <div class="bar">
+    <div class="search"><input id="q" type="search"
+       placeholder="Search a company&hellip; (e.g. Reliance, Infosys, Bajaj)"></div>
+  </div>
+</header>
+<main id="grid">
+{"".join(cards)}
+</main>
+<footer>
+  Estimates are broker previews (averaged), <b>not actuals</b>. Revenue = Revenue/NII, EBITDA = EBITDA/PPOP,
+  PAT = net profit, as reported by MOSL, Kotak (KIE) and Ambit for Q1&nbsp;FY27E. Updated {generated}.
+  Open a company from the calendar to jump straight to its card.
+</footer>
+<script>
+  const q = document.getElementById('q');
+  const cards = [...document.querySelectorAll('.ecard')];
+  q.addEventListener('input', () => {{
+    const t = q.value.trim().toLowerCase();
+    cards.forEach(c => c.classList.toggle('nomatch',
+      t && !c.querySelector('.ename').textContent.toLowerCase().includes(t)));
+  }});
+</script>
+</body>
+</html>
+"""
+
+
 def main():
     try:
         data = fetch()
@@ -343,6 +489,10 @@ def main():
     OUT_JSON.write_text(json.dumps(data, indent=1), encoding="utf-8")
     html = build_html(data)
     OUT_HTML.write_text(html, encoding="utf-8")
+    # estimates tab (all covered companies), if the estimates file is present
+    _lookup, est_recs = load_estimates()
+    if est_recs:
+        OUT_EST_HTML.write_text(build_estimates_html(est_recs), encoding="utf-8")
     n = sum(1 for r in data["list"] if RESULT_TYPE_LABEL in (r.get("resultType") or ""))
     print(f"OK  {n} companies  ->  {OUT_HTML.name}")
     return 0
