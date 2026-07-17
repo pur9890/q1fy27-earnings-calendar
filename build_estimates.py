@@ -1,22 +1,32 @@
 #!/usr/bin/env python3
 """
-Reads the broker-estimates workbook (Sheet1, which already averages MOSL/Kotak/
-Ambit) and writes estimates.json for the calendar to consume.
+Reads the broker-estimates workbook (Sheet1) and writes estimates.json.
+
+Sheet1 holds, per company, each broker's Q1 FY27E estimate (MOSL, Kotak, Ambit,
+Spark, I-Sec) plus their Average. For every metric we keep the average and the
+low/high across whichever brokers actually have a number, so the site can show
+e.g.  Revenue 1,263 (1,206 - 1,285).
 
 Run whenever the Excel changes:
     python build_estimates.py
 
-Only the AVERAGE across brokers is kept (Revenue, EBITDA, EBITDA margin, PAT),
-plus how many brokers contributed. Values are in Rs million (as in the sheet).
+Values stay in Rs million (the site converts to Rs crore). Companies covered by
+only one broker get no range - low/high would just repeat the single number.
 """
 import json
-import re
 from pathlib import Path
 
 import openpyxl
 
-XLSX = Path(r"C:\Users\lenovo\Desktop\MOSL & KIE Estimate Q1FY27.xlsx")
+XLSX = Path(r"C:\Users\lenovo\Desktop\MOSL & KIE Estimate Q1FY27 (version 1).xlsx")
 OUT = Path(__file__).with_name("estimates.json")
+
+BROKERS = ["MOSL", "Kotak", "Ambit", "Spark", "I-Sec"]
+
+# Sheet1 layout (0-based). Row 1 = metric group, row 2 = broker, data from row 3.
+C_NAME = 0
+C_ALIAS = [1, 2, 3, 4]          # Kotak / Ambit / Spark / I-Sec names
+C_REV, C_EBITDA, C_MARGIN, C_PAT = 5, 11, 17, 23      # each: 5 brokers then Average
 
 # Verified extra aliases: map a record (by its MOSL name) to the exact
 # MoneyControl calendar name(s), so the calendar links resolve reliably.
@@ -44,16 +54,27 @@ EXTRA_ALIASES = {
     "Union Bank": ["Union Bank of India"],
 }
 
-# Sheet1 column indices (0-based)
-C_MOSL, C_KOTAK, C_AMBIT = 0, 1, 2
-C_REV = [3, 4, 5, 6]        # MOSL, Kotak, Ambit, Average
-C_EBITDA = [7, 8, 9, 10]
-C_MARGIN = [11, 12, 13, 14]
-C_PAT = [15, 16, 17, 18]
-
 
 def num(v):
     return v if isinstance(v, (int, float)) else None
+
+
+def metric(row, start):
+    """Average + low/high across the brokers that have a number for this metric.
+    Returns None when nobody covers it; 'n' is how many brokers contributed."""
+    vals = [num(row[i]) for i in range(start, start + len(BROKERS))]
+    who = [(BROKERS[i], v) for i, v in enumerate(vals) if v is not None]
+    if not who:
+        return None
+    avg = num(row[start + len(BROKERS)])          # the sheet's own Average column
+    if avg is None:
+        avg = sum(v for _, v in who) / len(who)
+    lo = min(who, key=lambda x: x[1])
+    hi = max(who, key=lambda x: x[1])
+    out = {"avg": avg, "n": len(who)}
+    if len(who) > 1:                              # a range only means something with 2+
+        out.update({"min": lo[1], "max": hi[1], "minBy": lo[0], "maxBy": hi[0]})
+    return out
 
 
 def main():
@@ -63,27 +84,31 @@ def main():
 
     records = []
     for r in rows[2:]:
-        name = (r[C_MOSL] or "").strip() if r[C_MOSL] else ""
-        if not name:
+        # Every company in Sheet1 counts. MOSL doesn't cover all of them, so fall
+        # back to whichever broker names the company (Kotak/Ambit/Spark/I-Sec).
+        names = [str(r[i]).strip() for i in [C_NAME] + C_ALIAS
+                 if r[i] and str(r[i]).strip()]
+        if not names:
             continue
-        rev, ebitda, margin, pat = (num(r[C_REV[3]]), num(r[C_EBITDA[3]]),
-                                    num(r[C_MARGIN[3]]), num(r[C_PAT[3]]))
-        if rev is None and ebitda is None and pat is None:
+        name = names[0]
+        rev, ebitda = metric(r, C_REV), metric(r, C_EBITDA)
+        margin, pat = metric(r, C_MARGIN), metric(r, C_PAT)
+        if not any((rev, ebitda, pat)):
             continue
-        # how many brokers contributed (based on the revenue columns)
-        n = sum(1 for c in C_REV[:3] if num(r[c]) is not None)
-        aliases = [a.strip() for a in (r[C_KOTAK], r[C_AMBIT]) if a and str(a).strip()]
-        aliases += EXTRA_ALIASES.get(name, [])
+        aliases = names[1:] + EXTRA_ALIASES.get(name, [])
         records.append({
             "name": name,
-            "aliases": aliases,
+            "aliases": sorted(set(aliases)),
             "rev": rev, "ebitda": ebitda, "margin": margin, "pat": pat,
-            "n": n,
+            "n": max((m["n"] for m in (rev, ebitda, margin, pat) if m), default=0),
         })
 
     OUT.write_text(json.dumps({"records": records}, ensure_ascii=False, indent=0),
                    encoding="utf-8")
-    print(f"DONE  {len(records)} companies with estimates  ->  {OUT.name}")
+    ranged = sum(1 for x in records if (x["rev"] or {}).get("min") is not None)
+    print(f"DONE  {len(records)} companies  ->  {OUT.name}")
+    print(f"      {ranged} have a revenue range (2+ brokers), "
+          f"{len(records) - ranged} single-broker")
 
 
 if __name__ == "__main__":

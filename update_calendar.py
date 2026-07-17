@@ -378,30 +378,52 @@ def build_html(data):
 
 def _cr(v):
     """Rs million -> Rs crore, formatted with thousands separators."""
-    if v is None:
-        return "&mdash;"
-    return f"{round(v / 10):,}"
+    return "&mdash;" if v is None else f"{round(v / 10):,}"
+
+
+def _pct(v):
+    return "&mdash;" if v is None else f"{v * 100:.1f}%"
+
+
+def _metric(label, m, kind="cr"):
+    """One metric: average, plus the low-high range across brokers when 2+ cover it."""
+    fmt = _cr if kind == "cr" else _pct
+    if not m:
+        return f'<div class="m"><span class="ml">{label}</span><span class="mv">&mdash;</span></div>'
+    bar = ""
+    if m.get("min") is not None and m.get("max") is not None:
+        lo, hi = m["min"], m["max"]
+        spread = hi - lo
+        pos = ((m["avg"] - lo) / spread * 100) if spread else 50
+        pos = max(0.0, min(100.0, pos))
+        tip = escape(f"Low {fmt(lo).replace('&mdash;','-')} ({m.get('minBy','')}) "
+                     f"/ High {fmt(hi).replace('&mdash;','-')} ({m.get('maxBy','')})")
+        bar = (f'<span class="track" title="{tip}"><i style="left:{pos:.0f}%"></i></span>'
+               f'<span class="rg">{fmt(lo)} &ndash; {fmt(hi)}</span>')
+    return (f'<div class="m"><span class="ml">{label}</span>'
+            f'<span class="mv">{fmt(m["avg"])}</span>{bar}</div>')
 
 
 def build_estimates_html(records):
     """Standalone estimates page (all covered companies), opened in a new tab."""
     generated = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
     recs = sorted(records, key=lambda r: r["name"].lower())
+    ranged = sum(1 for r in recs if (r.get("rev") or {}).get("min") is not None)
     cards = []
     for rec in recs:
         nm = escape(rec["name"])
         n = rec.get("n") or 0
-        margin = rec.get("margin")
-        mg = f"{margin * 100:.1f}%" if isinstance(margin, (int, float)) else "&mdash;"
+        foot = (f"Average of {n} brokers &middot; range = low&ndash;high" if n > 1
+                else "1 broker &middot; no range")
         cards.append(f"""<div class="ecard" id="{rec['slug']}">
   <div class="ename">{nm}</div>
   <div class="metrics">
-    <div class="m"><span class="ml">Revenue</span><span class="mv">{_cr(rec.get('rev'))}</span></div>
-    <div class="m"><span class="ml">EBITDA</span><span class="mv">{_cr(rec.get('ebitda'))}</span></div>
-    <div class="m"><span class="ml">EBITDA margin</span><span class="mv">{mg}</span></div>
-    <div class="m"><span class="ml">PAT</span><span class="mv">{_cr(rec.get('pat'))}</span></div>
+    {_metric('Revenue', rec.get('rev'))}
+    {_metric('EBITDA', rec.get('ebitda'))}
+    {_metric('EBITDA margin', rec.get('margin'), 'pct')}
+    {_metric('PAT', rec.get('pat'))}
   </div>
-  <div class="efoot">Average of {n} broker{'s' if n != 1 else ''} &middot; Q1&nbsp;FY27E</div>
+  <div class="efoot">{foot} &middot; Q1&nbsp;FY27E</div>
 </div>""")
 
     return f"""<!DOCTYPE html>
@@ -428,7 +450,7 @@ def build_estimates_html(records):
   .search input {{ width:100%; padding:9px 12px; border-radius:8px; border:1px solid var(--line);
     background:var(--panel); color:var(--ink); font-size:14px; outline:none; }}
   .search input:focus {{ border-color:var(--accent); }}
-  main {{ padding:20px 26px 60px; display:grid;
+  main {{ padding:20px 26px 60px; display:grid; align-items:start;
     grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }}
   .ecard {{ background:var(--card); border:1px solid var(--line); border-radius:11px;
     padding:13px 14px; scroll-margin-top:120px; }}
@@ -438,6 +460,11 @@ def build_estimates_html(records):
   .m {{ display:flex; flex-direction:column; gap:1px; }}
   .ml {{ font-size:10.5px; color:var(--mut); text-transform:uppercase; letter-spacing:.4px; }}
   .mv {{ font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; }}
+  .track {{ display:block; height:3px; background:var(--line); border-radius:2px;
+    margin:6px 0 4px; position:relative; }}
+  .track i {{ position:absolute; top:-2px; width:3px; height:7px; background:var(--accent);
+    border-radius:1px; }}
+  .rg {{ font-size:11px; color:var(--mut); font-variant-numeric:tabular-nums; }}
   .efoot {{ margin-top:11px; padding-top:9px; border-top:1px solid var(--line);
     font-size:11px; color:var(--mut); }}
   .ecard:target {{ border-color:var(--accent);
@@ -451,8 +478,11 @@ def build_estimates_html(records):
   <a class="back" href="index.html">&larr; Back to calendar</a>
   <h1 style="margin-top:8px">Q1&nbsp;FY27 Broker Estimates &mdash; Averages</h1>
   <div class="sub">Consensus for <b>Apr&ndash;Jun 2026</b> (reported Jul&ndash;Aug) &middot;
-     average of <b>MOSL / Kotak / Ambit</b> &middot; <b>{len(recs)}</b> companies.
-     All figures in <b>&#8377; crore</b> (EBITDA margin in %).</div>
+     average of <b>MOSL / Kotak / Ambit / Spark / I-Sec</b> &middot; <b>{len(recs)}</b> companies.
+     All figures in <b>&#8377; crore</b> (EBITDA margin in %).<br>
+     The big number is the <b>average</b>; below it the <b>low&ndash;high</b> across brokers,
+     with the tick showing where the average sits ({ranged} companies have 2+ brokers;
+     the rest are covered by one broker, so no range).</div>
   <div class="bar">
     <div class="search"><input id="q" type="search"
        placeholder="Search a company&hellip; (e.g. Reliance, Infosys, Bajaj)"></div>
