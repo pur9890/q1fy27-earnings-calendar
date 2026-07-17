@@ -545,13 +545,19 @@ def build_estimates_html(records):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Q1 FY27 Broker Estimates &mdash; Indian Listed Companies</title>
 <style>
-  :root {{ --bg:#0f1420; --panel:#151b2b; --card:#161d2c; --line:#28324a;
-    --ink:#e7ecf5; --mut:#8b97ad; --accent:#4f8cff; --green:#26a269; }}
+  :root {{ --bg:#0e131f; --panel:#151b2b; --card:#161d2c; --line:#28324a;
+    --ink:#e7ecf5; --mut:#8b97ad; --accent:#4f8cff; --green:#2bb673; }}
+  :root.light {{ --bg:#f3f5fa; --panel:#ffffff; --card:#ffffff; --line:#e0e5ef;
+    --ink:#16202f; --mut:#66707f; --accent:#2f6bff; --green:#159060; }}
   * {{ box-sizing:border-box; }}
   body {{ margin:0; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }}
   header {{ padding:22px 26px 14px; border-bottom:1px solid var(--line);
     position:sticky; top:0; background:var(--bg); z-index:5; }}
+  .toprow {{ display:flex; align-items:center; justify-content:space-between; gap:10px; }}
+  .themebtn {{ background:var(--panel); border:1px solid var(--line); color:var(--ink);
+    font-size:15px; line-height:1; padding:7px 10px; border-radius:8px; cursor:pointer; }}
+  .themebtn:hover {{ border-color:var(--accent); }}
   h1 {{ margin:0 0 4px; font-size:21px; }}
   .sub {{ color:var(--mut); font-size:13px; }}
   .sub b {{ color:var(--ink); }}
@@ -587,7 +593,10 @@ def build_estimates_html(records):
 </head>
 <body>
 <header>
-  <a class="back" href="index.html">&larr; Back to calendar</a>
+  <div class="toprow">
+    <a class="back" href="index.html">&larr; Back to calendar</a>
+    <button id="themeBtn" class="themebtn" title="Switch light / dark" aria-label="Switch theme">&#9790;</button>
+  </div>
   <h1 style="margin-top:8px">Q1&nbsp;FY27 Broker Estimates &mdash; Averages</h1>
   <div class="sub">Consensus for <b>Apr&ndash;Jun 2026</b> (reported Jul&ndash;Aug) &middot;
      average of <b>MOSL / Kotak / Ambit / Spark / I-Sec</b> &middot; <b>{len(recs)}</b> companies.
@@ -609,6 +618,18 @@ def build_estimates_html(records):
   Open a company from the calendar to jump straight to its card.
 </footer>
 <script>
+  // light / dark theme, shared with the calendar via the same saved preference
+  const root = document.documentElement, tb = document.getElementById('themeBtn');
+  function applyTheme(t) {{
+    root.classList.toggle('light', t === 'light');
+    tb.innerHTML = t === 'light' ? '&#9728;' : '&#9790;';
+  }}
+  applyTheme(localStorage.getItem('cal-theme') || 'dark');
+  tb.addEventListener('click', () => {{
+    const t = root.classList.contains('light') ? 'dark' : 'light';
+    localStorage.setItem('cal-theme', t); applyTheme(t);
+  }});
+
   const q = document.getElementById('q');
   const cards = [...document.querySelectorAll('.ecard')];
   q.addEventListener('input', () => {{
