@@ -139,6 +139,32 @@ def parse_iso(datestr):
 # ---------------------------------------------------------------------------
 # HTML rendering
 # ---------------------------------------------------------------------------
+def company_chip(c, dlabel=""):
+    """One clickable company chip (links to its estimate, else MoneyControl)."""
+    nm = escape(c["name"])
+    url = escape(c["url"]) if c.get("url") else ""
+    mc, tm = c.get("mcap"), c.get("time")
+    bits = []
+    if mc:
+        bits.append(f"Mkt cap: Rs {mc:,.0f} cr")
+    if tm:
+        bits.append(f"Approx. time (from last quarter): {tm}")
+    tip = escape(" · ".join(bits))
+    dattr = f' data-d="{escape(dlabel)}"' if dlabel else ""
+    tspan = f' <span class="tm">({escape(tm)})</span>' if tm else ""
+    inner = f'<span class="nm">{nm}</span>{tspan}'
+    slug = c.get("est")
+    if slug:
+        etip = escape((" · " if tip else "") + "Click: Q1FY27 estimates (broker avg)")
+        return (f'<a class="co hasEst" href="estimates.html#{slug}" target="_blank" '
+                f'rel="noopener" title="{tip}{etip}" data-name="{nm.lower()}"{dattr}>{inner}</a>')
+    tip_attr = f' title="{tip}"' if tip else ""
+    if url:
+        return (f'<a class="co" href="{url}" target="_blank" rel="noopener"{tip_attr} '
+                f'data-name="{nm.lower()}"{dattr}>{inner}</a>')
+    return f'<span class="co"{tip_attr} data-name="{nm.lower()}"{dattr}>{inner}</span>'
+
+
 def month_grid(year, month, by_date, today=None):
     """Return HTML for one month's calendar grid (Mon-first weeks)."""
     first = date(year, month, 1)
@@ -163,38 +189,13 @@ def month_grid(year, month, by_date, today=None):
             cls += " today"
         today_tag = '<span class="todaytag">TODAY</span>' if is_today else ""
         cnt_badge = f'<span class="cnt">{len(comps)}</span>' if comps else ""
-        head = (f'<div class="{cls}"{" id=\"today\"" if is_today else ""}>'
+        idattr = ' id="today"' if is_today else ""
+        head = (f'<div class="{cls}"{idattr} data-date="{d.isoformat()}">'
                 f'<div class="dnum"><span class="dl">{dnum}{today_tag}</span>{cnt_badge}</div>')
         if comps:
-            items = []
-            for c in comps:
-                nm = escape(c["name"])
-                url = escape(c["url"]) if c.get("url") else ""
-                mc = c.get("mcap")
-                tm = c.get("time")
-                mc_bits = []
-                if mc:
-                    mc_bits.append(f"Mkt cap: Rs {mc:,.0f} cr")
-                if tm:
-                    mc_bits.append(f"Approx. time (from last quarter): {tm}")
-                tip = escape(" · ".join(mc_bits))
-                tip_attr = f' title="{tip}"' if tip else ""
-                tspan = f' <span class="tm">({escape(tm)})</span>' if tm else ""
-                inner = f'<span class="nm">{nm}</span>{tspan}'
-                slug = c.get("est")
-                if slug:
-                    # link to the estimates tab (opens in a new tab)
-                    etip = escape((" · " if tip else "") + "Click: Q1FY27 estimates (broker avg)")
-                    items.append(f'<a class="co hasEst" href="estimates.html#{slug}" '
-                                 f'target="_blank" rel="noopener" title="{tip}{etip}" '
-                                 f'data-name="{nm.lower()}">{inner}</a>')
-                elif url:
-                    items.append(f'<a class="co" href="{url}" target="_blank" '
-                                 f'rel="noopener"{tip_attr} data-name="{nm.lower()}">{inner}</a>')
-                else:
-                    items.append(f'<span class="co"{tip_attr} '
-                                 f'data-name="{nm.lower()}">{inner}</span>')
-            head += '<div class="colist">' + "".join(items) + '</div>'
+            dlabel = d.strftime("%d %b")
+            head += ('<div class="colist">'
+                     + "".join(company_chip(c, dlabel) for c in comps) + '</div>')
         head += '</div>'
         cells.append(head)
 
@@ -209,6 +210,31 @@ def month_grid(year, month, by_date, today=None):
     return (f'<section class="month">'
             f'<h2>{label} <span class="mtot">{total} companies</span></h2>'
             f'<div class="grid">{dows}{"".join(cells)}</div></section>')
+
+
+def today_banner(by_date, today):
+    """Prominent pop-out: who reports today (or the next reporting day)."""
+    todays = by_date.get(today, [])
+    if todays:
+        chips = "".join(company_chip(c) for c in todays)
+        noun = "company" if len(todays) == 1 else "companies"
+        return (f'<div class="banner" id="banner">'
+                f'<div class="bhead"><span class="bdot"></span>'
+                f'<b>Reporting today</b> &middot; {today.strftime("%a, %d %b %Y")} '
+                f'&middot; {len(todays)} {noun}'
+                f'<button class="bjump" onclick="jumpEl(document.getElementById(\'today\'))">'
+                f'Jump to today &darr;</button></div>'
+                f'<div class="blist">{chips}</div></div>')
+    future = sorted(dd for dd in by_date if dd > today)
+    if future:
+        nd = future[0]
+        n = len(by_date[nd])
+        return (f'<div class="banner none" id="banner">'
+                f'<span class="bdot mute"></span> No results scheduled for '
+                f'<b>today ({today.strftime("%d %b")})</b>. Next reporting day: '
+                f'<b>{nd.strftime("%a, %d %b")}</b> &middot; {n} companies '
+                f'<button class="bjump" onclick="jumpDate(\'{nd.isoformat()}\')">Show &darr;</button></div>')
+    return ""
 
 
 def build_html(data):
@@ -249,6 +275,7 @@ def build_html(data):
     today = datetime.now(IST).date()
     months = sorted({(d.year, d.month) for d in by_date})
     grids = "".join(month_grid(y, m, by_date, today) for y, m in months)
+    banner = today_banner(by_date, today)
 
     generated = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
     est_nav = ('<a class="estlink" href="estimates.html" target="_blank" '
@@ -266,31 +293,63 @@ def build_html(data):
 <title>{QUARTER_TITLE} Earnings Calendar &mdash; Indian Listed Companies</title>
 <style>
   :root {{
-    --bg:#0f1420; --panel:#151b2b; --cell:#1a2233; --cell2:#161d2c;
+    --bg:#0e131f; --panel:#151b2b; --cell2:#161d2c;
     --line:#28324a; --ink:#e7ecf5; --mut:#8b97ad; --accent:#4f8cff;
-    --has:#1d2740; --wk:#141a28; --cobg:#222d45; --green:#26a269;
-    --todaybg:#1b2b4d;
+    --has:#1a2438; --wk:#131926; --cobg:#232d47; --green:#2bb673;
+    --todaybg:#17284a; --todayco:#2b4675; --amber:#f0a83c; --flash:#3a63c7;
+  }}
+  :root.light {{
+    --bg:#f3f5fa; --panel:#ffffff; --cell2:#ffffff;
+    --line:#e0e5ef; --ink:#16202f; --mut:#66707f; --accent:#2f6bff;
+    --has:#eef4ff; --wk:#eff1f6; --cobg:#eef2f9; --green:#159060;
+    --todaybg:#e2ecff; --todayco:#d3e2ff; --amber:#c67c12; --flash:#bcd2ff;
   }}
   * {{ box-sizing:border-box; }}
   body {{ margin:0; background:var(--bg); color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }}
-  header {{ padding:22px 26px 14px; border-bottom:1px solid var(--line);
-    position:sticky; top:0; background:var(--bg); z-index:5; }}
+  header {{ padding:20px 26px 14px; border-bottom:1px solid var(--line);
+    position:sticky; top:0; background:var(--bg); z-index:20; }}
   h1 {{ margin:0 0 4px; font-size:22px; letter-spacing:.2px; }}
   .sub {{ color:var(--mut); font-size:13px; }}
   .sub b {{ color:var(--ink); }}
-  .bar {{ display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center;
-    margin-top:12px; }}
-  .search {{ flex:1; min-width:220px; max-width:420px; }}
+  .bar {{ display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; margin-top:12px; }}
+  .search {{ flex:1; min-width:220px; max-width:430px; position:relative; }}
   .search input {{ width:100%; padding:9px 12px; border-radius:8px;
     border:1px solid var(--line); background:var(--panel); color:var(--ink);
     font-size:14px; outline:none; }}
   .search input:focus {{ border-color:var(--accent); }}
+  .sresults {{ display:none; position:absolute; left:0; right:0; top:calc(100% + 4px);
+    background:var(--panel); border:1px solid var(--line); border-radius:9px;
+    box-shadow:0 12px 30px rgba(0,0,0,.35); max-height:320px; overflow-y:auto; z-index:30; }}
+  .sr {{ display:flex; justify-content:space-between; gap:10px; align-items:center;
+    padding:8px 12px; font-size:13px; cursor:pointer; border-bottom:1px solid var(--line); }}
+  .sr:last-child {{ border-bottom:none; }}
+  .sr:hover, .sr.act {{ background:var(--has); }}
+  .sr .srd {{ color:var(--accent); font-size:12px; font-weight:700; white-space:nowrap; }}
+  .sr.none {{ color:var(--mut); cursor:default; }}
   .chip {{ font-size:12px; color:var(--mut); }}
   .chip b {{ color:var(--ink); }}
   a.estlink {{ font-size:12px; color:var(--accent); text-decoration:none; font-weight:700; }}
   a.estlink:hover {{ text-decoration:underline; }}
-  main {{ padding:20px 26px 60px; }}
+  .themebtn {{ margin-left:auto; background:var(--panel); border:1px solid var(--line);
+    color:var(--ink); font-size:15px; line-height:1; padding:7px 10px; border-radius:8px;
+    cursor:pointer; }}
+  .themebtn:hover {{ border-color:var(--accent); }}
+  /* today pop-out banner */
+  .banner {{ margin:16px 26px 0; padding:12px 15px; border-radius:11px;
+    background:var(--todaybg); border:1px solid var(--accent); }}
+  .banner.none {{ background:var(--panel); border-color:var(--line); color:var(--mut);
+    font-size:13.5px; }}
+  .bhead {{ display:flex; align-items:center; gap:8px; font-size:14px; flex-wrap:wrap; }}
+  .bdot {{ width:9px; height:9px; border-radius:50%; background:var(--amber);
+    box-shadow:0 0 0 4px color-mix(in srgb,var(--amber) 30%,transparent); }}
+  .bdot.mute {{ background:var(--mut); box-shadow:none; }}
+  .bjump {{ background:var(--accent); color:#fff; border:none; border-radius:7px;
+    font-size:12px; font-weight:700; padding:4px 10px; cursor:pointer; }}
+  .bjump:hover {{ filter:brightness(1.08); }}
+  .blist {{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }}
+  .blist .co {{ display:inline-block; }}
+  main {{ padding:18px 26px 60px; }}
   .month {{ margin-bottom:34px; }}
   .month h2 {{ font-size:17px; margin:0 0 10px; font-weight:650; }}
   .mtot {{ font-size:12px; color:var(--mut); font-weight:500; margin-left:6px; }}
@@ -298,13 +357,15 @@ def build_html(data):
   .dow {{ text-align:center; font-size:11px; color:var(--mut);
     text-transform:uppercase; letter-spacing:.6px; padding:2px 0 4px; }}
   .cell {{ min-height:96px; background:var(--cell2); border:1px solid var(--line);
-    border-radius:9px; padding:6px 6px 7px; overflow:hidden; }}
+    border-radius:9px; padding:6px 6px 7px; overflow:hidden; scroll-margin-top:130px; }}
   .cell.weekend {{ background:var(--wk); }}
   .cell.has {{ background:var(--has); }}
   .cell.empty {{ background:transparent; border:none; }}
-  .cell.today {{ border-color:var(--accent); box-shadow:0 0 0 2px var(--accent) inset,
-    0 0 18px rgba(79,140,255,.40); background:var(--todaybg); }}
+  .cell.today {{ border-color:var(--accent); border-width:2px; padding:5px 5px 6px;
+    box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent);
+    background:var(--todaybg); }}
   .cell.today .dnum {{ color:var(--accent); }}
+  .cell.today .co {{ background:var(--todayco); }}
   .dl {{ display:inline-flex; align-items:center; gap:6px; }}
   .todaytag {{ background:var(--accent); color:#fff; font-size:8.5px; font-weight:800;
     padding:1px 6px; border-radius:20px; letter-spacing:.6px; }}
@@ -319,17 +380,18 @@ def build_html(data):
   .co .tm {{ color:var(--mut); font-weight:600; font-size:10px; }}
   a.co:hover {{ background:var(--accent); color:#fff; }}
   a.co:hover .tm {{ color:#dbe4ff; }}
-  /* companies that have a broker estimate: subtle left accent bar + hint */
   a.co.hasEst {{ box-shadow:inset 3px 0 0 var(--green); }}
   a.co.hasEst:hover {{ background:var(--green); box-shadow:none; }}
-  .co.dim {{ opacity:.14; }}
-  .cell.nomatch {{ opacity:.4; }}
+  @keyframes coflash {{ 0%,55% {{ background:var(--flash); color:#fff; }} 100% {{}} }}
+  .co.flash {{ animation:coflash 1.7s ease-out; }}
+  @media (prefers-reduced-motion: reduce) {{ .co.flash {{ animation:none; outline:2px solid var(--accent); }} }}
   footer {{ padding:16px 26px 40px; color:var(--mut); font-size:12px;
     border-top:1px solid var(--line); }}
   footer a {{ color:var(--accent); }}
   @media (max-width:720px) {{
     .grid {{ gap:3px; }} .cell {{ min-height:70px; padding:4px; }}
-    .co {{ font-size:10.5px; }} main,header {{ padding-left:12px; padding-right:12px; }}
+    .co {{ font-size:10.5px; }}
+    main,header {{ padding-left:12px; padding-right:12px; }} .banner {{ margin:14px 12px 0; }}
   }}
 </style>
 </head>
@@ -341,14 +403,19 @@ def build_html(data):
      <b>{total}</b> companies across <b>{len(by_date)}</b> dates &middot;
      times in <b>(brackets)</b> = approx., based on last quarter&rsquo;s filing</div>
   <div class="bar">
-    <div class="search"><input id="q" type="search"
-       placeholder="Search a company&hellip; (e.g. Reliance, TCS, Infosys)"></div>
+    <div class="search">
+      <input id="q" type="search" autocomplete="off"
+         placeholder="Search a company&hellip; jumps to its result date">
+      <div id="sresults" class="sresults"></div>
+    </div>
     <div class="chip">Source: <b>MoneyControl</b> &middot; data as on <b>{escape(as_on)}</b></div>
     <div class="chip">Updated <b>{generated}</b></div>
     {est_nav}
+    <button id="themeBtn" class="themebtn" title="Switch light / dark" aria-label="Switch theme">&#9790;</button>
   </div>
 </header>
-<main>
+{banner}
+<main id="cal">
 {grids}
 </main>
 <footer>
@@ -359,24 +426,62 @@ def build_html(data):
   used here as a rough guide. Actual {QUARTER_TITLE} timing may differ, and some companies (mainly NSE-SME listings) have no time shown.
 </footer>
 <script>
-  // Bring today's highlighted cell into view on load.
+  // ---- light / dark theme (remembers your choice) ----
+  const root = document.documentElement, tb = document.getElementById('themeBtn');
+  function applyTheme(t) {{
+    root.classList.toggle('light', t === 'light');
+    tb.innerHTML = t === 'light' ? '&#9728;' : '&#9790;';   // sun / moon
+  }}
+  applyTheme(localStorage.getItem('cal-theme') || 'dark');
+  tb.addEventListener('click', () => {{
+    const t = root.classList.contains('light') ? 'dark' : 'light';
+    localStorage.setItem('cal-theme', t); applyTheme(t);
+  }});
+
+  // ---- jump helpers ----
+  function jumpEl(el) {{
+    if (!el) return;
+    (el.closest('.cell') || el).scrollIntoView({{block: 'center', behavior: 'smooth'}});
+    if (el.classList.contains('co')) {{
+      el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+    }}
+  }}
+  function jumpDate(iso) {{ jumpEl(document.querySelector('.cell[data-date="' + iso + '"]')); }}
+
+  // bring today into view on load
   (function () {{
     const t = document.getElementById('today');
-    if (t) setTimeout(() => t.scrollIntoView({{block: 'center', behavior: 'smooth'}}), 150);
+    if (t) setTimeout(() => t.scrollIntoView({{block: 'center', behavior: 'smooth'}}), 200);
   }})();
-  const q = document.getElementById('q');
-  const cos = [...document.querySelectorAll('.co')];
-  const cells = [...document.querySelectorAll('.cell.has')];
+
+  // ---- search that jumps straight to the result date ----
+  const q = document.getElementById('q'), box = document.getElementById('sresults');
+  const idx = [...document.querySelectorAll('#cal .co')].map(el => ({{
+    name: el.dataset.name || '', label: el.querySelector('.nm').textContent,
+    d: el.dataset.d || '', el
+  }}));
+  let hits = [], act = -1;
+  function render() {{
+    if (!hits.length) {{ box.innerHTML = '<div class="sr none">No matching company</div>'; box.style.display = 'block'; return; }}
+    box.innerHTML = hits.map((o, i) =>
+      '<div class="sr' + (i === act ? ' act' : '') + '" data-i="' + i + '">' +
+      '<span>' + o.label + '</span><span class="srd">' + o.d + '</span></div>').join('');
+    box.style.display = 'block';
+  }}
   q.addEventListener('input', () => {{
     const t = q.value.trim().toLowerCase();
-    if (!t) {{ cos.forEach(c=>c.classList.remove('dim'));
-              cells.forEach(c=>c.classList.remove('nomatch')); return; }}
-    cos.forEach(c => c.classList.toggle('dim', !c.dataset.name.includes(t)));
-    cells.forEach(cell => {{
-      const any = [...cell.querySelectorAll('.co')].some(c=>c.dataset.name.includes(t));
-      cell.classList.toggle('nomatch', !any);
-    }});
+    if (!t) {{ box.style.display = 'none'; hits = []; return; }}
+    hits = idx.filter(o => o.name.includes(t)).slice(0, 12); act = -1; render();
   }});
+  q.addEventListener('keydown', e => {{
+    if (e.key === 'ArrowDown') {{ e.preventDefault(); act = Math.min(act + 1, hits.length - 1); render(); }}
+    else if (e.key === 'ArrowUp') {{ e.preventDefault(); act = Math.max(act - 1, 0); render(); }}
+    else if (e.key === 'Enter' && hits.length) {{ e.preventDefault(); pick(act < 0 ? 0 : act); }}
+    else if (e.key === 'Escape') {{ box.style.display = 'none'; }}
+  }});
+  function pick(i) {{ const o = hits[i]; if (!o) return; box.style.display = 'none'; q.blur(); jumpEl(o.el); }}
+  box.addEventListener('mousedown', e => {{ const r = e.target.closest('.sr'); if (r && r.dataset.i) pick(+r.dataset.i); }});
+  document.addEventListener('click', e => {{ if (!e.target.closest('.search')) box.style.display = 'none'; }});
 </script>
 </body>
 </html>
