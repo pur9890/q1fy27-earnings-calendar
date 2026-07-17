@@ -140,10 +140,14 @@ def parse_iso(datestr):
 # HTML rendering
 # ---------------------------------------------------------------------------
 def company_chip(c, dlabel=""):
-    """One clickable company chip (links to its estimate, else MoneyControl)."""
+    """One clickable company chip (links to its estimate, else MoneyControl),
+    with a watchlist star. The star's key matches the estimate slug when the
+    company has one, so a star set here also shows on the estimates page."""
     nm = escape(c["name"])
     url = escape(c["url"]) if c.get("url") else ""
     mc, tm = c.get("mcap"), c.get("time")
+    slug = c.get("est")
+    key = slug if slug else "nm:" + est_norm(c["name"])
     bits = []
     if mc:
         bits.append(f"Mkt cap: Rs {mc:,.0f} cr")
@@ -151,18 +155,19 @@ def company_chip(c, dlabel=""):
         bits.append(f"Approx. time (from last quarter): {tm}")
     tip = escape(" · ".join(bits))
     dattr = f' data-d="{escape(dlabel)}"' if dlabel else ""
+    kattr = f' data-key="{escape(key)}"'
+    star = '<span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span>'
     tspan = f' <span class="tm">({escape(tm)})</span>' if tm else ""
-    inner = f'<span class="nm">{nm}</span>{tspan}'
-    slug = c.get("est")
+    inner = f'{star}<span class="nm">{nm}</span>{tspan}'
     if slug:
         etip = escape((" · " if tip else "") + "Click: Q1FY27 estimates (broker avg)")
         return (f'<a class="co hasEst" href="estimates.html#{slug}" target="_blank" '
-                f'rel="noopener" title="{tip}{etip}" data-name="{nm.lower()}"{dattr}>{inner}</a>')
+                f'rel="noopener" title="{tip}{etip}" data-name="{nm.lower()}"{dattr}{kattr}>{inner}</a>')
     tip_attr = f' title="{tip}"' if tip else ""
     if url:
         return (f'<a class="co" href="{url}" target="_blank" rel="noopener"{tip_attr} '
-                f'data-name="{nm.lower()}"{dattr}>{inner}</a>')
-    return f'<span class="co"{tip_attr} data-name="{nm.lower()}"{dattr}>{inner}</span>'
+                f'data-name="{nm.lower()}"{dattr}{kattr}>{inner}</a>')
+    return f'<span class="co"{tip_attr} data-name="{nm.lower()}"{dattr}{kattr}>{inner}</span>'
 
 
 def month_grid(year, month, by_date, today=None):
@@ -382,6 +387,23 @@ def build_html(data):
   a.co:hover .tm {{ color:#dbe4ff; }}
   a.co.hasEst {{ box-shadow:inset 3px 0 0 var(--green); }}
   a.co.hasEst:hover {{ background:var(--green); box-shadow:none; }}
+  /* watchlist star (padded for an easy tap target that won't trigger the link) */
+  .star {{ cursor:pointer; color:var(--mut); font-size:14px; line-height:1;
+    padding:3px 5px 3px 2px; margin:-3px 0 -3px -3px; opacity:.5; }}
+  .star:hover {{ opacity:1; color:var(--amber); }}
+  .co.starred .star {{ color:var(--amber); opacity:1; }}
+  a.co:hover .star {{ color:#fff; }}
+  a.co.starred:hover .star {{ color:#fff; }}
+  /* watchlist-only view: hide everything not starred */
+  body.wlonly .co:not(.starred) {{ display:none; }}
+  body.wlonly .cell.has:not(.hasstar) .colist {{ display:none; }}
+  .wlbtn {{ background:var(--panel); border:1px solid var(--line); color:var(--ink);
+    font-size:12px; font-weight:700; padding:7px 11px; border-radius:8px; cursor:pointer; }}
+  .wlbtn:hover {{ border-color:var(--amber); }}
+  .wlbtn.on {{ background:var(--amber); border-color:var(--amber); color:#241a00; }}
+  .wlhint {{ display:none; margin:14px 26px 0; padding:12px 15px; border-radius:10px;
+    background:var(--panel); border:1px dashed var(--line); color:var(--mut); font-size:13px; }}
+  body.wlonly .wlhint.show {{ display:block; }}
   @keyframes coflash {{ 0%,55% {{ background:var(--flash); color:#fff; }} 100% {{}} }}
   .co.flash {{ animation:coflash 1.7s ease-out; }}
   @media (prefers-reduced-motion: reduce) {{ .co.flash {{ animation:none; outline:2px solid var(--accent); }} }}
@@ -411,10 +433,13 @@ def build_html(data):
     <div class="chip">Source: <b>MoneyControl</b> &middot; data as on <b>{escape(as_on)}</b></div>
     <div class="chip">Updated <b>{generated}</b></div>
     {est_nav}
+    <button id="wlBtn" class="wlbtn" title="Show only my starred companies">&#9734; Watchlist</button>
     <button id="themeBtn" class="themebtn" title="Switch light / dark" aria-label="Switch theme">&#9790;</button>
   </div>
 </header>
 {banner}
+<div id="wlHint" class="wlhint">Your watchlist is empty. Click the <b>&#9734;</b> star on any
+  company to add it &mdash; it&rsquo;s saved in your browser, just for you.</div>
 <main id="cal">
 {grids}
 </main>
@@ -482,6 +507,35 @@ def build_html(data):
   function pick(i) {{ const o = hits[i]; if (!o) return; box.style.display = 'none'; q.blur(); jumpEl(o.el); }}
   box.addEventListener('mousedown', e => {{ const r = e.target.closest('.sr'); if (r && r.dataset.i) pick(+r.dataset.i); }});
   document.addEventListener('click', e => {{ if (!e.target.closest('.search')) box.style.display = 'none'; }});
+
+  // ---- watchlist (saved in your browser only; others still see everything) ----
+  const WL_KEY = 'cal-watchlist';
+  let wl = new Set();
+  try {{ wl = new Set(JSON.parse(localStorage.getItem(WL_KEY) || '[]')); }} catch (e) {{}}
+  const wlBtn = document.getElementById('wlBtn'), wlHint = document.getElementById('wlHint');
+  function paintStars() {{
+    document.querySelectorAll('.co[data-key]').forEach(el => {{
+      const on = wl.has(el.dataset.key);
+      el.classList.toggle('starred', on);
+      const s = el.querySelector('.star'); if (s) s.innerHTML = on ? '&#9733;' : '&#9734;';
+    }});
+    document.querySelectorAll('#cal .cell').forEach(c =>
+      c.classList.toggle('hasstar', !!c.querySelector('.co.starred')));
+    wlBtn.innerHTML = (wl.size ? '&#9733;' : '&#9734;') + ' Watchlist' + (wl.size ? ' (' + wl.size + ')' : '');
+  }}
+  function updateHint() {{ wlHint.classList.toggle('show', wl.size === 0); }}
+  document.addEventListener('click', e => {{
+    const s = e.target.closest('.star'); if (!s) return;
+    const chip = s.closest('.co'); if (!chip) return;
+    e.preventDefault(); e.stopPropagation();
+    const k = chip.dataset.key; wl.has(k) ? wl.delete(k) : wl.add(k);
+    localStorage.setItem(WL_KEY, JSON.stringify([...wl])); paintStars(); updateHint();
+  }}, true);
+  wlBtn.addEventListener('click', () => {{
+    const on = document.body.classList.toggle('wlonly');
+    wlBtn.classList.toggle('on', on); updateHint();
+  }});
+  paintStars();
 </script>
 </body>
 </html>
@@ -527,8 +581,8 @@ def build_estimates_html(records):
         n = rec.get("n") or 0
         foot = (f"Average of {n} brokers &middot; range = low&ndash;high" if n > 1
                 else "1 broker &middot; no range")
-        cards.append(f"""<div class="ecard" id="{rec['slug']}">
-  <div class="ename">{nm}</div>
+        cards.append(f"""<div class="ecard" id="{rec['slug']}" data-key="{rec['slug']}">
+  <div class="ehead"><span class="ename">{nm}</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <div class="metrics">
     {_metric('Revenue', rec.get('rev'))}
     {_metric('EBITDA', rec.get('ebitda'))}
@@ -573,7 +627,20 @@ def build_estimates_html(records):
   .ecard {{ background:var(--card); border:1px solid var(--line); border-radius:11px;
     padding:13px 14px; scroll-margin-top:120px; }}
   .ecard.nomatch {{ display:none; }}
-  .ename {{ font-size:14.5px; font-weight:650; margin-bottom:10px; text-wrap:balance; }}
+  .ehead {{ display:flex; align-items:flex-start; justify-content:space-between;
+    gap:8px; margin-bottom:10px; }}
+  .ename {{ font-size:14.5px; font-weight:650; text-wrap:balance; }}
+  .star {{ cursor:pointer; color:var(--mut); font-size:17px; line-height:1; opacity:.55; flex:none; }}
+  .star:hover {{ opacity:1; color:#f0a83c; }}
+  .ecard.starred .star {{ color:#f0a83c; opacity:1; }}
+  body.wlonly .ecard:not(.starred) {{ display:none; }}
+  .wlbtn {{ background:var(--panel); border:1px solid var(--line); color:var(--ink);
+    font-size:12px; font-weight:700; padding:8px 12px; border-radius:8px; cursor:pointer; white-space:nowrap; }}
+  .wlbtn:hover {{ border-color:#f0a83c; }}
+  .wlbtn.on {{ background:#f0a83c; border-color:#f0a83c; color:#241a00; }}
+  .wlhint {{ display:none; grid-column:1/-1; padding:12px 15px; border-radius:10px;
+    background:var(--panel); border:1px dashed var(--line); color:var(--mut); font-size:13px; }}
+  body.wlonly .wlhint.show {{ display:block; }}
   .metrics {{ display:grid; grid-template-columns:1fr 1fr; gap:9px 12px; }}
   .m {{ display:flex; flex-direction:column; gap:1px; }}
   .ml {{ font-size:10.5px; color:var(--mut); text-transform:uppercase; letter-spacing:.4px; }}
@@ -607,9 +674,12 @@ def build_estimates_html(records):
   <div class="bar">
     <div class="search"><input id="q" type="search"
        placeholder="Search a company&hellip; (e.g. Reliance, Infosys, Bajaj)"></div>
+    <button id="wlBtn" class="wlbtn" title="Show only my starred companies">&#9734; Watchlist</button>
   </div>
 </header>
 <main id="grid">
+<div id="wlHint" class="wlhint">Your watchlist is empty. Click the <b>&#9734;</b> star on any
+  company&rsquo;s card to add it &mdash; it&rsquo;s saved in your browser and shared with the calendar.</div>
 {"".join(cards)}
 </main>
 <footer>
@@ -637,6 +707,32 @@ def build_estimates_html(records):
     cards.forEach(c => c.classList.toggle('nomatch',
       t && !c.querySelector('.ename').textContent.toLowerCase().includes(t)));
   }});
+
+  // ---- watchlist (shared with the calendar, saved in your browser only) ----
+  const WL_KEY = 'cal-watchlist';
+  let wl = new Set();
+  try {{ wl = new Set(JSON.parse(localStorage.getItem(WL_KEY) || '[]')); }} catch (e) {{}}
+  const wlBtn = document.getElementById('wlBtn'), wlHint = document.getElementById('wlHint');
+  function paintStars() {{
+    cards.forEach(el => {{
+      const on = wl.has(el.dataset.key);
+      el.classList.toggle('starred', on);
+      const s = el.querySelector('.star'); if (s) s.innerHTML = on ? '&#9733;' : '&#9734;';
+    }});
+    wlBtn.innerHTML = (wl.size ? '&#9733;' : '&#9734;') + ' Watchlist' + (wl.size ? ' (' + wl.size + ')' : '');
+  }}
+  function updateHint() {{ wlHint.classList.toggle('show', wl.size === 0); }}
+  document.addEventListener('click', e => {{
+    const s = e.target.closest('.star'); if (!s) return;
+    const card = s.closest('.ecard'); if (!card) return;
+    const k = card.dataset.key; wl.has(k) ? wl.delete(k) : wl.add(k);
+    localStorage.setItem(WL_KEY, JSON.stringify([...wl])); paintStars(); updateHint();
+  }});
+  wlBtn.addEventListener('click', () => {{
+    const on = document.body.classList.toggle('wlonly');
+    wlBtn.classList.toggle('on', on); updateHint();
+  }});
+  paintStars();
 </script>
 </body>
 </html>
