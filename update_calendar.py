@@ -225,16 +225,23 @@ def build_html(data):
             continue
         d = parse_iso(r["date"])
         name = r.get("stockName") or r.get("stockShortName") or "?"
+        short = r.get("stockShortName") or ""
         tm = times.get(norm_name(name))
         if tm:
             timed += 1
+        # Match estimates on the full name first, then MoneyControl's short name
+        # (a ticker/abbreviation like CDSL, TCS, HUL) which mirrors how brokers
+        # label companies -- this catches short-form-vs-full-name mismatches.
+        est_slug = est_lookup.get(est_norm(name))
+        if not est_slug and short and est_norm(short) != est_norm(name):
+            est_slug = est_lookup.get(est_norm(short))
         by_date.setdefault(d, []).append({
             "name": name,
             "url": r.get("stockUrl") or "",
             "mcap": r.get("marketCap"),
             "exch": r.get("exchange") or "",
             "time": tm,
-            "est": est_lookup.get(est_norm(name)),
+            "est": est_slug,
         })
         total += 1
 
