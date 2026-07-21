@@ -37,6 +37,7 @@ OUT_HTML = Path(__file__).with_name("earnings_calendar.html")
 OUT_JSON = Path(__file__).with_name("earnings_data.json")
 TIMES_JSON = Path(__file__).with_name("release_times.json")  # approx times, built separately
 EST_JSON = Path(__file__).with_name("estimates.json")        # broker estimates, built separately
+TKR_JSON = Path(__file__).with_name("tickers.json")          # NSE tickers for TradingView links
 OUT_EST_HTML = Path(__file__).with_name("estimates.html")
 
 API = ("https://api.moneycontrol.com/mcapi/v1/earnings/get-earnings-data"
@@ -77,6 +78,28 @@ def est_norm(s):
     s = _re.sub(r"\(.*?\)", "", s)
     s = _re.sub(r"\b(ltd|limited|the)\b", "", s)
     return _re.sub(r"[^a-z0-9]", "", s)
+
+
+def tkr_norm(s):
+    """Normalize a name for ticker lookup (must mirror build_tickers.py)."""
+    import re as _re
+    s = s.lower().replace("&", " and ")
+    s = _re.sub(r"\(.*?\)", " ", s)
+    s = _re.sub(r"\b(limited|ltd|the)\b", " ", s)
+    return _re.sub(r"[^a-z0-9]", "", s)
+
+
+def load_tickers():
+    try:
+        return {k: v for k, v in json.loads(TKR_JSON.read_text(encoding="utf-8")).items() if v}
+    except Exception:
+        return {}
+
+
+def tv_url(ticker):
+    """TradingView chart link for an NSE symbol."""
+    from urllib.parse import quote
+    return "https://www.tradingview.com/chart/?symbol=" + quote(f"NSE:{ticker}", safe="")
 
 
 def load_estimates():
@@ -153,21 +176,35 @@ def company_chip(c, dlabel=""):
         bits.append(f"Mkt cap: Rs {mc:,.0f} cr")
     if tm:
         bits.append(f"Approx. time (from last quarter): {tm}")
+    tkr = c.get("tkr")
     tip = escape(" · ".join(bits))
     dattr = f' data-d="{escape(dlabel)}"' if dlabel else ""
     kattr = f' data-key="{escape(key)}"'
     star = '<span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span>'
     tspan = f' <span class="tm">({escape(tm)})</span>' if tm else ""
-    inner = f'{star}<span class="nm">{nm}</span>{tspan}'
+
+    # the name links to the estimate when we have one, else the chart, else MoneyControl
     if slug:
-        etip = escape((" · " if tip else "") + "Click: Q1FY27 estimates (broker avg)")
-        return (f'<a class="co hasEst" href="estimates.html#{slug}" target="_blank" '
-                f'rel="noopener" title="{tip}{etip}" data-name="{nm.lower()}"{dattr}{kattr}>{inner}</a>')
-    tip_attr = f' title="{tip}"' if tip else ""
-    if url:
-        return (f'<a class="co" href="{url}" target="_blank" rel="noopener"{tip_attr} '
-                f'data-name="{nm.lower()}"{dattr}{kattr}>{inner}</a>')
-    return f'<span class="co"{tip_attr} data-name="{nm.lower()}"{dattr}{kattr}>{inner}</span>'
+        href, cls, what = f"estimates.html#{slug}", "co hasEst", "Q1FY27 estimates (broker avg)"
+    elif tkr:
+        href, cls, what = tv_url(tkr), "co", f"TradingView chart (NSE:{tkr})"
+    elif url:
+        href, cls, what = url, "co", "MoneyControl page"
+    else:
+        href, cls, what = "", "co", ""
+    ntip = escape((tip + " · " if tip else "") + (f"Click: {what}" if what else ""))
+    label = f'<span class="nm">{nm}</span>{tspan}'
+    namelink = (f'<a class="nmlink" href="{href}" target="_blank" rel="noopener" '
+                f'title="{ntip}">{label}</a>' if href else
+                f'<span class="nmlink" title="{tip}">{label}</span>')
+    # separate small chart icon -> TradingView
+    chart = (f'<a class="tv" href="{tv_url(tkr)}" target="_blank" rel="noopener" '
+             f'title="TradingView chart (NSE:{tkr})" aria-label="TradingView chart">'
+             f'<svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" '
+             f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+             f'<path d="M2 11.5l4-4 3 3 5-5.5"/></svg></a>') if tkr else ""
+    return (f'<div class="{cls}" data-name="{nm.lower()}"{dattr}{kattr}>'
+            f'{star}{namelink}{chart}</div>')
 
 
 def month_grid(year, month, by_date, today=None):
@@ -247,6 +284,7 @@ def build_html(data):
     as_on = data.get("asOnDate", "")
     times = load_times()
     est_lookup, _est_recs = load_estimates()
+    tickers = load_tickers()
 
     by_date = {}
     total = 0
@@ -273,6 +311,7 @@ def build_html(data):
             "exch": r.get("exchange") or "",
             "time": tm,
             "est": est_slug,
+            "tkr": tickers.get(tkr_norm(name)) or (tickers.get(tkr_norm(short)) if short else None),
         })
         total += 1
 
@@ -353,7 +392,8 @@ def build_html(data):
     font-size:12px; font-weight:700; padding:4px 10px; cursor:pointer; }}
   .bjump:hover {{ filter:brightness(1.08); }}
   .blist {{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }}
-  .blist .co {{ display:inline-block; }}
+  .blist .co {{ display:inline-flex; max-width:100%; }}
+  .blist .nmlink {{ flex:0 1 auto; }}
   main {{ padding:18px 26px 60px; }}
   .month {{ margin-bottom:34px; }}
   .month h2 {{ font-size:17px; margin:0 0 10px; font-weight:650; }}
@@ -379,14 +419,22 @@ def build_html(data):
   .cnt {{ background:var(--accent); color:#fff; border-radius:20px;
     font-size:10.5px; padding:1px 7px; font-weight:700; }}
   .colist {{ display:flex; flex-direction:column; gap:3px; }}
-  .co {{ display:block; font-size:11.5px; line-height:1.28; color:var(--ink);
-    background:var(--cobg); border-radius:5px; padding:3px 6px; text-decoration:none;
+  .co {{ display:flex; align-items:center; gap:2px; font-size:11.5px; line-height:1.28;
+    color:var(--ink); background:var(--cobg); border-radius:5px; padding:3px 5px;
+    overflow:hidden; }}
+  .co .nmlink {{ flex:1; min-width:0; color:inherit; text-decoration:none;
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
   .co .tm {{ color:var(--mut); font-weight:600; font-size:10px; }}
-  a.co:hover {{ background:var(--accent); color:#fff; }}
-  a.co:hover .tm {{ color:#dbe4ff; }}
-  a.co.hasEst {{ box-shadow:inset 3px 0 0 var(--green); }}
-  a.co.hasEst:hover {{ background:var(--green); box-shadow:none; }}
+  .co:hover {{ background:var(--accent); color:#fff; }}
+  .co:hover .tm {{ color:#dbe4ff; }}
+  .co.hasEst {{ box-shadow:inset 3px 0 0 var(--green); }}
+  .co.hasEst:hover {{ background:var(--green); box-shadow:none; }}
+  /* TradingView chart icon */
+  .tv {{ flex:none; display:flex; align-items:center; color:var(--mut); opacity:.55;
+    padding:2px; border-radius:4px; }}
+  .tv:hover {{ opacity:1; color:var(--ink); background:rgba(127,127,127,.25); }}
+  .co:hover .tv {{ color:#fff; opacity:.85; }}
+  .co:hover .tv:hover {{ opacity:1; background:rgba(255,255,255,.25); }}
   /* watchlist star (padded for an easy tap target that won't trigger the link) */
   .star {{ cursor:pointer; color:var(--mut); font-size:14px; line-height:1;
     padding:3px 5px 3px 2px; margin:-3px 0 -3px -3px; opacity:.5; }}

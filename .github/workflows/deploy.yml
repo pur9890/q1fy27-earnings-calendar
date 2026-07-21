@@ -44,7 +44,9 @@ jobs:
           # Fill in approximate times for any newly-added companies (incremental).
           # If BSE is unreachable from the runner, keep the existing committed times.
           python build_release_times.py || echo "time-builder skipped; using existing times"
-          # Rebuild so the freshly-found times are baked into the page.
+          # Refresh NSE tickers (TradingView chart links) for any new companies.
+          python build_tickers.py || echo "ticker-builder skipped; using existing tickers"
+          # Rebuild so the freshly-found times and tickers are baked into the page.
           python update_calendar.py
           mkdir -p _site
           cp earnings_calendar.html _site/index.html
