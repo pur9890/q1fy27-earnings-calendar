@@ -71,7 +71,7 @@ def metric(row, start):
         avg = sum(v for _, v in who) / len(who)
     lo = min(who, key=lambda x: x[1])
     hi = max(who, key=lambda x: x[1])
-    out = {"avg": avg, "n": len(who)}
+    out = {"avg": avg, "n": len(who), "brokers": [[b, v] for b, v in who]}
     if len(who) > 1:                              # a range only means something with 2+
         out.update({"min": lo[1], "max": hi[1], "minBy": lo[0], "maxBy": hi[0]})
     return out

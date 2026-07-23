@@ -707,33 +707,65 @@ def _rng_tip(m):
                   f"to {round(m['max']/10):,} ({m.get('maxBy','')})")
 
 
+def _range_panel(m, kind):
+    """The click-to-open detail: low/avg/high bar + every broker's number."""
+    if not m or m.get("min") is None or len(m.get("brokers") or []) < 2:
+        return ""
+    fmt = (lambda v: f"{v*100:.1f}%") if kind == "pct" else (lambda v: f"{round(v/10):,}")
+    lo, hi, avg = m["min"], m["max"], m["avg"]
+    spread = hi - lo
+    pos = max(0.0, min(100.0, (avg - lo) / spread * 100 if spread else 50))
+    chips = []
+    for name, val in m["brokers"]:
+        cls = " lo" if val == lo else (" hi" if val == hi else "")
+        chips.append(f'<span class="bk{cls}"><b>{escape(name)}</b> {fmt(val)}</span>')
+    return (f'<div class="panel">'
+            f'<div class="prng"><span>Low &middot; {escape(m.get("minBy",""))}</span>'
+            f'<span>Avg &middot; {m["n"]} brokers</span>'
+            f'<span>High &middot; {escape(m.get("maxBy",""))}</span></div>'
+            f'<div class="prng v"><span>{fmt(lo)}</span><span>{fmt(avg)}</span><span>{fmt(hi)}</span></div>'
+            f'<div class="pbar"><i style="left:{pos:.0f}%"></i></div>'
+            f'<div class="pbk">{"".join(chips)}</div></div>')
+
+
+def _mname(label, panel):
+    """A metric name that's a click-to-expand toggle when a range panel exists."""
+    if not panel:
+        return label
+    return (f'<span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>{label}</span>')
+
+
 def _row_cr(label, mkey, m, actual):
-    """A Rs-crore metric row: Est | editable Actual | auto-calculated Surprise."""
+    """A Rs-crore metric row: Est | editable Actual | Surprise, + click-out range."""
     if m:
         est_cr = round(m["avg"] / 10)
         est_disp, est_attr, tip = f"{est_cr:,}", str(est_cr), _rng_tip(m)
     else:
         est_disp, est_attr, tip = "&mdash;", "", ""
     auto = "" if actual is None else str(actual)
-    return (f'<tr data-m="{mkey}" data-est="{est_attr}">'
-            f'<td class="ml">{label}</td>'
-            f'<td class="est" title="{tip}">{est_disp}</td>'
-            f'<td class="act"><input class="ain" type="text" inputmode="numeric" '
-            f'data-auto="{auto}" aria-label="{label} actual"></td>'
-            f'<td class="surp"></td></tr>')
+    panel = _range_panel(m, "cr")
+    row = (f'<tr data-m="{mkey}" data-est="{est_attr}" class="mrow">'
+           f'<td class="ml">{_mname(label, panel)}</td>'
+           f'<td class="est" title="{tip}">{est_disp}</td>'
+           f'<td class="act"><input class="ain" type="text" inputmode="numeric" '
+           f'data-auto="{auto}" aria-label="{label} actual"></td>'
+           f'<td class="surp"></td></tr>')
+    return row + (f'<tr class="detail"><td colspan="4">{panel}</td></tr>' if panel else "")
 
 
 def _row_margin(m):
-    """EBITDA margin row: Est | auto-computed Actual (EBITDA/Revenue) | Surprise (pp)."""
+    """EBITDA margin row: Est | auto-computed Actual | Surprise (pp), + click-out range."""
     if m:
         est_disp, est_attr = f"{m['avg']*100:.1f}%", f"{m['avg']*100:.4f}"
     else:
         est_disp, est_attr = "&mdash;", ""
-    return (f'<tr data-m="margin" data-est="{est_attr}">'
-            f'<td class="ml">EBITDA margin</td>'
-            f'<td class="est">{est_disp}</td>'
-            f'<td class="act"><span class="autom">&mdash;</span></td>'
-            f'<td class="surp"></td></tr>')
+    panel = _range_panel(m, "pct")
+    row = (f'<tr data-m="margin" data-est="{est_attr}" class="mrow">'
+           f'<td class="ml">{_mname("EBITDA margin", panel)}</td>'
+           f'<td class="est">{est_disp}</td>'
+           f'<td class="act"><span class="autom">&mdash;</span></td>'
+           f'<td class="surp"></td></tr>')
+    return row + (f'<tr class="detail"><td colspan="4">{panel}</td></tr>' if panel else "")
 
 
 def build_estimates_html(records, actuals=None):
@@ -758,7 +790,7 @@ def build_estimates_html(records, actuals=None):
         cards.append(f"""<div class="ecard" id="{rec['slug']}" data-key="{rec['slug']}">
   <div class="ehead"><span class="ename">{nm}</span>{badge}<span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
-    <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Surprise</td></tr>
+    <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
     {_row_cr('Revenue', 'rev', rec.get('rev'), act.get('rev'))}
     {_row_cr('EBITDA', 'ebitda', rec.get('ebitda'), act.get('ebitda'))}
     {_row_margin(rec.get('margin'))}
@@ -836,6 +868,24 @@ def build_estimates_html(records, actuals=None):
     white-space:nowrap; color:var(--mut); }}
   .surp.beat {{ color:#1f9d55; }}
   .surp.miss {{ color:#e2534a; }}
+  .mtog {{ cursor:pointer; display:inline-flex; align-items:center; gap:5px; }}
+  .mtog:hover {{ color:var(--accent); }}
+  .chv {{ font-size:9px; color:var(--mut); transition:transform .15s; }}
+  .mrow.open .chv {{ transform:rotate(90deg); color:var(--accent); }}
+  .detail td {{ border-top:none !important; padding:0 !important; }}
+  .panel {{ display:none; background:var(--bg); border:1px solid var(--line); border-radius:9px;
+    margin:2px 0 7px; padding:10px 11px; }}
+  .mrow.open + .detail .panel {{ display:block; }}
+  .prng {{ display:flex; justify-content:space-between; font-size:10.5px; color:var(--mut); }}
+  .prng.v {{ color:var(--ink); font-weight:700; font-variant-numeric:tabular-nums; margin-top:1px; }}
+  .pbar {{ position:relative; height:5px; background:var(--line); border-radius:3px; margin:7px 0 9px; }}
+  .pbar i {{ position:absolute; top:-2px; width:2px; height:9px; background:var(--accent); border-radius:1px; }}
+  .pbk {{ display:flex; flex-wrap:wrap; gap:5px; }}
+  .bk {{ font-size:11px; font-variant-numeric:tabular-nums; background:var(--card);
+    border:0.5px solid var(--line); border-radius:6px; padding:2px 7px; }}
+  .bk b {{ font-weight:700; }}
+  .bk.lo {{ border-color:#e2534a; color:#e2534a; }}
+  .bk.hi {{ border-color:#1f9d55; color:#1f9d55; }}
   .efoot {{ margin-top:11px; padding-top:9px; border-top:1px solid var(--line);
     font-size:11px; color:var(--mut); }}
   .ecard:target {{ border-color:var(--accent);
@@ -856,7 +906,7 @@ def build_estimates_html(records, actuals=None):
      All figures in <b>&#8377; crore</b> (EBITDA margin in %).<br>
      <b>Est</b> = broker average (hover for the low&ndash;high range). <b>Actual</b> is auto-filled
      from Screener once a company reports (<b>{reported}</b> so far, shown in <b style="color:var(--green)">green</b>);
-     for the rest, <b>type the number in</b> and the <b>Surprise</b> calculates instantly.
+     for the rest, <b>type the number in</b> and the <b>beat / miss</b> shows instantly.
      Your entries save in your browser and are <b>auto-replaced by the official Screener figure</b> the moment it&rsquo;s published.</div>
   <div class="bar">
     <div class="search"><input id="q" type="search"
@@ -888,6 +938,10 @@ def build_estimates_html(records, actuals=None):
     localStorage.setItem('cal-theme', t); applyTheme(t);
   }});
 
+  // click a metric name to expand its per-broker range
+  function tgl(el) {{ el.closest('tr').classList.toggle('open'); }}
+  window.tgl = tgl;
+
   const q = document.getElementById('q');
   const cards = [...document.querySelectorAll('.ecard')];
   q.addEventListener('input', () => {{
@@ -900,7 +954,7 @@ def build_estimates_html(records, actuals=None):
   const AK = 'cal-actuals';
   let store = {{}};
   try {{ store = JSON.parse(localStorage.getItem(AK) || '{{}}'); }} catch (e) {{}}
-  const arrow = (d, pp) => (d >= 0 ? '▲ ' : '▼ ') + Math.abs(d).toFixed(pp ? 1 : 1) + (pp ? ' pp' : '%');
+  const arrow = (d, pp) => (d >= 0 ? '▲ Beat ' : '▼ Miss ') + Math.abs(d).toFixed(1) + (pp ? ' pp' : '%');
   function recalc(card) {{
     const est = {{}}, act = {{}};
     card.querySelectorAll('tr[data-m]').forEach(tr => {{

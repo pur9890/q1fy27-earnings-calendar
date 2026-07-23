@@ -491,6 +491,20 @@
    "exchange": "N"
   },
   {
+   "date": "29 Jul",
+   "stockName": "Eicher Motors",
+   "scId": "EM",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/auto-lcvs-hcvs/eichermotors/EM",
+   "resultType": "Q1 FY26-27",
+   "ltp": "7721.50",
+   "change": "1.17",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-lcvs-hcvs/eichermotors/EM#financials",
+   "stockShortName": "Eicher Motors",
+   "marketCap": 211949.53,
+   "exchange": "N"
+  },
+  {
    "date": "21 Jul",
    "stockName": "Adani Energy Solutions",
    "scId": "AT18",
@@ -500,7 +514,7 @@
    "change": "-2.35",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/power-transmission-equipment/adanienergysolutions/AT22#financials",
-   "stockShortName": "Adani Energy",
+   "stockShortName": "Adani Trans",
    "marketCap": 202271.97,
    "exchange": "N"
   },
@@ -698,6 +712,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-others/jiofinancialservices/JFS#financials",
    "stockShortName": "Jio Financial",
    "marketCap": 153958.85,
+   "exchange": "N"
+  },
+  {
+   "date": "6 Aug",
+   "stockName": "Samvardhana Motherson International",
+   "scId": "MSS01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries-auto-truck-motorcycle-parts/samvardhanamothersoninternational/MSS01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "145.57",
+   "change": "1.37",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries-auto-truck-motorcycle-parts/samvardhanamothersoninternational/MSS01#financials",
+   "stockShortName": "MOTHERSON",
+   "marketCap": 153641.02,
    "exchange": "N"
   },
   {
@@ -995,6 +1023,20 @@
    "exchange": "N"
   },
   {
+   "date": "30 Jul",
+   "stockName": "Indian Railway Finance Corporation",
+   "scId": "IRF",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-nbfc/indianrailwayfinancecorporation/IRF",
+   "resultType": "Q1 FY26-27",
+   "ltp": "87.03",
+   "change": "-0.41",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-nbfc/indianrailwayfinancecorporation/IRF#financials",
+   "stockShortName": "Indian Railway",
+   "marketCap": 113735.21,
+   "exchange": "N"
+  },
+  {
    "date": "27 Jul",
    "stockName": "Canara Bank",
    "scId": "CB06",
@@ -1093,6 +1135,20 @@
    "exchange": "N"
   },
   {
+   "date": "6 Aug",
+   "stockName": "Lupin",
+   "scId": "LC03",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/lupin/L",
+   "resultType": "Q1 FY26-27",
+   "ltp": "2396.30",
+   "change": "-0.44",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/lupin/L#financials",
+   "stockShortName": "Lupin",
+   "marketCap": 109567.2,
+   "exchange": "N"
+  },
+  {
    "date": "7 Aug",
    "stockName": "Godrej Consumer Products",
    "scId": "GCP",
@@ -1174,6 +1230,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/cement-major/ambujacements/AC18#financials",
    "stockShortName": "Ambuja Cements",
    "marketCap": 104694.08,
+   "exchange": "N"
+  },
+  {
+   "date": "6 Aug",
+   "stockName": "Hero Motocorp",
+   "scId": "HHM",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/auto-2-3-wheelers/heromotocorp/HHM",
+   "resultType": "Q1 FY26-27",
+   "ltp": "5173.80",
+   "change": "3.74",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-2-3-wheelers/heromotocorp/HHM#financials",
+   "stockShortName": "Hero Motocorp",
+   "marketCap": 103524.08,
    "exchange": "N"
   },
   {
@@ -1396,7 +1466,7 @@
    "change": "-0.81",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/online-services/one97communicationspaytm/OC03#financials",
-   "stockShortName": "One 97 Paytm",
+   "stockShortName": "One 97 Comm",
    "marketCap": 80521.23,
    "exchange": "N"
   },
@@ -1766,6 +1836,20 @@
   },
   {
    "date": "31 Jul",
+   "stockName": "National Aluminium Company",
+   "scId": "NAC",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/aluminium/nationalaluminiumcompany/NAC",
+   "resultType": "Q1 FY26-27",
+   "ltp": "346.00",
+   "change": "1.05",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/aluminium/nationalaluminiumcompany/NAC#financials",
+   "stockShortName": "NALCO",
+   "marketCap": 63547.46,
+   "exchange": "N"
+  },
+  {
+   "date": "31 Jul",
    "stockName": "Glenmark Pharma",
    "scId": "GP08",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/glenmarkpharma/GP08",
@@ -1984,7 +2068,7 @@
    "change": "-2.06",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-nbfc/mahindramahindrafinancialservices/MMF04#financials",
-   "stockShortName": "MM Financial",
+   "stockShortName": "M&M Financial",
    "marketCap": 51477.58,
    "exchange": "N"
   },
@@ -2348,7 +2432,7 @@
    "change": "1.26",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering/lttechnologyservices/LTS#financials",
-   "stockShortName": "LT Technology",
+   "stockShortName": "L&T Technology",
    "marketCap": 35804.35,
    "exchange": "N"
   },
@@ -2558,7 +2642,7 @@
    "change": "-0.27",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/tvsholdings/SC#financials",
-   "stockShortName": "TVS Holdings",
+   "stockShortName": "Sundaram-Clayto",
    "marketCap": 29957.68,
    "exchange": "N"
   },
@@ -2801,6 +2885,20 @@
    "exchange": "N"
   },
   {
+   "date": "29 Jul",
+   "stockName": "Syrma SGS Technology",
+   "scId": "SST07",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/engineering-industrial-equipments/syrmasgstechnology/SST06",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1380.00",
+   "change": "1.21",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering-industrial-equipments/syrmasgstechnology/SST06#financials",
+   "stockShortName": "Syrma SGS",
+   "marketCap": 26560.05,
+   "exchange": "N"
+  },
+  {
    "date": "27 Jul",
    "stockName": "SUMITOMO CHEMICAL INDIA LIMITE",
    "scId": "SUMIC54292",
@@ -2969,6 +3067,20 @@
    "exchange": "N"
   },
   {
+   "date": "28 Jul",
+   "stockName": "Netweb Technologies India",
+   "scId": "NTI03",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/computer-peripherals/netwebtechnologiesindia/NTI03",
+   "resultType": "Q1 FY26-27",
+   "ltp": "4243.80",
+   "change": "-1.05",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/computer-peripherals/netwebtechnologiesindia/NTI03#financials",
+   "stockShortName": "Netweb",
+   "marketCap": 24164.49,
+   "exchange": "N"
+  },
+  {
    "date": "24 Jul",
    "stockName": "CreditAccess Grameen",
    "scId": "CG02",
@@ -3106,6 +3218,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/banks-private-sector/cityunionbank/CUB#financials",
    "stockShortName": "City Union Bank",
    "marketCap": 21786.42,
+   "exchange": "N"
+  },
+  {
+   "date": "7 Aug",
+   "stockName": "The Ramco Cements",
+   "scId": "MC",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/cement-major/theramcocements/MC",
+   "resultType": "Q1 FY26-27",
+   "ltp": "915.10",
+   "change": "0.89",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/cement-major/theramcocements/MC#financials",
+   "stockShortName": "Ramco Cements",
+   "marketCap": 21623.12,
    "exchange": "N"
   },
   {
@@ -3263,6 +3389,20 @@
    "exchange": "N"
   },
   {
+   "date": "31 Jul",
+   "stockName": "Aether Industries",
+   "scId": "AI74",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/speciality-chemicals/aetherindustries/AI84",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1435.50",
+   "change": "-1.87",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/speciality-chemicals/aetherindustries/AI84#financials",
+   "stockShortName": "Aether Ind.",
+   "marketCap": 19050.89,
+   "exchange": "N"
+  },
+  {
    "date": "24 Jul",
    "stockName": "OneSource Specialty Pharma",
    "scId": "OSPL",
@@ -3389,6 +3529,20 @@
    "exchange": "N"
   },
   {
+   "date": "31 Jul",
+   "stockName": "Gujarat Mineral Development Corporation",
+   "scId": "GMD",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/mining-minerals/gujaratmineraldevelopmentcorporation/GMD",
+   "resultType": "Q1 FY26-27",
+   "ltp": "562.95",
+   "change": "0.48",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/mining-minerals/gujaratmineraldevelopmentcorporation/GMD#financials",
+   "stockShortName": "GMDC",
+   "marketCap": 17901.81,
+   "exchange": "N"
+  },
+  {
    "date": "6 Aug",
    "stockName": "Firstsource Solutions",
    "scId": "FS07",
@@ -3482,7 +3636,7 @@
    "change": "-1.19",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/banks-public-sector/punjabsindbank/PSB#financials",
-   "stockShortName": "Punjab and Sind",
+   "stockShortName": "Punjab & Sind",
    "marketCap": 17128.74,
    "exchange": "N"
   },
@@ -3498,6 +3652,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-machinery/lmw/LMW#financials",
    "stockShortName": "LMW",
    "marketCap": 17022.29,
+   "exchange": "N"
+  },
+  {
+   "date": "28 Jul",
+   "stockName": "Pine Labs",
+   "scId": "PLL01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-others/pinelabs/PLL01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "147.48",
+   "change": "0.40",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-others/pinelabs/PLL01#financials",
+   "stockShortName": "Pine Labs",
+   "marketCap": 17017.1,
    "exchange": "N"
   },
   {
@@ -3608,7 +3776,7 @@
    "change": "-2.85",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/amararajaenergymobility/ARB#financials",
-   "stockShortName": "Amara Raja",
+   "stockShortName": "Amara Raja Batt",
    "marketCap": 16040.34,
    "exchange": "N"
   },
@@ -3711,6 +3879,20 @@
    "exchange": "N"
   },
   {
+   "date": "29 Jul",
+   "stockName": "TBO Tek",
+   "scId": "TTL03",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/travel-services/tbotek/TTL03",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1436.10",
+   "change": "-2.25",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/travel-services/tbotek/TTL03#financials",
+   "stockShortName": "TBO Tek",
+   "marketCap": 15594.29,
+   "exchange": "N"
+  },
+  {
    "date": "27 Jul",
    "stockName": "Usha Martin",
    "scId": "UB01",
@@ -3778,6 +3960,34 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/diamond--jewellery/internationalgemologicalinstitute/IGIIL#financials",
    "stockShortName": "IGIL",
    "marketCap": 14935.44,
+   "exchange": "N"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "Rainbow Childrens Medicare",
+   "scId": "RCM03",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/hospital-healthcare-services/rainbowchildrensmedicare/RCM03",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1466.10",
+   "change": "-1.60",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/hospital-healthcare-services/rainbowchildrensmedicare/RCM03#financials",
+   "stockShortName": "Rainbow Childre",
+   "marketCap": 14890.68,
+   "exchange": "N"
+  },
+  {
+   "date": "29 Jul",
+   "stockName": "Aequs",
+   "scId": "AL20",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/engineering-industrial-equipments/aequs/AL16",
+   "resultType": "Q1 FY26-27",
+   "ltp": "221.59",
+   "change": "-4.79",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering-industrial-equipments/aequs/AL16#financials",
+   "stockShortName": "Aequs",
+   "marketCap": 14861.28,
    "exchange": "N"
   },
   {
@@ -3851,6 +4061,34 @@
    "exchange": "N"
   },
   {
+   "date": "28 Jul",
+   "stockName": "Paradeep Phosphates",
+   "scId": "PP36",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/fertilizers/paradeepphosphates/PP33",
+   "resultType": "Q1 FY26-27",
+   "ltp": "136.31",
+   "change": "-2.15",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/fertilizers/paradeepphosphates/PP33#financials",
+   "stockShortName": "Paradeep Phosph",
+   "marketCap": 14151.3,
+   "exchange": "N"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "Privi Speciality Chemicals",
+   "scId": "HKA",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/chemicals/privispecialitychemicals/HKF",
+   "resultType": "Q1 FY26-27",
+   "ltp": "3585.90",
+   "change": "-2.46",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/chemicals/privispecialitychemicals/HKF#financials",
+   "stockShortName": "Privi Special",
+   "marketCap": 14007.5,
+   "exchange": "N"
+  },
+  {
    "date": "27 Jul",
    "stockName": "Supreme Petrochem",
    "scId": "SP",
@@ -3865,6 +4103,20 @@
    "exchange": "N"
   },
   {
+   "date": "29 Jul",
+   "stockName": "Devyani International",
+   "scId": "DI23",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/consumer-food/devyaniinternational/DI06",
+   "resultType": "Q1 FY26-27",
+   "ltp": "109.87",
+   "change": "-0.69",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/consumer-food/devyaniinternational/DI06#financials",
+   "stockShortName": "Devyani",
+   "marketCap": 13546.31,
+   "exchange": "N"
+  },
+  {
    "date": "16 Jul",
    "stockName": "Ceat",
    "scId": "C07",
@@ -3876,6 +4128,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/tyres/ceat/C07#financials",
    "stockShortName": "Ceat",
    "marketCap": 13528.53,
+   "exchange": "N"
+  },
+  {
+   "date": "29 Jul",
+   "stockName": "Vinati Organics",
+   "scId": "VO01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/chemicals/vinatiorganics/VO01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1291.60",
+   "change": "-1.71",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/chemicals/vinatiorganics/VO01#financials",
+   "stockShortName": "Vinati Organics",
+   "marketCap": 13389.45,
    "exchange": "N"
   },
   {
@@ -3930,7 +4196,7 @@
    "change": "-4.18",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/automobile-dealers-distributors/cartradetech/CT12#financials",
-   "stockShortName": "CarTrade Tech",
+   "stockShortName": "Cartrade",
    "marketCap": 12928.76,
    "exchange": "N"
   },
@@ -4182,7 +4448,7 @@
    "change": "-0.60",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/utiassetmanagementcompany/UA04#financials",
-   "stockShortName": "UTI AMC",
+   "stockShortName": "UTI",
    "marketCap": 11620.17,
    "exchange": "N"
   },
@@ -4327,6 +4593,20 @@
    "exchange": "N"
   },
   {
+   "date": "28 Jul",
+   "stockName": "Sanofi Consumer Healthcare India",
+   "scId": "SCH",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/hospital-healthcare-services/sanoficonsumerhealthcareindia/SCH",
+   "resultType": "Q1 FY26-27",
+   "ltp": "4652.10",
+   "change": "0.80",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/hospital-healthcare-services/sanoficonsumerhealthcareindia/SCH#financials",
+   "stockShortName": "Sanofi Consumer",
+   "marketCap": 10714.08,
+   "exchange": "N"
+  },
+  {
    "date": "23 Jul",
    "stockName": "IIFL Capital Services",
    "scId": "IIFLS54277",
@@ -4338,6 +4618,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/iiflcapitalservices/IIFLS54277#financials",
    "stockShortName": "IIFL Capital ",
    "marketCap": 10690.83,
+   "exchange": "N"
+  },
+  {
+   "date": "29 Jul",
+   "stockName": "Karnataka Bank",
+   "scId": "KB04",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/banks-private-sector/karnatakabank/KB04",
+   "resultType": "Q1 FY26-27",
+   "ltp": "281.80",
+   "change": "2.01",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/banks-private-sector/karnatakabank/KB04#financials",
+   "stockShortName": "Karnataka Bank",
+   "marketCap": 10660.14,
    "exchange": "N"
   },
   {
@@ -5106,7 +5400,7 @@
    "change": "0.16",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals-drugs/senorespharmaceuticals/SPL10#financials",
-   "stockShortName": "Senores Pharma",
+   "stockShortName": "Senores Pharmac",
    "marketCap": 6427.24,
    "exchange": "N"
   },
@@ -5148,8 +5442,22 @@
    "change": "-2.45",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/consumer-food/dodladairy/DD01#financials",
-   "stockShortName": "Dodla Dairy",
+   "stockShortName": "Dodla",
    "marketCap": 6257.8,
+   "exchange": "N"
+  },
+  {
+   "date": "5 Aug",
+   "stockName": "SIS",
+   "scId": "SIS07",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/sis/SIS08",
+   "resultType": "Q1 FY26-27",
+   "ltp": "438.70",
+   "change": "0.37",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/sis/SIS08#financials",
+   "stockShortName": "SIS",
+   "marketCap": 6199.17,
    "exchange": "N"
   },
   {
@@ -5246,7 +5554,7 @@
    "change": "1.39",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/refractories/raghavproductivityenhancers/RRM01#financials",
-   "stockShortName": "Raghav Product",
+   "stockShortName": "Raghav Producti",
    "marketCap": 5934.03,
    "exchange": "N"
   },
@@ -5262,6 +5570,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/banks-private-sector/csbbank/CB05#financials",
    "stockShortName": "CSB Bank",
    "marketCap": 5866.42,
+   "exchange": "N"
+  },
+  {
+   "date": "13 Aug",
+   "stockName": "Technocraft Industries (India)",
+   "scId": "TII01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/steel-medium-small/technocraftindustriesindia/TII01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "2565.90",
+   "change": "1.43",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/steel-medium-small/technocraftindustriesindia/TII01#financials",
+   "stockShortName": "Technocraft Ind",
+   "marketCap": 5817.61,
    "exchange": "N"
   },
   {
@@ -5293,6 +5615,20 @@
    "exchange": "N"
   },
   {
+   "date": "29 Jul",
+   "stockName": "Triveni Engineering and Industries",
+   "scId": "TE10",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/sugar/triveniengineeringindustries/TE10",
+   "resultType": "Q1 FY26-27",
+   "ltp": "261.75",
+   "change": "-4.99",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/sugar/triveniengineeringindustries/TE10#financials",
+   "stockShortName": "Triveni Engg",
+   "marketCap": 5768,
+   "exchange": "N"
+  },
+  {
    "date": "22 Jul",
    "stockName": "Stylam Industries",
    "scId": "GL02",
@@ -5318,6 +5654,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/bank-private/janasmallfinancebank/JSFBL#financials",
    "stockShortName": "Jana SFB",
    "marketCap": 5725.5,
+   "exchange": "N"
+  },
+  {
+   "date": "29 Jul",
+   "stockName": "MAS Financial Services",
+   "scId": "MFS09",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-general/masfinancialservices/MFS09",
+   "resultType": "Q1 FY26-27",
+   "ltp": "315.00",
+   "change": "-0.24",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-general/masfinancialservices/MFS09#financials",
+   "stockShortName": "MAS Financial S",
+   "marketCap": 5715.78,
    "exchange": "N"
   },
   {
@@ -5528,6 +5878,34 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/paints/indigopaints/IP08#financials",
    "stockShortName": "Indigo Paints",
    "marketCap": 4994.5,
+   "exchange": "N"
+  },
+  {
+   "date": "27 Jul",
+   "stockName": "Epigral",
+   "scId": "MF24",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/speciality-chemicals/epigral/MF23",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1152.00",
+   "change": "1.16",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/speciality-chemicals/epigral/MF23#financials",
+   "stockShortName": "Epigral",
+   "marketCap": 4969.88,
+   "exchange": "N"
+  },
+  {
+   "date": "31 Jul",
+   "stockName": "LG Balakrishnan and Brothers",
+   "scId": "LGB",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/lgbalakrishnanbrothers/LGB",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1540.80",
+   "change": "-0.45",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/lgbalakrishnanbrothers/LGB#financials",
+   "stockShortName": "LG Balakrishnan",
+   "marketCap": 4913.98,
    "exchange": "N"
   },
   {
@@ -5979,6 +6357,20 @@
    "exchange": "N"
   },
   {
+   "date": "7 Aug",
+   "stockName": "Universal Cables",
+   "scId": "UC",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/cables-power-others/universalcables/UC",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1204.30",
+   "change": "0.07",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/cables-power-others/universalcables/UC#financials",
+   "stockShortName": "Universal Cable",
+   "marketCap": 4178.36,
+   "exchange": "N"
+  },
+  {
    "date": "23 Jul",
    "stockName": "Novartis India",
    "scId": "HCG",
@@ -6256,6 +6648,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/steel-tubes-pipes/welspunspecialtysolutions/RMG#financials",
    "stockShortName": "Welspun Special",
    "marketCap": 3269.99,
+   "exchange": "N"
+  },
+  {
+   "date": "29 Jul",
+   "stockName": "ADF Foods Industries",
+   "scId": "ADF01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/food-processing/adffoodsindustries/AF30",
+   "resultType": "Q1 FY26-27",
+   "ltp": "296.65",
+   "change": "-1.08",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/food-processing/adffoodsindustries/AF30#financials",
+   "stockShortName": "ADF Foods",
+   "marketCap": 3259.1,
    "exchange": "N"
   },
   {
@@ -6744,7 +7150,7 @@
    "change": "-2.24",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/domestic-appliances/stovekraft/SK03#financials",
-   "stockShortName": "Stove Kraft",
+   "stockShortName": "Stove",
    "marketCap": 2468.48,
    "exchange": "N"
   },
@@ -6760,6 +7166,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/raneholdings/RH01#financials",
    "stockShortName": "Rane Holdings",
    "marketCap": 2460.35,
+   "exchange": "N"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "Silver Touch Technologies",
+   "scId": "STT01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/computers-software/silvertouchtechnologies/STT01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "191.99",
+   "change": "-2.01",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/computers-software/silvertouchtechnologies/STT01#financials",
+   "stockShortName": "Silver Touch Te",
+   "marketCap": 2434.63,
    "exchange": "N"
   },
   {
@@ -7239,6 +7659,20 @@
    "exchange": "N"
   },
   {
+   "date": "31 Jul",
+   "stockName": "Nitta Gelatin India",
+   "scId": "KCP02",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/chemicals/nittagelatinindia/NGI04",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1920.80",
+   "change": "4.59",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/chemicals/nittagelatinindia/NGI04#financials",
+   "stockShortName": "Nitta Gelatin",
+   "marketCap": 1743.93,
+   "exchange": "N"
+  },
+  {
    "date": "20 Jul",
    "stockName": "Aurum Proptech",
    "scId": "M12",
@@ -7407,6 +7841,20 @@
    "exchange": "N"
   },
   {
+   "date": "29 Jul",
+   "stockName": "Vidhi Specialty Food Ingredients",
+   "scId": "VDM",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/dyes-pigments/vidhispecialtyfoodingredients/VDM",
+   "resultType": "Q1 FY26-27",
+   "ltp": "304.45",
+   "change": "0.83",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/dyes-pigments/vidhispecialtyfoodingredients/VDM#financials",
+   "stockShortName": "Vidhi Spec",
+   "marketCap": 1520.58,
+   "exchange": "N"
+  },
+  {
    "date": "21 Jul",
    "stockName": "InfoBeans Technologies",
    "scId": "IT05",
@@ -7444,7 +7892,7 @@
    "change": "0.52",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/it-services-consulting/digitidesolutions/DSL02#financials",
-   "stockShortName": "Digitide Solut",
+   "stockShortName": "Digitide Soluti",
    "marketCap": 1511.28,
    "exchange": "N"
   },
@@ -7533,6 +7981,20 @@
    "exchange": "N"
   },
   {
+   "date": "29 Jul",
+   "stockName": "Jagsonpal Pharmaceuticals",
+   "scId": "JP02",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/jagsonpalpharmaceuticals/JP02",
+   "resultType": "Q1 FY26-27",
+   "ltp": "217.82",
+   "change": "-1.07",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/jagsonpalpharmaceuticals/JP02#financials",
+   "stockShortName": "JagsonpalPharma",
+   "marketCap": 1436.08,
+   "exchange": "N"
+  },
+  {
    "date": "5 Aug",
    "stockName": "Godavari Biorefineries",
    "scId": "GBL02",
@@ -7542,7 +8004,7 @@
    "change": "0.58",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/diversified/godavaribiorefineries/GBL02#financials",
-   "stockShortName": "Godavari Bio",
+   "stockShortName": "Godavari Bioref",
    "marketCap": 1411.95,
    "exchange": "N"
   },
@@ -7558,6 +8020,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/chemicals/punjabchemicalscropprotection/PCC03#financials",
    "stockShortName": "Punjab Chemical",
    "marketCap": 1393.23,
+   "exchange": "N"
+  },
+  {
+   "date": "6 Aug",
+   "stockName": "Chaman Lal Setia Exports",
+   "scId": "CLS",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/food-processing/chamanlalsetiaexports/CLS",
+   "resultType": "Q1 FY26-27",
+   "ltp": "279.85",
+   "change": "-0.71",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/food-processing/chamanlalsetiaexports/CLS#financials",
+   "stockShortName": "Chaman Lal Seti",
+   "marketCap": 1391.57,
    "exchange": "N"
   },
   {
@@ -7780,7 +8256,7 @@
    "change": "1.21",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/iron-steel/ratnaveerprecisionengineering/RPE#financials",
-   "stockShortName": "Ratnaveer",
+   "stockShortName": "Ratnaveer Preci",
    "marketCap": 1267.61,
    "exchange": "N"
   },
@@ -7810,6 +8286,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-manmade/centuryenka/CE#financials",
    "stockShortName": "Century Enka",
    "marketCap": 1235.1,
+   "exchange": "N"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "Kabra Extrusion Technik",
+   "scId": "KET",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/engineering-heavy/kabraextrusiontechnik/KET",
+   "resultType": "Q1 FY26-27",
+   "ltp": "351.05",
+   "change": "2.95",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering-heavy/kabraextrusiontechnik/KET#financials",
+   "stockShortName": "Kabra Extrusion",
+   "marketCap": 1227.72,
    "exchange": "N"
   },
   {
@@ -7939,6 +8429,34 @@
    "exchange": "N"
   },
   {
+   "date": "30 Jul",
+   "stockName": "GHCL Textiles",
+   "scId": "GT09",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles/ghcltextiles/GT11",
+   "resultType": "Q1 FY26-27",
+   "ltp": "114.98",
+   "change": "0.68",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles/ghcltextiles/GT11#financials",
+   "stockShortName": "GHCL Textiles",
+   "marketCap": 1099.05,
+   "exchange": "N"
+  },
+  {
+   "date": "6 Aug",
+   "stockName": "Industrial and Prudential Investment Company",
+   "scId": "IPI",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/industrialprudentialinvestmentcompany/IPI",
+   "resultType": "Q1 FY26-27",
+   "ltp": "6480.00",
+   "change": "0.47",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/industrialprudentialinvestmentcompany/IPI#financials",
+   "stockShortName": "Ind & Prud Invt",
+   "marketCap": 1085.94,
+   "exchange": "B"
+  },
+  {
    "date": "20 Jul",
    "stockName": "Bajaj Healthcare",
    "scId": "BHL02",
@@ -7962,7 +8480,7 @@
    "change": "-0.28",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/iron-steel/mangalamworldwide/MW01#financials",
-   "stockShortName": "Mangalam World",
+   "stockShortName": "Mangalam Worldw",
    "marketCap": 1063.28,
    "exchange": "N"
   },
@@ -8023,6 +8541,20 @@
    "exchange": "B"
   },
   {
+   "date": "5 Aug",
+   "stockName": "RSWM",
+   "scId": "RSW",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles-spinning-synthetic-blended/rswm/RSW01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "212.13",
+   "change": "-0.07",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-spinning-synthetic-blended/rswm/RSW01#financials",
+   "stockShortName": "RSWM",
+   "marketCap": 999.17,
+   "exchange": "N"
+  },
+  {
    "date": "22 Jul",
    "stockName": "Bhageria Industries",
    "scId": "BD02",
@@ -8076,6 +8608,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering/rajooengineers/RE#financials",
    "stockShortName": "Rajoo Engineers",
    "marketCap": 984.14,
+   "exchange": "N"
+  },
+  {
+   "date": "7 Aug",
+   "stockName": "Kopran",
+   "scId": "K01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/kopran/K01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "197.78",
+   "change": "-1.78",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/kopran/K01#financials",
+   "stockShortName": "Kopran",
+   "marketCap": 954.99,
    "exchange": "N"
   },
   {
@@ -8205,6 +8751,20 @@
    "exchange": "N"
   },
   {
+   "date": "31 Jul",
+   "stockName": "Viceroy Hotels",
+   "scId": "PHH",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/hotels/viceroyhotels/VH04",
+   "resultType": "Q1 FY26-27",
+   "ltp": "131.30",
+   "change": "-0.52",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/hotels/viceroyhotels/VH04#financials",
+   "stockShortName": "Viceroy Hotels",
+   "marketCap": 887.31,
+   "exchange": "N"
+  },
+  {
    "date": "24 Jul",
    "stockName": "Automotive Stampings and Assemblies",
    "scId": "JBM01",
@@ -8238,12 +8798,12 @@
    "scId": "LCC01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/food-processing/lotuschocolatecompany/LCC01",
    "resultType": "Q1 FY26-27",
-   "ltp": "662.70",
+   "ltp": "661.15",
    "change": "0.11",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/food-processing/lotuschocolatecompany/LCC01#financials",
    "stockShortName": "Lotus Chocolate",
-   "marketCap": 850.98,
+   "marketCap": 848.99,
    "exchange": "B"
   },
   {
@@ -8258,6 +8818,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/construction-contracting-civil/supremeinfrastructureindia/SII03#financials",
    "stockShortName": "Supreme Infra",
    "marketCap": 831.8,
+   "exchange": "N"
+  },
+  {
+   "date": "5 Aug",
+   "stockName": "NR Agarwal Industries",
+   "scId": "NRA",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/paper/nragarwalindustries/NRA",
+   "resultType": "Q1 FY26-27",
+   "ltp": "487.60",
+   "change": "7.89",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/paper/nragarwalindustries/NRA#financials",
+   "stockShortName": "NR Agarwal",
+   "marketCap": 829.85,
    "exchange": "N"
   },
   {
@@ -8382,7 +8956,7 @@
    "change": "3.58",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/paper/emamipapermills/EPM01#financials",
-   "stockShortName": "Emami Paper",
+   "stockShortName": "EPM",
    "marketCap": 743.41,
    "exchange": "N"
   },
@@ -8410,7 +8984,7 @@
    "change": "-0.98",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles/karnikaindustries/KIL06#financials",
-   "stockShortName": "Karnika Ind",
+   "stockShortName": "Karnika Industr",
    "marketCap": 717.62,
    "exchange": "N"
   },
@@ -8490,12 +9064,12 @@
    "scId": "PGF02",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/retailing/pngsgargifashionjewellery/PGF01",
    "resultType": "Q1 FY26-27",
-   "ltp": "644.10",
+   "ltp": "645.65",
    "change": "-1.04",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/retailing/pngsgargifashionjewellery/PGF01#financials",
    "stockShortName": "PNGS Gargi",
-   "marketCap": 674.39,
+   "marketCap": 676.02,
    "exchange": "B"
   },
   {
@@ -8532,13 +9106,13 @@
    "scId": "KI23",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/software/ksolvesindia/KI09",
    "resultType": "Q1 FY26-27",
-   "ltp": "280.70",
-   "change": "-2.47",
+   "ltp": "281.45",
+   "change": "-2.09",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/software/ksolvesindia/KI09#financials",
    "stockShortName": "KSolves",
-   "marketCap": 665.6,
-   "exchange": "N"
+   "marketCap": 667.37,
+   "exchange": "B"
   },
   {
    "date": "23 Jul",
@@ -8564,7 +9138,7 @@
    "change": "0.93",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering-industrial-equipments/fabtechtechnologies/FTL03#financials",
-   "stockShortName": "Fabtech Tech",
+   "stockShortName": "Fabtech Technol",
    "marketCap": 660.54,
    "exchange": "N"
   },
@@ -8594,6 +9168,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/food-processing/coffeedayenterprises/CDE#financials",
    "stockShortName": "Coffee Day",
    "marketCap": 648.75,
+   "exchange": "N"
+  },
+  {
+   "date": "27 Jul",
+   "stockName": "Emkay Global Financial Services",
+   "scId": "ESS01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-general/emkayglobalfinancialservices/EGF",
+   "resultType": "Q1 FY26-27",
+   "ltp": "235.65",
+   "change": "-0.82",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-general/emkayglobalfinancialservices/EGF#financials",
+   "stockShortName": "Emkay Global",
+   "marketCap": 648.64,
    "exchange": "N"
   },
   {
@@ -8686,12 +9274,26 @@
    "scId": "HEB",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/dry-cells/highenergybatteriesindia/HEB",
    "resultType": "Q1 FY26-27",
-   "ltp": "604.85",
+   "ltp": "602.55",
    "change": "-0.17",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/dry-cells/highenergybatteriesindia/HEB#financials",
    "stockShortName": "High Energy",
-   "marketCap": 542.18,
+   "marketCap": 540.12,
+   "exchange": "B"
+  },
+  {
+   "date": "13 Aug",
+   "stockName": "Triton Valves",
+   "scId": "TV",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/tritonvalves/TV",
+   "resultType": "Q1 FY26-27",
+   "ltp": "1019.75",
+   "change": "-0.06",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/tritonvalves/TV#financials",
+   "stockShortName": "Triton Valves",
+   "marketCap": 522.33,
    "exchange": "B"
   },
   {
@@ -8700,12 +9302,12 @@
    "scId": "PS07",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/steel-medium-small/panchmahalsteels/PS07",
    "resultType": "Q1 FY26-27",
-   "ltp": "286.00",
+   "ltp": "273.25",
    "change": "0.35",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/steel-medium-small/panchmahalsteels/PS07#financials",
    "stockShortName": "Panchmahal Stee",
-   "marketCap": 545.64,
+   "marketCap": 521.32,
    "exchange": "B"
   },
   {
@@ -8721,6 +9323,20 @@
    "stockShortName": "Kanpur Plast",
    "marketCap": 515.33,
    "exchange": "N"
+  },
+  {
+   "date": "27 Jul",
+   "stockName": "Shiva Cement",
+   "scId": "SC42",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/cement-mini/shivacement/SC50",
+   "resultType": "Q1 FY26-27",
+   "ltp": "17.18",
+   "change": "0.47",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/cement-mini/shivacement/SC50#financials",
+   "stockShortName": "Shiva Cement",
+   "marketCap": 506.81,
+   "exchange": "B"
   },
   {
    "date": "29 Jul",
@@ -8763,6 +9379,20 @@
    "stockShortName": "Shardul Sec",
    "marketCap": 495.03,
    "exchange": "B"
+  },
+  {
+   "date": "29 Jul",
+   "stockName": "BMW Ventures",
+   "scId": "BVL01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/iron-steel/bmwventures/BVL01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "57.00",
+   "change": "0.56",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/iron-steel/bmwventures/BVL01#financials",
+   "stockShortName": "BMW Ventures",
+   "marketCap": 494.28,
+   "exchange": "N"
   },
   {
    "date": "13 Jul",
@@ -9003,6 +9633,20 @@
    "exchange": "N"
   },
   {
+   "date": "11 Aug",
+   "stockName": "Fratelli Vineyards",
+   "scId": "TINNA54174",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/breweries-distilleries/fratellivineyards/TINNA54174",
+   "resultType": "Q1 FY26-27",
+   "ltp": "91.30",
+   "change": "-4.94",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/breweries-distilleries/fratellivineyards/TINNA54174#financials",
+   "stockShortName": "Fratelli Vineya",
+   "marketCap": 396.5,
+   "exchange": "B"
+  },
+  {
    "date": "31 Jul",
    "stockName": "ILandFS Engineering and Construction Company",
    "scId": "MI35",
@@ -9157,6 +9801,20 @@
    "exchange": "N"
   },
   {
+   "date": "28 Jul",
+   "stockName": "Vardhman Acrylics",
+   "scId": "VA08",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles-apparel/vardhmanacrylics/VA08",
+   "resultType": "Q1 FY26-27",
+   "ltp": "42.10",
+   "change": "-2.48",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-apparel/vardhmanacrylics/VA08#financials",
+   "stockShortName": "Vardhman Acryli",
+   "marketCap": 338.33,
+   "exchange": "N"
+  },
+  {
    "date": "17 Jul",
    "stockName": "Atvo Enterprises",
    "scId": "TK",
@@ -9222,7 +9880,7 @@
    "change": "4.96",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/plastic-products/essenspecialityfilms/ESF01#financials",
-   "stockShortName": "Essen Specialit",
+   "stockShortName": "ESFL",
    "marketCap": 323.03,
    "exchange": "N"
   },
@@ -9232,12 +9890,12 @@
    "scId": "RI41",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/regencyfincorp/RI44",
    "resultType": "Q1 FY26-27",
-   "ltp": "43.30",
+   "ltp": "43.45",
    "change": "-3.26",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/regencyfincorp/RI44#financials",
    "stockShortName": "REGENCY FINCORP",
-   "marketCap": 318.48,
+   "marketCap": 319.58,
    "exchange": "B"
   },
   {
@@ -9246,12 +9904,12 @@
    "scId": "LES02",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/engineering/leapfrogengineeringservices/LES",
    "resultType": "Q1 FY26-27",
-   "ltp": "22.02",
+   "ltp": "22.24",
    "change": "-1.30",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering/leapfrogengineeringservices/LES#financials",
    "stockShortName": "Leapfrog Engine",
-   "marketCap": 312.23,
+   "marketCap": 315.35,
    "exchange": "B"
   },
   {
@@ -9260,13 +9918,27 @@
    "scId": "AS25",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-general/alacritysecurities/AS04",
    "resultType": "Q1 FY26-27",
-   "ltp": "66.50",
+   "ltp": "65.70",
    "change": "0.83",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-general/alacritysecurities/AS04#financials",
    "stockShortName": "Alacrity Sec",
-   "marketCap": 310.29,
+   "marketCap": 306.56,
    "exchange": "B"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "Oil Country Tubular",
+   "scId": "OCT",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/steel-tubes-pipes/oilcountrytubular/OCT",
+   "resultType": "Q1 FY26-27",
+   "ltp": "58.89",
+   "change": "4.99",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/steel-tubes-pipes/oilcountrytubular/OCT#financials",
+   "stockShortName": "Oil Country",
+   "marketCap": 306.17,
+   "exchange": "N"
   },
   {
    "date": "21 Jul",
@@ -9288,12 +9960,12 @@
    "scId": "KI16",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/electric-equipment/kayceeindustries/KI16",
    "resultType": "Q1 FY26-27",
-   "ltp": "934.95",
+   "ltp": "934.55",
    "change": "1.58",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/electric-equipment/kayceeindustries/KI16#financials",
    "stockShortName": "Kaycee Ind",
-   "marketCap": 296.71,
+   "marketCap": 296.58,
    "exchange": "B"
   },
   {
@@ -9353,6 +10025,34 @@
    "exchange": "N"
   },
   {
+   "date": "5 Aug",
+   "stockName": "Industrial Investment Trust",
+   "scId": "IIT01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/industrialinvestmenttrust/IIT01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "127.28",
+   "change": "-1.77",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/industrialinvestmenttrust/IIT01#financials",
+   "stockShortName": "Industrial Inv",
+   "marketCap": 286.99,
+   "exchange": "N"
+  },
+  {
+   "date": "27 Jul",
+   "stockName": "Kisan Mouldings",
+   "scId": "KM01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/plastics/kisanmouldings/KM01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "23.47",
+   "change": "0.99",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/plastics/kisanmouldings/KM01#financials",
+   "stockShortName": "Kisan Mouldings",
+   "marketCap": 280.38,
+   "exchange": "B"
+  },
+  {
    "date": "25 Jul",
    "stockName": "Exxaro Tiles",
    "scId": "ET05",
@@ -9362,7 +10062,7 @@
    "change": "-1.26",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/ceramics-marble-granite-sanitaryware/exxarotiles/ET02#financials",
-   "stockShortName": "Exxaro Tiles",
+   "stockShortName": "Exxaro",
    "marketCap": 280.08,
    "exchange": "N"
   },
@@ -9465,6 +10165,20 @@
    "exchange": "N"
   },
   {
+   "date": "28 Jul",
+   "stockName": "UFO Moviez India",
+   "scId": "UMI03",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/media-entertainment/ufomoviezindia/UMI03",
+   "resultType": "Q1 FY26-27",
+   "ltp": "67.27",
+   "change": "0.25",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/media-entertainment/ufomoviezindia/UMI03#financials",
+   "stockShortName": "UFO Moviez",
+   "marketCap": 261.17,
+   "exchange": "N"
+  },
+  {
    "date": "9 Jul",
    "stockName": "Asian Hotels (East)",
    "scId": "AHE01",
@@ -9512,12 +10226,12 @@
    "scId": "CT06",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/trading/cupidbreweriesdistilleries/CT06",
    "resultType": "Q1 FY26-27",
-   "ltp": "27.95",
+   "ltp": "27.74",
    "change": "1.64",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/trading/cupidbreweriesdistilleries/CT06#financials",
    "stockShortName": "Cupid Breweries",
-   "marketCap": 255.3,
+   "marketCap": 253.39,
    "exchange": "B"
   },
   {
@@ -9554,12 +10268,12 @@
    "scId": "ITH",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/internationaltravelhouse/ITH",
    "resultType": "Q1 FY26-27",
-   "ltp": "310.65",
+   "ltp": "310.75",
    "change": "-1.26",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/internationaltravelhouse/ITH#financials",
    "stockShortName": "Intl Travel",
-   "marketCap": 248.35,
+   "marketCap": 248.43,
    "exchange": "B"
   },
   {
@@ -9582,12 +10296,12 @@
    "scId": "RMI01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/steel-tubes-pipes/remiedelstahltubulars/RMI01",
    "resultType": "Q1 FY26-27",
-   "ltp": "191.00",
+   "ltp": "190.10",
    "change": "2.30",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/steel-tubes-pipes/remiedelstahltubulars/RMI01#financials",
    "stockShortName": "Remi Edelstahl",
-   "marketCap": 228.16,
+   "marketCap": 227.08,
    "exchange": "B"
   },
   {
@@ -9624,12 +10338,12 @@
    "scId": "JGT",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/electronics-components/jaschgaugingtechnologies/JGT",
    "resultType": "Q1 FY26-27",
-   "ltp": "479.00",
+   "ltp": "478.35",
    "change": "-1.34",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/electronics-components/jaschgaugingtechnologies/JGT#financials",
    "stockShortName": "Jasch Gauging",
-   "marketCap": 217.08,
+   "marketCap": 216.79,
    "exchange": "B"
   },
   {
@@ -9645,6 +10359,20 @@
    "stockShortName": "A2Z Infra Eng",
    "marketCap": 215.16,
    "exchange": "N"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "Madhav Infra Projects",
+   "scId": "MIP",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/engineering-construction/madhavinfraprojects/MIP",
+   "resultType": "Q1 FY26-27",
+   "ltp": "7.98",
+   "change": "-1.00",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering-construction/madhavinfraprojects/MIP#financials",
+   "stockShortName": "Madhav Infra Pr",
+   "marketCap": 215.13,
+   "exchange": "B"
   },
   {
    "date": "31 Jul",
@@ -9703,6 +10431,20 @@
    "exchange": "N"
   },
   {
+   "date": "4 Aug",
+   "stockName": "Syschem (India) RE",
+   "scId": "AP21",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pesticides-agro-chemicals/syschemindiare/SI71",
+   "resultType": "Q1 FY26-27",
+   "ltp": "42.50",
+   "change": "-27.19",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pesticides-agro-chemicals/syschemindiare/SI71#financials",
+   "stockShortName": "SYSCHEM-RE",
+   "marketCap": 208.31,
+   "exchange": "B"
+  },
+  {
    "date": "31 Jul",
    "stockName": "Smartlink Holdings      ",
    "scId": "DLI",
@@ -9750,12 +10492,12 @@
    "scId": "RP19",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/radixindustriesindia/RP19",
    "resultType": "Q1 FY26-27",
-   "ltp": "132.00",
+   "ltp": "132.05",
    "change": "-4.31",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/radixindustriesindia/RP19#financials",
    "stockShortName": "Radix Ind",
-   "marketCap": 198.09,
+   "marketCap": 198.17,
    "exchange": "B"
   },
   {
@@ -9764,12 +10506,12 @@
    "scId": "AAC04",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/food-processing/adonagrocommodities/AAC04",
    "resultType": "Q1 FY26-27",
-   "ltp": "85.96",
+   "ltp": "85.56",
    "change": "2.46",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/food-processing/adonagrocommodities/AAC04#financials",
    "stockShortName": "Adon Agro Commo",
-   "marketCap": 197.86,
+   "marketCap": 196.94,
    "exchange": "B"
   },
   {
@@ -9876,12 +10618,26 @@
    "scId": "AI44",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/computers-software-medium-small/atishay/AI19",
    "resultType": "Q1 FY26-27",
-   "ltp": "164.00",
+   "ltp": "164.25",
    "change": "0.18",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/computers-software-medium-small/atishay/AI19#financials",
    "stockShortName": "Atishay",
-   "marketCap": 180.09,
+   "marketCap": 180.37,
+   "exchange": "B"
+  },
+  {
+   "date": "25 Jul",
+   "stockName": "OXYGENTA PHARMACEUTICAL",
+   "scId": "SSO",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/oxygentapharmaceutical/SSO",
+   "resultType": "Q1 FY26-27",
+   "ltp": "48.00",
+   "change": "-2.79",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/oxygentapharmaceutical/SSO#financials",
+   "stockShortName": "OXYGENTA PHARMA",
+   "marketCap": 177.52,
    "exchange": "B"
   },
   {
@@ -9997,17 +10753,31 @@
    "exchange": "B"
   },
   {
+   "date": "10 Aug",
+   "stockName": "Bansal Roofing Products",
+   "scId": "BRP",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/steel-medium-small/bansalroofingproducts/BRP01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "119.75",
+   "change": "1.43",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/steel-medium-small/bansalroofingproducts/BRP01#financials",
+   "stockShortName": "Bansal Roofing",
+   "marketCap": 157.87,
+   "exchange": "B"
+  },
+  {
    "date": "12 Aug",
    "stockName": "DHP India",
    "scId": "DHP",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/domestic-appliances/dhpindia/DHP02",
    "resultType": "Q1 FY26-27",
-   "ltp": "519.90",
+   "ltp": "515.65",
    "change": "1.06",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/domestic-appliances/dhpindia/DHP02#financials",
    "stockShortName": "DHP",
-   "marketCap": 155.97,
+   "marketCap": 154.7,
    "exchange": "B"
   },
   {
@@ -10030,12 +10800,26 @@
    "scId": "GI16",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/gujaratintrux/GI16",
    "resultType": "Q1 FY26-27",
-   "ltp": "434.00",
+   "ltp": "430.10",
    "change": "1.14",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/metals-non-ferrous/gujaratintrux/GI16#financials",
    "stockShortName": "Guj Intrux",
-   "marketCap": 149.09,
+   "marketCap": 147.75,
+   "exchange": "B"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "CHL",
+   "scId": "CHL",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/hotels/chl/CHL",
+   "resultType": "Q1 FY26-27",
+   "ltp": "26.51",
+   "change": "-0.56",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/hotels/chl/CHL#financials",
+   "stockShortName": "CHL",
+   "marketCap": 145.32,
    "exchange": "B"
   },
   {
@@ -10051,6 +10835,20 @@
    "stockShortName": "Indbank Merchan",
    "marketCap": 144.27,
    "exchange": "N"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "International Combustion (India)",
+   "scId": "ICI06",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/engineering-heavy/internationalcombustionindia/ICI06",
+   "resultType": "Q1 FY26-27",
+   "ltp": "588.05",
+   "change": "-1.16",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering-heavy/internationalcombustionindia/ICI06#financials",
+   "stockShortName": "Intl Combustion",
+   "marketCap": 140.56,
+   "exchange": "B"
   },
   {
    "date": "18 Jul",
@@ -10100,12 +10898,12 @@
    "scId": "AI68",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/cement-products-building-materials/kanoriaenergyinfrastructure/AI74",
    "resultType": "Q1 FY26-27",
-   "ltp": "15.88",
+   "ltp": "15.90",
    "change": "0.44",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/cement-products-building-materials/kanoriaenergyinfrastructure/AI74#financials",
    "stockShortName": "KEIL",
-   "marketCap": 135.44,
+   "marketCap": 135.61,
    "exchange": "B"
   },
   {
@@ -10142,12 +10940,26 @@
    "scId": "DPL03",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/printing-publishing/dachepallipublishers/DPL03",
    "resultType": "Q1 FY26-27",
-   "ltp": "85.57",
+   "ltp": "85.56",
    "change": "4.99",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/printing-publishing/dachepallipublishers/DPL03#financials",
    "stockShortName": "Dachepalli Pub",
-   "marketCap": 128.15,
+   "marketCap": 128.13,
+   "exchange": "B"
+  },
+  {
+   "date": "29 Jul",
+   "stockName": "Trustedge Capital",
+   "scId": "AER",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/trustedgecapital/AER",
+   "resultType": "Q1 FY26-27",
+   "ltp": "134.50",
+   "change": "--",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/trustedgecapital/AER#financials",
+   "stockShortName": "Trustedge Capit",
+   "marketCap": 124.12,
    "exchange": "B"
   },
   {
@@ -10170,12 +10982,12 @@
    "scId": "HHS",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/hindustanhardy/HHS",
    "resultType": "Q1 FY26-27",
-   "ltp": "790.00",
+   "ltp": "792.30",
    "change": "-1.53",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/auto-ancillaries/hindustanhardy/HHS#financials",
    "stockShortName": "Hind Hardy",
-   "marketCap": 118.38,
+   "marketCap": 118.72,
    "exchange": "B"
   },
   {
@@ -10207,6 +11019,20 @@
    "exchange": "B"
   },
   {
+   "date": "29 Jul",
+   "stockName": "OBCL",
+   "scId": "OBC01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/ground-freight-logistics-services/obcl/OBC01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "53.11",
+   "change": "0.21",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/ground-freight-logistics-services/obcl/OBC01#financials",
+   "stockShortName": "OBCL",
+   "marketCap": 111.97,
+   "exchange": "N"
+  },
+  {
    "date": "16 Jul",
    "stockName": "Sampark India Logistics",
    "scId": "SILL",
@@ -10226,12 +11052,12 @@
    "scId": "MI33",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/construction-real-estate/marutiinfrastructure/MI33",
    "resultType": "Q1 FY26-27",
-   "ltp": "10.77",
+   "ltp": "10.86",
    "change": "-3.49",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/construction-real-estate/marutiinfrastructure/MI33#financials",
    "stockShortName": "Maruti Infra",
-   "marketCap": 100.97,
+   "marketCap": 101.81,
    "exchange": "B"
   },
   {
@@ -10282,12 +11108,12 @@
    "scId": "BAT",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/fertilisers/basantagrotechindia/BAT",
    "resultType": "Q1 FY26-27",
-   "ltp": "10.90",
+   "ltp": "10.99",
    "change": "-2.24",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/fertilisers/basantagrotechindia/BAT#financials",
    "stockShortName": "Basant Agro Tec",
-   "marketCap": 98.78,
+   "marketCap": 99.6,
    "exchange": "B"
   },
   {
@@ -10324,12 +11150,12 @@
    "scId": "ML11",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/mercurylaboratories/ML11",
    "resultType": "Q1 FY26-27",
-   "ltp": "807.00",
+   "ltp": "807.75",
    "change": "-4.40",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/mercurylaboratories/ML11#financials",
    "stockShortName": "Mercury Labs",
-   "marketCap": 96.84,
+   "marketCap": 96.93,
    "exchange": "B"
   },
   {
@@ -10361,17 +11187,31 @@
    "exchange": "B"
   },
   {
+   "date": "31 Jul",
+   "stockName": "Mukesh Babu Financial Services",
+   "scId": "MBF",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/mukeshbabufinancialservices/MBF",
+   "resultType": "Q1 FY26-27",
+   "ltp": "130.00",
+   "change": "0.74",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/mukeshbabufinancialservices/MBF#financials",
+   "stockShortName": "Mukesh Babu Fin",
+   "marketCap": 90.62,
+   "exchange": "B"
+  },
+  {
    "date": "24 Jul",
    "stockName": "Lykis",
    "scId": "GTE01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/plantations-tea-coffee/lykis/GTE01",
    "resultType": "Q1 FY26-27",
-   "ltp": "46.70",
+   "ltp": "45.93",
    "change": "2.84",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/plantations-tea-coffee/lykis/GTE01#financials",
    "stockShortName": "Lykis",
-   "marketCap": 90.48,
+   "marketCap": 88.99,
    "exchange": "B"
   },
   {
@@ -10394,12 +11234,12 @@
    "scId": "NCL01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/nclresearchfinancialservices/NCL01",
    "resultType": "Q1 FY26-27",
-   "ltp": "0.81",
+   "ltp": "0.82",
    "change": "2.53",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/nclresearchfinancialservices/NCL01#financials",
    "stockShortName": "NCL Research",
-   "marketCap": 86.7,
+   "marketCap": 87.77,
    "exchange": "B"
   },
   {
@@ -10408,12 +11248,12 @@
    "scId": "BIT",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/computers-software-training/bits/BIT",
    "resultType": "Q1 FY26-27",
-   "ltp": "7.58",
+   "ltp": "7.57",
    "change": "1.07",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/computers-software-training/bits/BIT#financials",
    "stockShortName": "BITS",
-   "marketCap": 84.8,
+   "marketCap": 84.69,
    "exchange": "B"
   },
   {
@@ -10436,13 +11276,13 @@
    "scId": "RSS",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/computers-software-medium-small/rssoftwareindia/RSS",
    "resultType": "Q1 FY26-27",
-   "ltp": "31.85",
+   "ltp": "31.90",
    "change": "-2.00",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/computers-software-medium-small/rssoftwareindia/RSS#financials",
    "stockShortName": "RS Software",
-   "marketCap": 82.27,
-   "exchange": "N"
+   "marketCap": 82.4,
+   "exchange": "B"
   },
   {
    "date": "23 Jul",
@@ -10450,12 +11290,12 @@
    "scId": "FPS",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/ferventsynergies/FPS",
    "resultType": "Q1 FY26-27",
-   "ltp": "15.85",
+   "ltp": "15.72",
    "change": "0.63",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/ferventsynergies/FPS#financials",
    "stockShortName": "Fervent Synergi",
-   "marketCap": 79.25,
+   "marketCap": 78.6,
    "exchange": "B"
   },
   {
@@ -10464,12 +11304,12 @@
    "scId": "RDI",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/construction-contracting-housing/radhedevelopersindia/RDI",
    "resultType": "Q1 FY26-27",
-   "ltp": "1.51",
+   "ltp": "1.49",
    "change": "0.67",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/construction-contracting-housing/radhedevelopersindia/RDI#financials",
    "stockShortName": "Radhe Developer",
-   "marketCap": 79.09,
+   "marketCap": 78.04,
    "exchange": "B"
   },
   {
@@ -10548,12 +11388,26 @@
    "scId": "GLF03",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/gowraleasingfinance/GLF03",
    "resultType": "Q1 FY26-27",
-   "ltp": "98.35",
+   "ltp": "97.70",
    "change": "-1.50",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/gowraleasingfinance/GLF03#financials",
    "stockShortName": "Gowra Leasing",
-   "marketCap": 76.2,
+   "marketCap": 75.7,
+   "exchange": "B"
+  },
+  {
+   "date": "26 Jul",
+   "stockName": "Kati Patang Lifestyle",
+   "scId": "SCL",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/breweries-distilleries/katipatanglifestyle/SCL",
+   "resultType": "Q1 FY26-27",
+   "ltp": "14.36",
+   "change": "7.17",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/breweries-distilleries/katipatanglifestyle/SCL#financials",
+   "stockShortName": "Kati Patang",
+   "marketCap": 74.32,
    "exchange": "B"
   },
   {
@@ -10562,12 +11416,12 @@
    "scId": "CIT01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/consecutivecommodities/CIT01",
    "resultType": "Q1 FY26-27",
-   "ltp": "1.16",
+   "ltp": "1.15",
    "change": "1.75",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/consecutivecommodities/CIT01#financials",
    "stockShortName": "Consecutive Com",
-   "marketCap": 74.31,
+   "marketCap": 73.67,
    "exchange": "B"
   },
   {
@@ -10576,12 +11430,12 @@
    "scId": "GM01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/media-entertainment/babaarts/GM01",
    "resultType": "Q1 FY26-27",
-   "ltp": "14.28",
+   "ltp": "14.03",
    "change": "2.66",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/media-entertainment/babaarts/GM01#financials",
    "stockShortName": "Baba Arts",
-   "marketCap": 74.97,
+   "marketCap": 73.66,
    "exchange": "B"
   },
   {
@@ -10590,12 +11444,12 @@
    "scId": "GI29",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/construction-contracting-real-estate/grovyindia/GI32",
    "resultType": "Q1 FY26-27",
-   "ltp": "53.97",
+   "ltp": "53.38",
    "change": "2.33",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/construction-contracting-real-estate/grovyindia/GI32#financials",
    "stockShortName": "Grovy India",
-   "marketCap": 71.98,
+   "marketCap": 71.19,
    "exchange": "B"
   },
   {
@@ -10660,12 +11514,12 @@
    "scId": "RI13",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/chemicals/riteshinternational/RI13",
    "resultType": "Q1 FY26-27",
-   "ltp": "79.00",
+   "ltp": "80.13",
    "change": "5.47",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/chemicals/riteshinternational/RI13#financials",
    "stockShortName": "Ritesh Intl",
-   "marketCap": 67.57,
+   "marketCap": 68.53,
    "exchange": "B"
   },
   {
@@ -10688,12 +11542,12 @@
    "scId": "RC06",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/ceramics-granite/restileceramics/RC06",
    "resultType": "Q1 FY26-27",
-   "ltp": "6.74",
+   "ltp": "6.73",
    "change": "-3.71",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/ceramics-granite/restileceramics/RC06#financials",
    "stockShortName": "Restile Ceramic",
-   "marketCap": 66.24,
+   "marketCap": 66.14,
    "exchange": "B"
   },
   {
@@ -10786,12 +11640,12 @@
    "scId": "FMI01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-nbfc/fmecinternationalfinancialservices/FMI01",
    "resultType": "Q1 FY26-27",
-   "ltp": "12.68",
+   "ltp": "12.62",
    "change": "-0.24",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-nbfc/fmecinternationalfinancialservices/FMI01#financials",
    "stockShortName": "F Mec Intl.",
-   "marketCap": 62.01,
+   "marketCap": 61.72,
    "exchange": "B"
   },
   {
@@ -10800,12 +11654,12 @@
    "scId": "LP09",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles-general/lakhotiapolyesters/LP09",
    "resultType": "Q1 FY26-27",
-   "ltp": "62.74",
+   "ltp": "57.61",
    "change": "-0.51",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-general/lakhotiapolyesters/LP09#financials",
    "stockShortName": "Lakhotia Poly",
-   "marketCap": 65.71,
+   "marketCap": 60.34,
    "exchange": "B"
   },
   {
@@ -10842,12 +11696,12 @@
    "scId": "ASM01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles-spinning-cotton-blended/amarjothispinningmills/ASM01",
    "resultType": "Q1 FY26-27",
-   "ltp": "180.00",
+   "ltp": "180.10",
    "change": "3.60",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-spinning-cotton-blended/amarjothispinningmills/ASM01#financials",
    "stockShortName": "Amarjothi Spin",
-   "marketCap": 121.5,
+   "marketCap": 121.57,
    "exchange": "B"
   },
   {
@@ -10912,12 +11766,12 @@
    "scId": "RI44",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/regisindustries/RI30",
    "resultType": "Q1 FY26-27",
-   "ltp": "2.21",
+   "ltp": "2.20",
    "change": "1.84",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/regisindustries/RI30#financials",
    "stockShortName": "Regis",
-   "marketCap": 57.04,
+   "marketCap": 56.79,
    "exchange": "B"
   },
   {
@@ -10944,7 +11798,7 @@
    "change": "1.49",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/hybridfinancialservices/MFC#financials",
-   "stockShortName": "Hybrid Fin Ser",
+   "stockShortName": "HYBRIDFIN",
    "marketCap": 55.99,
    "exchange": "N"
   },
@@ -10988,6 +11842,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/paper/cellaspacelimited/SSP08#financials",
    "stockShortName": "Cella Space Ltd",
    "marketCap": 53.52,
+   "exchange": "B"
+  },
+  {
+   "date": "14 Aug",
+   "stockName": "Krypton Industries",
+   "scId": "KI14",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/tyres/kryptonindustries/KI14",
+   "resultType": "Q1 FY26-27",
+   "ltp": "36.14",
+   "change": "-3.95",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/tyres/kryptonindustries/KI14#financials",
+   "stockShortName": "Krypton",
+   "marketCap": 53.12,
    "exchange": "B"
   },
   {
@@ -11066,12 +11934,12 @@
    "scId": "RFS",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/computers-software-medium-small/b2bsoftwaretechnologies/RFS",
    "resultType": "Q1 FY26-27",
-   "ltp": "26.72",
+   "ltp": "27.22",
    "change": "-4.71",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/computers-software-medium-small/b2bsoftwaretechnologies/RFS#financials",
    "stockShortName": "B2B Software",
-   "marketCap": 46.43,
+   "marketCap": 47.3,
    "exchange": "B"
   },
   {
@@ -11108,12 +11976,12 @@
    "scId": "JH02",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/hotels/jindalhotels/JH02",
    "resultType": "Q1 FY26-27",
-   "ltp": "64.40",
+   "ltp": "64.38",
    "change": "2.06",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/hotels/jindalhotels/JH02#financials",
    "stockShortName": "Jindal Hotels",
-   "marketCap": 45.08,
+   "marketCap": 45.07,
    "exchange": "B"
   },
   {
@@ -11122,12 +11990,12 @@
    "scId": "KC04",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/keycorporation/KC04",
    "resultType": "Q1 FY26-27",
-   "ltp": "74.50",
+   "ltp": "74.34",
    "change": "3.26",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/keycorporation/KC04#financials",
    "stockShortName": "Key Corporation",
-   "marketCap": 44.7,
+   "marketCap": 44.6,
    "exchange": "B"
   },
   {
@@ -11157,6 +12025,20 @@
    "stockShortName": "Vivimed Labs",
    "marketCap": 42.87,
    "exchange": "N"
+  },
+  {
+   "date": "31 Jul",
+   "stockName": "Dhanlaxmi Fabrics",
+   "scId": "DF04",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles-processing/dhanlaxmifabrics/DF04",
+   "resultType": "Q1 FY26-27",
+   "ltp": "49.00",
+   "change": "-0.79",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-processing/dhanlaxmifabrics/DF04#financials",
+   "stockShortName": "Dhanlaxmi Fabri",
+   "marketCap": 42.05,
+   "exchange": "B"
   },
   {
    "date": "23 Jul",
@@ -11211,7 +12093,7 @@
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/admanumfinance/AMF01#financials",
    "stockShortName": "Ad Manum Fin",
-   "marketCap": 40.39,
+   "marketCap": 40.4,
    "exchange": "B"
   },
   {
@@ -11276,12 +12158,12 @@
    "scId": "SAI05",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/edible-oils-solvent-extraction/poonadaloilindustries/SAI05",
    "resultType": "Q1 FY26-27",
-   "ltp": "61.05",
+   "ltp": "61.15",
    "change": "-1.53",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/edible-oils-solvent-extraction/poonadaloilindustries/SAI05#financials",
    "stockShortName": "Poona Dal",
-   "marketCap": 34.85,
+   "marketCap": 34.9,
    "exchange": "B"
   },
   {
@@ -11332,12 +12214,12 @@
    "scId": "IEC",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/computers-software-medium-small/ieceducation/IEC02",
    "resultType": "Q1 FY26-27",
-   "ltp": "21.30",
+   "ltp": "21.37",
    "change": "-2.96",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/computers-software-medium-small/ieceducation/IEC02#financials",
    "stockShortName": "IEC Education",
-   "marketCap": 32.5,
+   "marketCap": 32.61,
    "exchange": "B"
   },
   {
@@ -11374,12 +12256,12 @@
    "scId": "IC9",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles/indocotspin/IC9",
    "resultType": "Q1 FY26-27",
-   "ltp": "42.70",
+   "ltp": "41.78",
    "change": "4.99",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles/indocotspin/IC9#financials",
    "stockShortName": "Indo Cotspin",
-   "marketCap": 30.49,
+   "marketCap": 29.83,
    "exchange": "B"
   },
   {
@@ -11388,12 +12270,12 @@
    "scId": "SA07",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/plastics-tubes-pipes-hoses-fittings/sonaladhesives/SA07",
    "resultType": "Q1 FY26-27",
-   "ltp": "49.00",
+   "ltp": "48.33",
    "change": "0.02",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/plastics-tubes-pipes-hoses-fittings/sonaladhesives/SA07#financials",
    "stockShortName": "Sonal Adhesives",
-   "marketCap": 29.7,
+   "marketCap": 29.29,
    "exchange": "B"
   },
   {
@@ -11444,12 +12326,12 @@
    "scId": "MF09",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/morarkafinance/MF09",
    "resultType": "Q1 FY26-27",
-   "ltp": "61.25",
+   "ltp": "61.89",
    "change": "-4.55",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/morarkafinance/MF09#financials",
    "stockShortName": "Morarka Finance",
-   "marketCap": 27.58,
+   "marketCap": 27.86,
    "exchange": "B"
   },
   {
@@ -11467,17 +12349,31 @@
    "exchange": "N"
   },
   {
+   "date": "30 Jul",
+   "stockName": "Vapi Enterprises",
+   "scId": "VPM",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/paper/vapienterprises/VPM",
+   "resultType": "Q1 FY26-27",
+   "ltp": "122.00",
+   "change": "1.67",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/paper/vapienterprises/VPM#financials",
+   "stockShortName": "Vapi Ent.",
+   "marketCap": 27.83,
+   "exchange": "B"
+  },
+  {
    "date": "21 Jul",
    "stockName": "Gujarat Cotex",
    "scId": "GC09",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles-processing/gujaratcotex/GC09",
    "resultType": "Q1 FY26-27",
-   "ltp": "2.95",
+   "ltp": "2.93",
    "change": "-0.67",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-processing/gujaratcotex/GC09#financials",
    "stockShortName": "Guj Cotex",
-   "marketCap": 28.01,
+   "marketCap": 27.82,
    "exchange": "B"
   },
   {
@@ -11528,12 +12424,26 @@
    "scId": "MF02",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/food-processing/lakeshorerealty/MF02",
    "resultType": "Q1 FY26-27",
-   "ltp": "74.00",
+   "ltp": "73.85",
    "change": "-0.79",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/food-processing/lakeshorerealty/MF02#financials",
    "stockShortName": "Lake Shore Real",
-   "marketCap": 25.91,
+   "marketCap": 25.85,
+   "exchange": "B"
+  },
+  {
+   "date": "4 Aug",
+   "stockName": "IITL Projects",
+   "scId": "IGP02",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/iitlprojects/IGP02",
+   "resultType": "Q1 FY26-27",
+   "ltp": "51.75",
+   "change": "3.01",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/iitlprojects/IGP02#financials",
+   "stockShortName": "IITL Projects",
+   "marketCap": 25.83,
    "exchange": "B"
   },
   {
@@ -11542,12 +12452,12 @@
    "scId": "NLF",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/nalinleasefinance/NLF",
    "resultType": "Q1 FY26-27",
-   "ltp": "40.80",
+   "ltp": "39.32",
    "change": "2.26",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/nalinleasefinance/NLF#financials",
    "stockShortName": "Nalin Leasing",
-   "marketCap": 26.76,
+   "marketCap": 25.79,
    "exchange": "B"
   },
   {
@@ -11589,7 +12499,7 @@
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/invigoratedbusinessconsulting/EF05#financials",
    "stockShortName": "Invigorated Bus",
-   "marketCap": 24.95,
+   "marketCap": 24.96,
    "exchange": "B"
   },
   {
@@ -11604,6 +12514,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/dyes-pigments/daikaffilchemicalsindia/DCI01#financials",
    "stockShortName": "Daikaffil Chem",
    "marketCap": 24.9,
+   "exchange": "B"
+  },
+  {
+   "date": "7 Aug",
+   "stockName": "Kanco Tea and Industries",
+   "scId": "KTI04",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/plantations-tea-coffee/kancoteaindustries/KTI05",
+   "resultType": "Q1 FY26-27",
+   "ltp": "46.54",
+   "change": "-4.83",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/plantations-tea-coffee/kancoteaindustries/KTI05#financials",
+   "stockShortName": "Kanco Tea",
+   "marketCap": 23.84,
    "exchange": "B"
   },
   {
@@ -11626,12 +12550,12 @@
    "scId": "MS17",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles-spinning-cotton-blended/marisspinners/MS17",
    "resultType": "Q1 FY26-27",
-   "ltp": "29.50",
+   "ltp": "29.48",
    "change": "2.50",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles-spinning-cotton-blended/marisspinners/MS17#financials",
    "stockShortName": "Maris Spin",
-   "marketCap": 23.38,
+   "marketCap": 23.36,
    "exchange": "B"
   },
   {
@@ -11677,17 +12601,31 @@
    "exchange": "B"
   },
   {
+   "date": "27 Jul",
+   "stockName": "Seemax Resources",
+   "scId": "SRL02",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/engineering-industrial-equipments/seemaxresources/SRL02",
+   "resultType": "Q1 FY26-27",
+   "ltp": "52.00",
+   "change": "-5.88",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/engineering-industrial-equipments/seemaxresources/SRL02#financials",
+   "stockShortName": "Seemax Resource",
+   "marketCap": 22.88,
+   "exchange": "B"
+  },
+  {
    "date": "17 Jul",
    "stockName": "Roselabs Finance",
    "scId": "RF12",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/roselabsfinance/RF12",
    "resultType": "Q1 FY26-27",
-   "ltp": "21.74",
+   "ltp": "22.70",
    "change": "0.05",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/roselabsfinance/RF12#financials",
    "stockShortName": "Roselabs Fin",
-   "marketCap": 21.74,
+   "marketCap": 22.7,
    "exchange": "B"
   },
   {
@@ -11716,6 +12654,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/shreeganeshbiotechindialtd/SGB#financials",
    "stockShortName": "ShreeGanesh Bio",
    "marketCap": 22.32,
+   "exchange": "B"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "Vinyoflex",
+   "scId": "V01",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/plastics/vinyoflex/V01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "50.55",
+   "change": "-0.49",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/plastics/vinyoflex/V01#financials",
+   "stockShortName": "Vinyoflex",
+   "marketCap": 21.83,
    "exchange": "B"
   },
   {
@@ -11752,12 +12704,26 @@
    "scId": "CL01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/colinzlaboratories/CL01",
    "resultType": "Q1 FY26-27",
-   "ltp": "80.98",
+   "ltp": "80.49",
    "change": "1.06",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals/colinzlaboratories/CL01#financials",
    "stockShortName": "Colinz Labs",
-   "marketCap": 20.4,
+   "marketCap": 20.28,
+   "exchange": "B"
+  },
+  {
+   "date": "31 Jul",
+   "stockName": "Prima Industries",
+   "scId": "PI27",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/edible-oils-solvent-extraction/primaindustries/PI27",
+   "resultType": "Q1 FY26-27",
+   "ltp": "18.39",
+   "change": "8.18",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/edible-oils-solvent-extraction/primaindustries/PI27#financials",
+   "stockShortName": "Prima Ind",
+   "marketCap": 19.85,
    "exchange": "B"
   },
   {
@@ -11808,12 +12774,12 @@
    "scId": "GCM",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/globalcapitalmarkets/GCM",
    "resultType": "Q1 FY26-27",
-   "ltp": "0.47",
+   "ltp": "0.46",
    "change": "2.17",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/globalcapitalmarkets/GCM#financials",
    "stockShortName": "Global Cap Mkts",
-   "marketCap": 18.72,
+   "marketCap": 18.32,
    "exchange": "B"
   },
   {
@@ -11864,12 +12830,12 @@
    "scId": "JC03",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/chemicals/jayshreechemicals/JC03",
    "resultType": "Q1 FY26-27",
-   "ltp": "5.74",
+   "ltp": "5.70",
    "change": "-2.88",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/chemicals/jayshreechemicals/JC03#financials",
    "stockShortName": "Jayshree Chem",
-   "marketCap": 16.83,
+   "marketCap": 16.72,
    "exchange": "B"
   },
   {
@@ -11878,12 +12844,12 @@
    "scId": "ESI02",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/commodity-chemicals/squarefourprojectsindia/ESI02",
    "resultType": "Q1 FY26-27",
-   "ltp": "8.33",
+   "ltp": "8.32",
    "change": "0.12",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/commodity-chemicals/squarefourprojectsindia/ESI02#financials",
    "stockShortName": "Square Four",
-   "marketCap": 16.34,
+   "marketCap": 16.32,
    "exchange": "B"
   },
   {
@@ -11892,12 +12858,12 @@
    "scId": "BBS",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/bharatbhushanfinancecommoditybrokers/BBS02",
    "resultType": "Q1 FY26-27",
-   "ltp": "24.30",
+   "ltp": "23.63",
    "change": "2.88",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/bharatbhushanfinancecommoditybrokers/BBS02#financials",
    "stockShortName": "BHARAT Bhushan",
-   "marketCap": 16.43,
+   "marketCap": 15.98,
    "exchange": "B"
   },
   {
@@ -11934,12 +12900,12 @@
    "scId": "PO01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/hospitals-medical-services/familycarehospitals/PO01",
    "resultType": "Q1 FY26-27",
-   "ltp": "2.77",
+   "ltp": "2.73",
    "change": "5.32",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/hospitals-medical-services/familycarehospitals/PO01#financials",
    "stockShortName": "Family Care Hos",
-   "marketCap": 14.96,
+   "marketCap": 14.75,
    "exchange": "B"
   },
   {
@@ -11966,7 +12932,7 @@
    "change": "-3.53",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/pharmaceuticals-drugs/dipnapharmachem/DP10#financials",
-   "stockShortName": "Dipna Pharma",
+   "stockShortName": "Dipna Pharmache",
    "marketCap": 13.67,
    "exchange": "B"
   },
@@ -12032,12 +12998,12 @@
    "scId": "GLL",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/goldenlegendleasingfinance/GLL",
    "resultType": "Q1 FY26-27",
-   "ltp": "8.30",
+   "ltp": "8.44",
    "change": "-4.60",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-leasing-hire-purchase/goldenlegendleasingfinance/GLL#financials",
    "stockShortName": "Golden Legend",
-   "marketCap": 12.34,
+   "marketCap": 12.55,
    "exchange": "B"
   },
   {
@@ -12052,6 +13018,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-general/tokyofinance/TF05#financials",
    "stockShortName": "Tokyo Finance",
    "marketCap": 12.48,
+   "exchange": "B"
+  },
+  {
+   "date": "7 Aug",
+   "stockName": "Suncare Traders",
+   "scId": "ST15",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/trading/suncaretraders/ST08",
+   "resultType": "Q1 FY26-27",
+   "ltp": "0.48",
+   "change": "--",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/trading/suncaretraders/ST08#financials",
+   "stockShortName": "Suncare Traders",
+   "marketCap": 12.24,
    "exchange": "B"
   },
   {
@@ -12088,12 +13068,12 @@
    "scId": "CTC02",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/longspurinternationalventures/CTC02",
    "resultType": "Q1 FY26-27",
-   "ltp": "8.62",
+   "ltp": "8.69",
    "change": "-4.96",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/longspurinternationalventures/CTC02#financials",
    "stockShortName": "Longspur Int",
-   "marketCap": 11.77,
+   "marketCap": 11.86,
    "exchange": "B"
   },
   {
@@ -12167,17 +13147,59 @@
    "exchange": "B"
   },
   {
+   "date": "14 Aug",
+   "stockName": "Raunaq International",
+   "scId": "RI39",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/construction-contracting-civil/raunaqinternational/RI42",
+   "resultType": "Q1 FY26-27",
+   "ltp": "31.02",
+   "change": "-4.99",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/construction-contracting-civil/raunaqinternational/RI42#financials",
+   "stockShortName": "Raunaq Intl",
+   "marketCap": 10.37,
+   "exchange": "B"
+  },
+  {
+   "date": "27 Jul",
+   "stockName": "Ishaan Infrastructures And Shelters ",
+   "scId": "IIA",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/construction-real-estate/ishaaninfrastructuresshelters/IIA",
+   "resultType": "Q1 FY26-27",
+   "ltp": "15.11",
+   "change": "-1.88",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/construction-real-estate/ishaaninfrastructuresshelters/IIA#financials",
+   "stockShortName": "Ishaan Infrastr",
+   "marketCap": 9.78,
+   "exchange": "B"
+  },
+  {
    "date": "28 Jul",
    "stockName": "Modern Home Credit and Capital",
    "scId": "MHC01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-general/modernhomecreditcapital/MHC01",
    "resultType": "Q1 FY26-27",
-   "ltp": "32.24",
+   "ltp": "32.38",
    "change": "-1.13",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-general/modernhomecreditcapital/MHC01#financials",
    "stockShortName": "Modern Home",
-   "marketCap": 9.45,
+   "marketCap": 9.49,
+   "exchange": "B"
+  },
+  {
+   "date": "30 Jul",
+   "stockName": "Kush Industries",
+   "scId": "SF14",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textiles/kushindustries/SNS",
+   "resultType": "Q1 FY26-27",
+   "ltp": "6.00",
+   "change": "-3.23",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textiles/kushindustries/SNS#financials",
+   "stockShortName": "Kush Industries",
+   "marketCap": 9.15,
    "exchange": "B"
   },
   {
@@ -12186,12 +13208,12 @@
    "scId": "GPC",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/printing-stationery/galaglobalproductsltd/GPC",
    "resultType": "Q1 FY26-27",
-   "ltp": "1.70",
+   "ltp": "1.67",
    "change": "-1.73",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/printing-stationery/galaglobalproductsltd/GPC#financials",
    "stockShortName": "Gala Global Prd",
-   "marketCap": 9.28,
+   "marketCap": 9.12,
    "exchange": "B"
   },
   {
@@ -12200,12 +13222,12 @@
    "scId": "GG",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/chemicals/gagangases/GG",
    "resultType": "Q1 FY26-27",
-   "ltp": "19.58",
+   "ltp": "19.32",
    "change": "4.99",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/chemicals/gagangases/GG#financials",
    "stockShortName": "Gagan Gases",
-   "marketCap": 8.85,
+   "marketCap": 8.73,
    "exchange": "B"
   },
   {
@@ -12228,12 +13250,12 @@
    "scId": "KU01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-general/kuberudyog/KU01",
    "resultType": "Q1 FY26-27",
-   "ltp": "24.46",
+   "ltp": "24.74",
    "change": "-4.97",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-general/kuberudyog/KU01#financials",
    "stockShortName": "Kuber Udyog",
-   "marketCap": 8.4,
+   "marketCap": 8.49,
    "exchange": "B"
   },
   {
@@ -12256,12 +13278,26 @@
    "scId": "IGC01",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/trading/igcfoils/IGC02",
    "resultType": "Q1 FY26-27",
-   "ltp": "2.15",
+   "ltp": "2.14",
    "change": "-1.38",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/trading/igcfoils/IGC02#financials",
    "stockShortName": "IGC Foils",
-   "marketCap": 7.68,
+   "marketCap": 7.64,
+   "exchange": "B"
+  },
+  {
+   "date": "31 Jul",
+   "stockName": "Hindustan Bio Science",
+   "scId": "HS07",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/hindustanbioscience/HBS01",
+   "resultType": "Q1 FY26-27",
+   "ltp": "7.40",
+   "change": "0.95",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/hindustanbioscience/HBS01#financials",
+   "stockShortName": "Hind BioScience",
+   "marketCap": 7.59,
    "exchange": "B"
   },
   {
@@ -12321,6 +13357,20 @@
    "exchange": "B"
   },
   {
+   "date": "13 Aug",
+   "stockName": "Parker Agrochem E",
+   "scId": "PAE02",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/trading/parkeragrocheme/PAE02",
+   "resultType": "Q1 FY26-27",
+   "ltp": "13.85",
+   "change": "--",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/trading/parkeragrocheme/PAE02#financials",
+   "stockShortName": "Parker Agro",
+   "marketCap": 6.62,
+   "exchange": "B"
+  },
+  {
    "date": "3 Aug",
    "stockName": "Amraworld Agrico",
    "scId": "GNS",
@@ -12346,6 +13396,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investments/psitinfrastructureservices/PSI04#financials",
    "stockShortName": "PS IT Infra",
    "marketCap": 6.56,
+   "exchange": "B"
+  },
+  {
+   "date": "27 Jul",
+   "stockName": "Money Masters Leasing and Finance",
+   "scId": "MML04",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/moneymastersleasingfinance/MML04",
+   "resultType": "Q1 FY26-27",
+   "ltp": "0.65",
+   "change": "-7.14",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/moneymastersleasingfinance/MML04#financials",
+   "stockShortName": "Money Masters",
+   "marketCap": 6.52,
    "exchange": "B"
   },
   {
@@ -12382,12 +13446,12 @@
    "scId": "PK",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/textile-spinning/newtracfoodsbeverages/PK",
    "resultType": "Q1 FY26-27",
-   "ltp": "3.23",
+   "ltp": "3.21",
    "change": "-4.72",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/textile-spinning/newtracfoodsbeverages/PK#financials",
    "stockShortName": "Newtrac Foods",
-   "marketCap": 6.2,
+   "marketCap": 6.16,
    "exchange": "B"
   },
   {
@@ -12416,6 +13480,20 @@
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/finance-investment/voltaireleasingfinance/VLF01#financials",
    "stockShortName": "Voltaire Leasin",
    "marketCap": 5.77,
+   "exchange": "B"
+  },
+  {
+   "date": "28 Jul",
+   "stockName": "Mukta Agriculture",
+   "scId": "PA08",
+   "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/muktaagriculture/PA08",
+   "resultType": "Q1 FY26-27",
+   "ltp": "2.75",
+   "change": "-1.79",
+   "time": "Time Not Available",
+   "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/miscellaneous/muktaagriculture/PA08#financials",
+   "stockShortName": "Mukta Agri",
+   "marketCap": 5.96,
    "exchange": "B"
   },
   {
@@ -12536,12 +13614,12 @@
    "scId": "GCH",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/food-processing/goldcoinhealthfoods/GCH",
    "resultType": "Q1 FY26-27",
-   "ltp": "31.50",
+   "ltp": "31.30",
    "change": "2.74",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/food-processing/goldcoinhealthfoods/GCH#financials",
    "stockShortName": "Gold Coin Healt",
-   "marketCap": 4.73,
+   "marketCap": 4.7,
    "exchange": "B"
   },
   {
@@ -12606,12 +13684,12 @@
    "scId": "OI15",
    "stockUrl": "https://www.moneycontrol.com/india/stockpricequote/other-construction-materials/omnipotentindustries/OI15",
    "resultType": "Q1 FY26-27",
-   "ltp": "2.52",
+   "ltp": "2.45",
    "change": "4.56",
    "time": "Time Not Available",
    "seeFinancial": "https://www.moneycontrol.com/india/stockpricequote/other-construction-materials/omnipotentindustries/OI15#financials",
-   "stockShortName": "Omnipotent Ind",
-   "marketCap": 1.52,
+   "stockShortName": "Omnipotent",
+   "marketCap": 1.48,
    "exchange": "B"
   }
  ],
