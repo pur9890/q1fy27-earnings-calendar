@@ -199,15 +199,17 @@ def build_incremental(comps):
     added = 0
     for c in missing:
         t = resolve_one(c, q4dates)
+        # Record EVERY company we checked - the time if found, else null - so
+        # companies not on BSE are never re-checked on later runs (keeps builds fast).
+        existing[norm(c)] = t
         if t:
-            existing[norm(c)] = t
             added += 1
             print(f"  + {c}  ->  {t}")
     OUT.write_text(json.dumps(existing, ensure_ascii=False, indent=0, sort_keys=True),
                    encoding="utf-8")
-    still = len(comps) - sum(1 for c in comps if norm(c) in existing)
-    print(f"incremental done: +{added} new times | total {len(existing)} | "
-          f"{still} companies still without a time (not on BSE)")
+    have = sum(1 for v in existing.values() if v)
+    print(f"incremental done: +{added} new times | {have} companies have a time | "
+          f"{len(existing) - have} confirmed no BSE time (won't re-check)")
 
 
 def build_full(comps):
