@@ -402,12 +402,14 @@ def build_html(data):
     --line:#28324a; --ink:#e7ecf5; --mut:#8b97ad; --accent:#4f8cff;
     --has:#1a2438; --wk:#131926; --cobg:#232d47; --green:#2bb673;
     --todaybg:#17284a; --todayco:#2b4675; --amber:#f0a83c; --flash:#3a63c7;
+    --time:#d7b26a;
   }}
   :root.light {{
     --bg:#f3f5fa; --panel:#ffffff; --cell2:#ffffff;
     --line:#e0e5ef; --ink:#16202f; --mut:#66707f; --accent:#2f6bff;
     --has:#eef4ff; --wk:#eff1f6; --cobg:#eef2f9; --green:#159060;
     --todaybg:#e2ecff; --todayco:#d3e2ff; --amber:#c67c12; --flash:#bcd2ff;
+    --time:#9a6b1a;
   }}
   * {{ box-sizing:border-box; }}
   body {{ margin:0; background:var(--bg); color:var(--ink);
@@ -502,7 +504,7 @@ def build_html(data):
     overflow:hidden; }}
   .co .nmlink {{ flex:1; min-width:0; color:inherit; text-decoration:none;
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
-  .co .tm {{ color:var(--mut); font-weight:600; font-size:10px; }}
+  .co .tm {{ color:var(--time); font-weight:700; font-size:10px; }}
   .co:hover {{ background:var(--accent); color:#fff; }}
   .co:hover .tm {{ color:#dbe4ff; }}
   .co.hasEst {{ box-shadow:inset 3px 0 0 var(--green); }}
