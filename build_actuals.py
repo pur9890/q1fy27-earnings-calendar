@@ -45,7 +45,7 @@ def clean(s):
     return s.strip().rstrip("+").strip()
 
 
-MAX_PER_RUN = 40          # cap fetches per build so it never drags on
+MAX_PER_RUN = 5           # small batch per build -> stays fast; fills in gradually
 FETCH_TIMEOUT = 12        # a stalled Screener request shouldn't hold up the build
 
 

@@ -40,14 +40,12 @@ jobs:
 
       - name: Scrape MoneyControl and build the calendar
         run: |
-          # FAST MODE: only refresh the calendar + regenerate pages from the committed
-          # data files. The incremental data-fetch builders (times/tickers/actuals via
-          # BSE + Screener) are temporarily disabled because they made deploys slow;
-          # committed release_times.json / tickers.json / actuals.json are used as-is.
-          # Re-enable (optimized) later:
-          #   python build_release_times.py || echo "time-builder skipped"
-          #   python build_tickers.py       || echo "ticker-builder skipped"
-          #   python build_actuals.py       || echo "actuals-builder skipped"
+          python update_calendar.py
+          # Actuals: fetch a SMALL batch (5/run) from Screener so builds stay fast;
+          # the rest fill in gradually over later runs. Best-effort - if Screener is
+          # unavailable it keeps the committed actuals.json.
+          python build_actuals.py || echo "actuals-builder skipped; using committed actuals"
+          # (times/tickers BSE builders still paused for speed - re-enable optimized later)
           python update_calendar.py
           # Rebuild so the freshly-found times, tickers and actuals are baked into the page.
           python update_calendar.py
