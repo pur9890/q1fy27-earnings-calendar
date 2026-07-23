@@ -857,7 +857,7 @@ def build_estimates_html(records, actuals=None):
      <b>Est</b> = broker average (hover for the low&ndash;high range). <b>Actual</b> is auto-filled
      from Screener once a company reports (<b>{reported}</b> so far, shown in <b style="color:var(--green)">green</b>);
      for the rest, <b>type the number in</b> and the <b>Surprise</b> calculates instantly.
-     Your entries are saved in your browser.</div>
+     Your entries save in your browser and are <b>auto-replaced by the official Screener figure</b> the moment it&rsquo;s published.</div>
   <div class="bar">
     <div class="search"><input id="q" type="search"
        placeholder="Search a company&hellip; (e.g. Reliance, Infosys, Bajaj)"></div>
@@ -923,11 +923,15 @@ def build_estimates_html(records, actuals=None):
     const slug = card.id;
     card.querySelectorAll('input.ain').forEach(inp => {{
       const m = inp.closest('tr').dataset.m;
+      const auto = inp.dataset.auto || '';
       const saved = store[slug] && store[slug][m];
-      inp.value = (saved != null && saved !== '') ? saved : (inp.dataset.auto || '');
-      inp.classList.toggle('auto', inp.value !== '' && inp.value === inp.dataset.auto);
+      // Behaviour B: the official Screener figure (auto) always wins when present;
+      // your manual entry only fills companies that have no actual yet, and is
+      // replaced automatically once the real number is published.
+      inp.value = auto !== '' ? auto : ((saved != null && saved !== '') ? saved : '');
+      inp.classList.toggle('auto', inp.value !== '' && inp.value === auto);
       inp.addEventListener('input', () => {{
-        inp.classList.toggle('auto', inp.value !== '' && inp.value === inp.dataset.auto);
+        inp.classList.toggle('auto', inp.value !== '' && inp.value === auto);
         store[slug] = store[slug] || {{}};
         store[slug][m] = inp.value;
         localStorage.setItem(AK, JSON.stringify(store));

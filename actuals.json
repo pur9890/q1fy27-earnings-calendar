@@ -1,8 +1,38 @@
 {
+"360onewam": {
+"ebitda": 773,
+"pat": 331,
+"rev": 1226
+},
 "aavasfinanciers": {
 "ebitda": null,
 "pat": 171,
 "rev": 709
+},
+"adityabirlaamc": {
+"ebitda": 258,
+"pat": 309,
+"rev": 463
+},
+"alliedblendersanddistillers": {
+"ebitda": 115,
+"pat": 45,
+"rev": 979
+},
+"anandrathiwealth": {
+"ebitda": 109,
+"pat": 163,
+"rev": 322
+},
+"angelone": {
+"ebitda": 485,
+"pat": 231,
+"rev": 1430
+},
+"arvindfashions": {
+"ebitda": 160,
+"pat": 28,
+"rev": 1278
 },
 "atlantaelectricals": {
 "ebitda": 77,
@@ -28,6 +58,11 @@
 "ebitda": 970,
 "pat": 735,
 "rev": 1501
+},
+"bpcl": {
+"ebitda": -4055,
+"pat": -1873,
+"rev": 151277
 },
 "ceat": {
 "ebitda": 365,
@@ -74,6 +109,11 @@
 "pat": 1302,
 "rev": 7862
 },
+"fractalanalytics": {
+"ebitda": 120,
+"pat": 72,
+"rev": 912
+},
 "gabrielindia": {
 "ebitda": 107,
 "pat": 76,
@@ -84,10 +124,20 @@
 "pat": 180,
 "rev": 1477
 },
+"havellsindia": {
+"ebitda": 466,
+"pat": 290,
+"rev": 6518
+},
 "hcltechnologies": {
 "ebitda": 6870,
 "pat": 4626,
 "rev": 34579
+},
+"hdfcamc": {
+"ebitda": 850,
+"pat": 837,
+"rev": 1100
 },
 "hdfcbank": {
 "ebitda": null,
@@ -109,6 +159,11 @@
 "pat": 386,
 "rev": 28513
 },
+"iiflfinance": {
+"ebitda": null,
+"pat": 713,
+"rev": 3919
+},
 "indiacements": {
 "ebitda": 156,
 "pat": 27,
@@ -123,6 +178,11 @@
 "ebitda": null,
 "pat": 3357,
 "rev": 18095
+},
+"indianenergyexch": {
+"ebitda": 131,
+"pat": 135,
+"rev": 158
 },
 "indianhotels": {
 "ebitda": 673,
@@ -184,10 +244,25 @@
 "pat": 1469,
 "rev": 11608
 },
+"mahindralifespace": {
+"ebitda": 94,
+"pat": 86,
+"rev": 962
+},
 "mahindralogistics": {
 "ebitda": 115,
 "pat": 28,
 "rev": 2003
+},
+"mandmfinancial": {
+"ebitda": null,
+"pat": 927,
+"rev": 5718
+},
+"mastek": {
+"ebitda": 151,
+"pat": 106,
+"rev": 985
 },
 "medplushealthservices": {
 "ebitda": 133,
@@ -203,6 +278,11 @@
 "ebitda": 56,
 "pat": 63,
 "rev": 357
+},
+"nuvocovistascorp": {
+"ebitda": 568,
+"pat": 160,
+"rev": 3129
 },
 "oberoirealty": {
 "ebitda": 734,
@@ -224,6 +304,11 @@
 "pat": 5835,
 "rev": 33589
 },
+"pvrinox": {
+"ebitda": 528,
+"pat": 56,
+"rev": 1622
+},
 "rblbank": {
 "ebitda": null,
 "pat": 234,
@@ -234,10 +319,30 @@
 "pat": 23196,
 "rev": 309468
 },
+"rossaribiotech": {
+"ebitda": 81,
+"pat": 35,
+"rev": 697
+},
 "sagility": {
 "ebitda": 438,
 "pat": 217,
 "rev": 1963
+},
+"schaefflerindia": {
+"ebitda": 499,
+"pat": 326,
+"rev": 2761
+},
+"shoppersstop": {
+"ebitda": 187,
+"pat": -14,
+"rev": 1291
+},
+"shyammetalics": {
+"ebitda": 765,
+"pat": 351,
+"rev": 5455
 },
 "sobha": {
 "ebitda": 78,
@@ -249,20 +354,50 @@
 "pat": 179,
 "rev": 1301
 },
+"southindianbank": {
+"ebitda": null,
+"pat": 378,
+"rev": 2628
+},
+"srf": {
+"ebitda": 1237,
+"pat": 759,
+"rev": 5033
+},
 "sunteckrealty": {
 "ebitda": 67,
 "pat": 42,
 "rev": 192
+},
+"tatacomm": {
+"ebitda": 1230,
+"pat": 130,
+"rev": 6583
 },
 "tatatechnologies": {
 "ebitda": 267,
 "pat": 181,
 "rev": 1665
 },
+"tatvachintan": {
+"ebitda": 32,
+"pat": 16,
+"rev": 167
+},
+"tcs": {
+"ebitda": 18556,
+"pat": 13420,
+"rev": 72275
+},
 "techmahindra": {
 "ebitda": 2738,
 "pat": 1486,
 "rev": 15712
+},
+"trident": {
+"ebitda": 300,
+"pat": 158,
+"rev": 1787
 },
 "tvsmotor": {
 "ebitda": 2343,
@@ -289,6 +424,11 @@
 "pat": 463,
 "rev": 2708
 },
+"utiamc": {
+"ebitda": 383,
+"pat": 294,
+"rev": 584
+},
 "vishalmegamart": {
 "ebitda": 545,
 "pat": 259,
@@ -298,5 +438,10 @@
 "ebitda": 4633,
 "pat": 3356,
 "rev": 24479
+},
+"yesbank": {
+"ebitda": null,
+"pat": 1072,
+"rev": 8054
 }
 }

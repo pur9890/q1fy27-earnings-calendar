@@ -152,7 +152,7 @@ def main():
             hits += 1
         if i % 20 == 0 or i == len(todo):
             print(f"  {i}/{len(todo)}  (+{hits} with actuals)", flush=True)
-        time.sleep(0.4)
+        time.sleep(1.3)   # gentle: Screener rate-limits bulk fetching
 
     OUT.write_text(json.dumps(known, ensure_ascii=False, indent=0, sort_keys=True), encoding="utf-8")
     print(f"DONE  {len(known)} companies have actuals  ->  {OUT.name}")
