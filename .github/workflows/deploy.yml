@@ -46,8 +46,9 @@ jobs:
           python build_release_times.py || echo "time-builder skipped; using existing times"
           # Refresh NSE tickers (TradingView chart links) for any new companies.
           python build_tickers.py || echo "ticker-builder skipped; using existing tickers"
-          # Auto-fill reported actuals from Screener (best-effort; keeps committed file if blocked).
-          python build_actuals.py || echo "actuals-builder skipped; using existing actuals"
+          # Screener actuals fetch temporarily DISABLED (kept builds slow) - uses the
+          # committed actuals.json as-is. Re-enable later:
+          # python build_actuals.py || echo "actuals-builder skipped; using existing actuals"
           # Rebuild so the freshly-found times, tickers and actuals are baked into the page.
           python update_calendar.py
           mkdir -p _site
