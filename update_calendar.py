@@ -254,19 +254,80 @@ def month_grid(year, month, by_date, today=None):
             f'<div class="grid">{dows}{"".join(cells)}</div></section>')
 
 
+def _time_mins(tm):
+    """'1:10 PM' -> minutes past midnight; None if unparseable/empty."""
+    import re as _re
+    m = _re.match(r"(\d+):(\d+)\s*(AM|PM)", tm or "", _re.I)
+    if not m:
+        return None
+    h, mi, ap = int(m.group(1)), int(m.group(2)), m.group(3).upper()
+    if ap == "PM" and h != 12:
+        h += 12
+    if ap == "AM" and h == 12:
+        h = 0
+    return h * 60 + mi
+
+
+# NSE market hours: 9:15 AM (555) to 3:30 PM (930)
+MKT_OPEN, MKT_CLOSE = 555, 930
+
+
 def today_banner(by_date, today):
-    """Prominent pop-out: who reports today (or the next reporting day)."""
+    """Prominent pop-out: today's reporters, grouped by market session, collapsible."""
     todays = by_date.get(today, [])
     if todays:
-        chips = "".join(company_chip(c) for c in todays)
+        groups = {"live": [], "aft": [], "pre": [], "tbc": []}
+        for c in todays:
+            m = _time_mins(c.get("time"))
+            if m is None:
+                groups["tbc"].append((10 ** 9, c))
+            elif m < MKT_OPEN:
+                groups["pre"].append((m, c))
+            elif m <= MKT_CLOSE:
+                groups["live"].append((m, c))
+            else:
+                groups["aft"].append((m, c))
+        for g in ("live", "aft", "pre"):
+            groups[g].sort(key=lambda x: x[0])
+
+        def chips(items):
+            return "".join(company_chip(c) for _, c in items)
+
+        def grp(label, rng, dotvar, items, live=False, none_msg=None):
+            if not items and not none_msg:
+                return ""
+            body = (f'<div class="blist">{chips(items)}</div>' if items
+                    else f'<div class="bnone">{none_msg}</div>')
+            return (f'<div class="bgrp{" live" if live else ""}"><div class="bgrp-h">'
+                    f'<span class="gdot" style="background:var({dotvar})"></span>{label}'
+                    f'<span class="cnt">{rng} &middot; {len(items)}</span></div>{body}</div>')
+
+        body = (grp("During market hours &middot; live reaction", "9:15 AM&ndash;3:30 PM",
+                    "--amber", groups["live"], live=True,
+                    none_msg="No results during market hours today.")
+                + grp("After market close", "after 3:30 PM", "--accent", groups["aft"])
+                + grp("Pre-market", "before 9:15 AM", "--mut", groups["pre"])
+                + grp("Time to be confirmed", "no last-quarter time on record",
+                      "--mut", groups["tbc"]))
+
+        pills = ('<span class="bpills">'
+                 f'<span class="bpill live">{len(groups["live"])} live</span>'
+                 f'<span class="bpill aft">{len(groups["aft"])} after close</span>'
+                 + (f'<span class="bpill tbc">{len(groups["tbc"])} to confirm</span>'
+                    if groups["tbc"] else "")
+                 + '</span>')
         noun = "company" if len(todays) == 1 else "companies"
         return (f'<div class="banner" id="banner">'
-                f'<div class="bhead"><span class="bdot"></span>'
+                f'<div class="bhead" onclick="toggleBanner(event)">'
+                f'<span class="bchev"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" '
+                f'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+                f'<path d="M6 4l4 4-4 4"/></svg></span>'
+                f'<span class="bdot"></span>'
                 f'<b>Reporting today</b> &middot; {today.strftime("%a, %d %b %Y")} '
-                f'&middot; {len(todays)} {noun}'
-                f'<button class="bjump" onclick="jumpEl(document.getElementById(\'today\'))">'
-                f'Jump to today &darr;</button></div>'
-                f'<div class="blist">{chips}</div></div>')
+                f'&middot; {len(todays)} {noun}{pills}'
+                f'<button class="bjump" onclick="event.stopPropagation();'
+                f'jumpEl(document.getElementById(\'today\'))">Jump to today &darr;</button></div>'
+                f'<div class="bbody">{body}</div></div>')
     future = sorted(dd for dd in by_date if dd > today)
     if future:
         nd = future[0]
@@ -384,14 +445,31 @@ def build_html(data):
     background:var(--todaybg); border:1px solid var(--accent); }}
   .banner.none {{ background:var(--panel); border-color:var(--line); color:var(--mut);
     font-size:13.5px; }}
-  .bhead {{ display:flex; align-items:center; gap:8px; font-size:14px; flex-wrap:wrap; }}
+  .bhead {{ display:flex; align-items:center; gap:8px; font-size:14px; flex-wrap:wrap;
+    cursor:pointer; user-select:none; }}
+  .bchev {{ display:flex; color:var(--mut); transition:transform .18s; }}
+  .banner:not(.collapsed) .bchev {{ transform:rotate(90deg); }}
   .bdot {{ width:9px; height:9px; border-radius:50%; background:var(--amber);
     box-shadow:0 0 0 4px color-mix(in srgb,var(--amber) 30%,transparent); }}
   .bdot.mute {{ background:var(--mut); box-shadow:none; }}
+  .bpills {{ display:flex; gap:6px; flex-wrap:wrap; margin-left:auto; }}
+  .bpill {{ font-size:11px; font-weight:700; padding:2px 9px; border-radius:20px; }}
+  .bpill.live {{ background:var(--amber); color:#241a00; }}
+  .bpill.aft {{ background:color-mix(in srgb,var(--accent) 22%,transparent); color:var(--accent); }}
+  .bpill.tbc {{ background:color-mix(in srgb,var(--mut) 26%,transparent); color:var(--mut); }}
   .bjump {{ background:var(--accent); color:#fff; border:none; border-radius:7px;
     font-size:12px; font-weight:700; padding:4px 10px; cursor:pointer; }}
   .bjump:hover {{ filter:brightness(1.08); }}
-  .blist {{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }}
+  .bbody {{ margin-top:2px; }}
+  .banner.collapsed .bbody {{ display:none; }}
+  .bgrp {{ margin-top:13px; }}
+  .bgrp.live {{ border-left:3px solid var(--amber); padding-left:11px; }}
+  .bgrp-h {{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:650;
+    margin-bottom:8px; }}
+  .bgrp-h .gdot {{ width:10px; height:10px; border-radius:50%; flex:none; }}
+  .bgrp-h .cnt {{ margin-left:auto; font-size:11.5px; font-weight:500; color:var(--mut); }}
+  .bnone {{ font-size:12.5px; color:var(--mut); }}
+  .blist {{ display:flex; flex-wrap:wrap; gap:6px; }}
   .blist .co {{ display:inline-flex; max-width:100%; }}
   .blist .nmlink {{ flex:0 1 auto; }}
   main {{ padding:18px 26px 60px; }}
@@ -520,6 +598,18 @@ def build_html(data):
     }}
   }}
   function jumpDate(iso) {{ jumpEl(document.querySelector('.cell[data-date="' + iso + '"]')); }}
+
+  // ---- collapsible "reporting today" banner (remembers your choice) ----
+  function toggleBanner(e) {{
+    if (e && e.target.closest('.bjump')) return;
+    const b = document.getElementById('banner'); if (!b) return;
+    const col = b.classList.toggle('collapsed');
+    localStorage.setItem('cal-banner-collapsed', col ? '1' : '0');
+  }}
+  (function () {{
+    const b = document.getElementById('banner');
+    if (b && localStorage.getItem('cal-banner-collapsed') === '1') b.classList.add('collapsed');
+  }})();
 
   // bring today into view on load
   (function () {{
