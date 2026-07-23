@@ -45,9 +45,13 @@ def clean(s):
     return s.strip().rstrip("+").strip()
 
 
+MAX_PER_RUN = 40          # cap fetches per build so it never drags on
+FETCH_TIMEOUT = 12        # a stalled Screener request shouldn't hold up the build
+
+
 def _get(url):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Encoding": "gzip"})
-    r = urllib.request.urlopen(req, timeout=30, context=CTX)
+    r = urllib.request.urlopen(req, timeout=FETCH_TIMEOUT, context=CTX)
     d = r.read()
     if r.headers.get("Content-Encoding") == "gzip":
         d = gzip.decompress(d)
@@ -140,7 +144,10 @@ def main():
             known = {}
 
     todo = [(k, t) for k, t in want.items() if k not in known]
-    print(f"{len(want)} reported+covered companies | {len(known)} already have actuals | {len(todo)} to fetch")
+    capped = todo[:MAX_PER_RUN]      # keep each build fast; the rest fill in next run
+    print(f"{len(want)} reported+covered | {len(known)} already have actuals | "
+          f"{len(todo)} pending, fetching {len(capped)} this run")
+    todo = capped
     hits = 0
     for i, (key, tkr) in enumerate(todo, 1):
         try:

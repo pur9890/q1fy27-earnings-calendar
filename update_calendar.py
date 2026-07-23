@@ -954,7 +954,7 @@ def build_estimates_html(records, actuals=None):
   const AK = 'cal-actuals';
   let store = {{}};
   try {{ store = JSON.parse(localStorage.getItem(AK) || '{{}}'); }} catch (e) {{}}
-  const arrow = (d, pp) => (d >= 0 ? '▲ Beat ' : '▼ Miss ') + Math.abs(d).toFixed(1) + (pp ? ' pp' : '%');
+  const arrow = (d, pp) => (d >= 0 ? '▲ ' : '▼ ') + Math.abs(d).toFixed(1) + (pp ? ' pp' : '%');
   function recalc(card) {{
     const est = {{}}, act = {{}};
     card.querySelectorAll('tr[data-m]').forEach(tr => {{

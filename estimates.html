@@ -5062,7 +5062,7 @@
   <b>Est</b> = average of MOSL / Kotak / Ambit / Spark / I-Sec for Q1&nbsp;FY27E (Revenue/NII, EBITDA/PPOP, PAT).
   <b>Actual</b> is the reported figure auto-filled from Screener (green) or typed by you; surprise =
   (actual &minus; est) &divide; est, margin surprise in percentage points. For banks/NBFCs, EBITDA is not
-  meaningful and is left blank. Numbers in &#8377; crore. Updated 24 Jul 2026, 03:56 AM IST.
+  meaningful and is left blank. Numbers in &#8377; crore. Updated 24 Jul 2026, 04:15 AM IST.
 </footer>
 <script>
   // light / dark theme, shared with the calendar via the same saved preference
@@ -5093,7 +5093,7 @@
   const AK = 'cal-actuals';
   let store = {};
   try { store = JSON.parse(localStorage.getItem(AK) || '{}'); } catch (e) {}
-  const arrow = (d, pp) => (d >= 0 ? '▲ Beat ' : '▼ Miss ') + Math.abs(d).toFixed(1) + (pp ? ' pp' : '%');
+  const arrow = (d, pp) => (d >= 0 ? '▲ ' : '▼ ') + Math.abs(d).toFixed(1) + (pp ? ' pp' : '%');
   function recalc(card) {
     const est = {}, act = {};
     card.querySelectorAll('tr[data-m]').forEach(tr => {
