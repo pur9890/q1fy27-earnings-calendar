@@ -1,0 +1,302 @@
+{
+"aavasfinanciers": {
+"ebitda": null,
+"pat": 171,
+"rev": 709
+},
+"atlantaelectricals": {
+"ebitda": 77,
+"pat": 47,
+"rev": 466
+},
+"avenuesupermarts": {
+"ebitda": 1499,
+"pat": 860,
+"rev": 18795
+},
+"axisbank": {
+"ebitda": null,
+"pat": 7670,
+"rev": 35542
+},
+"bajajauto": {
+"ebitda": 4528,
+"pat": 3189,
+"rev": 21689
+},
+"billionbrains": {
+"ebitda": 970,
+"pat": 735,
+"rev": 1501
+},
+"ceat": {
+"ebitda": 365,
+"pat": 4,
+"rev": 4318
+},
+"cieautomotive": {
+"ebitda": 390,
+"pat": 236,
+"rev": 2621
+},
+"cipla": {
+"ebitda": 1192,
+"pat": 786,
+"rev": 7119
+},
+"coromandelinternational": {
+"ebitda": 756,
+"pat": 382,
+"rev": 8165
+},
+"cyient": {
+"ebitda": 263,
+"pat": 109,
+"rev": 2076
+},
+"cyientdlm": {
+"ebitda": 39,
+"pat": 16,
+"rev": 374
+},
+"drreddyslabs": {
+"ebitda": 860,
+"pat": 436,
+"rev": 8100
+},
+"eternal": {
+"ebitda": 594,
+"pat": 92,
+"rev": 20211
+},
+"federalbank": {
+"ebitda": null,
+"pat": 1302,
+"rev": 7862
+},
+"gabrielindia": {
+"ebitda": 107,
+"pat": 76,
+"rev": 1274
+},
+"granulesindia": {
+"ebitda": 339,
+"pat": 180,
+"rev": 1477
+},
+"hcltechnologies": {
+"ebitda": 6870,
+"pat": 4626,
+"rev": 34579
+},
+"hdfcbank": {
+"ebitda": null,
+"pat": 20383,
+"rev": 90575
+},
+"hdfclifeinsur": {
+"ebitda": 506,
+"pat": 611,
+"rev": 33759
+},
+"icicibank": {
+"ebitda": null,
+"pat": 16276,
+"rev": 52241
+},
+"iciciprulife": {
+"ebitda": 293,
+"pat": 386,
+"rev": 28513
+},
+"indiacements": {
+"ebitda": 156,
+"pat": 27,
+"rev": 1019
+},
+"indiamartinter": {
+"ebitda": 132,
+"pat": 172,
+"rev": 414
+},
+"indianbank": {
+"ebitda": null,
+"pat": 3357,
+"rev": 18095
+},
+"indianhotels": {
+"ebitda": 673,
+"pat": 391,
+"rev": 2339
+},
+"indusindbank": {
+"ebitda": null,
+"pat": 1037,
+"rev": 11310
+},
+"infosys": {
+"ebitda": 11409,
+"pat": 7775,
+"rev": 48211
+},
+"interglobeaviation": {
+"ebitda": 3267,
+"pat": -238,
+"rev": 24584
+},
+"jiofinancial": {
+"ebitda": 1397,
+"pat": 830,
+"rev": 2004
+},
+"jkcements": {
+"ebitda": 648,
+"pat": 275,
+"rev": 4032
+},
+"jswenergy": {
+"ebitda": 2873,
+"pat": 533,
+"rev": 5207
+},
+"jswinfra": {
+"ebitda": 674,
+"pat": 358,
+"rev": 1445
+},
+"jswsteel": {
+"ebitda": 9285,
+"pat": 4696,
+"rev": 47364
+},
+"kotakmahindrabank": {
+"ebitda": null,
+"pat": 5480,
+"rev": 18355
+},
+"landtfinance": {
+"ebitda": null,
+"pat": 916,
+"rev": 5213
+},
+"ltm": {
+"ebitda": 2061,
+"pat": 1469,
+"rev": 11608
+},
+"mahindralogistics": {
+"ebitda": 115,
+"pat": 28,
+"rev": 2003
+},
+"medplushealthservices": {
+"ebitda": 133,
+"pat": 33,
+"rev": 1880
+},
+"nestle": {
+"ebitda": 1522,
+"pat": 959,
+"rev": 6378
+},
+"newgensoftwaretechnologies": {
+"ebitda": 56,
+"pat": 63,
+"rev": 357
+},
+"oberoirealty": {
+"ebitda": 734,
+"pat": 544,
+"rev": 1301
+},
+"polycabindia": {
+"ebitda": 1136,
+"pat": 797,
+"rev": 8210
+},
+"poonawallafincorp": {
+"ebitda": null,
+"pat": 308,
+"rev": 2330
+},
+"punjabnationalbank": {
+"ebitda": null,
+"pat": 5835,
+"rev": 33589
+},
+"rblbank": {
+"ebitda": null,
+"pat": 234,
+"rev": 3840
+},
+"relianceinds": {
+"ebitda": 47517,
+"pat": 23196,
+"rev": 309468
+},
+"sagility": {
+"ebitda": 438,
+"pat": 217,
+"rev": 1963
+},
+"sobha": {
+"ebitda": 78,
+"pat": 51,
+"rev": 1278
+},
+"sonablwprecis": {
+"ebitda": 293,
+"pat": 179,
+"rev": 1301
+},
+"sunteckrealty": {
+"ebitda": 67,
+"pat": 42,
+"rev": 192
+},
+"tatatechnologies": {
+"ebitda": 267,
+"pat": 181,
+"rev": 1665
+},
+"techmahindra": {
+"ebitda": 2738,
+"pat": 1486,
+"rev": 15712
+},
+"tvsmotor": {
+"ebitda": 2343,
+"pat": 1058,
+"rev": 16296
+},
+"ujjivansmallfinancebank": {
+"ebitda": null,
+"pat": 317,
+"rev": 2025
+},
+"ultratechcement": {
+"ebitda": 5015,
+"pat": 2604,
+"rev": 24648
+},
+"unionbank": {
+"ebitda": null,
+"pat": 5642,
+"rev": 27427
+},
+"unitedspirits": {
+"ebitda": 429,
+"pat": 463,
+"rev": 2708
+},
+"vishalmegamart": {
+"ebitda": 545,
+"pat": 259,
+"rev": 3727
+},
+"wipro": {
+"ebitda": 4633,
+"pat": 3356,
+"rev": 24479
+}
+}

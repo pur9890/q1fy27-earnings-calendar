@@ -38,6 +38,7 @@ OUT_JSON = Path(__file__).with_name("earnings_data.json")
 TIMES_JSON = Path(__file__).with_name("release_times.json")  # approx times, built separately
 EST_JSON = Path(__file__).with_name("estimates.json")        # broker estimates, built separately
 TKR_JSON = Path(__file__).with_name("tickers.json")          # NSE tickers for TradingView links
+ACT_JSON = Path(__file__).with_name("actuals.json")          # reported actuals (Screener)
 OUT_EST_HTML = Path(__file__).with_name("estimates.html")
 
 API = ("https://api.moneycontrol.com/mcapi/v1/earnings/get-earnings-data"
@@ -92,6 +93,13 @@ def tkr_norm(s):
 def load_tickers():
     try:
         return {k: v for k, v in json.loads(TKR_JSON.read_text(encoding="utf-8")).items() if v}
+    except Exception:
+        return {}
+
+
+def load_actuals():
+    try:
+        return json.loads(ACT_JSON.read_text(encoding="utf-8"))
     except Exception:
         return {}
 
@@ -692,45 +700,71 @@ def _pct(v):
     return "&mdash;" if v is None else f"{v * 100:.1f}%"
 
 
-def _metric(label, m, kind="cr"):
-    """One metric: average, plus the low-high range across brokers when 2+ cover it."""
-    fmt = _cr if kind == "cr" else _pct
-    if not m:
-        return f'<div class="m"><span class="ml">{label}</span><span class="mv">&mdash;</span></div>'
-    bar = ""
-    if m.get("min") is not None and m.get("max") is not None:
-        lo, hi = m["min"], m["max"]
-        spread = hi - lo
-        pos = ((m["avg"] - lo) / spread * 100) if spread else 50
-        pos = max(0.0, min(100.0, pos))
-        tip = escape(f"Low {fmt(lo).replace('&mdash;','-')} ({m.get('minBy','')}) "
-                     f"/ High {fmt(hi).replace('&mdash;','-')} ({m.get('maxBy','')})")
-        bar = (f'<span class="track" title="{tip}"><i style="left:{pos:.0f}%"></i></span>'
-               f'<span class="rg">{fmt(lo)} &ndash; {fmt(hi)}</span>')
-    return (f'<div class="m"><span class="ml">{label}</span>'
-            f'<span class="mv">{fmt(m["avg"])}</span>{bar}</div>')
+def _rng_tip(m):
+    if not m or m.get("min") is None:
+        return ""
+    return escape(f"{m['n']}-broker range: {round(m['min']/10):,} ({m.get('minBy','')}) "
+                  f"to {round(m['max']/10):,} ({m.get('maxBy','')})")
 
 
-def build_estimates_html(records):
-    """Standalone estimates page (all covered companies), opened in a new tab."""
+def _row_cr(label, mkey, m, actual):
+    """A Rs-crore metric row: Est | editable Actual | auto-calculated Surprise."""
+    if m:
+        est_cr = round(m["avg"] / 10)
+        est_disp, est_attr, tip = f"{est_cr:,}", str(est_cr), _rng_tip(m)
+    else:
+        est_disp, est_attr, tip = "&mdash;", "", ""
+    auto = "" if actual is None else str(actual)
+    return (f'<tr data-m="{mkey}" data-est="{est_attr}">'
+            f'<td class="ml">{label}</td>'
+            f'<td class="est" title="{tip}">{est_disp}</td>'
+            f'<td class="act"><input class="ain" type="text" inputmode="numeric" '
+            f'data-auto="{auto}" aria-label="{label} actual"></td>'
+            f'<td class="surp"></td></tr>')
+
+
+def _row_margin(m):
+    """EBITDA margin row: Est | auto-computed Actual (EBITDA/Revenue) | Surprise (pp)."""
+    if m:
+        est_disp, est_attr = f"{m['avg']*100:.1f}%", f"{m['avg']*100:.4f}"
+    else:
+        est_disp, est_attr = "&mdash;", ""
+    return (f'<tr data-m="margin" data-est="{est_attr}">'
+            f'<td class="ml">EBITDA margin</td>'
+            f'<td class="est">{est_disp}</td>'
+            f'<td class="act"><span class="autom">&mdash;</span></td>'
+            f'<td class="surp"></td></tr>')
+
+
+def build_estimates_html(records, actuals=None):
+    """Standalone estimates page: Est vs (auto/manual) Actual with live surprise."""
+    actuals = actuals or {}
     generated = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
     recs = sorted(records, key=lambda r: r["name"].lower())
     ranged = sum(1 for r in recs if (r.get("rev") or {}).get("min") is not None)
+    reported = 0
     cards = []
     for rec in recs:
         nm = escape(rec["name"])
         n = rec.get("n") or 0
-        foot = (f"Average of {n} brokers &middot; range = low&ndash;high" if n > 1
-                else "1 broker &middot; no range")
+        act = actuals.get(rec["slug"]) or {}
+        has_act = any(act.get(k) is not None for k in ("rev", "ebitda", "pat"))
+        if has_act:
+            reported += 1
+        badge = ('<span class="rep" title="Actuals auto-filled from Screener">Reported</span>'
+                 if has_act else "")
+        foot = (f"Est: avg of {n} brokers &middot; range on hover" if n > 1
+                else "Est: 1 broker")
         cards.append(f"""<div class="ecard" id="{rec['slug']}" data-key="{rec['slug']}">
-  <div class="ehead"><span class="ename">{nm}</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
-  <div class="metrics">
-    {_metric('Revenue', rec.get('rev'))}
-    {_metric('EBITDA', rec.get('ebitda'))}
-    {_metric('EBITDA margin', rec.get('margin'), 'pct')}
-    {_metric('PAT', rec.get('pat'))}
-  </div>
-  <div class="efoot">{foot} &middot; Q1&nbsp;FY27E</div>
+  <div class="ehead"><span class="ename">{nm}</span>{badge}<span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
+  <table class="bm"><tbody>
+    <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Surprise</td></tr>
+    {_row_cr('Revenue', 'rev', rec.get('rev'), act.get('rev'))}
+    {_row_cr('EBITDA', 'ebitda', rec.get('ebitda'), act.get('ebitda'))}
+    {_row_margin(rec.get('margin'))}
+    {_row_cr('PAT', 'pat', rec.get('pat'), act.get('pat'))}
+  </tbody></table>
+  <div class="efoot">{foot} &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
 </div>""")
 
     return f"""<!DOCTYPE html>
@@ -782,15 +816,26 @@ def build_estimates_html(records):
   .wlhint {{ display:none; grid-column:1/-1; padding:12px 15px; border-radius:10px;
     background:var(--panel); border:1px dashed var(--line); color:var(--mut); font-size:13px; }}
   body.wlonly .wlhint.show {{ display:block; }}
-  .metrics {{ display:grid; grid-template-columns:1fr 1fr; gap:9px 12px; }}
-  .m {{ display:flex; flex-direction:column; gap:1px; }}
-  .ml {{ font-size:10.5px; color:var(--mut); text-transform:uppercase; letter-spacing:.4px; }}
-  .mv {{ font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; }}
-  .track {{ display:block; height:3px; background:var(--line); border-radius:2px;
-    margin:6px 0 4px; position:relative; }}
-  .track i {{ position:absolute; top:-2px; width:3px; height:7px; background:var(--accent);
-    border-radius:1px; }}
-  .rg {{ font-size:11px; color:var(--mut); font-variant-numeric:tabular-nums; }}
+  .rep {{ font-size:9.5px; font-weight:700; padding:1px 7px; border-radius:20px; flex:none;
+    background:color-mix(in srgb,var(--green) 22%,transparent); color:var(--green); align-self:center; }}
+  .bm {{ width:100%; border-collapse:collapse; }}
+  .bm td {{ padding:5px 3px; font-size:12.5px; border-top:0.5px solid var(--line); }}
+  .bmhd td {{ border-top:none; font-size:9px; text-transform:uppercase; letter-spacing:.3px;
+    color:var(--mut); padding:0 3px 3px; text-align:right; }}
+  .bmhd td.ml {{ text-align:left; }}
+  .bm td.ml {{ color:var(--mut); white-space:nowrap; }}
+  .bm td.est {{ text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }}
+  .bm td.act {{ text-align:right; width:76px; }}
+  .ain {{ width:72px; text-align:right; font-size:12.5px; font-variant-numeric:tabular-nums;
+    padding:3px 6px; border:1px solid var(--line); border-radius:6px; background:var(--bg);
+    color:var(--ink); outline:none; }}
+  .ain:focus {{ border-color:var(--accent); }}
+  .ain.auto {{ color:var(--green); border-color:color-mix(in srgb,var(--green) 50%,var(--line)); }}
+  .autom {{ color:var(--mut); font-variant-numeric:tabular-nums; }}
+  .surp {{ text-align:right; font-weight:700; font-variant-numeric:tabular-nums;
+    white-space:nowrap; color:var(--mut); }}
+  .surp.beat {{ color:#1f9d55; }}
+  .surp.miss {{ color:#e2534a; }}
   .efoot {{ margin-top:11px; padding-top:9px; border-top:1px solid var(--line);
     font-size:11px; color:var(--mut); }}
   .ecard:target {{ border-color:var(--accent);
@@ -809,9 +854,10 @@ def build_estimates_html(records):
   <div class="sub">Consensus for <b>Apr&ndash;Jun 2026</b> (reported Jul&ndash;Aug) &middot;
      average of <b>MOSL / Kotak / Ambit / Spark / I-Sec</b> &middot; <b>{len(recs)}</b> companies.
      All figures in <b>&#8377; crore</b> (EBITDA margin in %).<br>
-     The big number is the <b>average</b>; below it the <b>low&ndash;high</b> across brokers,
-     with the tick showing where the average sits ({ranged} companies have 2+ brokers;
-     the rest are covered by one broker, so no range).</div>
+     <b>Est</b> = broker average (hover for the low&ndash;high range). <b>Actual</b> is auto-filled
+     from Screener once a company reports (<b>{reported}</b> so far, shown in <b style="color:var(--green)">green</b>);
+     for the rest, <b>type the number in</b> and the <b>Surprise</b> calculates instantly.
+     Your entries are saved in your browser.</div>
   <div class="bar">
     <div class="search"><input id="q" type="search"
        placeholder="Search a company&hellip; (e.g. Reliance, Infosys, Bajaj)"></div>
@@ -824,9 +870,10 @@ def build_estimates_html(records):
 {"".join(cards)}
 </main>
 <footer>
-  Estimates are broker previews (averaged), <b>not actuals</b>. Revenue = Revenue/NII, EBITDA = EBITDA/PPOP,
-  PAT = net profit, as reported by MOSL, Kotak (KIE) and Ambit for Q1&nbsp;FY27E. Updated {generated}.
-  Open a company from the calendar to jump straight to its card.
+  <b>Est</b> = average of MOSL / Kotak / Ambit / Spark / I-Sec for Q1&nbsp;FY27E (Revenue/NII, EBITDA/PPOP, PAT).
+  <b>Actual</b> is the reported figure auto-filled from Screener (green) or typed by you; surprise =
+  (actual &minus; est) &divide; est, margin surprise in percentage points. For banks/NBFCs, EBITDA is not
+  meaningful and is left blank. Numbers in &#8377; crore. Updated {generated}.
 </footer>
 <script>
   // light / dark theme, shared with the calendar via the same saved preference
@@ -847,6 +894,47 @@ def build_estimates_html(records):
     const t = q.value.trim().toLowerCase();
     cards.forEach(c => c.classList.toggle('nomatch',
       t && !c.querySelector('.ename').textContent.toLowerCase().includes(t)));
+  }});
+
+  // ---- Actual vs Estimate surprise (editable, auto-calc, saved in your browser) ----
+  const AK = 'cal-actuals';
+  let store = {{}};
+  try {{ store = JSON.parse(localStorage.getItem(AK) || '{{}}'); }} catch (e) {{}}
+  const arrow = (d, pp) => (d >= 0 ? '▲ ' : '▼ ') + Math.abs(d).toFixed(pp ? 1 : 1) + (pp ? ' pp' : '%');
+  function recalc(card) {{
+    const est = {{}}, act = {{}};
+    card.querySelectorAll('tr[data-m]').forEach(tr => {{
+      const m = tr.dataset.m;
+      est[m] = tr.dataset.est !== '' ? parseFloat(tr.dataset.est) : NaN;
+      const inp = tr.querySelector('input.ain');
+      if (inp) {{ const v = parseFloat((inp.value || '').replace(/,/g, '')); act[m] = isNaN(v) ? null : v; }}
+    }});
+    act.margin = (act.rev && act.ebitda != null && act.rev !== 0) ? act.ebitda / act.rev * 100 : null;
+    const mc = card.querySelector('tr[data-m="margin"] .autom');
+    if (mc) mc.textContent = act.margin != null ? act.margin.toFixed(1) + '%' : '—';
+    card.querySelectorAll('tr[data-m]').forEach(tr => {{
+      const m = tr.dataset.m, s = tr.querySelector('.surp'), e = est[m], a = act[m];
+      if (a == null || isNaN(e)) {{ s.textContent = ''; s.className = 'surp'; return; }}
+      const d = m === 'margin' ? (a - e) : (a - e) / e * 100;
+      s.textContent = arrow(d, m === 'margin'); s.className = 'surp ' + (d >= 0 ? 'beat' : 'miss');
+    }});
+  }}
+  cards.forEach(card => {{
+    const slug = card.id;
+    card.querySelectorAll('input.ain').forEach(inp => {{
+      const m = inp.closest('tr').dataset.m;
+      const saved = store[slug] && store[slug][m];
+      inp.value = (saved != null && saved !== '') ? saved : (inp.dataset.auto || '');
+      inp.classList.toggle('auto', inp.value !== '' && inp.value === inp.dataset.auto);
+      inp.addEventListener('input', () => {{
+        inp.classList.toggle('auto', inp.value !== '' && inp.value === inp.dataset.auto);
+        store[slug] = store[slug] || {{}};
+        store[slug][m] = inp.value;
+        localStorage.setItem(AK, JSON.stringify(store));
+        recalc(card);
+      }});
+    }});
+    recalc(card);
   }});
 
   // ---- watchlist (shared with the calendar, saved in your browser only) ----
@@ -892,7 +980,7 @@ def main():
     # estimates tab (all covered companies), if the estimates file is present
     _lookup, est_recs = load_estimates()
     if est_recs:
-        OUT_EST_HTML.write_text(build_estimates_html(est_recs), encoding="utf-8")
+        OUT_EST_HTML.write_text(build_estimates_html(est_recs, load_actuals()), encoding="utf-8")
     n = sum(1 for r in data["list"] if RESULT_TYPE_LABEL in (r.get("resultType") or ""))
     print(f"OK  {n} companies  ->  {OUT_HTML.name}")
     return 0
