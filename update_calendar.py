@@ -469,7 +469,8 @@ def build_html(data):
   .bgrp-h {{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:650;
     margin-bottom:8px; }}
   .bgrp-h .gdot {{ width:10px; height:10px; border-radius:50%; flex:none; }}
-  .bgrp-h .cnt {{ margin-left:auto; font-size:11.5px; font-weight:500; color:var(--mut); }}
+  .bgrp-h .cnt {{ margin-left:auto; font-size:11.5px; font-weight:700; color:var(--time);
+    background:none; padding:0; border-radius:0; }}
   .bnone {{ font-size:12.5px; color:var(--mut); }}
   .blist {{ display:flex; flex-wrap:wrap; gap:6px; }}
   .blist .co {{ display:inline-flex; max-width:100%; }}
