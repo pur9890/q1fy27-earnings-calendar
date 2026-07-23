@@ -830,7 +830,7 @@ def build_estimates_html(records, actuals=None):
     background:var(--panel); color:var(--ink); font-size:14px; outline:none; }}
   .search input:focus {{ border-color:var(--accent); }}
   main {{ padding:20px 26px 60px; display:grid; align-items:start;
-    grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:12px; }}
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:12px; }}
   .ecard {{ background:var(--card); border:1px solid var(--line); border-radius:11px;
     padding:13px 14px; scroll-margin-top:120px; }}
   .ecard.nomatch {{ display:none; }}
@@ -857,9 +857,9 @@ def build_estimates_html(records, actuals=None):
   .bmhd td.ml {{ text-align:left; }}
   .bm td.ml {{ color:var(--mut); white-space:nowrap; }}
   .bm td.est {{ text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }}
-  .bm td.act {{ text-align:right; width:76px; }}
-  .ain {{ width:72px; text-align:right; font-size:12.5px; font-variant-numeric:tabular-nums;
-    padding:3px 6px; border:1px solid var(--line); border-radius:6px; background:var(--bg);
+  .bm td.act {{ text-align:right; width:68px; }}
+  .ain {{ width:64px; text-align:right; font-size:12.5px; font-variant-numeric:tabular-nums;
+    padding:3px 5px; border:1px solid var(--line); border-radius:6px; background:var(--bg);
     color:var(--ink); outline:none; }}
   .ain:focus {{ border-color:var(--accent); }}
   .ain.auto {{ color:var(--green); border-color:color-mix(in srgb,var(--green) 50%,var(--line)); }}
