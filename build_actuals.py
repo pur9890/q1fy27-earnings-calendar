@@ -14,7 +14,7 @@ Jun-2026 quarter is read: Revenue (Sales), EBITDA (Operating Profit), PAT
 Only companies with an estimate AND a ticker are fetched (that's where a
 surprise can be computed). Values are in Rs crore (as Screener reports them).
 """
-import gzip, json, re, ssl, sys, time, urllib.request
+import gzip, json, os, re, ssl, sys, time, urllib.request
 from datetime import date, datetime
 from pathlib import Path
 
@@ -45,7 +45,7 @@ def clean(s):
     return s.strip().rstrip("+").strip()
 
 
-MAX_PER_RUN = 5           # small batch per build -> stays fast; fills in gradually
+MAX_PER_RUN = int(os.environ.get("MAX_ACTUALS", "5"))   # 5/build in cloud; override locally
 FETCH_TIMEOUT = 12        # a stalled Screener request shouldn't hold up the build
 
 
@@ -66,44 +66,43 @@ def _num(v):
 
 
 def fetch_actual(ticker):
-    """Return {'rev','ebitda','pat'} in Rs cr for Jun-2026, or None if not reported."""
-    html = None
-    for path in (f"https://www.screener.in/company/{ticker}/consolidated/",
-                 f"https://www.screener.in/company/{ticker}/"):
+    """Return {'rev','ebitda','pat'} in Rs cr for Jun-2026, or None if not reported.
+    Tries consolidated AND standalone - some companies have the recent quarter on
+    only one of them - and uses whichever actually has the Jun-2026 column."""
+    for suffix in ("consolidated/", ""):
         try:
-            html = _get(path)
-            break
+            html = _get(f"https://www.screener.in/company/{ticker}/{suffix}")
         except Exception:
-            html = None
-    if not html:
-        return None
-    m = re.search(r"Quarterly Results.*?</table>", html, re.S)
-    if not m:
-        return None
-    seg = m.group(0)
-    months = re.findall(r"<th[^>]*>\s*([A-Za-z]{3}\s*\d{4})", seg)
-    if QUARTER not in months:
-        return None
-    idx = months.index(QUARTER)
-    rows = {}
-    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", seg, re.S):
-        cells = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)
-        if cells:
-            rows[clean(cells[0])] = [clean(c) for c in cells[1:]]
+            continue
+        # anchor on the quarters SECTION (text-matching grabbed the wrong table)
+        m = re.search(r'id="quarters".*?</table>', html, re.S) \
+            or re.search(r"Quarterly Results.*?</table>", html, re.S)
+        if not m:
+            continue
+        seg = m.group(0)
+        months = re.findall(r"<th[^>]*>\s*([A-Za-z]{3}\s*\d{4})", seg)
+        if QUARTER not in months:
+            continue                       # this variant lacks the quarter; try the other
+        idx = months.index(QUARTER)
+        rows = {}
+        for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", seg, re.S):
+            cells = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)
+            if cells:
+                rows[clean(cells[0])] = [clean(c) for c in cells[1:]]
 
-    def find(*names):
-        for label, vals in rows.items():
-            low = label.lower()
-            if any(low.startswith(n) for n in names) and idx < len(vals):
-                return _num(vals[idx])
-        return None
+        def find(*names):
+            for label, vals in rows.items():
+                low = label.lower()
+                if any(low.startswith(n) for n in names) and idx < len(vals):
+                    return _num(vals[idx])
+            return None
 
-    rev = find("sales", "revenue", "total income")
-    ebitda = find("operating profit")          # absent for banks/NBFCs -> None
-    pat = find("net profit", "profit after tax", "profit for")
-    if rev is None and pat is None and ebitda is None:
-        return None
-    return {"rev": rev, "ebitda": ebitda, "pat": pat}
+        rev = find("sales", "revenue", "total income", "interest earned")
+        ebitda = find("operating profit")      # absent for banks/NBFCs -> None
+        pat = find("net profit", "profit after tax", "profit for")
+        if rev is not None or pat is not None or ebitda is not None:
+            return {"rev": rev, "ebitda": ebitda, "pat": pat}
+    return None
 
 
 def report_date(datestr):

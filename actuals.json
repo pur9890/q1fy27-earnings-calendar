@@ -54,6 +54,11 @@
 "pat": 3189,
 "rev": 21689
 },
+"bandhanbank": {
+"ebitda": null,
+"pat": 502,
+"rev": 5631
+},
 "billionbrains": {
 "ebitda": 970,
 "pat": 735,
@@ -63,6 +68,16 @@
 "ebitda": -4055,
 "pat": -1873,
 "rev": 151277
+},
+"canarahsbc": {
+"ebitda": 0,
+"pat": 28,
+"rev": 4351
+},
+"canfinhomes": {
+"ebitda": null,
+"pat": 268,
+"rev": 1096
 },
 "ceat": {
 "ebitda": 365,
@@ -119,6 +134,11 @@
 "pat": 76,
 "rev": 1274
 },
+"godigit": {
+"ebitda": 114,
+"pat": 86,
+"rev": 2427
+},
 "granulesindia": {
 "ebitda": 339,
 "pat": 180,
@@ -133,6 +153,11 @@
 "ebitda": 6870,
 "pat": 4626,
 "rev": 34579
+},
+"hdbfinancial": {
+"ebitda": null,
+"pat": 785,
+"rev": 4938
 },
 "hdfcamc": {
 "ebitda": 850,
@@ -153,6 +178,11 @@
 "ebitda": null,
 "pat": 16276,
 "rev": 52241
+},
+"icicilombard": {
+"ebitda": 522,
+"pat": 403,
+"rev": 7088
 },
 "iciciprulife": {
 "ebitda": 293,
@@ -204,6 +234,11 @@
 "pat": -238,
 "rev": 24584
 },
+"janasfb": {
+"ebitda": null,
+"pat": 155,
+"rev": 1515
+},
 "jiofinancial": {
 "ebitda": 1397,
 "pat": 830,
@@ -228,6 +263,11 @@
 "ebitda": 9285,
 "pat": 4696,
 "rev": 47364
+},
+"karurvysyabank": {
+"ebitda": null,
+"pat": 756,
+"rev": 3049
 },
 "kotakmahindrabank": {
 "ebitda": null,
@@ -288,6 +328,11 @@
 "ebitda": 734,
 "pat": 544,
 "rev": 1301
+},
+"orientelectric": {
+"ebitda": 67,
+"pat": 31,
+"rev": 950
 },
 "polycabindia": {
 "ebitda": 1136,
@@ -374,6 +419,11 @@
 "pat": 130,
 "rev": 6583
 },
+"tataelxsi": {
+"ebitda": 216,
+"pat": 171,
+"rev": 1021
+},
 "tatatechnologies": {
 "ebitda": 267,
 "pat": 181,
@@ -393,6 +443,11 @@
 "ebitda": 2738,
 "pat": 1486,
 "rev": 15712
+},
+"tipsmusic": {
+"ebitda": 54,
+"pat": 44,
+"rev": 107
 },
 "trident": {
 "ebitda": 300,
