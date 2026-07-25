@@ -84,6 +84,11 @@
 "pat": 4,
 "rev": 4318
 },
+"cgpowerandinds": {
+"ebitda": 397,
+"pat": 308,
+"rev": 3281
+},
 "cieautomotive": {
 "ebitda": 390,
 "pat": 236,
@@ -173,6 +178,11 @@
 "ebitda": 506,
 "pat": 611,
 "rev": 33759
+},
+"hindustanzinc": {
+"ebitda": 8050,
+"pat": 5469,
+"rev": 13747
 },
 "icicibank": {
 "ebitda": null,
@@ -319,6 +329,11 @@
 "pat": 63,
 "rev": 357
 },
+"ntpc": {
+"ebitda": 16231,
+"pat": 6896,
+"rev": 50741
+},
 "nuvocovistascorp": {
 "ebitda": 568,
 "pat": 160,
@@ -374,6 +389,11 @@
 "pat": 217,
 "rev": 1963
 },
+"sbilifeinsurance": {
+"ebitda": 757,
+"pat": 725,
+"rev": 46337
+},
 "schaefflerindia": {
 "ebitda": 499,
 "pat": 326,
@@ -383,6 +403,11 @@
 "ebitda": 187,
 "pat": -14,
 "rev": 1291
+},
+"shriramfinance": {
+"ebitda": null,
+"pat": 3453,
+"rev": 13400
 },
 "shyammetalics": {
 "ebitda": 765,
