@@ -9,6 +9,11 @@
 "pat": 171,
 "rev": 709
 },
+"acc": {
+"ebitda": 457,
+"pat": 147,
+"rev": 5808
+},
 "adityabirlaamc": {
 "ebitda": 258,
 "pat": 309,
@@ -114,6 +119,11 @@
 "pat": 382,
 "rev": 8165
 },
+"creditaccess": {
+"ebitda": null,
+"pat": 493,
+"rev": 1783
+},
 "cyient": {
 "ebitda": 263,
 "pat": 109,
@@ -123,6 +133,16 @@
 "ebitda": 39,
 "pat": 16,
 "rev": 374
+},
+"dalmiabharat": {
+"ebitda": 805,
+"pat": 192,
+"rev": 3890
+},
+"drlalpathlabs": {
+"ebitda": 248,
+"pat": 170,
+"rev": 798
 },
 "drreddyslabs": {
 "ebitda": 860,
@@ -158,6 +178,11 @@
 "ebitda": 339,
 "pat": 180,
 "rev": 1477
+},
+"grindwellnorton": {
+"ebitda": 157,
+"pat": 115,
+"rev": 803
 },
 "havellsindia": {
 "ebitda": 466,
