@@ -44,6 +44,11 @@
 "pat": 47,
 "rev": 466
 },
+"atul": {
+"ebitda": 394,
+"pat": 254,
+"rev": 1848
+},
 "avenuesupermarts": {
 "ebitda": 1499,
 "pat": 860,
@@ -138,6 +143,11 @@
 "ebitda": 805,
 "pat": 192,
 "rev": 3890
+},
+"dcbbank": {
+"ebitda": null,
+"pat": 213,
+"rev": 1984
 },
 "drlalpathlabs": {
 "ebitda": 248,
@@ -319,6 +329,11 @@
 "pat": 756,
 "rev": 3049
 },
+"kfintechnologies": {
+"ebitda": 122,
+"pat": 75,
+"rev": 357
+},
 "kotakmahindrabank": {
 "ebitda": null,
 "pat": 5480,
@@ -454,6 +469,11 @@
 "pat": 1644,
 "rev": 26246
 },
+"sapphirefoods": {
+"ebitda": 140,
+"pat": 14,
+"rev": 891
+},
 "sbicards": {
 "ebitda": null,
 "pat": 664,
@@ -588,6 +608,11 @@
 "ebitda": 545,
 "pat": 259,
 "rev": 3727
+},
+"vmartretail": {
+"ebitda": 161,
+"pat": 47,
+"rev": 1089
 },
 "wipro": {
 "ebitda": 4633,
