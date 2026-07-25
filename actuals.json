@@ -59,6 +59,11 @@
 "pat": 502,
 "rev": 5631
 },
+"bankofbaroda": {
+"ebitda": null,
+"pat": 1839,
+"rev": 35115
+},
 "billionbrains": {
 "ebitda": 970,
 "pat": 735,
@@ -249,6 +254,11 @@
 "pat": 155,
 "rev": 1515
 },
+"jindalsteel": {
+"ebitda": 2660,
+"pat": 844,
+"rev": 15482
+},
 "jiofinancial": {
 "ebitda": 1397,
 "pat": 830,
@@ -288,6 +298,11 @@
 "ebitda": null,
 "pat": 916,
 "rev": 5213
+},
+"lodhadevelopers": {
+"ebitda": 1922,
+"pat": 1373,
+"rev": 4997
 },
 "ltm": {
 "ebitda": 2061,
@@ -374,6 +389,11 @@
 "pat": 234,
 "rev": 3840
 },
+"rec": {
+"ebitda": null,
+"pat": 4193,
+"rev": 14435
+},
 "relianceinds": {
 "ebitda": 47517,
 "pat": 23196,
@@ -443,6 +463,11 @@
 "ebitda": 1230,
 "pat": 130,
 "rev": 6583
+},
+"tataconsumer": {
+"ebitda": 724,
+"pat": 427,
+"rev": 5349
 },
 "tataelxsi": {
 "ebitda": 216,
