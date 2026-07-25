@@ -189,6 +189,11 @@
 "pat": 180,
 "rev": 1477
 },
+"greenplyindustries": {
+"ebitda": 73,
+"pat": 38,
+"rev": 725
+},
 "grindwellnorton": {
 "ebitda": 157,
 "pat": 115,
@@ -388,6 +393,11 @@
 "ebitda": 795,
 "pat": 490,
 "rev": 4384
+},
+"neogenchemicals": {
+"ebitda": 48,
+"pat": 17,
+"rev": 250
 },
 "nestle": {
 "ebitda": 1522,
