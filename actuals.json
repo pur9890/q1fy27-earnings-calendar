@@ -104,6 +104,11 @@
 "pat": 786,
 "rev": 7119
 },
+"concor": {
+"ebitda": 444,
+"pat": 269,
+"rev": 2160
+},
 "coromandelinternational": {
 "ebitda": 756,
 "pat": 382,
@@ -299,6 +304,11 @@
 "pat": 916,
 "rev": 5213
 },
+"lauruslabs": {
+"ebitda": 638,
+"pat": 362,
+"rev": 2026
+},
 "lodhadevelopers": {
 "ebitda": 1922,
 "pat": 1373,
@@ -333,6 +343,11 @@
 "ebitda": 133,
 "pat": 33,
 "rev": 1880
+},
+"mphasis": {
+"ebitda": 795,
+"pat": 490,
+"rev": 4384
 },
 "nestle": {
 "ebitda": 1522,
@@ -408,6 +423,16 @@
 "ebitda": 438,
 "pat": 217,
 "rev": 1963
+},
+"sail": {
+"ebitda": 4153,
+"pat": 1644,
+"rev": 26246
+},
+"sbicards": {
+"ebitda": null,
+"pat": 664,
+"rev": 5041
 },
 "sbilifeinsurance": {
 "ebitda": 757,
