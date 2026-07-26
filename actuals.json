@@ -84,6 +84,11 @@
 "pat": 735,
 "rev": 1501
 },
+"birlacorporation": {
+"ebitda": 342,
+"pat": 116,
+"rev": 2646
+},
 "bpcl": {
 "ebitda": -4055,
 "pat": -1873,
@@ -633,6 +638,11 @@
 "ebitda": 383,
 "pat": 294,
 "rev": 584
+},
+"vedantfashions": {
+"ebitda": 131,
+"pat": 81,
+"rev": 301
 },
 "vishalmegamart": {
 "ebitda": 545,
