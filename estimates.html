@@ -47,6 +47,16 @@
   .wlhint { display:none; grid-column:1/-1; padding:12px 15px; border-radius:10px;
     background:var(--panel); border:1px dashed var(--line); color:var(--mut); font-size:13px; }
   body.wlonly .wlhint.show { display:block; }
+  /* result-date filter bar */
+  .dfbar { display:flex; align-items:center; gap:7px; overflow-x:auto; margin-top:12px;
+    padding-bottom:2px; }
+  .dflbl { flex:none; font-size:12px; color:var(--mut); margin-right:2px; }
+  .dchip { flex:none; font-size:12.5px; padding:6px 11px; border-radius:20px; cursor:pointer;
+    white-space:nowrap; background:var(--panel); border:1px solid var(--line); color:var(--mut); }
+  .dchip:hover { border-color:var(--accent); color:var(--ink); }
+  .dchip.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .dchip .n { opacity:.7; margin-left:3px; font-weight:700; }
+  .ecard.dfhide { display:none; }
   .rep { font-size:9.5px; font-weight:700; padding:1px 7px; border-radius:20px; flex:none;
     background:color-mix(in srgb,var(--green) 22%,transparent); color:var(--green); align-self:center; }
   .bm { width:100%; border-collapse:collapse; }
@@ -104,7 +114,7 @@
      average of <b>MOSL / Kotak / Ambit / Spark / I-Sec</b> &middot; <b>494</b> companies.
      All figures in <b>&#8377; crore</b> (EBITDA margin in %).<br>
      <b>Est</b> = broker average (hover for the low&ndash;high range). <b>Actual</b> is auto-filled
-     from Screener once a company reports (<b>100</b> so far, shown in <b style="color:var(--green)">green</b>);
+     from Screener once a company reports (<b>105</b> so far, shown in <b style="color:var(--green)">green</b>);
      for the rest, <b>type the number in</b> and the <b>beat / miss</b> shows instantly.
      Your entries save in your browser and are <b>auto-replaced by the official Screener figure</b> the moment it&rsquo;s published.</div>
   <div class="bar">
@@ -112,11 +122,12 @@
        placeholder="Search a company&hellip; (e.g. Reliance, Infosys, Bajaj)"></div>
     <button id="wlBtn" class="wlbtn" title="Show only my starred companies">&#9734; Watchlist</button>
   </div>
+  <div class="dfbar"><span class="dflbl">By result date &middot; reported (actuals from Screener):</span><button class="dchip on" data-d="all">All companies</button><button class="dchip" data-d="__rep">Reported <span class="n">105</span></button><button class="dchip" data-d="09 Jul">09 Jul <span class="n">2</span></button><button class="dchip" data-d="10 Jul">10 Jul <span class="n">2</span></button><button class="dchip" data-d="11 Jul">11 Jul <span class="n">2</span></button><button class="dchip" data-d="13 Jul">13 Jul <span class="n">2</span></button><button class="dchip" data-d="14 Jul">14 Jul <span class="n">1</span></button><button class="dchip" data-d="15 Jul">15 Jul <span class="n">9</span></button><button class="dchip" data-d="16 Jul">16 Jul <span class="n">8</span></button><button class="dchip" data-d="17 Jul">17 Jul <span class="n">9</span></button><button class="dchip" data-d="18 Jul">18 Jul <span class="n">10</span></button><button class="dchip" data-d="20 Jul">20 Jul <span class="n">6</span></button><button class="dchip" data-d="21 Jul">21 Jul <span class="n">19</span></button><button class="dchip" data-d="22 Jul">22 Jul <span class="n">16</span></button><button class="dchip" data-d="23 Jul">23 Jul <span class="n">14</span></button><button class="dchip" data-d="24 Jul">24 Jul <span class="n">5</span></button></div>
 </header>
 <main id="grid">
 <div id="wlHint" class="wlhint">Your watchlist is empty. Click the <b>&#9734;</b> star on any
   company&rsquo;s card to add it &mdash; it&rsquo;s saved in your browser and shared with the calendar.</div>
-<div class="ecard" id="360onewam" data-key="360onewam">
+<div class="ecard" id="360onewam" data-key="360onewam" data-rep="1" data-rdate="16 Jul" data-riso="2026-07-16">
   <div class="ehead"><span class="ename">360 One WAM</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -146,7 +157,7 @@
     <tr data-m="pat" data-est="90" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 78 (I-Sec) to 102 (Spark)">90</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 2 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>78</span><span>90</span><span>102</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>Spark</b> 102</span><span class="bk lo"><b>I-Sec</b> 78</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="aavasfinanciers" data-key="aavasfinanciers">
+</div><div class="ecard" id="aavasfinanciers" data-key="aavasfinanciers" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">AAVAS Financiers</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -206,7 +217,7 @@
     <tr data-m="pat" data-est="3361" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 3,267 (Kotak) to 3,466 (Spark)">3,361</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>3,267</span><span>3,361</span><span>3,466</span></div><div class="pbar"><i style="left:47%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 3,349</span><span class="bk lo"><b>Kotak</b> 3,267</span><span class="bk hi"><b>Spark</b> 3,466</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="adityabirlaamc" data-key="adityabirlaamc">
+</div><div class="ecard" id="adityabirlaamc" data-key="adityabirlaamc" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Aditya Birla AMC</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -356,7 +367,7 @@
     <tr data-m="pat" data-est="47" class="mrow"><td class="ml">PAT</td><td class="est" title="">47</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="alliedblendersanddistillers" data-key="alliedblendersanddistillers">
+</div><div class="ecard" id="alliedblendersanddistillers" data-key="alliedblendersanddistillers" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">ALLIED BLENDERS AND DISTILLERS (Consolidated)</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -406,7 +417,7 @@
     <tr data-m="pat" data-est="328" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 242 (Spark) to 409 (Kotak)">328</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>242</span><span>328</span><span>409</span></div><div class="pbar"><i style="left:51%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 280</span><span class="bk hi"><b>Kotak</b> 409</span><span class="bk lo"><b>Spark</b> 242</span><span class="bk"><b>I-Sec</b> 381</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="anandrathiwealth" data-key="anandrathiwealth">
+</div><div class="ecard" id="anandrathiwealth" data-key="anandrathiwealth" data-rep="1" data-rdate="09 Jul" data-riso="2026-07-09">
   <div class="ehead"><span class="ename">Anand Rathi Wealth</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -426,7 +437,7 @@
     <tr data-m="pat" data-est="129" class="mrow"><td class="ml">PAT</td><td class="est" title="">129</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="angelone" data-key="angelone">
+</div><div class="ecard" id="angelone" data-key="angelone" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">Angel One</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -496,7 +507,7 @@
     <tr data-m="pat" data-est="100" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 74 (MOSL) to 126 (Spark)">100</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>74</span><span>100</span><span>126</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 74</span><span class="bk hi"><b>Spark</b> 126</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="arvindfashions" data-key="arvindfashions">
+</div><div class="ecard" id="arvindfashions" data-key="arvindfashions" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Arvind Fashions</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -586,7 +597,7 @@
     <tr data-m="pat" data-est="-129" class="mrow"><td class="ml">PAT</td><td class="est" title="">-129</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="atlantaelectricals" data-key="atlantaelectricals">
+</div><div class="ecard" id="atlantaelectricals" data-key="atlantaelectricals" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Atlanta Electricals</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -636,7 +647,7 @@
     <tr data-m="pat" data-est="31" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 27 (MOSL) to 33 (Kotak)">31</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>27</span><span>31</span><span>33</span></div><div class="pbar"><i style="left:64%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 27</span><span class="bk hi"><b>Kotak</b> 33</span><span class="bk"><b>Spark</b> 32</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="avenuesupermarts" data-key="avenuesupermarts">
+</div><div class="ecard" id="avenuesupermarts" data-key="avenuesupermarts" data-rep="1" data-rdate="11 Jul" data-riso="2026-07-11">
   <div class="ehead"><span class="ename">Avenue Supermarts</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -656,7 +667,7 @@
     <tr data-m="pat" data-est="" class="mrow"><td class="ml">PAT</td><td class="est" title="">&mdash;</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="axisbank" data-key="axisbank">
+</div><div class="ecard" id="axisbank" data-key="axisbank" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">Axis Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -676,7 +687,7 @@
     <tr data-m="pat" data-est="34" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 30 (I-Sec) to 38 (Spark)">34</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 2 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>30</span><span>34</span><span>38</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>Spark</b> 38</span><span class="bk lo"><b>I-Sec</b> 30</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="bajajauto" data-key="bajajauto">
+</div><div class="ecard" id="bajajauto" data-key="bajajauto" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Bajaj Auto</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -746,7 +757,7 @@
     <tr data-m="pat" data-est="380" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 369 (MOSL) to 392 (Kotak)">380</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>369</span><span>380</span><span>392</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 369</span><span class="bk hi"><b>Kotak</b> 392</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="bandhanbank" data-key="bandhanbank">
+</div><div class="ecard" id="bandhanbank" data-key="bandhanbank" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Bandhan Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -846,7 +857,7 @@
     <tr data-m="pat" data-est="62" class="mrow"><td class="ml">PAT</td><td class="est" title="">62</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="billionbrains" data-key="billionbrains">
+</div><div class="ecard" id="billionbrains" data-key="billionbrains" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">Billionbrains</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -916,7 +927,7 @@
     <tr data-m="pat" data-est="560" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 533 (MOSL) to 587 (I-Sec)">560</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; I-Sec</span></div><div class="prng v"><span>533</span><span>560</span><span>587</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 533</span><span class="bk hi"><b>I-Sec</b> 587</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="bpcl" data-key="bpcl">
+</div><div class="ecard" id="bpcl" data-key="bpcl" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">BPCL</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -986,7 +997,7 @@
     <tr data-m="pat" data-est="121" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 110 (Spark) to 130 (MOSL)">121</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 3 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>110</span><span>121</span><span>130</span></div><div class="pbar"><i style="left:55%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 130</span><span class="bk"><b>Kotak</b> 123</span><span class="bk lo"><b>Spark</b> 110</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="canfinhomes" data-key="canfinhomes">
+</div><div class="ecard" id="canfinhomes" data-key="canfinhomes" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">Can Fin Homes</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1006,7 +1017,7 @@
     <tr data-m="pat" data-est="4380" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 4,103 (Kotak) to 4,622 (Spark)">4,380</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>4,103</span><span>4,380</span><span>4,622</span></div><div class="pbar"><i style="left:53%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 4,416</span><span class="bk lo"><b>Kotak</b> 4,103</span><span class="bk hi"><b>Spark</b> 4,622</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="canarahsbc" data-key="canarahsbc">
+</div><div class="ecard" id="canarahsbc" data-key="canarahsbc" data-rep="1" data-rdate="20 Jul" data-riso="2026-07-20">
   <div class="ehead"><span class="ename">Canara HSBC</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1056,7 +1067,7 @@
     <tr data-m="pat" data-est="110" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 110 (Spark) to 110 (MOSL)">110</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>110</span><span>110</span><span>110</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 110</span><span class="bk lo"><b>Spark</b> 110</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="ceat" data-key="ceat">
+</div><div class="ecard" id="ceat" data-key="ceat" data-rep="1" data-rdate="16 Jul" data-riso="2026-07-16">
   <div class="ehead"><span class="ename">CEAT</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1106,14 +1117,14 @@
     <tr data-m="pat" data-est="144" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 138 (MOSL) to 151 (Ambit)">144</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>138</span><span>144</span><span>151</span></div><div class="pbar"><i style="left:48%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 138</span><span class="bk"><b>Kotak</b> 138</span><span class="bk hi"><b>Ambit</b> 151</span><span class="bk"><b>Spark</b> 149</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="cgpowerandinds" data-key="cgpowerandinds">
-  <div class="ehead"><span class="ename">CG Power &amp; Inds.</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
+</div><div class="ecard" id="cgpowerandinds" data-key="cgpowerandinds" data-rep="1" data-rdate="24 Jul" data-riso="2026-07-24">
+  <div class="ehead"><span class="ename">CG Power &amp; Inds.</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
-    <tr data-m="rev" data-est="3549" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="4-broker range: 3,454 (Spark) to 3,655 (Ambit)">3,549</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>3,454</span><span>3,549</span><span>3,655</span></div><div class="pbar"><i style="left:47%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 3,458</span><span class="bk"><b>Kotak</b> 3,629</span><span class="bk hi"><b>Ambit</b> 3,655</span><span class="bk lo"><b>Spark</b> 3,454</span></div></div></td></tr>
-    <tr data-m="ebitda" data-est="481" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="4-broker range: 456 (MOSL) to 502 (Ambit)">481</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>456</span><span>481</span><span>502</span></div><div class="pbar"><i style="left:53%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 456</span><span class="bk"><b>Kotak</b> 491</span><span class="bk hi"><b>Ambit</b> 502</span><span class="bk"><b>Spark</b> 473</span></div></div></td></tr>
+    <tr data-m="rev" data-est="3549" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="4-broker range: 3,454 (Spark) to 3,655 (Ambit)">3,549</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="3281" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>3,454</span><span>3,549</span><span>3,655</span></div><div class="pbar"><i style="left:47%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 3,458</span><span class="bk"><b>Kotak</b> 3,629</span><span class="bk hi"><b>Ambit</b> 3,655</span><span class="bk lo"><b>Spark</b> 3,454</span></div></div></td></tr>
+    <tr data-m="ebitda" data-est="481" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="4-broker range: 456 (MOSL) to 502 (Ambit)">481</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="397" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>456</span><span>481</span><span>502</span></div><div class="pbar"><i style="left:53%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 456</span><span class="bk"><b>Kotak</b> 491</span><span class="bk hi"><b>Ambit</b> 502</span><span class="bk"><b>Spark</b> 473</span></div></div></td></tr>
     <tr data-m="margin" data-est="13.5421" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA margin</span></td><td class="est">13.5%</td><td class="act"><span class="autom">&mdash;</span></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>13.2%</span><span>13.5%</span><span>13.7%</span></div><div class="pbar"><i style="left:64%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 13.2%</span><span class="bk"><b>Kotak</b> 13.5%</span><span class="bk hi"><b>Ambit</b> 13.7%</span><span class="bk"><b>Spark</b> 13.7%</span></div></div></td></tr>
-    <tr data-m="pat" data-est="353" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 338 (MOSL) to 366 (Spark)">353</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>338</span><span>353</span><span>366</span></div><div class="pbar"><i style="left:54%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 338</span><span class="bk"><b>Kotak</b> 353</span><span class="bk"><b>Ambit</b> 356</span><span class="bk hi"><b>Spark</b> 366</span></div></div></td></tr>
+    <tr data-m="pat" data-est="353" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 338 (MOSL) to 366 (Spark)">353</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="308" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>338</span><span>353</span><span>366</span></div><div class="pbar"><i style="left:54%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 338</span><span class="bk"><b>Kotak</b> 353</span><span class="bk"><b>Ambit</b> 356</span><span class="bk hi"><b>Spark</b> 366</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
 </div><div class="ecard" id="chalethotels" data-key="chalethotels">
@@ -1156,7 +1167,7 @@
     <tr data-m="pat" data-est="1529" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="5-broker range: 1,453 (MOSL) to 1,668 (I-Sec)">1,529</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 5 brokers</span><span>High &middot; I-Sec</span></div><div class="prng v"><span>1,453</span><span>1,529</span><span>1,668</span></div><div class="pbar"><i style="left:35%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 1,453</span><span class="bk"><b>Kotak</b> 1,503</span><span class="bk"><b>Ambit</b> 1,515</span><span class="bk"><b>Spark</b> 1,505</span><span class="bk hi"><b>I-Sec</b> 1,668</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 5 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="cieautomotive" data-key="cieautomotive">
+</div><div class="ecard" id="cieautomotive" data-key="cieautomotive" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">CIE Automotive</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1166,7 +1177,7 @@
     <tr data-m="pat" data-est="249" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 242 (MOSL) to 255 (Kotak)">249</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="236" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>242</span><span>249</span><span>255</span></div><div class="pbar"><i style="left:53%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 242</span><span class="bk hi"><b>Kotak</b> 255</span><span class="bk"><b>I-Sec</b> 250</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="cipla" data-key="cipla">
+</div><div class="ecard" id="cipla" data-key="cipla" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Cipla</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1246,7 +1257,7 @@
     <tr data-m="pat" data-est="281" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 263 (Spark) to 308 (MOSL)">281</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 3 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>263</span><span>281</span><span>308</span></div><div class="pbar"><i style="left:39%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 308</span><span class="bk"><b>Kotak</b> 271</span><span class="bk lo"><b>Spark</b> 263</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="coromandelinternational" data-key="coromandelinternational">
+</div><div class="ecard" id="coromandelinternational" data-key="coromandelinternational" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Coromandel International</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1286,7 +1297,7 @@
     <tr data-m="pat" data-est="608" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 596 (Kotak) to 624 (MOSL)">608</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>596</span><span>608</span><span>624</span></div><div class="pbar"><i style="left:40%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 624</span><span class="bk lo"><b>Kotak</b> 596</span><span class="bk"><b>Spark</b> 602</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="cyient" data-key="cyient">
+</div><div class="ecard" id="cyient" data-key="cyient" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Cyient</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1296,7 +1307,7 @@
     <tr data-m="pat" data-est="191" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 107 (Spark) to 336 (MOSL)">191</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="109" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>107</span><span>191</span><span>336</span></div><div class="pbar"><i style="left:37%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 336</span><span class="bk"><b>Kotak</b> 173</span><span class="bk lo"><b>Spark</b> 107</span><span class="bk"><b>I-Sec</b> 150</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="cyientdlm" data-key="cyientdlm">
+</div><div class="ecard" id="cyientdlm" data-key="cyientdlm" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Cyient DLM</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1426,7 +1437,7 @@
     <tr data-m="pat" data-est="145" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 143 (I-Sec) to 147 (Spark)">145</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 2 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>143</span><span>145</span><span>147</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>Spark</b> 147</span><span class="bk lo"><b>I-Sec</b> 143</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="drreddyslabs" data-key="drreddyslabs">
+</div><div class="ecard" id="drreddyslabs" data-key="drreddyslabs" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">Dr Reddy&#x27;s Labs</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1536,7 +1547,7 @@
     <tr data-m="pat" data-est="331" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 319 (Kotak) to 340 (Ambit)">331</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>319</span><span>331</span><span>340</span></div><div class="pbar"><i style="left:55%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 329</span><span class="bk lo"><b>Kotak</b> 319</span><span class="bk hi"><b>Ambit</b> 340</span><span class="bk"><b>Spark</b> 336</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="eternal" data-key="eternal">
+</div><div class="ecard" id="eternal" data-key="eternal" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">Eternal</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1566,7 +1577,7 @@
     <tr data-m="pat" data-est="107" class="mrow"><td class="ml">PAT</td><td class="est" title="">107</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="federalbank" data-key="federalbank">
+</div><div class="ecard" id="federalbank" data-key="federalbank" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">Federal Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1626,7 +1637,7 @@
     <tr data-m="pat" data-est="276" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 262 (MOSL) to 290 (I-Sec)">276</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; I-Sec</span></div><div class="prng v"><span>262</span><span>276</span><span>290</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 262</span><span class="bk hi"><b>I-Sec</b> 290</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="fractalanalytics" data-key="fractalanalytics">
+</div><div class="ecard" id="fractalanalytics" data-key="fractalanalytics" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">FRACTAL ANALYTICS</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1676,7 +1687,7 @@
     <tr data-m="pat" data-est="199" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 171 (Ambit) to 218 (Kotak)">199</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Ambit</span><span>Avg &middot; 3 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>171</span><span>199</span><span>218</span></div><div class="pbar"><i style="left:58%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 206</span><span class="bk hi"><b>Kotak</b> 218</span><span class="bk lo"><b>Ambit</b> 171</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="gabrielindia" data-key="gabrielindia">
+</div><div class="ecard" id="gabrielindia" data-key="gabrielindia" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Gabriel India</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1766,7 +1777,7 @@
     <tr data-m="pat" data-est="26" class="mrow"><td class="ml">PAT</td><td class="est" title="">26</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="godigit" data-key="godigit">
+</div><div class="ecard" id="godigit" data-key="godigit" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">GO DIGIT</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1836,7 +1847,7 @@
     <tr data-m="pat" data-est="16" class="mrow"><td class="ml">PAT</td><td class="est" title="">16</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="granulesindia" data-key="granulesindia">
+</div><div class="ecard" id="granulesindia" data-key="granulesindia" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Granules India</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1976,7 +1987,7 @@
     <tr data-m="pat" data-est="86" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 83 (I-Sec) to 90 (MOSL)">86</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 3 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>83</span><span>86</span><span>90</span></div><div class="pbar"><i style="left:42%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 90</span><span class="bk"><b>Ambit</b> 84</span><span class="bk lo"><b>I-Sec</b> 83</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="havellsindia" data-key="havellsindia">
+</div><div class="ecard" id="havellsindia" data-key="havellsindia" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">Havells India</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -1996,7 +2007,7 @@
     <tr data-m="pat" data-est="25" class="mrow"><td class="ml">PAT</td><td class="est" title="">25</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="hcltechnologies" data-key="hcltechnologies">
+</div><div class="ecard" id="hcltechnologies" data-key="hcltechnologies" data-rep="1" data-rdate="13 Jul" data-riso="2026-07-13">
   <div class="ehead"><span class="ename">HCL Technologies</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2006,7 +2017,7 @@
     <tr data-m="pat" data-est="4531" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 4,187 (I-Sec) to 4,733 (MOSL)">4,531</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="4626" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 4 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>4,187</span><span>4,531</span><span>4,733</span></div><div class="pbar"><i style="left:63%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 4,733</span><span class="bk"><b>Kotak</b> 4,561</span><span class="bk"><b>Spark</b> 4,643</span><span class="bk lo"><b>I-Sec</b> 4,187</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="hdbfinancial" data-key="hdbfinancial">
+</div><div class="ecard" id="hdbfinancial" data-key="hdbfinancial" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">HDB Financial</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2016,7 +2027,7 @@
     <tr data-m="pat" data-est="752" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 744 (I-Sec) to 767 (Ambit)">752</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="785" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>744</span><span>752</span><span>767</span></div><div class="pbar"><i style="left:35%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 750</span><span class="bk hi"><b>Ambit</b> 767</span><span class="bk"><b>Spark</b> 748</span><span class="bk lo"><b>I-Sec</b> 744</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="hdfcamc" data-key="hdfcamc">
+</div><div class="ecard" id="hdfcamc" data-key="hdfcamc" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">HDFC AMC</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2026,7 +2037,7 @@
     <tr data-m="pat" data-est="764" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 763 (Kotak) to 766 (MOSL)">764</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="837" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>763</span><span>764</span><span>766</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 766</span><span class="bk lo"><b>Kotak</b> 763</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="hdfcbank" data-key="hdfcbank">
+</div><div class="ecard" id="hdfcbank" data-key="hdfcbank" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">HDFC Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2036,7 +2047,7 @@
     <tr data-m="pat" data-est="19641" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="5-broker range: 19,229 (MOSL) to 20,032 (Ambit)">19,641</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="20383" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 5 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>19,229</span><span>19,641</span><span>20,032</span></div><div class="pbar"><i style="left:51%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 19,229</span><span class="bk"><b>Kotak</b> 19,691</span><span class="bk hi"><b>Ambit</b> 20,032</span><span class="bk"><b>Spark</b> 19,512</span><span class="bk"><b>I-Sec</b> 19,739</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 5 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="hdfclifeinsur" data-key="hdfclifeinsur">
+</div><div class="ecard" id="hdfclifeinsur" data-key="hdfclifeinsur" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">HDFC Life Insur.</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2106,14 +2117,14 @@
     <tr data-m="pat" data-est="5641" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 5,444 (Spark) to 6,011 (Kotak)">5,641</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>5,444</span><span>5,641</span><span>6,011</span></div><div class="pbar"><i style="left:35%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 5,554</span><span class="bk hi"><b>Kotak</b> 6,011</span><span class="bk lo"><b>Spark</b> 5,444</span><span class="bk"><b>I-Sec</b> 5,555</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="hindustanzinc" data-key="hindustanzinc">
-  <div class="ehead"><span class="ename">Hindustan Zinc</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
+</div><div class="ecard" id="hindustanzinc" data-key="hindustanzinc" data-rep="1" data-rdate="24 Jul" data-riso="2026-07-24">
+  <div class="ehead"><span class="ename">Hindustan Zinc</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
-    <tr data-m="rev" data-est="12590" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="2-broker range: 12,481 (Kotak) to 12,699 (MOSL)">12,590</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>12,481</span><span>12,590</span><span>12,699</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 12,699</span><span class="bk lo"><b>Kotak</b> 12,481</span></div></div></td></tr>
-    <tr data-m="ebitda" data-est="7688" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="2-broker range: 7,655 (MOSL) to 7,721 (Kotak)">7,688</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>7,655</span><span>7,688</span><span>7,721</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 7,655</span><span class="bk hi"><b>Kotak</b> 7,721</span></div></div></td></tr>
+    <tr data-m="rev" data-est="12590" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="2-broker range: 12,481 (Kotak) to 12,699 (MOSL)">12,590</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="13747" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>12,481</span><span>12,590</span><span>12,699</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 12,699</span><span class="bk lo"><b>Kotak</b> 12,481</span></div></div></td></tr>
+    <tr data-m="ebitda" data-est="7688" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="2-broker range: 7,655 (MOSL) to 7,721 (Kotak)">7,688</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="8050" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>7,655</span><span>7,688</span><span>7,721</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 7,655</span><span class="bk hi"><b>Kotak</b> 7,721</span></div></div></td></tr>
     <tr data-m="margin" data-est="61.0632" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA margin</span></td><td class="est">61.1%</td><td class="act"><span class="autom">&mdash;</span></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>60.3%</span><span>61.1%</span><span>61.9%</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 60.3%</span><span class="bk hi"><b>Kotak</b> 61.9%</span></div></div></td></tr>
-    <tr data-m="pat" data-est="5038" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 5,015 (MOSL) to 5,061 (Kotak)">5,038</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>5,015</span><span>5,038</span><span>5,061</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 5,015</span><span class="bk hi"><b>Kotak</b> 5,061</span></div></div></td></tr>
+    <tr data-m="pat" data-est="5038" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 5,015 (MOSL) to 5,061 (Kotak)">5,038</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="5469" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>5,015</span><span>5,038</span><span>5,061</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 5,015</span><span class="bk hi"><b>Kotak</b> 5,061</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
 </div><div class="ecard" id="hitachienergy" data-key="hitachienergy">
@@ -2156,7 +2167,7 @@
     <tr data-m="pat" data-est="847" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 826 (MOSL) to 858 (Spark)">847</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>826</span><span>847</span><span>858</span></div><div class="pbar"><i style="left:64%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 826</span><span class="bk"><b>Kotak</b> 850</span><span class="bk"><b>Ambit</b> 854</span><span class="bk hi"><b>Spark</b> 858</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="icicibank" data-key="icicibank">
+</div><div class="ecard" id="icicibank" data-key="icicibank" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">ICICI Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2166,7 +2177,7 @@
     <tr data-m="pat" data-est="13131" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 12,955 (Spark) to 13,338 (Ambit)">13,131</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="16276" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>12,955</span><span>13,131</span><span>13,338</span></div><div class="pbar"><i style="left:46%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 13,162</span><span class="bk"><b>Kotak</b> 13,070</span><span class="bk hi"><b>Ambit</b> 13,338</span><span class="bk lo"><b>Spark</b> 12,955</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="icicilombard" data-key="icicilombard">
+</div><div class="ecard" id="icicilombard" data-key="icicilombard" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">ICICI Lombard</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2176,7 +2187,7 @@
     <tr data-m="pat" data-est="689" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 640 (Spark) to 738 (MOSL)">689</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="403" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>640</span><span>689</span><span>738</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 738</span><span class="bk lo"><b>Spark</b> 640</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="iciciprulife" data-key="iciciprulife">
+</div><div class="ecard" id="iciciprulife" data-key="iciciprulife" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">ICICI Pru Life</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2206,7 +2217,7 @@
     <tr data-m="pat" data-est="798" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 793 (I-Sec) to 803 (MOSL)">798</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>793</span><span>798</span><span>803</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 803</span><span class="bk lo"><b>I-Sec</b> 793</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="iiflfinance" data-key="iiflfinance">
+</div><div class="ecard" id="iiflfinance" data-key="iiflfinance" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">IIFL Finance</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2226,7 +2237,7 @@
     <tr data-m="pat" data-est="112" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 111 (Kotak) to 113 (MOSL)">112</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>111</span><span>112</span><span>113</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 113</span><span class="bk lo"><b>Kotak</b> 111</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="indiacements" data-key="indiacements">
+</div><div class="ecard" id="indiacements" data-key="indiacements" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">India Cements</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2246,7 +2257,7 @@
     <tr data-m="pat" data-est="137" class="mrow"><td class="ml">PAT</td><td class="est" title="">137</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="indiamartinter" data-key="indiamartinter">
+</div><div class="ecard" id="indiamartinter" data-key="indiamartinter" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Indiamart Inter.</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2256,7 +2267,7 @@
     <tr data-m="pat" data-est="129" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 118 (MOSL) to 138 (Kotak)">129</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="172" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>118</span><span>129</span><span>138</span></div><div class="pbar"><i style="left:56%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 118</span><span class="bk hi"><b>Kotak</b> 138</span><span class="bk"><b>Ambit</b> 137</span><span class="bk"><b>Spark</b> 124</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="indianbank" data-key="indianbank">
+</div><div class="ecard" id="indianbank" data-key="indianbank" data-rep="1" data-rdate="10 Jul" data-riso="2026-07-10">
   <div class="ehead"><span class="ename">Indian Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2266,7 +2277,7 @@
     <tr data-m="pat" data-est="3255" class="mrow"><td class="ml">PAT</td><td class="est" title="">3,255</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="3357" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="indianenergyexch" data-key="indianenergyexch">
+</div><div class="ecard" id="indianenergyexch" data-key="indianenergyexch" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Indian Energy Exch.</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2276,7 +2287,7 @@
     <tr data-m="pat" data-est="119" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 118 (MOSL) to 121 (Spark)">119</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="135" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>118</span><span>119</span><span>121</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 118</span><span class="bk hi"><b>Spark</b> 121</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="indianhotels" data-key="indianhotels">
+</div><div class="ecard" id="indianhotels" data-key="indianhotels" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Indian Hotels</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2326,7 +2337,7 @@
     <tr data-m="pat" data-est="1811" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="5-broker range: 1,791 (Spark) to 1,850 (MOSL)">1,811</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 5 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>1,791</span><span>1,811</span><span>1,850</span></div><div class="pbar"><i style="left:34%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 1,850</span><span class="bk"><b>Kotak</b> 1,792</span><span class="bk"><b>Ambit</b> 1,805</span><span class="bk lo"><b>Spark</b> 1,791</span><span class="bk"><b>I-Sec</b> 1,816</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 5 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="indusindbank" data-key="indusindbank">
+</div><div class="ecard" id="indusindbank" data-key="indusindbank" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">IndusInd Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2346,7 +2357,7 @@
     <tr data-m="pat" data-est="306" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 294 (MOSL) to 318 (Ambit)">306</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 4 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>294</span><span>306</span><span>318</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 294</span><span class="bk"><b>Kotak</b> 305</span><span class="bk hi"><b>Ambit</b> 318</span><span class="bk"><b>Spark</b> 308</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="infosys" data-key="infosys">
+</div><div class="ecard" id="infosys" data-key="infosys" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Infosys</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2386,7 +2397,7 @@
     <tr data-m="pat" data-est="122" class="mrow"><td class="ml">PAT</td><td class="est" title="">122</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="interglobeaviation" data-key="interglobeaviation">
+</div><div class="ecard" id="interglobeaviation" data-key="interglobeaviation" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Interglobe Aviation</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2456,7 +2467,7 @@
     <tr data-m="pat" data-est="4094" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 3,738 (Kotak) to 4,617 (MOSL)">4,094</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>3,738</span><span>4,094</span><span>4,617</span></div><div class="pbar"><i style="left:40%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 4,617</span><span class="bk lo"><b>Kotak</b> 3,738</span><span class="bk"><b>Spark</b> 3,926</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="jkcements" data-key="jkcements">
+</div><div class="ecard" id="jkcements" data-key="jkcements" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">J K Cements</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2476,7 +2487,7 @@
     <tr data-m="pat" data-est="92" class="mrow"><td class="ml">PAT</td><td class="est" title="">92</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="janasfb" data-key="janasfb">
+</div><div class="ecard" id="janasfb" data-key="janasfb" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">Jana SFB</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2506,7 +2517,7 @@
     <tr data-m="pat" data-est="1090" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 921 (Spark) to 1,375 (I-Sec)">1,090</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; I-Sec</span></div><div class="prng v"><span>921</span><span>1,090</span><span>1,375</span></div><div class="pbar"><i style="left:37%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 950</span><span class="bk"><b>Kotak</b> 1,116</span><span class="bk lo"><b>Spark</b> 921</span><span class="bk hi"><b>I-Sec</b> 1,375</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="jiofinancial" data-key="jiofinancial">
+</div><div class="ecard" id="jiofinancial" data-key="jiofinancial" data-rep="1" data-rdate="16 Jul" data-riso="2026-07-16">
   <div class="ehead"><span class="ename">Jio Financial</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2536,7 +2547,7 @@
     <tr data-m="pat" data-est="126" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 104 (MOSL) to 138 (Spark)">126</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>104</span><span>126</span><span>138</span></div><div class="pbar"><i style="left:66%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 104</span><span class="bk"><b>Kotak</b> 137</span><span class="bk hi"><b>Spark</b> 138</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="jswenergy" data-key="jswenergy">
+</div><div class="ecard" id="jswenergy" data-key="jswenergy" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">JSW Energy</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2546,7 +2557,7 @@
     <tr data-m="pat" data-est="257" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 222 (Kotak) to 300 (Spark)">257</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="533" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>222</span><span>257</span><span>300</span></div><div class="pbar"><i style="left:45%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 249</span><span class="bk lo"><b>Kotak</b> 222</span><span class="bk hi"><b>Spark</b> 300</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="jswinfra" data-key="jswinfra">
+</div><div class="ecard" id="jswinfra" data-key="jswinfra" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">JSW Infra</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2556,7 +2567,7 @@
     <tr data-m="pat" data-est="391" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 375 (MOSL) to 408 (Kotak)">391</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="358" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>375</span><span>391</span><span>408</span></div><div class="pbar"><i style="left:47%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 375</span><span class="bk hi"><b>Kotak</b> 408</span><span class="bk"><b>Spark</b> 389</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="jswsteel" data-key="jswsteel">
+</div><div class="ecard" id="jswsteel" data-key="jswsteel" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">JSW Steel</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2626,7 +2637,7 @@
     <tr data-m="pat" data-est="399" class="mrow"><td class="ml">PAT</td><td class="est" title="">399</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="karurvysyabank" data-key="karurvysyabank">
+</div><div class="ecard" id="karurvysyabank" data-key="karurvysyabank" data-rep="1" data-rdate="20 Jul" data-riso="2026-07-20">
   <div class="ehead"><span class="ename">Karur Vysya Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2716,7 +2727,7 @@
     <tr data-m="pat" data-est="-22" class="mrow"><td class="ml">PAT</td><td class="est" title="">-22</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="kotakmahindrabank" data-key="kotakmahindrabank">
+</div><div class="ecard" id="kotakmahindrabank" data-key="kotakmahindrabank" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">Kotak Mahindra Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2756,7 +2767,7 @@
     <tr data-m="pat" data-est="159" class="mrow"><td class="ml">PAT</td><td class="est" title="">159</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="landtfinance" data-key="landtfinance">
+</div><div class="ecard" id="landtfinance" data-key="landtfinance" data-rep="1" data-rdate="10 Jul" data-riso="2026-07-10">
   <div class="ehead"><span class="ename">L&amp;T Finance</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2926,7 +2937,7 @@
     <tr data-m="pat" data-est="726" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 657 (MOSL) to 796 (Kotak)">726</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>657</span><span>726</span><span>796</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 657</span><span class="bk hi"><b>Kotak</b> 796</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="ltm" data-key="ltm">
+</div><div class="ecard" id="ltm" data-key="ltm" data-rep="1" data-rdate="11 Jul" data-riso="2026-07-11">
   <div class="ehead"><span class="ename">LTM</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2946,7 +2957,7 @@
     <tr data-m="pat" data-est="1310" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 1,265 (Spark) to 1,363 (MOSL)">1,310</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>1,265</span><span>1,310</span><span>1,363</span></div><div class="pbar"><i style="left:47%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 1,363</span><span class="bk"><b>Kotak</b> 1,311</span><span class="bk lo"><b>Spark</b> 1,265</span><span class="bk"><b>I-Sec</b> 1,303</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="mandmfinancial" data-key="mandmfinancial">
+</div><div class="ecard" id="mandmfinancial" data-key="mandmfinancial" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">M &amp; M Financial</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2976,7 +2987,7 @@
     <tr data-m="pat" data-est="3559" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="5-broker range: 3,458 (MOSL) to 3,676 (Ambit)">3,559</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 5 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>3,458</span><span>3,559</span><span>3,676</span></div><div class="pbar"><i style="left:46%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 3,458</span><span class="bk"><b>Kotak</b> 3,529</span><span class="bk hi"><b>Ambit</b> 3,676</span><span class="bk"><b>Spark</b> 3,557</span><span class="bk"><b>I-Sec</b> 3,574</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 5 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="mahindralifespace" data-key="mahindralifespace">
+</div><div class="ecard" id="mahindralifespace" data-key="mahindralifespace" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Mahindra Lifespace</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -2986,7 +2997,7 @@
     <tr data-m="pat" data-est="231" class="mrow"><td class="ml">PAT</td><td class="est" title="">231</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="86" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="mahindralogistics" data-key="mahindralogistics">
+</div><div class="ecard" id="mahindralogistics" data-key="mahindralogistics" data-rep="1" data-rdate="20 Jul" data-riso="2026-07-20">
   <div class="ehead"><span class="ename">Mahindra Logistics</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3046,7 +3057,7 @@
     <tr data-m="pat" data-est="104" class="mrow"><td class="ml">PAT</td><td class="est" title="">104</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="mastek" data-key="mastek">
+</div><div class="ecard" id="mastek" data-key="mastek" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">MASTEK</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3086,7 +3097,7 @@
     <tr data-m="pat" data-est="420" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 410 (Spark) to 430 (MOSL)">420</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>410</span><span>420</span><span>430</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 430</span><span class="bk lo"><b>Spark</b> 410</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="medplushealthservices" data-key="medplushealthservices">
+</div><div class="ecard" id="medplushealthservices" data-key="medplushealthservices" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">MEDPLUS HEALTH SERVICES (Consolidated)</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3266,7 +3277,7 @@
     <tr data-m="pat" data-est="34" class="mrow"><td class="ml">PAT</td><td class="est" title="">34</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="nestle" data-key="nestle">
+</div><div class="ecard" id="nestle" data-key="nestle" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">Nestle</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3276,7 +3287,7 @@
     <tr data-m="pat" data-est="839" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 815 (Ambit) to 852 (Spark)">839</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="959" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Ambit</span><span>Avg &middot; 4 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>815</span><span>839</span><span>852</span></div><div class="pbar"><i style="left:66%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 844</span><span class="bk"><b>Kotak</b> 847</span><span class="bk lo"><b>Ambit</b> 815</span><span class="bk hi"><b>Spark</b> 852</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="newgensoftwaretechnologies" data-key="newgensoftwaretechnologies">
+</div><div class="ecard" id="newgensoftwaretechnologies" data-key="newgensoftwaretechnologies" data-rep="1" data-rdate="16 Jul" data-riso="2026-07-16">
   <div class="ehead"><span class="ename">NEWGEN SOFTWARE TECHNOLOGIES</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3336,14 +3347,14 @@
     <tr data-m="pat" data-est="100" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 100 (Spark) to 101 (MOSL)">100</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>100</span><span>100</span><span>101</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 101</span><span class="bk lo"><b>Spark</b> 100</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="ntpc" data-key="ntpc">
-  <div class="ehead"><span class="ename">NTPC</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
+</div><div class="ecard" id="ntpc" data-key="ntpc" data-rep="1" data-rdate="24 Jul" data-riso="2026-07-24">
+  <div class="ehead"><span class="ename">NTPC</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
-    <tr data-m="rev" data-est="45843" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="3-broker range: 42,187 (MOSL) to 52,444 (Spark)">45,843</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>42,187</span><span>45,843</span><span>52,444</span></div><div class="pbar"><i style="left:36%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 42,187</span><span class="bk"><b>Kotak</b> 42,899</span><span class="bk hi"><b>Spark</b> 52,444</span></div></div></td></tr>
-    <tr data-m="ebitda" data-est="11870" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="3-broker range: 10,741 (Kotak) to 14,093 (Spark)">11,870</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>10,741</span><span>11,870</span><span>14,093</span></div><div class="pbar"><i style="left:34%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 10,776</span><span class="bk lo"><b>Kotak</b> 10,741</span><span class="bk hi"><b>Spark</b> 14,093</span></div></div></td></tr>
+    <tr data-m="rev" data-est="45843" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="3-broker range: 42,187 (MOSL) to 52,444 (Spark)">45,843</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="50741" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>42,187</span><span>45,843</span><span>52,444</span></div><div class="pbar"><i style="left:36%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 42,187</span><span class="bk"><b>Kotak</b> 42,899</span><span class="bk hi"><b>Spark</b> 52,444</span></div></div></td></tr>
+    <tr data-m="ebitda" data-est="11870" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="3-broker range: 10,741 (Kotak) to 14,093 (Spark)">11,870</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="16231" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>10,741</span><span>11,870</span><span>14,093</span></div><div class="pbar"><i style="left:34%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 10,776</span><span class="bk lo"><b>Kotak</b> 10,741</span><span class="bk hi"><b>Spark</b> 14,093</span></div></div></td></tr>
     <tr data-m="margin" data-est="25.8921" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA margin</span></td><td class="est">25.9%</td><td class="act"><span class="autom">&mdash;</span></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>25.0%</span><span>25.9%</span><span>26.9%</span></div><div class="pbar"><i style="left:47%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 25.5%</span><span class="bk lo"><b>Kotak</b> 25.0%</span><span class="bk hi"><b>Spark</b> 26.9%</span></div></div></td></tr>
-    <tr data-m="pat" data-est="5462" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 4,395 (MOSL) to 6,677 (Spark)">5,462</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>4,395</span><span>5,462</span><span>6,677</span></div><div class="pbar"><i style="left:47%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 4,395</span><span class="bk"><b>Kotak</b> 5,314</span><span class="bk hi"><b>Spark</b> 6,677</span></div></div></td></tr>
+    <tr data-m="pat" data-est="5462" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 4,395 (MOSL) to 6,677 (Spark)">5,462</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="6896" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>4,395</span><span>5,462</span><span>6,677</span></div><div class="pbar"><i style="left:47%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 4,395</span><span class="bk"><b>Kotak</b> 5,314</span><span class="bk hi"><b>Spark</b> 6,677</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
 </div><div class="ecard" id="nuvamawealth" data-key="nuvamawealth">
@@ -3356,7 +3367,7 @@
     <tr data-m="pat" data-est="273" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 260 (Spark) to 287 (MOSL)">273</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>260</span><span>273</span><span>287</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 287</span><span class="bk lo"><b>Spark</b> 260</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="nuvocovistascorp" data-key="nuvocovistascorp">
+</div><div class="ecard" id="nuvocovistascorp" data-key="nuvocovistascorp" data-rep="1" data-rdate="13 Jul" data-riso="2026-07-13">
   <div class="ehead"><span class="ename">Nuvoco Vistas Corp.</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3366,7 +3377,7 @@
     <tr data-m="pat" data-est="99" class="mrow"><td class="ml">PAT</td><td class="est" title="">99</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="160" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="oberoirealty" data-key="oberoirealty">
+</div><div class="ecard" id="oberoirealty" data-key="oberoirealty" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">Oberoi Realty</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3416,7 +3427,7 @@
     <tr data-m="pat" data-est="15156" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="5-broker range: 11,720 (I-Sec) to 19,300 (Ambit)">15,156</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 5 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>11,720</span><span>15,156</span><span>19,300</span></div><div class="pbar"><i style="left:45%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 14,714</span><span class="bk"><b>Kotak</b> 16,107</span><span class="bk hi"><b>Ambit</b> 19,300</span><span class="bk"><b>Spark</b> 13,940</span><span class="bk lo"><b>I-Sec</b> 11,720</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 5 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="orientelectric" data-key="orientelectric">
+</div><div class="ecard" id="orientelectric" data-key="orientelectric" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">ORIENT ELECTRIC (Standalone)</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3586,7 +3597,7 @@
     <tr data-m="pat" data-est="100" class="mrow"><td class="ml">PAT</td><td class="est" title="">100</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="polycabindia" data-key="polycabindia">
+</div><div class="ecard" id="polycabindia" data-key="polycabindia" data-rep="1" data-rdate="16 Jul" data-riso="2026-07-16">
   <div class="ehead"><span class="ename">Polycab India</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3596,7 +3607,7 @@
     <tr data-m="pat" data-est="701" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 668 (Spark) to 742 (Kotak)">701</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="797" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>668</span><span>701</span><span>742</span></div><div class="pbar"><i style="left:45%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 709</span><span class="bk hi"><b>Kotak</b> 742</span><span class="bk"><b>Ambit</b> 685</span><span class="bk lo"><b>Spark</b> 668</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="poonawallafincorp" data-key="poonawallafincorp">
+</div><div class="ecard" id="poonawallafincorp" data-key="poonawallafincorp" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">Poonawalla Fincorp</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3686,7 +3697,7 @@
     <tr data-m="pat" data-est="13" class="mrow"><td class="ml">PAT</td><td class="est" title="">13</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="punjabnationalbank" data-key="punjabnationalbank">
+</div><div class="ecard" id="punjabnationalbank" data-key="punjabnationalbank" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">Punjab National Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3696,7 +3707,7 @@
     <tr data-m="pat" data-est="4705" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 4,576 (Kotak) to 4,834 (MOSL)">4,705</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="5835" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>4,576</span><span>4,705</span><span>4,834</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 4,834</span><span class="bk lo"><b>Kotak</b> 4,576</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="pvrinox" data-key="pvrinox">
+</div><div class="ecard" id="pvrinox" data-key="pvrinox" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">PVR Inox</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3766,7 +3777,7 @@
     <tr data-m="pat" data-est="-10" class="mrow"><td class="ml">PAT</td><td class="est" title="">-10</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="rblbank" data-key="rblbank">
+</div><div class="ecard" id="rblbank" data-key="rblbank" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">RBL Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3806,7 +3817,7 @@
     <tr data-m="pat" data-est="54" class="mrow"><td class="ml">PAT</td><td class="est" title="">54</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="relianceinds" data-key="relianceinds">
+</div><div class="ecard" id="relianceinds" data-key="relianceinds" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">Reliance Inds.</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3846,7 +3857,7 @@
     <tr data-m="pat" data-est="-11" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: -14 (MOSL) to -7 (Kotak)">-11</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>-14</span><span>-11</span><span>-7</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> -14</span><span class="bk hi"><b>Kotak</b> -7</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="rossaribiotech" data-key="rossaribiotech">
+</div><div class="ecard" id="rossaribiotech" data-key="rossaribiotech" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">Rossari Biotech</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3876,7 +3887,7 @@
     <tr data-m="pat" data-est="45" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 44 (MOSL) to 46 (Ambit)">45</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 2 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>44</span><span>45</span><span>46</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 44</span><span class="bk hi"><b>Ambit</b> 46</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="sagility" data-key="sagility">
+</div><div class="ecard" id="sagility" data-key="sagility" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Sagility</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -3946,17 +3957,17 @@
     <tr data-m="pat" data-est="650" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 641 (Ambit) to 660 (MOSL)">650</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Ambit</span><span>Avg &middot; 4 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>641</span><span>650</span><span>660</span></div><div class="pbar"><i style="left:44%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 660</span><span class="bk"><b>Kotak</b> 644</span><span class="bk lo"><b>Ambit</b> 641</span><span class="bk"><b>Spark</b> 653</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="sbilifeinsurance" data-key="sbilifeinsurance">
-  <div class="ehead"><span class="ename">SBI Life Insurance</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
+</div><div class="ecard" id="sbilifeinsurance" data-key="sbilifeinsurance" data-rep="1" data-rdate="24 Jul" data-riso="2026-07-24">
+  <div class="ehead"><span class="ename">SBI Life Insurance</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
-    <tr data-m="rev" data-est="9715" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="3-broker range: 4,400 (Spark) to 20,211 (MOSL)">9,715</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 3 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>4,400</span><span>9,715</span><span>20,211</span></div><div class="pbar"><i style="left:34%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 20,211</span><span class="bk"><b>Kotak</b> 4,534</span><span class="bk lo"><b>Spark</b> 4,400</span></div></div></td></tr>
-    <tr data-m="ebitda" data-est="1194" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="3-broker range: 1,176 (MOSL) to 1,210 (Spark)">1,194</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>1,176</span><span>1,194</span><span>1,210</span></div><div class="pbar"><i style="left:54%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 1,176</span><span class="bk"><b>Kotak</b> 1,197</span><span class="bk hi"><b>Spark</b> 1,210</span></div></div></td></tr>
+    <tr data-m="rev" data-est="9715" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="3-broker range: 4,400 (Spark) to 20,211 (MOSL)">9,715</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="46337" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 3 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>4,400</span><span>9,715</span><span>20,211</span></div><div class="pbar"><i style="left:34%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 20,211</span><span class="bk"><b>Kotak</b> 4,534</span><span class="bk lo"><b>Spark</b> 4,400</span></div></div></td></tr>
+    <tr data-m="ebitda" data-est="1194" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="3-broker range: 1,176 (MOSL) to 1,210 (Spark)">1,194</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="757" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>1,176</span><span>1,194</span><span>1,210</span></div><div class="pbar"><i style="left:54%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 1,176</span><span class="bk"><b>Kotak</b> 1,197</span><span class="bk hi"><b>Spark</b> 1,210</span></div></div></td></tr>
     <tr data-m="margin" data-est="12.2941" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA margin</span></td><td class="est">12.3%</td><td class="act"><span class="autom">&mdash;</span></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; MOSL</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>5.8%</span><span>12.3%</span><span>27.5%</span></div><div class="pbar"><i style="left:30%"></i></div><div class="pbk"><span class="bk lo"><b>MOSL</b> 5.8%</span><span class="bk"><b>Kotak</b> 26.4%</span><span class="bk hi"><b>Spark</b> 27.5%</span></div></div></td></tr>
-    <tr data-m="pat" data-est="675" class="mrow"><td class="ml">PAT</td><td class="est" title="">675</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
+    <tr data-m="pat" data-est="675" class="mrow"><td class="ml">PAT</td><td class="est" title="">675</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="725" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="schaefflerindia" data-key="schaefflerindia">
+</div><div class="ecard" id="schaefflerindia" data-key="schaefflerindia" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">Schaeffler India</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4006,7 +4017,7 @@
     <tr data-m="pat" data-est="57" class="mrow"><td class="ml">PAT</td><td class="est" title="">57</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="shoppersstop" data-key="shoppersstop">
+</div><div class="ecard" id="shoppersstop" data-key="shoppersstop" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">Shoppers Stop</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4026,17 +4037,17 @@
     <tr data-m="pat" data-est="425" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 387 (I-Sec) to 457 (MOSL)">425</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 4 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>387</span><span>425</span><span>457</span></div><div class="pbar"><i style="left:54%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 457</span><span class="bk"><b>Kotak</b> 424</span><span class="bk"><b>Spark</b> 431</span><span class="bk lo"><b>I-Sec</b> 387</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="shriramfinance" data-key="shriramfinance">
-  <div class="ehead"><span class="ename">Shriram Finance</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
+</div><div class="ecard" id="shriramfinance" data-key="shriramfinance" data-rep="1" data-rdate="24 Jul" data-riso="2026-07-24">
+  <div class="ehead"><span class="ename">Shriram Finance</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
-    <tr data-m="rev" data-est="7276" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="5-broker range: 7,055 (I-Sec) to 7,517 (Spark)">7,276</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 5 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>7,055</span><span>7,276</span><span>7,517</span></div><div class="pbar"><i style="left:48%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 7,228</span><span class="bk"><b>Kotak</b> 7,347</span><span class="bk"><b>Ambit</b> 7,231</span><span class="bk hi"><b>Spark</b> 7,517</span><span class="bk lo"><b>I-Sec</b> 7,055</span></div></div></td></tr>
+    <tr data-m="rev" data-est="7276" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>Revenue</span></td><td class="est" title="5-broker range: 7,055 (I-Sec) to 7,517 (Spark)">7,276</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="13400" aria-label="Revenue actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 5 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>7,055</span><span>7,276</span><span>7,517</span></div><div class="pbar"><i style="left:48%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 7,228</span><span class="bk"><b>Kotak</b> 7,347</span><span class="bk"><b>Ambit</b> 7,231</span><span class="bk hi"><b>Spark</b> 7,517</span><span class="bk lo"><b>I-Sec</b> 7,055</span></div></div></td></tr>
     <tr data-m="ebitda" data-est="5777" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA</span></td><td class="est" title="5-broker range: 5,568 (I-Sec) to 5,902 (Kotak)">5,777</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="EBITDA actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 5 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>5,568</span><span>5,777</span><span>5,902</span></div><div class="pbar"><i style="left:63%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 5,891</span><span class="bk hi"><b>Kotak</b> 5,902</span><span class="bk"><b>Ambit</b> 5,658</span><span class="bk"><b>Spark</b> 5,867</span><span class="bk lo"><b>I-Sec</b> 5,568</span></div></div></td></tr>
     <tr data-m="margin" data-est="79.4082" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>EBITDA margin</span></td><td class="est">79.4%</td><td class="act"><span class="autom">&mdash;</span></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 5 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>78.0%</span><span>79.4%</span><span>81.5%</span></div><div class="pbar"><i style="left:39%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 81.5%</span><span class="bk"><b>Kotak</b> 80.3%</span><span class="bk"><b>Ambit</b> 78.3%</span><span class="bk lo"><b>Spark</b> 78.0%</span><span class="bk"><b>I-Sec</b> 78.9%</span></div></div></td></tr>
-    <tr data-m="pat" data-est="3222" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="5-broker range: 3,071 (I-Sec) to 3,331 (Kotak)">3,222</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 5 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>3,071</span><span>3,222</span><span>3,331</span></div><div class="pbar"><i style="left:58%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 3,283</span><span class="bk hi"><b>Kotak</b> 3,331</span><span class="bk"><b>Ambit</b> 3,186</span><span class="bk"><b>Spark</b> 3,237</span><span class="bk lo"><b>I-Sec</b> 3,071</span></div></div></td></tr>
+    <tr data-m="pat" data-est="3222" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="5-broker range: 3,071 (I-Sec) to 3,331 (Kotak)">3,222</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="3453" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 5 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>3,071</span><span>3,222</span><span>3,331</span></div><div class="pbar"><i style="left:58%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 3,283</span><span class="bk hi"><b>Kotak</b> 3,331</span><span class="bk"><b>Ambit</b> 3,186</span><span class="bk"><b>Spark</b> 3,237</span><span class="bk lo"><b>I-Sec</b> 3,071</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 5 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="shyammetalics" data-key="shyammetalics">
+</div><div class="ecard" id="shyammetalics" data-key="shyammetalics" data-rep="1" data-rdate="20 Jul" data-riso="2026-07-20">
   <div class="ehead"><span class="ename">Shyam Metalics</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4086,7 +4097,7 @@
     <tr data-m="pat" data-est="96" class="mrow"><td class="ml">PAT</td><td class="est" title="">96</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="sobha" data-key="sobha">
+</div><div class="ecard" id="sobha" data-key="sobha" data-rep="1" data-rdate="20 Jul" data-riso="2026-07-20">
   <div class="ehead"><span class="ename">Sobha</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4116,7 +4127,7 @@
     <tr data-m="pat" data-est="34" class="mrow"><td class="ml">PAT</td><td class="est" title="">34</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="sonablwprecis" data-key="sonablwprecis">
+</div><div class="ecard" id="sonablwprecis" data-key="sonablwprecis" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Sona BLW Precis.</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4136,7 +4147,7 @@
     <tr data-m="pat" data-est="139" class="mrow"><td class="ml">PAT</td><td class="est" title="">139</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="southindianbank" data-key="southindianbank">
+</div><div class="ecard" id="southindianbank" data-key="southindianbank" data-rep="1" data-rdate="16 Jul" data-riso="2026-07-16">
   <div class="ehead"><span class="ename">South Indian Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4166,7 +4177,7 @@
     <tr data-m="pat" data-est="17" class="mrow"><td class="ml">PAT</td><td class="est" title="">17</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="srf" data-key="srf">
+</div><div class="ecard" id="srf" data-key="srf" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">SRF</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4276,7 +4287,7 @@
     <tr data-m="pat" data-est="" class="mrow"><td class="ml">PAT</td><td class="est" title="">&mdash;</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="sunteckrealty" data-key="sunteckrealty">
+</div><div class="ecard" id="sunteckrealty" data-key="sunteckrealty" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Sunteck Realty</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4356,7 +4367,7 @@
     <tr data-m="pat" data-est="14" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: -7 (Kotak) to 35 (MOSL)">14</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>-7</span><span>14</span><span>35</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 35</span><span class="bk lo"><b>Kotak</b> -7</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="tatacomm" data-key="tatacomm">
+</div><div class="ecard" id="tatacomm" data-key="tatacomm" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">Tata Comm</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4376,7 +4387,7 @@
     <tr data-m="pat" data-est="426" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 400 (Spark) to 477 (Ambit)">426</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 3 brokers</span><span>High &middot; Ambit</span></div><div class="prng v"><span>400</span><span>426</span><span>477</span></div><div class="pbar"><i style="left:34%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 400</span><span class="bk hi"><b>Ambit</b> 477</span><span class="bk lo"><b>Spark</b> 400</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="tataelxsi" data-key="tataelxsi">
+</div><div class="ecard" id="tataelxsi" data-key="tataelxsi" data-rep="1" data-rdate="14 Jul" data-riso="2026-07-14">
   <div class="ehead"><span class="ename">Tata Elxsi</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4426,7 +4437,7 @@
     <tr data-m="pat" data-est="2689" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 2,026 (Kotak) to 3,838 (Spark)">2,689</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 4 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>2,026</span><span>2,689</span><span>3,838</span></div><div class="pbar"><i style="left:37%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 2,066</span><span class="bk lo"><b>Kotak</b> 2,026</span><span class="bk hi"><b>Spark</b> 3,838</span><span class="bk"><b>I-Sec</b> 2,825</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="tatatechnologies" data-key="tatatechnologies">
+</div><div class="ecard" id="tatatechnologies" data-key="tatatechnologies" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">Tata Technologies</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4436,7 +4447,7 @@
     <tr data-m="pat" data-est="189" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: 177 (Kotak) to 198 (MOSL)">189</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="181" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 3 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>177</span><span>189</span><span>198</span></div><div class="pbar"><i style="left:54%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 198</span><span class="bk lo"><b>Kotak</b> 177</span><span class="bk"><b>I-Sec</b> 190</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="tatvachintan" data-key="tatvachintan">
+</div><div class="ecard" id="tatvachintan" data-key="tatvachintan" data-rep="1" data-rdate="17 Jul" data-riso="2026-07-17">
   <div class="ehead"><span class="ename">Tatva Chintan</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4466,7 +4477,7 @@
     <tr data-m="pat" data-est="22" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 21 (Spark) to 22 (MOSL)">22</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>21</span><span>22</span><span>22</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 22</span><span class="bk lo"><b>Spark</b> 21</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="tcs" data-key="tcs">
+</div><div class="ecard" id="tcs" data-key="tcs" data-rep="1" data-rdate="09 Jul" data-riso="2026-07-09">
   <div class="ehead"><span class="ename">TCS</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4486,7 +4497,7 @@
     <tr data-m="pat" data-est="35" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: 34 (Kotak) to 36 (MOSL)">35</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>34</span><span>35</span><span>36</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> 36</span><span class="bk lo"><b>Kotak</b> 34</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="techmahindra" data-key="techmahindra">
+</div><div class="ecard" id="techmahindra" data-key="techmahindra" data-rep="1" data-rdate="16 Jul" data-riso="2026-07-16">
   <div class="ehead"><span class="ename">Tech Mahindra</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4546,7 +4557,7 @@
     <tr data-m="pat" data-est="103" class="mrow"><td class="ml">PAT</td><td class="est" title="">103</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="tipsmusic" data-key="tipsmusic">
+</div><div class="ecard" id="tipsmusic" data-key="tipsmusic" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">TIPS MUSIC</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4606,7 +4617,7 @@
     <tr data-m="pat" data-est="496" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 469 (Spark) to 514 (Kotak)">496</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 4 brokers</span><span>High &middot; Kotak</span></div><div class="prng v"><span>469</span><span>496</span><span>514</span></div><div class="pbar"><i style="left:61%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 503</span><span class="bk hi"><b>Kotak</b> 514</span><span class="bk"><b>Ambit</b> 500</span><span class="bk lo"><b>Spark</b> 469</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="trident" data-key="trident">
+</div><div class="ecard" id="trident" data-key="trident" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">Trident</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4636,7 +4647,7 @@
     <tr data-m="pat" data-est="165" class="mrow"><td class="ml">PAT</td><td class="est" title="">165</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="tvsmotor" data-key="tvsmotor">
+</div><div class="ecard" id="tvsmotor" data-key="tvsmotor" data-rep="1" data-rdate="21 Jul" data-riso="2026-07-21">
   <div class="ehead"><span class="ename">TVS Motor</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4646,7 +4657,7 @@
     <tr data-m="pat" data-est="1018" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="5-broker range: 995 (Spark) to 1,043 (I-Sec)">1,018</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="1058" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Spark</span><span>Avg &middot; 5 brokers</span><span>High &middot; I-Sec</span></div><div class="prng v"><span>995</span><span>1,018</span><span>1,043</span></div><div class="pbar"><i style="left:49%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 1,013</span><span class="bk"><b>Kotak</b> 1,028</span><span class="bk"><b>Ambit</b> 1,014</span><span class="bk lo"><b>Spark</b> 995</span><span class="bk hi"><b>I-Sec</b> 1,043</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 5 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="ujjivansmallfinancebank" data-key="ujjivansmallfinancebank">
+</div><div class="ecard" id="ujjivansmallfinancebank" data-key="ujjivansmallfinancebank" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Ujjivan Small Finance Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4656,7 +4667,7 @@
     <tr data-m="pat" data-est="292" class="mrow"><td class="ml">PAT</td><td class="est" title="">292</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="317" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="ultratechcement" data-key="ultratechcement">
+</div><div class="ecard" id="ultratechcement" data-key="ultratechcement" data-rep="1" data-rdate="20 Jul" data-riso="2026-07-20">
   <div class="ehead"><span class="ename">Ultratech Cement</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4666,7 +4677,7 @@
     <tr data-m="pat" data-est="2461" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="4-broker range: 2,379 (I-Sec) to 2,546 (Spark)">2,461</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="2604" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; I-Sec</span><span>Avg &middot; 4 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>2,379</span><span>2,461</span><span>2,546</span></div><div class="pbar"><i style="left:49%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> 2,474</span><span class="bk"><b>Kotak</b> 2,446</span><span class="bk hi"><b>Spark</b> 2,546</span><span class="bk lo"><b>I-Sec</b> 2,379</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 4 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="unionbank" data-key="unionbank">
+</div><div class="ecard" id="unionbank" data-key="unionbank" data-rep="1" data-rdate="15 Jul" data-riso="2026-07-15">
   <div class="ehead"><span class="ename">Union Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4696,7 +4707,7 @@
     <tr data-m="pat" data-est="-1" class="mrow"><td class="ml">PAT</td><td class="est" title="">-1</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="unitedspirits" data-key="unitedspirits">
+</div><div class="ecard" id="unitedspirits" data-key="unitedspirits" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">United Spirits</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4746,7 +4757,7 @@
     <tr data-m="pat" data-est="-64" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="2-broker range: -72 (Kotak) to -57 (MOSL)">-64</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Kotak</span><span>Avg &middot; 2 brokers</span><span>High &middot; MOSL</span></div><div class="prng v"><span>-72</span><span>-64</span><span>-57</span></div><div class="pbar"><i style="left:50%"></i></div><div class="pbk"><span class="bk hi"><b>MOSL</b> -57</span><span class="bk lo"><b>Kotak</b> -72</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 2 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="utiamc" data-key="utiamc">
+</div><div class="ecard" id="utiamc" data-key="utiamc" data-rep="1" data-rdate="22 Jul" data-riso="2026-07-22">
   <div class="ehead"><span class="ename">UTI AMC</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4876,7 +4887,7 @@
     <tr data-m="pat" data-est="-30" class="mrow"><td class="ml"><span class="mtog" onclick="tgl(this)"><span class="chv">&#9656;</span>PAT</span></td><td class="est" title="3-broker range: -61 (Ambit) to -11 (Spark)">-30</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr><tr class="detail"><td colspan="4"><div class="panel"><div class="prng"><span>Low &middot; Ambit</span><span>Avg &middot; 3 brokers</span><span>High &middot; Spark</span></div><div class="prng v"><span>-61</span><span>-30</span><span>-11</span></div><div class="pbar"><i style="left:62%"></i></div><div class="pbk"><span class="bk"><b>MOSL</b> -18</span><span class="bk lo"><b>Ambit</b> -61</span><span class="bk hi"><b>Spark</b> -11</span></div></div></td></tr>
   </tbody></table>
   <div class="efoot">Est: avg of 3 brokers &middot; range on hover &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="vishalmegamart" data-key="vishalmegamart">
+</div><div class="ecard" id="vishalmegamart" data-key="vishalmegamart" data-rep="1" data-rdate="23 Jul" data-riso="2026-07-23">
   <div class="ehead"><span class="ename">Vishal Mega Mart</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4966,7 +4977,7 @@
     <tr data-m="pat" data-est="110" class="mrow"><td class="ml">PAT</td><td class="est" title="">110</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="wipro" data-key="wipro">
+</div><div class="ecard" id="wipro" data-key="wipro" data-rep="1" data-rdate="16 Jul" data-riso="2026-07-16">
   <div class="ehead"><span class="ename">Wipro</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -4986,7 +4997,7 @@
     <tr data-m="pat" data-est="9" class="mrow"><td class="ml">PAT</td><td class="est" title="">9</td><td class="act"><input class="ain" type="text" inputmode="numeric" data-auto="" aria-label="PAT actual"></td><td class="surp"></td></tr>
   </tbody></table>
   <div class="efoot">Est: 1 broker &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
-</div><div class="ecard" id="yesbank" data-key="yesbank">
+</div><div class="ecard" id="yesbank" data-key="yesbank" data-rep="1" data-rdate="18 Jul" data-riso="2026-07-18">
   <div class="ehead"><span class="ename">YES Bank</span><span class="rep" title="Actuals auto-filled from Screener">Reported</span><span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -5062,7 +5073,7 @@
   <b>Est</b> = average of MOSL / Kotak / Ambit / Spark / I-Sec for Q1&nbsp;FY27E (Revenue/NII, EBITDA/PPOP, PAT).
   <b>Actual</b> is the reported figure auto-filled from Screener (green) or typed by you; surprise =
   (actual &minus; est) &divide; est, margin surprise in percentage points. For banks/NBFCs, EBITDA is not
-  meaningful and is left blank. Numbers in &#8377; crore. Updated 24 Jul 2026, 10:48 AM IST.
+  meaningful and is left blank. Numbers in &#8377; crore. Updated 26 Jul 2026, 11:35 AM IST.
 </footer>
 <script>
   // light / dark theme, shared with the calendar via the same saved preference
@@ -5080,6 +5091,25 @@
   // click a metric name to expand its per-broker range
   function tgl(el) { el.closest('tr').classList.toggle('open'); }
   window.tgl = tgl;
+
+  // ---- filter by result date (shows only that day's reported companies) ----
+  const dfbar = document.querySelector('.dfbar');
+  if (dfbar) {
+    const ecards = [...document.querySelectorAll('.ecard')];
+    dfbar.addEventListener('click', e => {
+      const ch = e.target.closest('.dchip'); if (!ch) return;
+      dfbar.querySelectorAll('.dchip').forEach(x => x.classList.remove('on'));
+      ch.classList.add('on');
+      const d = ch.dataset.d;
+      ecards.forEach(c => {
+        let show;
+        if (d === 'all') show = true;
+        else if (d === '__rep') show = c.dataset.rep === '1';
+        else show = c.dataset.rdate === d;
+        c.classList.toggle('dfhide', !show);
+      });
+    });
+  }
 
   const q = document.getElementById('q');
   const cards = [...document.querySelectorAll('.ecard')];

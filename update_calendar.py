@@ -768,26 +768,37 @@ def _row_margin(m):
     return row + (f'<tr class="detail"><td colspan="4">{panel}</td></tr>' if panel else "")
 
 
-def build_estimates_html(records, actuals=None):
+def build_estimates_html(records, actuals=None, rmap=None):
     """Standalone estimates page: Est vs (auto/manual) Actual with live surprise."""
     actuals = actuals or {}
+    rmap = rmap or {}
     generated = datetime.now(IST).strftime("%d %b %Y, %I:%M %p IST")
     recs = sorted(records, key=lambda r: r["name"].lower())
     ranged = sum(1 for r in recs if (r.get("rev") or {}).get("min") is not None)
     reported = 0
+    date_counts = {}            # display date -> (iso, count) for reported+actuals cards
     cards = []
     for rec in recs:
         nm = escape(rec["name"])
         n = rec.get("n") or 0
         act = actuals.get(rec["slug"]) or {}
         has_act = any(act.get(k) is not None for k in ("rev", "ebitda", "pat"))
+        rd = rmap.get(rec["slug"])          # (iso, "24 Jul") or None
+        # a card counts for the date filter only if it reported AND has actuals
+        rep_attr = ""
         if has_act:
             reported += 1
+            rep_attr = ' data-rep="1"'
+            if rd:
+                rep_attr += f' data-rdate="{rd[1]}" data-riso="{rd[0]}"'
+                iso, disp = rd
+                date_counts.setdefault(disp, [iso, 0])
+                date_counts[disp][1] += 1
         badge = ('<span class="rep" title="Actuals auto-filled from Screener">Reported</span>'
                  if has_act else "")
         foot = (f"Est: avg of {n} brokers &middot; range on hover" if n > 1
                 else "Est: 1 broker")
-        cards.append(f"""<div class="ecard" id="{rec['slug']}" data-key="{rec['slug']}">
+        cards.append(f"""<div class="ecard" id="{rec['slug']}" data-key="{rec['slug']}"{rep_attr}>
   <div class="ehead"><span class="ename">{nm}</span>{badge}<span class="star" title="Add to my watchlist" aria-hidden="true">&#9734;</span></div>
   <table class="bm"><tbody>
     <tr class="bmhd"><td class="ml"></td><td>Est</td><td>Actual &#8377;cr</td><td>Beat / miss</td></tr>
@@ -798,6 +809,18 @@ def build_estimates_html(records, actuals=None):
   </tbody></table>
   <div class="efoot">{foot} &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
 </div>""")
+
+    # ---- date-filter bar: chips for dates that have reported companies with actuals ----
+    dated = sorted(date_counts.items(), key=lambda kv: kv[1][0])
+    chips = ['<button class="dchip on" data-d="all">All companies</button>']
+    if reported:
+        chips.append(f'<button class="dchip" data-d="__rep">Reported '
+                     f'<span class="n">{reported}</span></button>')
+    for disp, (iso, cnt) in dated:
+        chips.append(f'<button class="dchip" data-d="{escape(disp)}">{escape(disp)} '
+                     f'<span class="n">{cnt}</span></button>')
+    datebar = (('<div class="dfbar"><span class="dflbl">By result date &middot; reported '
+                '(actuals from Screener):</span>' + "".join(chips) + '</div>') if dated else "")
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -848,6 +871,16 @@ def build_estimates_html(records, actuals=None):
   .wlhint {{ display:none; grid-column:1/-1; padding:12px 15px; border-radius:10px;
     background:var(--panel); border:1px dashed var(--line); color:var(--mut); font-size:13px; }}
   body.wlonly .wlhint.show {{ display:block; }}
+  /* result-date filter bar */
+  .dfbar {{ display:flex; align-items:center; gap:7px; overflow-x:auto; margin-top:12px;
+    padding-bottom:2px; }}
+  .dflbl {{ flex:none; font-size:12px; color:var(--mut); margin-right:2px; }}
+  .dchip {{ flex:none; font-size:12.5px; padding:6px 11px; border-radius:20px; cursor:pointer;
+    white-space:nowrap; background:var(--panel); border:1px solid var(--line); color:var(--mut); }}
+  .dchip:hover {{ border-color:var(--accent); color:var(--ink); }}
+  .dchip.on {{ background:var(--accent); border-color:var(--accent); color:#fff; }}
+  .dchip .n {{ opacity:.7; margin-left:3px; font-weight:700; }}
+  .ecard.dfhide {{ display:none; }}
   .rep {{ font-size:9.5px; font-weight:700; padding:1px 7px; border-radius:20px; flex:none;
     background:color-mix(in srgb,var(--green) 22%,transparent); color:var(--green); align-self:center; }}
   .bm {{ width:100%; border-collapse:collapse; }}
@@ -913,6 +946,7 @@ def build_estimates_html(records, actuals=None):
        placeholder="Search a company&hellip; (e.g. Reliance, Infosys, Bajaj)"></div>
     <button id="wlBtn" class="wlbtn" title="Show only my starred companies">&#9734; Watchlist</button>
   </div>
+  {datebar}
 </header>
 <main id="grid">
 <div id="wlHint" class="wlhint">Your watchlist is empty. Click the <b>&#9734;</b> star on any
@@ -941,6 +975,25 @@ def build_estimates_html(records, actuals=None):
   // click a metric name to expand its per-broker range
   function tgl(el) {{ el.closest('tr').classList.toggle('open'); }}
   window.tgl = tgl;
+
+  // ---- filter by result date (shows only that day's reported companies) ----
+  const dfbar = document.querySelector('.dfbar');
+  if (dfbar) {{
+    const ecards = [...document.querySelectorAll('.ecard')];
+    dfbar.addEventListener('click', e => {{
+      const ch = e.target.closest('.dchip'); if (!ch) return;
+      dfbar.querySelectorAll('.dchip').forEach(x => x.classList.remove('on'));
+      ch.classList.add('on');
+      const d = ch.dataset.d;
+      ecards.forEach(c => {{
+        let show;
+        if (d === 'all') show = true;
+        else if (d === '__rep') show = c.dataset.rep === '1';
+        else show = c.dataset.rdate === d;
+        c.classList.toggle('dfhide', !show);
+      }});
+    }});
+  }}
 
   const q = document.getElementById('q');
   const cards = [...document.querySelectorAll('.ecard')];
@@ -1036,9 +1089,20 @@ def main():
     html = build_html(data)
     OUT_HTML.write_text(html, encoding="utf-8")
     # estimates tab (all covered companies), if the estimates file is present
-    _lookup, est_recs = load_estimates()
+    est_lookup, est_recs = load_estimates()
     if est_recs:
-        OUT_EST_HTML.write_text(build_estimates_html(est_recs, load_actuals()), encoding="utf-8")
+        # map each estimate's slug -> its result date (from the calendar) for the date filter
+        rmap = {}
+        for r in data["list"]:
+            if RESULT_TYPE_LABEL not in (r.get("resultType") or ""):
+                continue
+            nm = r.get("stockName") or ""
+            sh = r.get("stockShortName") or ""
+            slug = est_lookup.get(est_norm(nm)) or (est_lookup.get(est_norm(sh)) if sh else None)
+            if slug and slug not in rmap:
+                d = parse_iso(r["date"])
+                rmap[slug] = (d.isoformat(), d.strftime("%d %b"))
+        OUT_EST_HTML.write_text(build_estimates_html(est_recs, load_actuals(), rmap), encoding="utf-8")
     n = sum(1 for r in data["list"] if RESULT_TYPE_LABEL in (r.get("resultType") or ""))
     print(f"OK  {n} companies  ->  {OUT_HTML.name}")
     return 0
