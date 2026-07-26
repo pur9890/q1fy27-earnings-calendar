@@ -49,6 +49,11 @@
 "pat": 254,
 "rev": 1848
 },
+"ausmallfinance": {
+"ebitda": null,
+"pat": 796,
+"rev": 5303
+},
 "avenuesupermarts": {
 "ebitda": 1499,
 "pat": 860,
@@ -169,6 +174,11 @@
 "pat": 1302,
 "rev": 7862
 },
+"fivestarbusiness": {
+"ebitda": null,
+"pat": 271,
+"rev": 829
+},
 "fractalanalytics": {
 "ebitda": 120,
 "pat": 72,
@@ -248,6 +258,11 @@
 "ebitda": 293,
 "pat": 386,
 "rev": 28513
+},
+"idfcfirstbank": {
+"ebitda": null,
+"pat": 1148,
+"rev": 11051
 },
 "iiflfinance": {
 "ebitda": null,
@@ -484,6 +499,11 @@
 "pat": 14,
 "rev": 891
 },
+"sbfc": {
+"ebitda": null,
+"pat": 130,
+"rev": 491
+},
 "sbicards": {
 "ebitda": null,
 "pat": 664,
@@ -633,5 +653,10 @@
 "ebitda": null,
 "pat": 1072,
 "rev": 8054
+},
+"zentechnologies": {
+"ebitda": 38,
+"pat": 32,
+"rev": 142
 }
 }
