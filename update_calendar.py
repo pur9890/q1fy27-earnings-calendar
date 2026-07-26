@@ -810,17 +810,16 @@ def build_estimates_html(records, actuals=None, rmap=None):
   <div class="efoot">{foot} &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
 </div>""")
 
-    # ---- date-filter bar: chips for dates that have reported companies with actuals ----
+    # ---- date filter: a dropdown of dates that have reported companies with actuals ----
     dated = sorted(date_counts.items(), key=lambda kv: kv[1][0])
-    chips = ['<button class="dchip on" data-d="all">All companies</button>']
+    opts = ['<option value="all">All companies</option>']
     if reported:
-        chips.append(f'<button class="dchip" data-d="__rep">Reported '
-                     f'<span class="n">{reported}</span></button>')
+        opts.append(f'<option value="__rep">&#9679; Reported so far ({reported})</option>')
     for disp, (iso, cnt) in dated:
-        chips.append(f'<button class="dchip" data-d="{escape(disp)}">{escape(disp)} '
-                     f'<span class="n">{cnt}</span></button>')
-    datebar = (('<div class="dfbar"><span class="dflbl">By result date &middot; reported '
-                '(actuals from Screener):</span>' + "".join(chips) + '</div>') if dated else "")
+        opts.append(f'<option value="{escape(disp)}">{escape(disp)} &mdash; {cnt} '
+                    f'compan{"y" if cnt == 1 else "ies"}</option>')
+    datebar = (('<div class="dfbar"><label class="dflbl" for="dfsel">Filter by result date:</label>'
+                '<select id="dfsel" class="dfsel">' + "".join(opts) + '</select></div>') if dated else "")
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -871,15 +870,13 @@ def build_estimates_html(records, actuals=None, rmap=None):
   .wlhint {{ display:none; grid-column:1/-1; padding:12px 15px; border-radius:10px;
     background:var(--panel); border:1px dashed var(--line); color:var(--mut); font-size:13px; }}
   body.wlonly .wlhint.show {{ display:block; }}
-  /* result-date filter bar */
-  .dfbar {{ display:flex; align-items:center; gap:7px; overflow-x:auto; margin-top:12px;
-    padding-bottom:2px; }}
-  .dflbl {{ flex:none; font-size:12px; color:var(--mut); margin-right:2px; }}
-  .dchip {{ flex:none; font-size:12.5px; padding:6px 11px; border-radius:20px; cursor:pointer;
-    white-space:nowrap; background:var(--panel); border:1px solid var(--line); color:var(--mut); }}
-  .dchip:hover {{ border-color:var(--accent); color:var(--ink); }}
-  .dchip.on {{ background:var(--accent); border-color:var(--accent); color:#fff; }}
-  .dchip .n {{ opacity:.7; margin-left:3px; font-weight:700; }}
+  /* result-date filter (dropdown) */
+  .dfbar {{ display:flex; align-items:center; gap:10px; margin-top:12px; flex-wrap:wrap; }}
+  .dflbl {{ font-size:12.5px; color:var(--mut); }}
+  .dfsel {{ font-size:13px; font-weight:600; padding:8px 12px; border-radius:8px; cursor:pointer;
+    background:var(--panel); border:1px solid var(--line); color:var(--ink); outline:none;
+    min-width:210px; }}
+  .dfsel:focus {{ border-color:var(--accent); }}
   .ecard.dfhide {{ display:none; }}
   .rep {{ font-size:9.5px; font-weight:700; padding:1px 7px; border-radius:20px; flex:none;
     background:color-mix(in srgb,var(--green) 22%,transparent); color:var(--green); align-self:center; }}
@@ -976,15 +973,12 @@ def build_estimates_html(records, actuals=None, rmap=None):
   function tgl(el) {{ el.closest('tr').classList.toggle('open'); }}
   window.tgl = tgl;
 
-  // ---- filter by result date (shows only that day's reported companies) ----
-  const dfbar = document.querySelector('.dfbar');
-  if (dfbar) {{
+  // ---- filter by result date (dropdown; shows only that day's reported companies) ----
+  const dfsel = document.getElementById('dfsel');
+  if (dfsel) {{
     const ecards = [...document.querySelectorAll('.ecard')];
-    dfbar.addEventListener('click', e => {{
-      const ch = e.target.closest('.dchip'); if (!ch) return;
-      dfbar.querySelectorAll('.dchip').forEach(x => x.classList.remove('on'));
-      ch.classList.add('on');
-      const d = ch.dataset.d;
+    dfsel.addEventListener('change', () => {{
+      const d = dfsel.value;
       ecards.forEach(c => {{
         let show;
         if (d === 'all') show = true;
