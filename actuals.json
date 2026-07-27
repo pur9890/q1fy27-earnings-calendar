@@ -79,6 +79,11 @@
 "pat": 1839,
 "rev": 35115
 },
+"bharatelectronics": {
+"ebitda": 1388,
+"pat": 1055,
+"rev": 5547
+},
 "billionbrains": {
 "ebitda": 970,
 "pat": 735,
@@ -94,6 +99,11 @@
 "pat": -1873,
 "rev": 151277
 },
+"canarabank": {
+"ebitda": null,
+"pat": 5182,
+"rev": 32957
+},
 "canarahsbc": {
 "ebitda": 0,
 "pat": 28,
@@ -103,6 +113,11 @@
 "ebitda": null,
 "pat": 268,
 "rev": 1096
+},
+"cclproductsindia": {
+"ebitda": 194,
+"pat": 117,
+"rev": 1200
 },
 "ceat": {
 "ebitda": 365,
@@ -123,6 +138,11 @@
 "ebitda": 1192,
 "pat": 786,
 "rev": 7119
+},
+"coalindia": {
+"ebitda": 12069,
+"pat": 8850,
+"rev": 46255
 },
 "concor": {
 "ebitda": 444,
@@ -203,6 +223,11 @@
 "ebitda": 339,
 "pat": 180,
 "rev": 1477
+},
+"gravitaindia": {
+"ebitda": 110,
+"pat": 106,
+"rev": 1475
 },
 "greenplyindustries": {
 "ebitda": 73,
@@ -409,6 +434,11 @@
 "pat": 33,
 "rev": 1880
 },
+"moldtekpackaging": {
+"ebitda": 56,
+"pat": 26,
+"rev": 300
+},
 "mphasis": {
 "ebitda": 795,
 "pat": 490,
@@ -429,6 +459,11 @@
 "pat": 63,
 "rev": 357
 },
+"northernarc": {
+"ebitda": null,
+"pat": 114,
+"rev": 780
+},
 "ntpc": {
 "ebitda": 16231,
 "pat": 6896,
@@ -448,6 +483,11 @@
 "ebitda": 67,
 "pat": 31,
 "rev": 950
+},
+"pngadgiljewellers": {
+"ebitda": 182,
+"pat": 105,
+"rev": 2413
 },
 "polycabindia": {
 "ebitda": 1136,
@@ -488,6 +528,11 @@
 "ebitda": 81,
 "pat": 35,
 "rev": 697
+},
+"rrkabel": {
+"ebitda": 283,
+"pat": 205,
+"rev": 3168
 },
 "sagility": {
 "ebitda": 438,
@@ -564,6 +609,11 @@
 "pat": 42,
 "rev": 192
 },
+"tatachemicals": {
+"ebitda": 538,
+"pat": 60,
+"rev": 4255
+},
 "tatacomm": {
 "ebitda": 1230,
 "pat": 130,
@@ -578,6 +628,11 @@
 "ebitda": 216,
 "pat": 171,
 "rev": 1021
+},
+"tatapower": {
+"ebitda": 3860,
+"pat": 1401,
+"rev": 19051
 },
 "tatatechnologies": {
 "ebitda": 267,
@@ -598,6 +653,11 @@
 "ebitda": 2738,
 "pat": 1486,
 "rev": 15712
+},
+"tilaknagarindustries": {
+"ebitda": 169,
+"pat": 32,
+"rev": 1046
 },
 "tipsmusic": {
 "ebitda": 54,

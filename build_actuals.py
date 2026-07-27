@@ -132,7 +132,7 @@ def main():
         slug = est_lookup.get(norm(nm)) or (est_lookup.get(norm(short)) if short else None)
         d = report_date(r.get("date", ""))
         tkr = tickers.get(norm(nm)) or (tickers.get(norm(short)) if short else None)
-        if slug and tkr and d and d < today:
+        if slug and tkr and d and d <= today:      # include today's reporters
             want[slug] = tkr
 
     known = {}
