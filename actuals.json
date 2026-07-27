@@ -239,6 +239,11 @@
 "pat": 115,
 "rev": 803
 },
+"happiestminds": {
+"ebitda": 118,
+"pat": 68,
+"rev": 629
+},
 "havellsindia": {
 "ebitda": 466,
 "pat": 290,
@@ -328,6 +333,11 @@
 "ebitda": null,
 "pat": 1037,
 "rev": 11310
+},
+"industowers": {
+"ebitda": 4478,
+"pat": 1746,
+"rev": 8431
 },
 "infosys": {
 "ebitda": 11409,
