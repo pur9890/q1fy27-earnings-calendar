@@ -204,6 +204,11 @@
 "pat": 436,
 "rev": 8100
 },
+"equitassmallfin": {
+"ebitda": null,
+"pat": 184,
+"rev": 1960
+},
 "eternal": {
 "ebitda": 594,
 "pat": 92,
@@ -658,6 +663,11 @@
 "ebitda": 595,
 "pat": 305,
 "rev": 3829
+},
+"tatacapital": {
+"ebitda": null,
+"pat": 1628,
+"rev": 8822
 },
 "tatachemicals": {
 "ebitda": 538,
