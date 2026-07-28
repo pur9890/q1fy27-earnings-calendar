@@ -144,6 +144,11 @@
 "pat": 786,
 "rev": 7119
 },
+"cityunionbank": {
+"ebitda": null,
+"pat": 383,
+"rev": 1985
+},
 "coalindia": {
 "ebitda": 12069,
 "pat": 8850,
@@ -638,6 +643,11 @@
 "ebitda": 67,
 "pat": 42,
 "rev": 192
+},
+"supremeinds": {
+"ebitda": 398,
+"pat": 281,
+"rev": 2718
 },
 "suzlonenergy": {
 "ebitda": 595,
