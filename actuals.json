@@ -234,6 +234,11 @@
 "pat": 436,
 "rev": 8100
 },
+"eichermotors": {
+"ebitda": 1591,
+"pat": 1463,
+"rev": 6632
+},
 "equitassmallfin": {
 "ebitda": null,
 "pat": 184,
@@ -823,6 +828,11 @@
 "ebitda": 161,
 "pat": 47,
 "rev": 1089
+},
+"waareeenergies": {
+"ebitda": 1440,
+"pat": 892,
+"rev": 7932
 },
 "wipro": {
 "ebitda": 4633,
