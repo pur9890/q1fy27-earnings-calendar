@@ -624,6 +624,11 @@
 "pat": 4193,
 "rev": 14435
 },
+"redington": {
+"ebitda": 708,
+"pat": 453,
+"rev": 34922
+},
 "relianceinds": {
 "ebitda": 47517,
 "pat": 23196,
@@ -733,6 +738,11 @@
 "ebitda": 595,
 "pat": 305,
 "rev": 3829
+},
+"syrmasgstech": {
+"ebitda": 162,
+"pat": 106,
+"rev": 1589
 },
 "tatacapital": {
 "ebitda": null,
