@@ -14,6 +14,11 @@
 "pat": 147,
 "rev": 5808
 },
+"acmesolar": {
+"ebitda": 734,
+"pat": 235,
+"rev": 858
+},
 "adaniports": {
 "ebitda": 6253,
 "pat": 3650,
@@ -344,6 +349,11 @@
 "pat": 611,
 "rev": 33759
 },
+"hexawaretech": {
+"ebitda": 605,
+"pat": 330,
+"rev": 3845
+},
 "hindunilever": {
 "ebitda": 3947,
 "pat": 2680,
@@ -539,6 +549,11 @@
 "pat": 490,
 "rev": 4384
 },
+"mtartech": {
+"ebitda": 85,
+"pat": 50,
+"rev": 361
+},
 "neogenchemicals": {
 "ebitda": 48,
 "pat": 17,
@@ -593,6 +608,11 @@
 "ebitda": 642,
 "pat": 394,
 "rev": 1075
+},
+"piramalpharma": {
+"ebitda": 195,
+"pat": -69,
+"rev": 2270
 },
 "pngadgiljewellers": {
 "ebitda": 182,
@@ -803,6 +823,11 @@
 "ebitda": 32,
 "pat": 16,
 "rev": 167
+},
+"tbotek": {
+"ebitda": 138,
+"pat": 83,
+"rev": 926
 },
 "tcs": {
 "ebitda": 18556,
