@@ -474,6 +474,11 @@
 "pat": 5480,
 "rev": 18355
 },
+"kpittechnologies": {
+"ebitda": 257,
+"pat": 116,
+"rev": 1675
+},
 "landtfinance": {
 "ebitda": null,
 "pat": 916,
@@ -748,6 +753,11 @@
 "ebitda": 595,
 "pat": 305,
 "rev": 3829
+},
+"syngeneinternational": {
+"ebitda": 91,
+"pat": -9,
+"rev": 736
 },
 "syrmasgstech": {
 "ebitda": 162,
