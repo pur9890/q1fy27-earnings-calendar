@@ -154,6 +154,11 @@
 "pat": 308,
 "rev": 3281
 },
+"chalethotels": {
+"ebitda": 234,
+"pat": 86,
+"rev": 512
+},
 "cieautomotive": {
 "ebitda": 390,
 "pat": 236,
@@ -248,6 +253,11 @@
 "ebitda": null,
 "pat": 184,
 "rev": 1960
+},
+"erislifescience": {
+"ebitda": 296,
+"pat": 143,
+"rev": 873
 },
 "eternal": {
 "ebitda": 594,
