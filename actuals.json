@@ -594,6 +594,11 @@
 "pat": 308,
 "rev": 2330
 },
+"prestigeestates": {
+"ebitda": 849,
+"pat": 271,
+"rev": 2675
+},
 "punjabnationalbank": {
 "ebitda": null,
 "pat": 5835,
@@ -708,6 +713,11 @@
 "ebitda": 1237,
 "pat": 759,
 "rev": 5033
+},
+"starhealth": {
+"ebitda": 749,
+"pat": 550,
+"rev": 5522
 },
 "sunteckrealty": {
 "ebitda": 67,
