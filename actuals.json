@@ -29,6 +29,11 @@
 "pat": 309,
 "rev": 463
 },
+"aequs": {
+"ebitda": 15,
+"pat": -53,
+"rev": 396
+},
 "alliedblendersanddistillers": {
 "ebitda": 115,
 "pat": 45,
@@ -238,6 +243,11 @@
 "ebitda": null,
 "pat": 213,
 "rev": 1984
+},
+"devyaniintl": {
+"ebitda": 254,
+"pat": 17,
+"rev": 1581
 },
 "drlalpathlabs": {
 "ebitda": 248,
@@ -599,6 +609,11 @@
 "pat": 126,
 "rev": 891
 },
+"pcblchemical": {
+"ebitda": 396,
+"pat": 155,
+"rev": 2473
+},
 "pfizer": {
 "ebitda": 248,
 "pat": 204,
@@ -894,6 +909,11 @@
 "pat": 81,
 "rev": 301
 },
+"vinatiorganics": {
+"ebitda": 170,
+"pat": 109,
+"rev": 696
+},
 "vishalmegamart": {
 "ebitda": 545,
 "pat": 259,
@@ -918,6 +938,11 @@
 "ebitda": null,
 "pat": 1072,
 "rev": 8054
+},
+"zensartech": {
+"ebitda": 221,
+"pat": 184,
+"rev": 1508
 },
 "zentechnologies": {
 "ebitda": 38,
