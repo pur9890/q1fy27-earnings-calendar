@@ -84,6 +84,11 @@
 "pat": 3189,
 "rev": 21689
 },
+"bajajhousing": {
+"ebitda": null,
+"pat": 715,
+"rev": 3063
+},
 "bandhanbank": {
 "ebitda": null,
 "pat": 502,
@@ -193,6 +198,11 @@
 "ebitda": 39,
 "pat": 16,
 "rev": 374
+},
+"dabur": {
+"ebitda": 741,
+"pat": 586,
+"rev": 3764
 },
 "dalmiabharat": {
 "ebitda": 805,
