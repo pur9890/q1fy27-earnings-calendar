@@ -94,6 +94,11 @@
 "pat": 3189,
 "rev": 21689
 },
+"bajajfinance": {
+"ebitda": null,
+"pat": 6081,
+"rev": 23165
+},
 "bajajhousing": {
 "ebitda": null,
 "pat": 715,
@@ -374,6 +379,11 @@
 "pat": 5469,
 "rev": 13747
 },
+"hyundaimotor": {
+"ebitda": 1512,
+"pat": 889,
+"rev": 16335
+},
 "icicibank": {
 "ebitda": null,
 "pat": 16276,
@@ -543,6 +553,11 @@
 "ebitda": null,
 "pat": 927,
 "rev": 5718
+},
+"mankindpharma": {
+"ebitda": 1056,
+"pat": 574,
+"rev": 4031
 },
 "mastek": {
 "ebitda": 151,
