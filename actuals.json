@@ -34,6 +34,11 @@
 "pat": -53,
 "rev": 396
 },
+"ajantapharma": {
+"ebitda": 424,
+"pat": 334,
+"rev": 1626
+},
 "alliedblendersanddistillers": {
 "ebitda": 115,
 "pat": 45,
@@ -284,6 +289,11 @@
 "pat": 92,
 "rev": 20211
 },
+"exideinds": {
+"ebitda": 621,
+"pat": 351,
+"rev": 5528
+},
 "federalbank": {
 "ebitda": null,
 "pat": 1302,
@@ -303,6 +313,11 @@
 "ebitda": 107,
 "pat": 76,
 "rev": 1274
+},
+"globalhealth": {
+"ebitda": 287,
+"pat": 157,
+"rev": 1304
 },
 "godigit": {
 "ebitda": 114,
