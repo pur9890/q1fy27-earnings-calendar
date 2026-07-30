@@ -434,6 +434,11 @@
 "pat": 713,
 "rev": 3919
 },
+"indegene": {
+"ebitda": 174,
+"pat": 116,
+"rev": 1063
+},
 "indiacements": {
 "ebitda": 156,
 "pat": 27,
@@ -559,10 +564,20 @@
 "pat": 1373,
 "rev": 4997
 },
+"ltfoods": {
+"ebitda": 354,
+"pat": 183,
+"rev": 3152
+},
 "ltm": {
 "ebitda": 2061,
 "pat": 1469,
 "rev": 11608
+},
+"mahanagargas": {
+"ebitda": 342,
+"pat": 193,
+"rev": 2373
 },
 "mahindraandmahindra": {
 "ebitda": 10827,
@@ -1023,6 +1038,11 @@
 "ebitda": 1440,
 "pat": 892,
 "rev": 7932
+},
+"westlifefoodworld": {
+"ebitda": 93,
+"pat": 1,
+"rev": 736
 },
 "wipro": {
 "ebitda": 4633,
