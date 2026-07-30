@@ -814,6 +814,11 @@
 "pat": 305,
 "rev": 3829
 },
+"swiggy": {
+"ebitda": -651,
+"pat": -791,
+"rev": 6812
+},
 "syngeneinternational": {
 "ebitda": 91,
 "pat": -9,
@@ -884,6 +889,11 @@
 "pat": 1486,
 "rev": 15712
 },
+"thermax": {
+"ebitda": 69,
+"pat": 22,
+"rev": 2303
+},
 "tilaknagarindustries": {
 "ebitda": 169,
 "pat": 32,
@@ -893,6 +903,11 @@
 "ebitda": 54,
 "pat": 44,
 "rev": 107
+},
+"torrentpharma": {
+"ebitda": 1664,
+"pat": 566,
+"rev": 4921
 },
 "trident": {
 "ebitda": 300,
@@ -933,6 +948,11 @@
 "ebitda": 2339,
 "pat": 1525,
 "rev": 8451
+},
+"vedanta": {
+"ebitda": 8501,
+"pat": 7918,
+"rev": 24205
 },
 "vedantfashions": {
 "ebitda": 131,
