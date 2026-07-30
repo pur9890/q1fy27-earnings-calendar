@@ -339,6 +339,11 @@
 "pat": 86,
 "rev": 2427
 },
+"gofashion": {
+"ebitda": 61,
+"pat": 16,
+"rev": 223
+},
 "granulesindia": {
 "ebitda": 339,
 "pat": 180,
@@ -1008,6 +1013,11 @@
 "ebitda": 429,
 "pat": 463,
 "rev": 2708
+},
+"updaterservices": {
+"ebitda": 42,
+"pat": 30,
+"rev": 764
 },
 "utiamc": {
 "ebitda": 383,
