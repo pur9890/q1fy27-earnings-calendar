@@ -4,6 +4,11 @@
 "pat": 331,
 "rev": 1226
 },
+"aartiindustries": {
+"ebitda": 382,
+"pat": 155,
+"rev": 2387
+},
 "aavasfinanciers": {
 "ebitda": null,
 "pat": 171,
@@ -248,6 +253,11 @@
 "ebitda": 805,
 "pat": 192,
 "rev": 3890
+},
+"datapattern": {
+"ebitda": 31,
+"pat": 22,
+"rev": 116
 },
 "dcbbank": {
 "ebitda": null,
@@ -629,6 +639,11 @@
 "pat": 6896,
 "rev": 50741
 },
+"nuvamawealth": {
+"ebitda": 724,
+"pat": 306,
+"rev": 1376
+},
 "nuvocovistascorp": {
 "ebitda": 568,
 "pat": 160,
@@ -878,6 +893,11 @@
 "ebitda": 3860,
 "pat": 1401,
 "rev": 19051
+},
+"tatasteel": {
+"ebitda": 9264,
+"pat": 2385,
+"rev": 60794
 },
 "tatatechnologies": {
 "ebitda": 267,
