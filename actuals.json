@@ -329,6 +329,11 @@
 "pat": 157,
 "rev": 1304
 },
+"gngelectronics": {
+"ebitda": 49,
+"pat": 29,
+"rev": 412
+},
 "godigit": {
 "ebitda": 114,
 "pat": 86,
@@ -719,6 +724,11 @@
 "pat": 271,
 "rev": 2675
 },
+"pspprojects": {
+"ebitda": 55,
+"pat": 18,
+"rev": 853
+},
 "punjabnationalbank": {
 "ebitda": null,
 "pat": 5835,
@@ -963,6 +973,11 @@
 "ebitda": 1664,
 "pat": 566,
 "rev": 4921
+},
+"transportcorp": {
+"ebitda": 135,
+"pat": 107,
+"rev": 1248
 },
 "trident": {
 "ebitda": 300,
