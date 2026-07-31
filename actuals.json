@@ -14,6 +14,11 @@
 "pat": 171,
 "rev": 709
 },
+"abbindia": {
+"ebitda": 447,
+"pat": 362,
+"rev": 3559
+},
 "acc": {
 "ebitda": 457,
 "pat": 147,
@@ -344,6 +349,11 @@
 "pat": 4671,
 "rev": 41198
 },
+"glenmarkpharma": {
+"ebitda": 805,
+"pat": 483,
+"rev": 4018
+},
 "globalhealth": {
 "ebitda": 287,
 "pat": 157,
@@ -513,6 +523,11 @@
 "ebitda": 3267,
 "pat": -238,
 "rev": 24584
+},
+"ioc": {
+"ebitda": 4062,
+"pat": -1141,
+"rev": 266407
 },
 "irbinfra": {
 "ebitda": 1153,
