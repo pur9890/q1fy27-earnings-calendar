@@ -194,6 +194,11 @@
 "pat": 4,
 "rev": 4318
 },
+"centuryplyboards": {
+"ebitda": 198,
+"pat": 83,
+"rev": 1561
+},
 "cgpowerandinds": {
 "ebitda": 397,
 "pat": 308,
@@ -618,6 +623,11 @@
 "ebitda": 638,
 "pat": 362,
 "rev": 2026
+},
+"leelapalaceshotelsandresorts": {
+"ebitda": 128,
+"pat": 49,
+"rev": 352
 },
 "lichousingfin": {
 "ebitda": null,
