@@ -519,6 +519,11 @@
 "pat": 306,
 "rev": 2137
 },
+"itc": {
+"ebitda": 5181,
+"pat": 4509,
+"rev": 19114
+},
 "janasfb": {
 "ebitda": null,
 "pat": 155,
@@ -638,6 +643,11 @@
 "ebitda": 1056,
 "pat": 574,
 "rev": 4031
+},
+"marutisuzuki": {
+"ebitda": 4313,
+"pat": 3447,
+"rev": 52470
 },
 "mastek": {
 "ebitda": 151,
