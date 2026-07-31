@@ -164,6 +164,11 @@
 "pat": 116,
 "rev": 2646
 },
+"bluedartexpress": {
+"ebitda": 261,
+"pat": 88,
+"rev": 1658
+},
 "bpcl": {
 "ebitda": -4055,
 "pat": -1873,
@@ -713,6 +718,11 @@
 "ebitda": 85,
 "pat": 50,
 "rev": 361
+},
+"narayanahrudayalaya": {
+"ebitda": 468,
+"pat": 207,
+"rev": 2684
 },
 "neogenchemicals": {
 "ebitda": 48,
