@@ -4,6 +4,11 @@
 "pat": 331,
 "rev": 1226
 },
+"aadharhousingfinance": {
+"ebitda": null,
+"pat": 282,
+"rev": 993
+},
 "aartiindustries": {
 "ebitda": 382,
 "pat": 155,
@@ -574,6 +579,11 @@
 "pat": 4696,
 "rev": 47364
 },
+"kajariaceramics": {
+"ebitda": 260,
+"pat": 171,
+"rev": 1328
+},
 "karurvysyabank": {
 "ebitda": null,
 "pat": 756,
@@ -1073,6 +1083,11 @@
 "ebitda": 42,
 "pat": 30,
 "rev": 764
+},
+"urbancompany": {
+"ebitda": -97,
+"pat": -92,
+"rev": 528
 },
 "utiamc": {
 "ebitda": 383,
