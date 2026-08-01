@@ -194,6 +194,11 @@
 "pat": 117,
 "rev": 1200
 },
+"cdsl": {
+"ebitda": 138,
+"pat": 118,
+"rev": 293
+},
 "ceat": {
 "ebitda": 365,
 "pat": 4,
@@ -228,6 +233,11 @@
 "ebitda": null,
 "pat": 383,
 "rev": 1985
+},
+"cleanscience": {
+"ebitda": 96,
+"pat": 73,
+"rev": 268
 },
 "coalindia": {
 "ebitda": 12069,
