@@ -79,6 +79,11 @@
 "pat": 231,
 "rev": 1430
 },
+"aplapollotubes": {
+"ebitda": 411,
+"pat": 263,
+"rev": 5607
+},
 "arvindfashions": {
 "ebitda": 160,
 "pat": 28,
@@ -644,6 +649,11 @@
 "pat": 4988,
 "rev": 67942
 },
+"latentviewanalytics": {
+"ebitda": 57,
+"pat": 47,
+"rev": 287
+},
 "lauruslabs": {
 "ebitda": 638,
 "pat": 362,
@@ -733,6 +743,11 @@
 "ebitda": 85,
 "pat": 50,
 "rev": 361
+},
+"muthootfinance": {
+"ebitda": null,
+"pat": 2825,
+"rev": 8672
 },
 "nalco": {
 "ebitda": 2708,
