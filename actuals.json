@@ -184,6 +184,11 @@
 "pat": 88,
 "rev": 1658
 },
+"bluejethealthcare": {
+"ebitda": 98,
+"pat": 78,
+"rev": 293
+},
 "bpcl": {
 "ebitda": -4055,
 "pat": -1873,
@@ -938,6 +943,11 @@
 "ebitda": 47517,
 "pat": 23196,
 "rev": 309468
+},
+"restaurantbrands": {
+"ebitda": 100,
+"pat": -33,
+"rev": 823
 },
 "rossaribiotech": {
 "ebitda": 81,
