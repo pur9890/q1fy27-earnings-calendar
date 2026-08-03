@@ -339,6 +339,11 @@
 "pat": 718,
 "rev": 15548
 },
+"dlf": {
+"ebitda": 150,
+"pat": 794,
+"rev": 1280
+},
 "drlalpathlabs": {
 "ebitda": 248,
 "pat": 170,
@@ -1148,6 +1153,11 @@
 "ebitda": 1664,
 "pat": 566,
 "rev": 4921
+},
+"torrentpower": {
+"ebitda": 1538,
+"pat": 662,
+"rev": 8124
 },
 "transportcorp": {
 "ebitda": 135,
