@@ -99,6 +99,11 @@
 "pat": 1559,
 "rev": 10542
 },
+"atherenergy": {
+"ebitda": -33,
+"pat": -51,
+"rev": 1217
+},
 "atlantaelectricals": {
 "ebitda": 77,
 "pat": 47,
@@ -588,6 +593,11 @@
 "ebitda": null,
 "pat": 155,
 "rev": 1515
+},
+"jindalstainless": {
+"ebitda": 1329,
+"pat": 769,
+"rev": 11279
 },
 "jindalsteel": {
 "ebitda": 2660,
@@ -1168,6 +1178,11 @@
 "ebitda": 42,
 "pat": 30,
 "rev": 764
+},
+"upl": {
+"ebitda": 1367,
+"pat": -73,
+"rev": 10181
 },
 "urbancompany": {
 "ebitda": -97,
