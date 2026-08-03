@@ -414,6 +414,11 @@
 "pat": 4671,
 "rev": 41198
 },
+"ganeshaecosphere": {
+"ebitda": 60,
+"pat": 29,
+"rev": 424
+},
 "glenmarkpharma": {
 "ebitda": 805,
 "pat": 483,
@@ -609,6 +614,11 @@
 "pat": 4509,
 "rev": 19114
 },
+"jainresource": {
+"ebitda": 108,
+"pat": 69,
+"rev": 2724
+},
 "janasfb": {
 "ebitda": null,
 "pat": 155,
@@ -668,6 +678,11 @@
 "ebitda": 122,
 "pat": 75,
 "rev": 357
+},
+"kims": {
+"ebitda": 223,
+"pat": 37,
+"rev": 1180
 },
 "kotakmahindrabank": {
 "ebitda": null,
