@@ -204,6 +204,11 @@
 "pat": -1873,
 "rev": 151277
 },
+"bse": {
+"ebitda": 1046,
+"pat": 873,
+"rev": 1566
+},
 "camsservices": {
 "ebitda": 182,
 "pat": 127,
@@ -804,6 +809,11 @@
 "pat": 33,
 "rev": 1880
 },
+"metrobrands": {
+"ebitda": 215,
+"pat": 95,
+"rev": 720
+},
 "moldtekpackaging": {
 "ebitda": 56,
 "pat": 26,
@@ -913,6 +923,11 @@
 "ebitda": 195,
 "pat": -69,
 "rev": 2270
+},
+"pnbhousing": {
+"ebitda": null,
+"pat": 557,
+"rev": 2263
 },
 "pngadgiljewellers": {
 "ebitda": 182,
