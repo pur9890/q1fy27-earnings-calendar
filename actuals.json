@@ -64,6 +64,11 @@
 "pat": 334,
 "rev": 1626
 },
+"alembicpharma": {
+"ebitda": 332,
+"pat": 172,
+"rev": 2150
+},
 "alliedblendersanddistillers": {
 "ebitda": 115,
 "pat": 45,
@@ -373,6 +378,11 @@
 "ebitda": 150,
 "pat": 794,
 "rev": 1280
+},
+"dragarwalshealth": {
+"ebitda": 170,
+"pat": 55,
+"rev": 614
 },
 "drlalpathlabs": {
 "ebitda": 248,
