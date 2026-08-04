@@ -169,6 +169,16 @@
 "pat": 1055,
 "rev": 5547
 },
+"bhartiairtel": {
+"ebitda": 33303,
+"pat": 10012,
+"rev": 58539
+},
+"bhartihexacom": {
+"ebitda": 1322,
+"pat": 482,
+"rev": 2510
+},
 "billionbrains": {
 "ebitda": 970,
 "pat": 735,
@@ -438,6 +448,11 @@
 "ebitda": 114,
 "pat": 86,
 "rev": 2427
+},
+"godrejproperties": {
+"ebitda": -294,
+"pat": 349,
+"rev": 506
 },
 "gofashion": {
 "ebitda": 61,
