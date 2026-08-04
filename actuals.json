@@ -69,6 +69,11 @@
 "pat": 172,
 "rev": 2150
 },
+"alkylamines": {
+"ebitda": 134,
+"pat": 95,
+"rev": 528
+},
 "alliedblendersanddistillers": {
 "ebitda": 115,
 "pat": 45,
@@ -103,6 +108,11 @@
 "ebitda": 2169,
 "pat": 1559,
 "rev": 10542
+},
+"askautomotive": {
+"ebitda": 158,
+"pat": 85,
+"rev": 1358
 },
 "atherenergy": {
 "ebitda": -33,
@@ -1064,6 +1074,11 @@
 "pat": 205,
 "rev": 3168
 },
+"safariinds": {
+"ebitda": 75,
+"pat": 48,
+"rev": 589
+},
 "sagility": {
 "ebitda": 438,
 "pat": 217,
@@ -1143,6 +1158,11 @@
 "ebitda": 749,
 "pat": 550,
 "rev": 5522
+},
+"sudeeppharma": {
+"ebitda": 55,
+"pat": 41,
+"rev": 158
 },
 "sundaramfinance": {
 "ebitda": null,
