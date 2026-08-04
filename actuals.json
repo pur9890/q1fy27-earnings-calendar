@@ -124,6 +124,11 @@
 "pat": 796,
 "rev": 5303
 },
+"avalontech": {
+"ebitda": 58,
+"pat": 35,
+"rev": 484
+},
 "avenuesupermarts": {
 "ebitda": 1499,
 "pat": 860,
@@ -919,6 +924,11 @@
 "pat": 544,
 "rev": 1301
 },
+"ongc": {
+"ebitda": 15485,
+"pat": 6554,
+"rev": 204987
+},
 "orientelectric": {
 "ebitda": 67,
 "pat": 31,
@@ -1254,6 +1264,11 @@
 "pat": 32,
 "rev": 1046
 },
+"timken": {
+"ebitda": 178,
+"pat": 120,
+"rev": 943
+},
 "tipsmusic": {
 "ebitda": 54,
 "pat": 44,
@@ -1298,6 +1313,11 @@
 "ebitda": null,
 "pat": 5642,
 "rev": 27427
+},
+"unitedbreweries": {
+"ebitda": 283,
+"pat": 166,
+"rev": 3067
 },
 "unitedspirits": {
 "ebitda": 429,
@@ -1348,6 +1368,11 @@
 "ebitda": 131,
 "pat": 81,
 "rev": 301
+},
+"ventivehospitality": {
+"ebitda": 192,
+"pat": 124,
+"rev": 543
 },
 "vinatiorganics": {
 "ebitda": 170,
