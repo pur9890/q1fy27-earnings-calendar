@@ -1009,6 +1009,11 @@
 "pat": 271,
 "rev": 2675
 },
+"princepipes": {
+"ebitda": 77,
+"pat": 34,
+"rev": 609
+},
 "pspprojects": {
 "ebitda": 55,
 "pat": 18,
@@ -1339,6 +1344,11 @@
 "pat": 166,
 "rev": 3067
 },
+"unitedfoodbrands": {
+"ebitda": 70,
+"pat": 2,
+"rev": 426
+},
 "unitedspirits": {
 "ebitda": 429,
 "pat": 463,
@@ -1413,6 +1423,11 @@
 "ebitda": 80,
 "pat": 91,
 "rev": 544
+},
+"vrllogistics": {
+"ebitda": 187,
+"pat": 81,
+"rev": 879
 },
 "waareeenergies": {
 "ebitda": 1440,
