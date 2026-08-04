@@ -389,6 +389,11 @@
 "pat": 1463,
 "rev": 6632
 },
+"emami": {
+"ebitda": 225,
+"pat": 139,
+"rev": 1039
+},
 "equitassmallfin": {
 "ebitda": null,
 "pat": 184,
@@ -498,6 +503,11 @@
 "ebitda": 118,
 "pat": 68,
 "rev": 629
+},
+"happyforgings": {
+"ebitda": 141,
+"pat": 91,
+"rev": 449
 },
 "havellsindia": {
 "ebitda": 466,
