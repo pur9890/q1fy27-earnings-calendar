@@ -229,6 +229,11 @@
 "pat": 268,
 "rev": 1096
 },
+"castrolindia": {
+"ebitda": 494,
+"pat": 348,
+"rev": 1871
+},
 "cclproductsindia": {
 "ebitda": 194,
 "pat": 117,
@@ -1368,5 +1373,10 @@
 "ebitda": 38,
 "pat": 32,
 "rev": 142
+},
+"zyduswellness": {
+"ebitda": 242,
+"pat": 119,
+"rev": 1437
 }
 }
