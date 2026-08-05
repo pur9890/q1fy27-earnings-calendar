@@ -114,6 +114,11 @@
 "pat": 85,
 "rev": 1358
 },
+"asterdmqualitycare": {
+"ebitda": 256,
+"pat": 29,
+"rev": 1311
+},
 "atherenergy": {
 "ebitda": -33,
 "pat": -51,
@@ -904,6 +909,11 @@
 "pat": 207,
 "rev": 2684
 },
+"navinfluorine": {
+"ebitda": 357,
+"pat": 243,
+"rev": 1045
+},
 "neogenchemicals": {
 "ebitda": 48,
 "pat": 17,
@@ -958,6 +968,11 @@
 "ebitda": 170,
 "pat": 126,
 "rev": 891
+},
+"pbfintech": {
+"ebitda": 137,
+"pat": 163,
+"rev": 1888
 },
 "pcblchemical": {
 "ebitda": 396,
