@@ -139,6 +139,11 @@
 "pat": 254,
 "rev": 1848
 },
+"aurobindopharma": {
+"ebitda": 1880,
+"pat": 1032,
+"rev": 9150
+},
 "ausmallfinance": {
 "ebitda": null,
 "pat": 796,
@@ -208,6 +213,11 @@
 "ebitda": 1322,
 "pat": 482,
 "rev": 2510
+},
+"bikajifoods": {
+"ebitda": 99,
+"pat": 59,
+"rev": 734
 },
 "billionbrains": {
 "ebitda": 970,
@@ -518,6 +528,11 @@
 "ebitda": 114,
 "pat": 86,
 "rev": 2427
+},
+"godrejagrovet": {
+"ebitda": 240,
+"pat": 128,
+"rev": 2855
 },
 "godrejproperties": {
 "ebitda": -294,
