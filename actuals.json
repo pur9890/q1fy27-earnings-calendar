@@ -704,6 +704,11 @@
 "pat": -238,
 "rev": 24584
 },
+"inventurusknowledge": {
+"ebitda": 290,
+"pat": 194,
+"rev": 894
+},
 "ioc": {
 "ebitda": 4062,
 "pat": -1141,
@@ -1004,6 +1009,11 @@
 "pat": 155,
 "rev": 2473
 },
+"pearlglobal": {
+"ebitda": 164,
+"pat": 99,
+"rev": 1528
+},
 "persistentsystems": {
 "ebitda": 697,
 "pat": 483,
@@ -1048,6 +1058,11 @@
 "ebitda": null,
 "pat": 308,
 "rev": 2330
+},
+"powergridcorp": {
+"ebitda": 9430,
+"pat": 3598,
+"rev": 11497
 },
 "prataapsnacks": {
 "ebitda": 20,
@@ -1339,6 +1354,11 @@
 "pat": 32,
 "rev": 1046
 },
+"timetechnoplast": {
+"ebitda": 224,
+"pat": 118,
+"rev": 1693
+},
 "timken": {
 "ebitda": 178,
 "pat": 120,
@@ -1488,6 +1508,11 @@
 "ebitda": 93,
 "pat": 1,
 "rev": 736
+},
+"whirlpool": {
+"ebitda": 139,
+"pat": 103,
+"rev": 2727
 },
 "wipro": {
 "ebitda": 4633,
