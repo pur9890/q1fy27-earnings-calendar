@@ -104,6 +104,11 @@
 "pat": 28,
 "rev": 1278
 },
+"asahiindiaglass": {
+"ebitda": 325,
+"pat": 149,
+"rev": 1413
+},
 "asianpaints": {
 "ebitda": 2169,
 "pat": 1559,
@@ -323,6 +328,11 @@
 "ebitda": 1058,
 "pat": 532,
 "rev": 5528
+},
+"cohancelifesciences": {
+"ebitda": 1,
+"pat": -45,
+"rev": 422
 },
 "colgate": {
 "ebitda": 483,
