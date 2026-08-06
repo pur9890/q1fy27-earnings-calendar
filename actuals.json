@@ -54,6 +54,11 @@
 "pat": 29,
 "rev": 2046
 },
+"aegislogistics": {
+"ebitda": 714,
+"pat": 545,
+"rev": 2357
+},
 "aequs": {
 "ebitda": 15,
 "pat": -53,
@@ -493,6 +498,11 @@
 "ebitda": null,
 "pat": 271,
 "rev": 829
+},
+"fortishealthcare": {
+"ebitda": 537,
+"pat": 273,
+"rev": 2545
 },
 "fractalanalytics": {
 "ebitda": 120,
