@@ -504,6 +504,11 @@
 "pat": 1302,
 "rev": 7862
 },
+"finolexindustries": {
+"ebitda": 107,
+"pat": 115,
+"rev": 884
+},
 "firstsourcesolutions": {
 "ebitda": 451,
 "pat": 166,
@@ -633,6 +638,11 @@
 "ebitda": 506,
 "pat": 611,
 "rev": 33759
+},
+"heromotocorp": {
+"ebitda": 1702,
+"pat": 1418,
+"rev": 13126
 },
 "hexawaretech": {
 "ebitda": 605,
@@ -888,6 +898,11 @@
 "ebitda": 2061,
 "pat": 1469,
 "rev": 11608
+},
+"lupin": {
+"ebitda": 2450,
+"pat": 1417,
+"rev": 8277
 },
 "mahanagargas": {
 "ebitda": 342,
@@ -1254,6 +1269,11 @@
 "pat": 351,
 "rev": 5455
 },
+"siemensenergy": {
+"ebitda": 586,
+"pat": 441,
+"rev": 2486
+},
 "signatureglobal": {
 "ebitda": -45,
 "pat": -17,
@@ -1518,6 +1538,11 @@
 "ebitda": 474,
 "pat": 315,
 "rev": 2703
+},
+"varrocengineering": {
+"ebitda": 222,
+"pat": 78,
+"rev": 2634
 },
 "varunbeverages": {
 "ebitda": 2339,
