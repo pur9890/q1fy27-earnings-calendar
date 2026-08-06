@@ -814,6 +814,11 @@
 "pat": 37,
 "rev": 1180
 },
+"kirloskaroil": {
+"ebitda": 300,
+"pat": 111,
+"rev": 2000
+},
 "kotakmahindrabank": {
 "ebitda": null,
 "pat": 5480,
@@ -1088,6 +1093,11 @@
 "ebitda": 20,
 "pat": 2,
 "rev": 492
+},
+"premierenergies": {
+"ebitda": 714,
+"pat": 472,
+"rev": 2463
 },
 "prestigeestates": {
 "ebitda": 849,
