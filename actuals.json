@@ -274,6 +274,11 @@
 "pat": 873,
 "rev": 1566
 },
+"campusactivewear": {
+"ebitda": 55,
+"pat": 26,
+"rev": 385
+},
 "camsservices": {
 "ebitda": 182,
 "pat": 127,
@@ -328,6 +333,11 @@
 "ebitda": 234,
 "pat": 86,
 "rev": 512
+},
+"chemplastsanmar": {
+"ebitda": -115,
+"pat": -176,
+"rev": 1125
 },
 "cieautomotive": {
 "ebitda": 390,
@@ -599,6 +609,11 @@
 "pat": 115,
 "rev": 803
 },
+"grinfraproject": {
+"ebitda": 468,
+"pat": 358,
+"rev": 2784
+},
 "happiestminds": {
 "ebitda": 118,
 "pat": 68,
@@ -718,6 +733,11 @@
 "ebitda": 673,
 "pat": 391,
 "rev": 2339
+},
+"indiashelter": {
+"ebitda": null,
+"pat": 143,
+"rev": 432
 },
 "indusindbank": {
 "ebitda": null,
@@ -1293,6 +1313,11 @@
 "ebitda": 293,
 "pat": 179,
 "rev": 1301
+},
+"sonatasoftware": {
+"ebitda": 171,
+"pat": 108,
+"rev": 3279
 },
 "southindianbank": {
 "ebitda": null,
