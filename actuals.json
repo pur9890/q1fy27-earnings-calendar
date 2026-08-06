@@ -504,6 +504,11 @@
 "pat": 1302,
 "rev": 7862
 },
+"firstsourcesolutions": {
+"ebitda": 451,
+"pat": 166,
+"rev": 2725
+},
 "fivestarbusiness": {
 "ebitda": null,
 "pat": 271,
@@ -1248,6 +1253,11 @@
 "ebitda": 765,
 "pat": 351,
 "rev": 5455
+},
+"signatureglobal": {
+"ebitda": -45,
+"pat": -17,
+"rev": 552
 },
 "sis": {
 "ebitda": 207,
