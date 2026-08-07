@@ -609,6 +609,11 @@
 "pat": 16,
 "rev": 223
 },
+"gopalsnacks": {
+"ebitda": 31,
+"pat": 13,
+"rev": 422
+},
 "granulesindia": {
 "ebitda": 339,
 "pat": 180,
@@ -879,6 +884,11 @@
 "pat": 756,
 "rev": 3049
 },
+"kaynestech": {
+"ebitda": 148,
+"pat": 56,
+"rev": 946
+},
 "keiindustries": {
 "ebitda": 396,
 "pat": 274,
@@ -1093,6 +1103,11 @@
 "ebitda": 734,
 "pat": 544,
 "rev": 1301
+},
+"oilindia": {
+"ebitda": 5793,
+"pat": 4027,
+"rev": 12503
 },
 "ongc": {
 "ebitda": 15485,
