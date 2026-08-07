@@ -669,6 +669,11 @@
 "pat": 330,
 "rev": 3845
 },
+"hindalco": {
+"ebitda": 13932,
+"pat": 7013,
+"rev": 84825
+},
 "hindunilever": {
 "ebitda": 3947,
 "pat": 2680,
@@ -1488,6 +1493,11 @@
 "ebitda": 54,
 "pat": 44,
 "rev": 107
+},
+"titancompany": {
+"ebitda": 2890,
+"pat": 1777,
+"rev": 21356
 },
 "torrentpharma": {
 "ebitda": 1664,
