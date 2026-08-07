@@ -174,6 +174,11 @@
 "pat": 7670,
 "rev": 35542
 },
+"azadengineering": {
+"ebitda": 64,
+"pat": 35,
+"rev": 173
+},
 "bajajauto": {
 "ebitda": 4528,
 "pat": 3189,
@@ -689,6 +694,11 @@
 "pat": 5469,
 "rev": 13747
 },
+"hitachienergy": {
+"ebitda": 364,
+"pat": 294,
+"rev": 2494
+},
 "hyundaimotor": {
 "ebitda": 1512,
 "pat": 889,
@@ -1198,6 +1208,11 @@
 "ebitda": 349,
 "pat": 230,
 "rev": 1684
+},
+"ramcocements": {
+"ebitda": 306,
+"pat": 31,
+"rev": 2273
 },
 "raymondlifestyle": {
 "ebitda": 90,
