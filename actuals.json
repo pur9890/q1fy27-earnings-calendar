@@ -329,6 +329,11 @@
 "pat": 4,
 "rev": 4318
 },
+"celloworld": {
+"ebitda": 99,
+"pat": 73,
+"rev": 527
+},
 "centuryplyboards": {
 "ebitda": 198,
 "pat": 83,
@@ -943,6 +948,11 @@
 "ebitda": 128,
 "pat": 49,
 "rev": 352
+},
+"lemontreehotel": {
+"ebitda": 149,
+"pat": 57,
+"rev": 345
 },
 "lichousingfin": {
 "ebitda": null,
