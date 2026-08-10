@@ -289,6 +289,11 @@
 "pat": 103,
 "rev": 3378
 },
+"bosch": {
+"ebitda": 821,
+"pat": 706,
+"rev": 5842
+},
 "bpcl": {
 "ebitda": -4055,
 "pat": -1873,
@@ -939,6 +944,11 @@
 "pat": 56,
 "rev": 946
 },
+"kecinternational": {
+"ebitda": 291,
+"pat": 73,
+"rev": 5024
+},
 "keiindustries": {
 "ebitda": 396,
 "pat": 274,
@@ -1008,6 +1018,11 @@
 "ebitda": null,
 "pat": 1499,
 "rev": 7083
+},
+"lloydsmetals": {
+"ebitda": 2781,
+"pat": 1734,
+"rev": 7354
 },
 "lodhadevelopers": {
 "ebitda": 1922,
@@ -1639,6 +1654,11 @@
 "pat": 158,
 "rev": 1787
 },
+"triveniturbine": {
+"ebitda": 51,
+"pat": 51,
+"rev": 443
+},
 "tvsmotor": {
 "ebitda": 2343,
 "pat": 1058,
@@ -1743,6 +1763,11 @@
 "ebitda": 161,
 "pat": 47,
 "rev": 1089
+},
+"vodafoneidea": {
+"ebitda": 5034,
+"pat": -3754,
+"rev": 11689
 },
 "voltamptransformers": {
 "ebitda": 80,
