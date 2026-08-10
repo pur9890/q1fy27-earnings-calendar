@@ -594,6 +594,11 @@
 "pat": 72,
 "rev": 912
 },
+"fusionfinance": {
+"ebitda": null,
+"pat": 62,
+"rev": 458
+},
 "gabrielindia": {
 "ebitda": 107,
 "pat": 76,
@@ -1803,6 +1808,11 @@
 "ebitda": null,
 "pat": 1072,
 "rev": 8054
+},
+"zeeentertainment": {
+"ebitda": 100,
+"pat": 74,
+"rev": 1907
 },
 "zensartech": {
 "ebitda": 221,
