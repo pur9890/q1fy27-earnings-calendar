@@ -234,6 +234,11 @@
 "pat": 1839,
 "rev": 35115
 },
+"bataindia": {
+"ebitda": 204,
+"pat": 64,
+"rev": 979
+},
 "bharatelectronics": {
 "ebitda": 1388,
 "pat": 1055,
@@ -699,6 +704,11 @@
 "pat": 358,
 "rev": 2784
 },
+"gujaratenergy": {
+"ebitda": 1381,
+"pat": 1007,
+"rev": 9545
+},
 "happiestminds": {
 "ebitda": 118,
 "pat": 68,
@@ -853,6 +863,11 @@
 "ebitda": 11409,
 "pat": 7775,
 "rev": 48211
+},
+"innovacaptab": {
+"ebitda": 73,
+"pat": 44,
+"rev": 471
 },
 "inoxwind": {
 "ebitda": 152,
@@ -1258,6 +1273,11 @@
 "ebitda": 1194,
 "pat": 884,
 "rev": 4552
+},
+"piindustries": {
+"ebitda": 367,
+"pat": 244,
+"rev": 1702
 },
 "piramalpharma": {
 "ebitda": 195,
