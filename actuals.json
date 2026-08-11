@@ -1434,6 +1434,11 @@
 "pat": 351,
 "rev": 5455
 },
+"siemens": {
+"ebitda": 431,
+"pat": 2143,
+"rev": 4714
+},
 "siemensenergy": {
 "ebitda": 586,
 "pat": 441,
@@ -1828,6 +1833,11 @@
 "ebitda": 38,
 "pat": 32,
 "rev": 142
+},
+"zyduslifesciences": {
+"ebitda": 1929,
+"pat": 990,
+"rev": 8017
 },
 "zyduswellness": {
 "ebitda": 242,
