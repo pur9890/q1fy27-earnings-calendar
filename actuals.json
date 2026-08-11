@@ -539,6 +539,11 @@
 "pat": 139,
 "rev": 1039
 },
+"epl": {
+"ebitda": 261,
+"pat": 101,
+"rev": 1388
+},
 "equitassmallfin": {
 "ebitda": null,
 "pat": 184,
@@ -1073,6 +1078,11 @@
 "ebitda": 115,
 "pat": 28,
 "rev": 2003
+},
+"manappuramfinance": {
+"ebitda": null,
+"pat": 585,
+"rev": 3034
 },
 "mandmfinancial": {
 "ebitda": null,
