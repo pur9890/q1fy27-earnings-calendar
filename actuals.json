@@ -24,6 +24,11 @@
 "pat": 362,
 "rev": 3559
 },
+"abbottindia": {
+"ebitda": 522,
+"pat": 429,
+"rev": 1814
+},
 "acc": {
 "ebitda": 457,
 "pat": 147,
@@ -739,6 +744,11 @@
 "pat": 219,
 "rev": 1588
 },
+"gujaratpipavavport": {
+"ebitda": 214,
+"pat": 148,
+"rev": 332
+},
 "happiestminds": {
 "ebitda": 118,
 "pat": 68,
@@ -933,6 +943,11 @@
 "ebitda": 1153,
 "pat": 306,
 "rev": 2137
+},
+"irctc": {
+"ebitda": 387,
+"pat": 330,
+"rev": 1370
 },
 "itc": {
 "ebitda": 5181,
@@ -1478,6 +1493,11 @@
 "ebitda": 3096,
 "pat": 1076,
 "rev": 35244
+},
+"sanseraengineering": {
+"ebitda": 196,
+"pat": 87,
+"rev": 1021
 },
 "sapphirefoods": {
 "ebitda": 140,
