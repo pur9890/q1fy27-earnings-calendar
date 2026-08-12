@@ -1334,6 +1334,11 @@
 "pat": 483,
 "rev": 4303
 },
+"petronetlng": {
+"ebitda": 1535,
+"pat": 1137,
+"rev": 5558
+},
 "pfizer": {
 "ebitda": 248,
 "pat": 204,
@@ -1963,6 +1968,11 @@
 "ebitda": 4633,
 "pat": 3356,
 "rev": 24479
+},
+"yatraonline": {
+"ebitda": 12,
+"pat": 0,
+"rev": 188
 },
 "yesbank": {
 "ebitda": null,
