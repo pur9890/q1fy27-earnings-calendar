@@ -1209,6 +1209,11 @@
 "pat": 57,
 "rev": 450
 },
+"midwest": {
+"ebitda": 49,
+"pat": 31,
+"rev": 192
+},
 "moldtekpackaging": {
 "ebitda": 56,
 "pat": 26,
@@ -1574,6 +1579,11 @@
 "pat": 51,
 "rev": 1278
 },
+"somanyceramics": {
+"ebitda": 86,
+"pat": 34,
+"rev": 750
+},
 "sonablwprecis": {
 "ebitda": 293,
 "pat": 179,
@@ -1903,6 +1913,11 @@
 "ebitda": 170,
 "pat": 109,
 "rev": 696
+},
+"vipinds": {
+"ebitda": -11,
+"pat": -54,
+"rev": 578
 },
 "vishalmegamart": {
 "ebitda": 545,
