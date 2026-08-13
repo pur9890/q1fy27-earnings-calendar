@@ -649,6 +649,11 @@
 "pat": 72,
 "rev": 912
 },
+"fujiyamapower": {
+"ebitda": 255,
+"pat": 58,
+"rev": 1346
+},
 "fusionfinance": {
 "ebitda": null,
 "pat": 62,
@@ -663,6 +668,11 @@
 "ebitda": 7098,
 "pat": 4671,
 "rev": 41198
+},
+"galaxysurfactants": {
+"ebitda": 249,
+"pat": 166,
+"rev": 1782
 },
 "ganeshaecosphere": {
 "ebitda": 60,
@@ -909,6 +919,11 @@
 "pat": 143,
 "rev": 432
 },
+"indigopaints": {
+"ebitda": 62,
+"pat": 42,
+"rev": 370
+},
 "indocountinds": {
 "ebitda": 143,
 "pat": 63,
@@ -1023,6 +1038,11 @@
 "ebitda": 259,
 "pat": 108,
 "rev": 1905
+},
+"jswcement": {
+"ebitda": 299,
+"pat": 153,
+"rev": 1896
 },
 "jswenergy": {
 "ebitda": 2873,
