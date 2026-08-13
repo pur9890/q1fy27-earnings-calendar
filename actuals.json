@@ -1009,6 +1009,11 @@
 "pat": 4696,
 "rev": 47364
 },
+"jubilantfoodworks": {
+"ebitda": 504,
+"pat": 100,
+"rev": 2570
+},
 "jyothylabs": {
 "ebitda": 65,
 "pat": 48,
@@ -1318,6 +1323,11 @@
 "ebitda": 67,
 "pat": 31,
 "rev": 950
+},
+"pageindustries": {
+"ebitda": 289,
+"pat": 193,
+"rev": 1420
 },
 "pandghygiene": {
 "ebitda": 170,
