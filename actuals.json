@@ -939,6 +939,11 @@
 "pat": -1141,
 "rev": 266407
 },
+"ipcalabs": {
+"ebitda": 670,
+"pat": 424,
+"rev": 2788
+},
 "irbinfra": {
 "ebitda": 1153,
 "pat": 306,
@@ -1193,6 +1198,11 @@
 "ebitda": 151,
 "pat": 106,
 "rev": 985
+},
+"maxhealthcare": {
+"ebitda": 598,
+"pat": 323,
+"rev": 2366
 },
 "medplushealthservices": {
 "ebitda": 133,
