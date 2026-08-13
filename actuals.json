@@ -329,6 +329,11 @@
 "pat": -1873,
 "rev": 151277
 },
+"brigadeenterpr": {
+"ebitda": 361,
+"pat": 217,
+"rev": 1116
+},
 "britannia": {
 "ebitda": 838,
 "pat": 593,
@@ -1223,6 +1228,11 @@
 "ebitda": 151,
 "pat": 106,
 "rev": 985
+},
+"maxfinancial": {
+"ebitda": 167,
+"pat": 118,
+"rev": 14970
 },
 "maxhealthcare": {
 "ebitda": 598,
