@@ -89,6 +89,11 @@
 "pat": 172,
 "rev": 2150
 },
+"alkemlab": {
+"ebitda": 766,
+"pat": 521,
+"rev": 3740
+},
 "alkylamines": {
 "ebitda": 134,
 "pat": 95,
@@ -1343,6 +1348,11 @@
 "ebitda": 468,
 "pat": 207,
 "rev": 2684
+},
+"natcopharma": {
+"ebitda": 186,
+"pat": 206,
+"rev": 735
 },
 "navinfluorine": {
 "ebitda": 357,
