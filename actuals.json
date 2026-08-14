@@ -1599,6 +1599,11 @@
 "pat": 205,
 "rev": 3168
 },
+"rubiconresearch": {
+"ebitda": 129,
+"pat": 85,
+"rev": 534
+},
 "safariinds": {
 "ebitda": 75,
 "pat": 48,
@@ -2058,6 +2063,11 @@
 "ebitda": 80,
 "pat": 91,
 "rev": 544
+},
+"voltas": {
+"ebitda": 228,
+"pat": 213,
+"rev": 4674
 },
 "vrllogistics": {
 "ebitda": 187,
