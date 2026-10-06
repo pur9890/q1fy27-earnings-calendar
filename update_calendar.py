@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Q1 FY27 Earnings Calendar for Indian listed companies.
+Q2 FY27 Earnings Calendar for Indian listed companies.
 
 Scrapes the MoneyControl results-calendar API and regenerates a simple,
 self-contained HTML calendar (earnings_calendar.html) in this folder.
@@ -27,11 +27,11 @@ from html import escape
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-# Q1 FY27 = quarter Apr-Jun 2026; results are announced Jul-Sep 2026.
-START_DATE = "2026-07-01"
-END_DATE   = "2026-09-30"
-RESULT_TYPE_LABEL = "Q1 FY26-27"          # what MoneyControl calls Q1 FY27
-QUARTER_TITLE = "Q1 FY27"
+# Q2 FY27 = quarter Jul-Sep 2026; results are announced Oct-Dec 2026.
+START_DATE = "2026-10-01"
+END_DATE   = "2026-12-15"
+RESULT_TYPE_LABEL = "Q2 FY26-27"          # what MoneyControl calls Q2 FY27
+QUARTER_TITLE = "Q2 FY27"
 
 OUT_HTML = Path(__file__).with_name("earnings_calendar.html")
 OUT_JSON = Path(__file__).with_name("earnings_data.json")
@@ -193,7 +193,7 @@ def company_chip(c, dlabel=""):
 
     # the name links to the estimate when we have one, else the chart, else MoneyControl
     if slug:
-        href, cls, what = f"estimates.html#{slug}", "co hasEst", "Q1FY27 estimates (broker avg)"
+        href, cls, what = f"estimates.html#{slug}", "co hasEst", "Q2FY27 estimates (broker avg)"
     elif tkr:
         href, cls, what = tv_url(tkr), "co", f"TradingView chart (NSE:{tkr})"
     elif url:
@@ -557,7 +557,7 @@ def build_html(data):
 <body>
 <header>
   <h1>{QUARTER_TITLE} Earnings Calendar &mdash; Indian Listed Companies</h1>
-  <div class="sub">Quarter <b>{QUARTER_TITLE}</b> (Apr&ndash;Jun 2026) results &middot;
+  <div class="sub">Quarter <b>{QUARTER_TITLE}</b> (Jul&ndash;Sep 2026) results &middot;
      reporting window <b>{span}</b> &middot;
      <b>{total}</b> companies across <b>{len(by_date)}</b> dates &middot;
      times in <b>(brackets)</b> = approx., based on last quarter&rsquo;s filing</div>
@@ -807,7 +807,7 @@ def build_estimates_html(records, actuals=None, rmap=None):
     {_row_margin(rec.get('margin'))}
     {_row_cr('PAT', 'pat', rec.get('pat'), act.get('pat'))}
   </tbody></table>
-  <div class="efoot">{foot} &middot; Q1&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
+  <div class="efoot">{foot} &middot; Q2&nbsp;FY27E &middot; type an Actual &rarr; surprise auto-calcs</div>
 </div>""")
 
     # ---- date filter: a dropdown of dates that have reported companies with actuals ----
@@ -826,7 +826,7 @@ def build_estimates_html(records, actuals=None, rmap=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Q1 FY27 Broker Estimates &mdash; Indian Listed Companies</title>
+<title>Q2 FY27 Broker Estimates &mdash; Indian Listed Companies</title>
 <style>
   :root {{ --bg:#0e131f; --panel:#151b2b; --card:#161d2c; --line:#28324a;
     --ink:#e7ecf5; --mut:#8b97ad; --accent:#4f8cff; --green:#2bb673; }}
@@ -930,8 +930,8 @@ def build_estimates_html(records, actuals=None, rmap=None):
     <a class="back" href="index.html">&larr; Back to calendar</a>
     <button id="themeBtn" class="themebtn" title="Switch light / dark" aria-label="Switch theme">&#9790;</button>
   </div>
-  <h1 style="margin-top:8px">Q1&nbsp;FY27 Broker Estimates &mdash; Averages</h1>
-  <div class="sub">Consensus for <b>Apr&ndash;Jun 2026</b> (reported Jul&ndash;Aug) &middot;
+  <h1 style="margin-top:8px">Q2&nbsp;FY27 Broker Estimates &mdash; Averages</h1>
+  <div class="sub">Consensus for <b>Jul&ndash;Sep 2026</b> (reported Oct&ndash;Nov) &middot;
      average of <b>MOSL / Kotak / Ambit / Spark / I-Sec</b> &middot; <b>{len(recs)}</b> companies.
      All figures in <b>&#8377; crore</b> (EBITDA margin in %).<br>
      <b>Est</b> = broker average (hover for the low&ndash;high range). <b>Actual</b> is auto-filled
@@ -951,7 +951,7 @@ def build_estimates_html(records, actuals=None, rmap=None):
 {"".join(cards)}
 </main>
 <footer>
-  <b>Est</b> = average of MOSL / Kotak / Ambit / Spark / I-Sec for Q1&nbsp;FY27E (Revenue/NII, EBITDA/PPOP, PAT).
+  <b>Est</b> = average of MOSL / Kotak / Ambit / Spark / I-Sec for Q2&nbsp;FY27E (Revenue/NII, EBITDA/PPOP, PAT).
   <b>Actual</b> is the reported figure auto-filled from Screener (green) or typed by you; surprise =
   (actual &minus; est) &divide; est, margin surprise in percentage points. For banks/NBFCs, EBITDA is not
   meaningful and is left blank. Numbers in &#8377; crore. Updated {generated}.
@@ -1084,19 +1084,20 @@ def main():
     OUT_HTML.write_text(html, encoding="utf-8")
     # estimates tab (all covered companies), if the estimates file is present
     est_lookup, est_recs = load_estimates()
-    if est_recs:
-        # map each estimate's slug -> its result date (from the calendar) for the date filter
-        rmap = {}
-        for r in data["list"]:
-            if RESULT_TYPE_LABEL not in (r.get("resultType") or ""):
-                continue
-            nm = r.get("stockName") or ""
-            sh = r.get("stockShortName") or ""
-            slug = est_lookup.get(est_norm(nm)) or (est_lookup.get(est_norm(sh)) if sh else None)
-            if slug and slug not in rmap:
-                d = parse_iso(r["date"])
-                rmap[slug] = (d.isoformat(), d.strftime("%d %b"))
-        OUT_EST_HTML.write_text(build_estimates_html(est_recs, load_actuals(), rmap), encoding="utf-8")
+    # map each estimate's slug -> its result date (from the calendar) for the date filter
+    rmap = {}
+    for r in data["list"]:
+        if RESULT_TYPE_LABEL not in (r.get("resultType") or ""):
+            continue
+        nm = r.get("stockName") or ""
+        sh = r.get("stockShortName") or ""
+        slug = est_lookup.get(est_norm(nm)) or (est_lookup.get(est_norm(sh)) if sh else None)
+        if slug and slug not in rmap:
+            d = parse_iso(r["date"])
+            rmap[slug] = (d.isoformat(), d.strftime("%d %b"))
+    # always regenerate the estimates page so it tracks the current quarter,
+    # even before the broker-estimates Excel for this quarter is loaded (empty records)
+    OUT_EST_HTML.write_text(build_estimates_html(est_recs, load_actuals(), rmap), encoding="utf-8")
     n = sum(1 for r in data["list"] if RESULT_TYPE_LABEL in (r.get("resultType") or ""))
     print(f"OK  {n} companies  ->  {OUT_HTML.name}")
     return 0

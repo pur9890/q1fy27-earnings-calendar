@@ -1,3 +1,7 @@
 *.tmp
 build.log
 _site/
+__pycache__/
+*.log
+q2test.json
+*_backup.json

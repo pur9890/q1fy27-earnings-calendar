@@ -28,7 +28,7 @@ EST_JSON = HERE / "estimates.json"
 TKR_JSON = HERE / "tickers.json"
 OUT = HERE / "actuals.json"
 
-QUARTER = "Jun 2026"
+QUARTER = "Sep 2026"
 MONTHS = {m: i for i, m in enumerate(
     ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
 

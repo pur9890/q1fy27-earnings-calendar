@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
 Builds release_times.json: an approximate result-release time for each company,
-taken from when it filed LAST quarter's (Q4 FY26) results with the BSE exchange.
+taken from when it filed LAST quarter's (Q1 FY27) results with the BSE exchange.
 
-These times are a proxy for Q1 FY27 timing and only need to be rebuilt occasionally
+These times are a proxy for Q2 FY27 timing and only need to be rebuilt occasionally
 (last quarter's filing times don't change). Run:
     python build_release_times.py
 
 Sources:
-  - Primary : BSE "Result" category announcements, Apr-Jun 2026 (bulk sweep).
+  - Primary : BSE "Result" category announcements, Jul-Sep 2026 (bulk sweep).
   - Fallback: for companies whose results were filed under "Board Meeting",
               a per-company lookup via BSE search, excluding meeting *intimations*.
 Companies listed only on NSE / NSE-SME (not on BSE) will have no time.
@@ -24,7 +24,7 @@ HDR = {"User-Agent": UA, "Referer": "https://www.bseindia.com/",
        "Origin": "https://www.bseindia.com", "Accept": "application/json"}
 CTX = ssl.create_default_context(); CTX.check_hostname = False; CTX.verify_mode = ssl.CERT_NONE
 
-FROM, TO = "20260401", "20260630"          # Q4 FY26 reporting window
+FROM, TO = "20260701", "20260930"          # Q1 FY27 reporting window (last quarter)
 HERE = Path(__file__).parent
 MC_JSON = HERE / "earnings_data.json"       # produced by update_calendar.py
 OUT = HERE / "release_times.json"
@@ -51,9 +51,9 @@ def ann(cat, scrip="", page=1):
 
 # --- 1. Bulk sweep of the clean "Result" category (fortnightly windows) --------
 def sweep_results():
-    windows = [("20260401", "20260415"), ("20260416", "20260430"),
-               ("20260501", "20260515"), ("20260516", "20260531"),
-               ("20260601", "20260615"), ("20260616", "20260630")]
+    windows = [("20260701", "20260715"), ("20260716", "20260731"),
+               ("20260801", "20260815"), ("20260816", "20260831"),
+               ("20260901", "20260915"), ("20260916", "20260930")]
     rows = {}
     for frm, to in windows:
         page, total = 1, None
@@ -143,9 +143,9 @@ def q4_report_dates():
     hdr = {"User-Agent": UA, "Referer": "https://www.moneycontrol.com/", "Accept": "application/json"}
     months = {m: i for i, m in enumerate(
         ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
-    windows = [("2026-04-01", "2026-04-15"), ("2026-04-16", "2026-04-30"),
-               ("2026-05-01", "2026-05-15"), ("2026-05-16", "2026-05-31"),
-               ("2026-06-01", "2026-06-15"), ("2026-06-16", "2026-06-30")]
+    windows = [("2026-07-01", "2026-07-15"), ("2026-07-16", "2026-07-31"),
+               ("2026-08-01", "2026-08-15"), ("2026-08-16", "2026-08-31"),
+               ("2026-09-01", "2026-09-15"), ("2026-09-16", "2026-09-30")]
     out = {}
     for s, e in windows:
         url = ("https://api.moneycontrol.com/mcapi/v1/earnings/get-earnings-data"
@@ -158,7 +158,7 @@ def q4_report_dates():
         except Exception:
             continue
         for r in rows:
-            if "Q4 FY25-26" not in (r.get("resultType") or ""):
+            if "Q1 FY26-27" not in (r.get("resultType") or ""):
                 continue
             try:
                 dd, mm = r["date"].split()
