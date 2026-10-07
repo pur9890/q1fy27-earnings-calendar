@@ -144,8 +144,11 @@
   @keyframes coflash { 0%,55% { background:var(--flash); color:#fff; } 100% {} }
   .co.flash { animation:coflash 1.7s ease-out; }
   @media (prefers-reduced-motion: reduce) { .co.flash { animation:none; outline:2px solid var(--accent); } }
-  .credit { margin-top:14px; font-size:13px; font-weight:800; letter-spacing:.4px;
-             color:var(--accent); opacity:.92; }
+  .credit { width:fit-content; margin:0 0 8px auto; z-index:5; font-size:12.5px;
+             font-weight:800; letter-spacing:.4px; color:var(--accent); opacity:.95;
+             background:var(--card,var(--panel)); padding:3px 9px; border-radius:999px;
+             border:1px solid var(--line); white-space:nowrap; }
+  header { position:relative; }
   footer { padding:16px 26px 40px; color:var(--mut); font-size:12px;
     border-top:1px solid var(--line); }
   footer a { color:var(--accent); }
@@ -158,6 +161,7 @@
 </head>
 <body>
 <header>
+  <div class="credit">Made by Purva Jhaveri</div>
   <h1>Q2 FY27 Earnings Calendar &mdash; Indian Listed Companies</h1>
   <div class="sub">Quarter <b>Q2 FY27</b> (Jul&ndash;Sep 2026) results &middot;
      reporting window <b>01 Oct &ndash; 14 Nov 2026</b> &middot;
@@ -170,7 +174,7 @@
       <div id="sresults" class="sresults"></div>
     </div>
     <div class="chip">Source: <b>MoneyControl</b> &middot; data as on <b>08/10/2026</b></div>
-    <div class="chip">Updated <b>08 Oct 2026, 12:36 AM IST</b></div>
+    <div class="chip">Updated <b>08 Oct 2026, 12:43 AM IST</b></div>
     <a class="estlink" href="estimates.html" target="_blank" rel="noopener">&#128202; Broker estimates &rarr;</a>
     <button id="wlBtn" class="wlbtn" title="Show only my starred companies">&#9734; Watchlist</button>
     <button id="themeBtn" class="themebtn" title="Switch light / dark" aria-label="Switch theme">&#9790;</button>
@@ -188,7 +192,6 @@
   Click any company to open its MoneyControl page. Dates &amp; companies update whenever you re-run <code>update_calendar.py</code>.
   Times in brackets are <b>approximate</b> &mdash; they show when the company filed its <b>last quarter (Q4&nbsp;FY26)</b> results with the BSE,
   used here as a rough guide. Actual Q2 FY27 timing may differ, and some companies (mainly NSE-SME listings) have no time shown.
-  <div class="credit">Made by Purva Jhaveri</div>
 </footer>
 <script>
   // ---- light / dark theme (remembers your choice) ----
