@@ -43,7 +43,7 @@ echo.
 echo ----------------------------------------------------------------
 echo  STEP 3 of 3 :  UPLOADING AND GOING LIVE
 echo ----------------------------------------------------------------
-gh repo create q1fy27-earnings-calendar --public --source=. --push
+gh repo create q2fy27-earnings-calendar --public --source=. --push
 if errorlevel 1 goto fail
 echo.
 
@@ -53,7 +53,7 @@ echo    ALL DONE!
 echo.
 echo    Your calendar will be LIVE in about 1-2 minutes at:
 echo.
-echo        https://%GHUSER%.github.io/q1fy27-earnings-calendar/
+echo        https://%GHUSER%.github.io/q2fy27-earnings-calendar/
 echo.
 echo    It refreshes itself every morning - no need to keep your PC on.
 echo ================================================================
