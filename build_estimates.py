@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Reads the broker-estimates workbook (Sheet1) and writes estimates.json.
+Reads the broker-estimates workbook (Q2 FY27 sheet) and writes estimates.json.
 
-Sheet1 holds, per company, each broker's Q1 FY27E estimate (MOSL, Kotak, Ambit,
-Spark, I-Sec) plus their Average. For every metric we keep the average and the
+The sheet holds, per company, each broker's Q2 FY27E estimate (MOSL, Kotak, Ambit,
+Spark, I-Sec, B&K) plus their Average. For every metric we keep the average and the
 low/high across whichever brokers actually have a number, so the site can show
 e.g.  Revenue 1,263 (1,206 - 1,285).
 
@@ -18,15 +18,17 @@ from pathlib import Path
 
 import openpyxl
 
-XLSX = Path(r"C:\Users\lenovo\Desktop\MOSL & KIE Estimate Q1FY27 (version 1).xlsx")
+XLSX = Path(r"C:\Users\lenovo\OneDrive\Desktop\p\MOSL & KIE Estimate Q1FY27 (version 1).xlsx")
+SHEET = "Sheet1 Q2FY27"         # Q2 FY27 consolidated tab in the workbook
 OUT = Path(__file__).with_name("estimates.json")
 
-BROKERS = ["MOSL", "Kotak", "Ambit", "Spark", "I-Sec"]
+BROKERS = ["MOSL", "Kotak", "Ambit", "Spark", "I-Sec", "B&K"]
 
-# Sheet1 layout (0-based). Row 1 = metric group, row 2 = broker, data from row 3.
+# Sheet layout (0-based). Row 1 = metric group, row 2 = broker, data from row 3.
+# 6 name columns, then each metric block = 6 brokers followed by an Average column.
 C_NAME = 0
-C_ALIAS = [1, 2, 3, 4]          # Kotak / Ambit / Spark / I-Sec names
-C_REV, C_EBITDA, C_MARGIN, C_PAT = 5, 11, 17, 23      # each: 5 brokers then Average
+C_ALIAS = [1, 2, 3, 4, 5]       # Kotak / Ambit / Spark / I-Sec / B&K names
+C_REV, C_EBITDA, C_MARGIN, C_PAT = 6, 13, 20, 27      # each: 6 brokers then Average
 
 # Verified extra aliases: map a record (by its MOSL name) to the exact
 # MoneyControl calendar name(s), so the calendar links resolve reliably.
@@ -79,7 +81,7 @@ def metric(row, start):
 
 def main():
     wb = openpyxl.load_workbook(XLSX, data_only=True, read_only=True)
-    ws = wb["Sheet1"]
+    ws = wb[SHEET]
     rows = list(ws.iter_rows(values_only=True))
 
     records = []
