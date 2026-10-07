@@ -544,6 +544,8 @@ def build_html(data):
   @keyframes coflash {{ 0%,55% {{ background:var(--flash); color:#fff; }} 100% {{}} }}
   .co.flash {{ animation:coflash 1.7s ease-out; }}
   @media (prefers-reduced-motion: reduce) {{ .co.flash {{ animation:none; outline:2px solid var(--accent); }} }}
+  .credit {{ margin-top:14px; font-size:13px; font-weight:800; letter-spacing:.4px;
+             color:var(--accent); opacity:.92; }}
   footer {{ padding:16px 26px 40px; color:var(--mut); font-size:12px;
     border-top:1px solid var(--line); }}
   footer a {{ color:var(--accent); }}
@@ -586,6 +588,7 @@ def build_html(data):
   Click any company to open its MoneyControl page. Dates &amp; companies update whenever you re-run <code>update_calendar.py</code>.
   Times in brackets are <b>approximate</b> &mdash; they show when the company filed its <b>last quarter (Q4&nbsp;FY26)</b> results with the BSE,
   used here as a rough guide. Actual {QUARTER_TITLE} timing may differ, and some companies (mainly NSE-SME listings) have no time shown.
+  <div class="credit">Made by Purva Jhaveri</div>
 </footer>
 <script>
   // ---- light / dark theme (remembers your choice) ----
@@ -921,6 +924,8 @@ def build_estimates_html(records, actuals=None, rmap=None):
   .ecard:target {{ border-color:var(--accent);
     box-shadow:0 0 0 2px var(--accent) inset, 0 0 22px rgba(79,140,255,.45); }}
   footer {{ padding:16px 26px 44px; color:var(--mut); font-size:12px; border-top:1px solid var(--line); }}
+  .credit {{ margin-top:14px; font-size:13px; font-weight:800; letter-spacing:.4px;
+             color:var(--accent); opacity:.92; }}
   @media (max-width:640px) {{ main {{ padding:14px 12px 50px; }} header {{ padding:16px 12px 12px; }} }}
 </style>
 </head>
@@ -955,6 +960,7 @@ def build_estimates_html(records, actuals=None, rmap=None):
   <b>Actual</b> is the reported figure auto-filled from Screener (green) or typed by you; surprise =
   (actual &minus; est) &divide; est, margin surprise in percentage points. For banks/NBFCs, EBITDA is not
   meaningful and is left blank. Numbers in &#8377; crore. Updated {generated}.
+  <div class="credit">Made by Purva Jhaveri</div>
 </footer>
 <script>
   // light / dark theme, shared with the calendar via the same saved preference
