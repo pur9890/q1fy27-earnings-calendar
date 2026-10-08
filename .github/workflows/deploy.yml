@@ -5,14 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:        # lets you run it manually from the Actions tab
   schedule:
-    # GitHub's free cron is best-effort and can drop individual runs (esp. on
-    # busy round minutes). Several odd-minute morning attempts make a full miss
-    # very unlikely; whichever fires first refreshes the page. UTC = IST - 5:30.
-    - cron: "17 2 * * *"    # 07:47 IST
-    - cron: "37 2 * * *"    # 08:07 IST
-    - cron: "57 2 * * *"    # 08:27 IST
-    - cron: "23 3 * * *"    # 08:53 IST
-    - cron: "33 14 * * *"   # 20:03 IST (evening safety net, ~8 PM)
+    # Refresh every 30 minutes. GitHub's free cron is best-effort and can drop or
+    # delay individual runs, so cron-job.org also hits this workflow's dispatch
+    # API every ~30 min as the reliable trigger (see repo README / setup notes).
+    - cron: "*/30 * * * *"   # every 30 minutes (UTC; interval is timezone-agnostic)
 
 permissions:
   contents: write        # allow committing the fetched actuals/times/tickers back
