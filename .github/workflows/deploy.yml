@@ -5,10 +5,17 @@ on:
     branches: [main]
   workflow_dispatch:        # lets you run it manually from the Actions tab
   schedule:
-    # Refresh every 30 minutes. GitHub's free cron is best-effort and can drop or
-    # delay individual runs, so cron-job.org also hits this workflow's dispatch
-    # API every ~30 min as the reliable trigger (see repo README / setup notes).
-    - cron: "*/30 * * * *"   # every 30 minutes (UTC; interval is timezone-agnostic)
+    # The reliable every-30-min refresh comes from cron-job.org hitting this
+    # workflow's dispatch API (see setup notes). These GitHub crons are only a
+    # sparse daily backup at odd minutes (:13) so they NEVER collide with the
+    # cron-job.org trigger -- a collision inside the ~2-min build window makes
+    # cancel-in-progress cancel one run mid-deploy ("no artifacts" failure).
+    # UTC = IST - 5:30; spread across India market + after-close hours.
+    - cron: "13 3 * * *"    # 08:43 IST
+    - cron: "13 6 * * *"    # 11:43 IST
+    - cron: "13 9 * * *"    # 14:43 IST
+    - cron: "13 12 * * *"   # 17:43 IST
+    - cron: "13 15 * * *"   # 20:43 IST
 
 permissions:
   contents: write        # allow committing the fetched actuals/times/tickers back
