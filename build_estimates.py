@@ -23,13 +23,13 @@ XLSX = Path(r"C:\Users\lenovo\OneDrive\Desktop\p\MOSL & KIE Estimate Q1FY27 (ver
 SHEET = "Sheet1 Q2FY27"         # Q2 FY27 consolidated tab in the workbook
 OUT = Path(__file__).with_name("estimates.json")
 
-BROKERS = ["MOSL", "Kotak", "Ambit", "Spark", "I-Sec", "B&K"]
+BROKERS = ["MOSL", "Kotak", "Ambit", "Spark", "I-Sec", "B&K", "Investec"]
 
 # Sheet layout (0-based). Row 1 = metric group, row 2 = broker, data from row 3.
-# 6 name columns, then each metric block = 6 brokers followed by an Average column.
+# 7 name columns, then each metric block = 7 brokers followed by an Average column.
 C_NAME = 0
-C_ALIAS = [1, 2, 3, 4, 5]       # Kotak / Ambit / Spark / I-Sec / B&K names
-C_REV, C_EBITDA, C_MARGIN, C_PAT = 6, 13, 20, 27      # each: 6 brokers then Average
+C_ALIAS = [1, 2, 3, 4, 5, 6]    # Kotak / Ambit / Spark / I-Sec / B&K / Investec names
+C_REV, C_EBITDA, C_MARGIN, C_PAT = 7, 15, 23, 31      # each: 7 brokers then Average
 
 # Verified extra aliases: map a record (by its MOSL name) to the exact
 # MoneyControl calendar name(s), so the calendar links resolve reliably.
@@ -62,31 +62,15 @@ def num(v):
     return v if isinstance(v, (int, float)) else None
 
 
-# Keep ONLY brokers whose Q2 FY27 numbers are actually in the workbook.
-# Spark / Ambit / MOSL have no Q2 preview tab, so any values in their columns on
-# the "Sheet1 Q2FY27" consolidated tab are stale Q1 carry-over and are ignored.
-# (When the user adds a Spark/Ambit/MOSL Q2 tab, add them here + to PREVIEW.)
-Q2_BROKERS = {"Kotak", "I-Sec", "B&K"}
-BLOCKS = (6, 13, 20, 27)          # broker-start columns for Rev/EBITDA/Margin/PAT
-METRIC_KEYS = ("rev", "ebitda", "margin", "pat")
+# All seven brokers on "Sheet1 Q2FY27" now hold genuine Q2 numbers.
+BLOCKS = (7, 15, 23, 31)          # broker-start columns for Rev/EBITDA/Margin/PAT
 
-# For a broker whose consolidated column on "Sheet1 Q2FY27" was NOT reliably
-# synced for Q2 (e.g. I-Sec, which still held Q1 values for most companies),
-# pull its numbers straight from its own dedicated Q2 preview tab instead.
-# Kotak and B&K were synced into the consolidated tab (verified 0 stale), so
-# they are read from there and need no override.
-PREVIEW = {
-    "I-Sec": {"sheet": "ISec Q2 FY27 preview", "name": 1,
-              "cols": {"rev": 2, "ebitda": 3, "margin": 4, "pat": 5}},
-}
-
-
-def _jnorm(s):
-    """Loose name key for joining preview tabs to the consolidated rows."""
-    s = (s or "").lower().replace("&", " and ")
-    s = re.sub(r"\(.*?\)", "", s)
-    s = re.sub(r"\b(ltd|limited|limite|the)\b", "", s)
-    return re.sub(r"[^a-z0-9]", "", s)
+# Stale-guard: the Q2 tab was seeded by copying the Q1 "Sheet1", so a value that
+# is still byte-identical to the SAME broker's Q1 number is treated as un-updated
+# carry-over and dropped. This protects against partially-filled future updates.
+STALE_SHEET = "Sheet1"
+Q1_BROKERS = ["MOSL", "Kotak", "Ambit", "Spark", "I-Sec", "B&K"]   # Q1 layout
+Q1_BLOCKS = (6, 13, 20, 27)       # Q1 broker-start columns (6 brokers per block)
 
 
 def metric(row, start):
@@ -120,40 +104,33 @@ def main():
     ws = wb[SHEET]
     rows = list(ws.iter_rows(values_only=True))
 
-    # Build per-broker Q2 preview maps (authoritative Sep-26E numbers).
-    pv = {}
-    for b, cfg in PREVIEW.items():
-        m = {}
-        if cfg["sheet"] in wb.sheetnames:
-            for r in list(wb[cfg["sheet"]].iter_rows(values_only=True))[2:]:
-                nm = r[cfg["name"]] if cfg["name"] < len(r) else None
-                if not nm:
-                    continue
-                vals = {k: (r[c] if c < len(r) and isinstance(r[c], (int, float)) else None)
-                        for k, c in cfg["cols"].items()}
-                if any(v is not None for v in vals.values()):
-                    m[_jnorm(nm)] = vals
-        pv[b] = m
+    # Q1 reference, keyed by company identity, for the stale-guard.
+    q1ref = {}
+    if STALE_SHEET in wb.sheetnames:
+        for r in list(wb[STALE_SHEET].iter_rows(values_only=True))[2:]:
+            k = _idkey(r)
+            if k:
+                q1ref[k] = r
 
     def clean(r):
-        """Keep only Q2 brokers: drop excluded ones, and replace a preview-backed
-        broker's consolidated values with its authoritative preview numbers."""
+        """Drop any value byte-identical to the same broker's Q1 number (stale
+        carry-over from seeding the Q2 tab off the Q1 sheet)."""
         r = list(r)
-        rownames = [r[i] for i in [C_NAME] + C_ALIAS if i < len(r) and r[i]]
-        for bi, b in enumerate(BROKERS):
-            if b in PREVIEW:
-                hit = None
-                for nm in rownames:
-                    hit = pv[b].get(_jnorm(nm))
-                    if hit:
-                        break
-                for start, mk in zip(BLOCKS, METRIC_KEYS):
-                    r[start + bi] = hit.get(mk) if hit else None
-            elif b not in Q2_BROKERS:
-                for start in BLOCKS:
-                    if start + bi < len(r):
-                        r[start + bi] = None
-            # else (Kotak, B&K): keep the consolidated value as-is
+        q1 = q1ref.get(_idkey(r))
+        if not q1:
+            return r
+        for q2start, q1start in zip(BLOCKS, Q1_BLOCKS):
+            for bi, b in enumerate(BROKERS):
+                if b not in Q1_BROKERS:          # e.g. Investec: no Q1 column
+                    continue
+                c = q2start + bi
+                v = r[c] if c < len(r) else None
+                if not isinstance(v, (int, float)):
+                    continue
+                q1c = q1start + Q1_BROKERS.index(b)
+                if (q1c < len(q1) and isinstance(q1[q1c], (int, float))
+                        and abs(q1[q1c] - v) < 1e-9):
+                    r[c] = None
         return r
 
     records = []

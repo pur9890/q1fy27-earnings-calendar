@@ -946,7 +946,7 @@ def build_estimates_html(records, actuals=None, rmap=None):
   </div>
   <h1 style="margin-top:8px">Q2&nbsp;FY27 Broker Estimates &mdash; Averages</h1>
   <div class="sub">Consensus for <b>Jul&ndash;Sep 2026</b> (reported Oct&ndash;Nov) &middot;
-     average of <b>Kotak / I-Sec / B&amp;K</b> &middot; <b>{len(recs)}</b> companies.
+     average of <b>MOSL / Kotak / Ambit / Spark / I-Sec / B&amp;K / Investec</b> &middot; <b>{len(recs)}</b> companies.
      All figures in <b>&#8377; crore</b> (EBITDA margin in %).<br>
      <b>Est</b> = broker average (hover for the low&ndash;high range). <b>Actual</b> is auto-filled
      from Screener once a company reports (<b>{reported}</b> so far, shown in <b style="color:var(--green)">green</b>);
@@ -965,7 +965,7 @@ def build_estimates_html(records, actuals=None, rmap=None):
 {"".join(cards)}
 </main>
 <footer>
-  <b>Est</b> = average of Kotak / I-Sec / B&amp;K for Q2&nbsp;FY27E (Revenue/NII, EBITDA/PPOP, PAT).
+  <b>Est</b> = average of MOSL / Kotak / Ambit / Spark / I-Sec / B&amp;K / Investec for Q2&nbsp;FY27E (Revenue/NII, EBITDA/PPOP, PAT).
   <b>Actual</b> is the reported figure auto-filled from Screener (green) or typed by you; surprise =
   (actual &minus; est) &divide; est, margin surprise in percentage points. For banks/NBFCs, EBITDA is not
   meaningful and is left blank. Numbers in &#8377; crore. Updated {generated}.
